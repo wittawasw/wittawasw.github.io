@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[I am Programer]]></title>
+  <title><![CDATA[I am Programmer]]></title>
   <link href="http://wittawasw.com/atom.xml" rel="self"/>
   <link href="http://wittawasw.com/"/>
-  <updated>2014-03-14T01:20:39+07:00</updated>
+  <updated>2014-03-14T06:38:59+07:00</updated>
   <id>http://wittawasw.com/</id>
   <author>
     <name><![CDATA[Wittawas Wisarnkanchana]]></name>
