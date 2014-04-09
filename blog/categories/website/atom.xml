@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[I am Programmer]]></title>
-  <link href="http://wittawasw.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Website, | I am Programmer]]></title>
+  <link href="http://wittawasw.com/blog/categories/website/atom.xml" rel="self"/>
   <link href="http://wittawasw.com/"/>
   <updated>2014-04-09T14:33:46+07:00</updated>
   <id>http://wittawasw.com/</id>
@@ -56,28 +56,22 @@
 
 <h2>Web structure.</h2>
 
-<p>You can play with your HTML all you want from this point on. Just add structure like this and copy script from below to server.go and app.yaml .</p>
-
+<p>You can play with your HTML all you want from this point on. Just add structure like this and copy script from below to server.go and app.yaml .
 <div>
-  <pre><code class='ruby'>- css
-  - app.css
-- js
-  - app.js
-- images
-  - lion.jpg
-- index.html
-- app.yaml
-- server.go</code></pre>
+  <pre><code class='ruby'>&amp;ndash; css
+  &amp;ndash; app.css
+&amp;ndash; js
+  &amp;ndash; app.js
+&amp;ndash; images
+  &amp;ndash; lion.jpg
+&amp;ndash; index.html
+&amp;ndash; app.yaml
+&amp;ndash; server.go</code></pre>
 </div>
+</p>
 
-
-
-
-<div><script src='https://gist.github.com/10232673.js'></script>
+<p><div><script src='https://gist.github.com/10232673.js'></script>
 <noscript><pre><code>package server</code></pre></noscript></div>
-
-
-
 
 <div><script src='https://gist.github.com/10232962.js'></script>
 <noscript><pre><code>application: your-app-id-here
@@ -98,7 +92,7 @@ handlers:
  
 - url: /images
   static_dir: images</code></pre></noscript></div>
-
+</p>
 
 <blockquote><p>Up to this point, you must be able to run &ldquo;goapp&rdquo; command (<a href="https://developers.google.com/appengine/docs/go/gettingstarted/devenvironment">details</a>).</p></blockquote>
 
@@ -108,7 +102,7 @@ handlers:
 
 <ul>
 <li>Go to <a href="https://cloud.google.com/">https://cloud.google.com/</a>, Sign-in or Sign-up then get to your <a href="https://console.developers.google.com">console</a>.</li>
-<li>Create New Project (If it&rsquo;s your first time here, they will prompt you to create new project immediately.)<img class="center" src="http://wittawasw.com/images/post/gae-screenshot.png" title="image" alt="images"></li>
+<li>Create New Project (If it&rsquo;s your first time here, they will prompt you to create new project immediately.)<img class="center" src="/images/post/gae-screenshot.png" title="&lsquo;image&rsquo; &lsquo;images&rsquo;" ></li>
 <li>After Successfully created your project, Save your Project-ID and put it in app.yaml</li>
 <li>In your website&rsquo;s root directory, Run &ldquo;goapp deploy&rdquo; and input your Google credential to deploy your website.</li>
 <li>Your website will now be running at &ldquo;project-id.appspot.com&rdquo; , check it out.</li>
