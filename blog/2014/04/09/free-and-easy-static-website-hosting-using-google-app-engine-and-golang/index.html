@@ -27,8 +27,10 @@
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700' rel='stylesheet' type='text/css'>
+<link href="/stylesheets/coderay-github.css" media="screen" rel="stylesheet" type="text/css">
+
 
   
   <script type="text/javascript">
@@ -46,33 +48,16 @@
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">I am Programmer</a></h1>
-  
-    <h2>Live in Thailand - Code for everywhere.</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:wittawasw.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
+<body    class="collapse-sidebar sidebar-footer" >
+  <nav id="main-nav" role="navigation">
 <ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/" class="nav-link">Blog</a></li>
+  <li><a href="/blog/archives" class="nav-link">Archives</a></li>
+  <li><a href="/atom.xml" class="nav-link">RSS</a></li>
 </ul>
 
 </nav>
+  
   <div id="main">
     <div id="content">
       <div>
@@ -108,46 +93,37 @@
 
 <div class="entry-content"><p>In this post, we&rsquo;re going to host a simple static website without so much pain. Using <a href="http://golang.org">Go</a> as a server script but fear not, you don&rsquo;t have to learn Go in this post since this post focus on the most simplest and reliable way to host static website.</p>
 
-<h2>Have you heard of Google App Engine ?</h2>
+<h2 id="have-you-heard-of-google-app-engine-">Have you heard of Google App Engine ?</h2>
 
 <p><a href="https://appengine.google.com/">Google App Engine</a>(GAE) is a service from Google Cloud platform that let us host web applications from various development stack and one of that is web application using Go. Normally GAE is a paid-service but it come with a nice and good free-tier that&rsquo;s Similar with what you can find in <a href="http://heroku.com">Heroku</a> but if you just want some free hosting for straight-forward HTML and little Javascript and CSS, it won&rsquo;t hurt to try this trick since it won&rsquo;t take much time from you.</p>
 
-<h3>Pros</h3>
-
+<h3 id="pros">Pros</h3>
 <ul>
-<li>Free</li>
-<li>Upgrade to paid service if required.</li>
-<li>Can add server&rsquo;s features using Go later.</li>
-<li>Free to use custom domain.</li>
+  <li>Free</li>
+  <li>Upgrade to paid service if required.</li>
+  <li>Can add server&rsquo;s features using Go later.</li>
+  <li>Free to use custom domain.</li>
 </ul>
 
-
-<h3>Con</h3>
-
+<h3 id="con">Con</h3>
 <ul>
-<li>Not easy enough if you&rsquo;re not a developer or a geek.</li>
+  <li>Not easy enough if you&rsquo;re not a developer or a geek.</li>
 </ul>
 
-
-<h2>Prerequisite</h2>
-
+<h2 id="prerequisite">Prerequisite</h2>
 <ul>
-<li>Familiar with command-line interface. (If you&rsquo;re not, google it)</li>
-<li>Some knowledge about website.</li>
-<li>15-30 mins of your times at most.</li>
+  <li>Familiar with command-line interface. (If you&rsquo;re not, google it)</li>
+  <li>Some knowledge about website.</li>
+  <li>15-30 mins of your times at most.</li>
 </ul>
 
-
-<h2>Getting Start: Prepare your simple website</h2>
-
+<h2 id="getting-start-prepare-your-simple-website">Getting Start: Prepare your simple website</h2>
 <p>Download and install go_appengine_sdk on your own machine, by follow this <a href="https://developers.google.com/appengine/downloads#Google_App_Engine_SDK_for_Go">Link</a></p>
 
-<h2>Web structure.</h2>
-
-<p>You can play with your HTML all you want from this point on. Just add structure like this and copy script from below to server.go and app.yaml .</p>
-
+<h2 id="web-structure">Web structure.</h2>
+<p>You can play with your HTML all you want from this point on. Just add structure like this and copy script from below to server.go and app.yaml . </p>
 <div>
-  <pre><code class='ruby'>- css
+  <pre><code class="ruby">- css
   - app.css
 - js
   - app.js
@@ -158,61 +134,75 @@
 - server.go</code></pre>
 </div>
 
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>server.go </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="go"><span class="line"><span class="kn">package</span> <span class="nx">server</span>
+</span><span class="line"><span class="c1">//just one line is enough to host static site</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>app.yaml </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+</pre></td><td class="code"><pre><code class="yaml"><span class="line"><span class="l-Scalar-Plain">application</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">your-app-id-here</span>
+</span><span class="line"><span class="l-Scalar-Plain">version</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1</span>
+</span><span class="line"><span class="l-Scalar-Plain">runtime</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">go</span>
+</span><span class="line"><span class="l-Scalar-Plain">api_version</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">go1</span>
+</span><span class="line">
+</span><span class="line"><span class="l-Scalar-Plain">handlers</span><span class="p-Indicator">:</span>
+</span><span class="line"><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/</span>
+</span><span class="line">  <span class="l-Scalar-Plain">static_files</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">index.html</span>
+</span><span class="line">  <span class="l-Scalar-Plain">upload</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">index\.html</span>
+</span><span class="line">
+</span><span class="line"><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/js</span>
+</span><span class="line">  <span class="l-Scalar-Plain">static_dir</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">js</span>
+</span><span class="line">
+</span><span class="line"><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/css</span>
+</span><span class="line">  <span class="l-Scalar-Plain">static_dir</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">css</span>
+</span><span class="line">
+</span><span class="line"><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/images</span>
+</span><span class="line">  <span class="l-Scalar-Plain">static_dir</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">images</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-
-<div><script src='https://gist.github.com/10232673.js'></script>
-<noscript><pre><code>package server</code></pre></noscript></div>
-
-
-
-
-<div><script src='https://gist.github.com/10232962.js'></script>
-<noscript><pre><code>application: your-app-id-here
-version: 1
-runtime: go
-api_version: go1
- 
-handlers:
-- url: /
-  static_files: index.html
-  upload: index\.html
- 
-- url: /js
-  static_dir: js
- 
-- url: /css
-  static_dir: css
- 
-- url: /images
-  static_dir: images</code></pre></noscript></div>
-
-
-<blockquote><p>Up to this point, you must be able to run &ldquo;goapp&rdquo; command (<a href="https://developers.google.com/appengine/docs/go/gettingstarted/devenvironment">details</a>).</p></blockquote>
+<blockquote>
+  <p>Up to this point, you must be able to run &ldquo;goapp&rdquo; command (<a href="https://developers.google.com/appengine/docs/go/gettingstarted/devenvironment">details</a>).</p>
+</blockquote>
 
 <p>Try &ldquo;goapp serve&rdquo; command at website&rsquo;s root directory and check your result at <a href="http://localhost:8080">http://localhost:8080</a></p>
 
-<h2>Deploy to Google App Engine</h2>
-
+<h2 id="deploy-to-google-app-engine">Deploy to Google App Engine</h2>
 <ul>
-<li>Go to <a href="https://cloud.google.com/">https://cloud.google.com/</a>, Sign-in or Sign-up then get to your <a href="https://console.developers.google.com">console</a>.</li>
-<li>Create New Project (If it&rsquo;s your first time here, they will prompt you to create new project immediately.)<img class="center" src="/images/post/gae-screenshot.png" title="image" alt="images"></li>
-<li>After Successfully created your project, Save your Project-ID and put it in app.yaml</li>
-<li>In your website&rsquo;s root directory, Run &ldquo;goapp deploy&rdquo; and input your Google credential to deploy your website.</li>
-<li>Your website will now be running at &ldquo;project-id.appspot.com&rdquo; , check it out.</li>
-<li>Custom domain can be set using this <a href="https://developers.google.com/appengine/docs/domain">details</a></li>
+  <li>Go to <a href="https://cloud.google.com/">https://cloud.google.com/</a>, Sign-in or Sign-up then get to your <a href="https://console.developers.google.com">console</a>. </li>
+  <li>Create New Project (If it&rsquo;s your first time here, they will prompt you to create new project immediately.)<img class="center" src="/images/post/gae-screenshot.png" title="image" alt="images" /></li>
+  <li>After Successfully created your project, Save your Project-ID and put it in app.yaml</li>
+  <li>In your website&rsquo;s root directory, Run &ldquo;goapp deploy&rdquo; and input your Google credential to deploy your website.</li>
+  <li>Your website will now be running at &ldquo;project-id.appspot.com&rdquo; , check it out.</li>
+  <li>Custom domain can be set using this <a href="https://developers.google.com/appengine/docs/domain">details</a></li>
 </ul>
 
-
-<h2>Maintenance and update</h2>
-
-<p>Can be easily done using &ldquo;goapp&rdquo; command by</p>
+<h2 id="maintenance-and-update">Maintenance and update</h2>
+<p>Can be easily done using &ldquo;goapp&rdquo; command by </p>
 
 <ul>
-<li>goapp serve: test website in development (No need to restart server, automatically change when files are changed.)</li>
-<li>goapp deploy: deploy to GAE</li>
+  <li>goapp serve: test website in development (No need to restart server, automatically change when files are changed.)</li>
+  <li>goapp deploy: deploy to GAE</li>
 </ul>
-
 </div>
 
 
@@ -277,30 +267,7 @@ handlers:
 
 <aside class="sidebar">
   
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
     
-      <li class="post">
-        <a href="/blog/2014/04/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang/">Free and Easy Static Website Hosting Using Google App Engine and Go's Runtime</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/102023979090961798570?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
-
-
-
   
 </aside>
 
