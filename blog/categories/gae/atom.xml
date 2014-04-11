@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Gae | I am Programmer]]></title>
   <link href="http://wittawasw.com/blog/categories/gae/atom.xml" rel="self"/>
   <link href="http://wittawasw.com/"/>
-  <updated>2014-04-10T20:57:25+07:00</updated>
+  <updated>2014-04-11T12:40:45+07:00</updated>
   <id>http://wittawasw.com/</id>
   <author>
     <name><![CDATA[Wittawas Wisarnkanchana]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Free and Easy Static Website Hosting Using Google App Engine and Go's Runtime]]></title>
-    <link href="http://wittawasw.com/blog/2014/04/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang/"/>
-    <updated>2014-04-09T12:05:05+07:00</updated>
-    <id>http://wittawasw.com/blog/2014/04/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang</id>
+    <link href="http://wittawasw.com/blog/2014/03/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang/"/>
+    <updated>2014-03-09T12:05:05+07:00</updated>
+    <id>http://wittawasw.com/blog/2014/03/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang</id>
     <content type="html"><![CDATA[<p>In this post, we&rsquo;re going to host a simple static website without so much pain. Using <a href="http://golang.org">Go</a> as a server script but fear not, you don&rsquo;t have to learn Go in this post since this post focus on the most simplest and reliable way to host static website.</p>
 
 <h2 id="have-you-heard-of-google-app-engine-">Have you heard of Google App Engine ?</h2>
