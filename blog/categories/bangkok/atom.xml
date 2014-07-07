@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Bangkok | I am Programmer]]></title>
   <link href="http://wittawasw.com/blog/categories/bangkok/atom.xml" rel="self"/>
   <link href="http://wittawasw.com/"/>
-  <updated>2014-07-07T09:24:05+07:00</updated>
+  <updated>2014-07-07T21:38:31+07:00</updated>
   <id>http://wittawasw.com/</id>
   <author>
     <name><![CDATA[Wittawas Wisarnkanchana]]></name>
@@ -18,7 +18,15 @@
     <link href="http://wittawasw.com/blog/2014/07/07/my-experiences-on-angelhack-and-how-sucks-it-is/"/>
     <updated>2014-07-07T06:30:50+07:00</updated>
     <id>http://wittawasw.com/blog/2014/07/07/my-experiences-on-angelhack-and-how-sucks-it-is</id>
-    <content type="html"><![CDATA[<p>Below is a message I sent to info@angelhack.com around 12 hours ago and I want to keep this in my journal as well as to warn other developers before take part in any “Hacker” or “Developer” competitions in Bangkok .</p>
+    <content type="html"><![CDATA[<blockquote>
+  <p>Update: </p>
+</blockquote>
+
+<blockquote>
+  <p>I spoke with my friends who’ve been more focused on the winner presentation than me and they told me that the winnner didn’t use image files. They used some kind of Mockup tool to make their prototype that can be clicked and move between pages. </p>
+</blockquote>
+
+<p>Below is a message I sent to info@angelhack.com around 12 hours ago and I want to keep this in my journal as well as to warn other developers before take part in any “Hacker” or “Developer” competitions in Bangkok .</p>
 
 <blockquote>
   <p>I participated in AngelHackBKK that’s just ended hours ago and I have some feedback for you, please consider this seriously.</p>
