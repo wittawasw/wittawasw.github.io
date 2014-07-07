@@ -9,7 +9,7 @@
   <meta name="author" content="Wittawas Wisarnkanchana">
 
   
-  <meta name="description" content="">
+  <meta name="description" content="Normally when you build a web or mobile application, you will have to build seperate backend because most web framework originally means to generate &hellip;">
   <meta name="keywords" content="backend, rails, api, angularjs, client, frontend">
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,7 +94,7 @@
 <div class="entry-content"><p>Normally when you build a web or mobile application, you will have to build seperate backend because most web framework originally means to generate data along with dynamic HTML templates. But if we think that web application is just a form of native applications and we treat it that way, generate only data and just use static HTML to handle the logic. This way, we can reuse our backend to almost every native applications we want. </p>
 
 <blockquote>
-  <p>If you&rsquo;re asking for some BIG example out there that use this trick, Try <a href="https://twitter.com">Twitter.com</a></p>
+  <p>If you’re asking for some BIG example out there that use this trick, Try <a href="https://twitter.com">Twitter.com</a></p>
 </blockquote>
 
 <h2 id="why-use-rails-">Why use Rails ?</h2>
@@ -103,7 +103,7 @@
   <li>Very clean Routing and easy to use. </li>
   <li>Secure enough.</li>
   <li>Easiest (in my opinion) to debug using <a href="https://github.com/charliesome/better_errors">better_errors</a> and <a href="https://github.com/banister/binding_of_caller">binding_of_caller</a>.</li>
-  <li>I want to use Rails, that&rsquo;s all.</li>
+  <li>I want to use Rails, that’s all.</li>
 </ul>
 
 <blockquote>
@@ -111,7 +111,7 @@
 </blockquote>
 
 <h2 id="getting-started-rails-api">Getting started: Rails-API</h2>
-<p>Assuming that you&rsquo;ve already installed Ruby(1.9.3+) and Rails(3.2+) already, today we use this nicely done gem to help us prepare new application</p>
+<p>Assuming that you’ve already installed Ruby(1.9.3+) and Rails(3.2+) already, today we use this nicely done gem to help us prepare new application</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>shell </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -119,9 +119,9 @@
 </pre></td><td class="code"><pre><code class=""><span class="line">$ gem install rails-api
 </span><span class="line">$ rails-api new contact-api</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>with Rails-API we&rsquo;ll get only essential part of Rails to build API instead of getting all heavy and unnecessary features from traditional Rails. And now we have our newly created app called <a href="">contact-api</a></p>
+<p>with Rails-API we’ll get only essential part of Rails to build API instead of getting all heavy and unnecessary features from traditional Rails. And now we have our newly created app called <a href="">contact-api</a></p>
 
-<p>Then put this on your gemfile and run &ldquo;bundle install&rdquo;, this will make your life a lot easier.</p>
+<p>Then put this on your gemfile and run “bundle install”, this will make your life a lot easier.</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Gemfile</span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -135,7 +135,7 @@
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h2 id="rails-time">Rails time</h2>
-<p>Since there&rsquo;s only API, so we don&rsquo;t need to setup things like HTML template or homepage here. Let&rsquo;s generate contact by using </p>
+<p>Since there’s only API, so we don’t need to setup things like HTML template or homepage here. Let’s generate contact by using </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>shell </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -143,7 +143,7 @@
 </pre></td><td class="code"><pre><code class=""><span class="line">$ rails g scaffold contact name:string email:string 
 </span><span class="line">$ rake db:migrate</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>If you&rsquo;re running on Rails 3+, you need to put these line in your app/model/contact.rb</p>
+<p>If you’re running on Rails 3+, you need to put these line in your app/model/contact.rb</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>app/model/contact.rb </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -189,10 +189,10 @@
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">$ rails s</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>Try access by your browser to <a href="http://localhost:3000/contacts/">localhost:3000/contacts</a> and you will see an empty JSON &ldquo;[]&rdquo; there. Now let&rsquo;s try to make it error by access to <a href="http://localhost:3000/contacts/test">localhost:3000/contacts/test</a> and you&rsquo;ll see error like below.
+<p>Try access by your browser to <a href="http://localhost:3000/contacts/">localhost:3000/contacts</a> and you will see an empty JSON “[]” there. Now let’s try to make it error by access to <a href="http://localhost:3000/contacts/test">localhost:3000/contacts/test</a> and you’ll see error like below.
 <img class="center" src="/images/post/contact-error.png" title="image" alt="images" /></p>
 
-<p>Obviously, it&rsquo;s a &ldquo;Not found&rdquo; error because we try to access object Contact that have id = &ldquo;test&rdquo; which doesn&rsquo;t exist. On the right side, you&rsquo;ll see a very handy shell that you can play with it like how you play in &ldquo;rails console&rdquo;. And since we have our console right before our eyes, we should try something.</p>
+<p>Obviously, it’s a “Not found” error because we try to access object Contact that have id = “test” which doesn’t exist. On the right side, you’ll see a very handy shell that you can play with it like how you play in “rails console”. And since we have our console right before our eyes, we should try something.</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Better-error shell </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -206,7 +206,7 @@ Now we can try to access <a href="http://localhost:3000/contacts/1">localhost:30
 <img class="center" src="/images/post/contact-1.png" title="image" alt="images" /></p>
 
 <h2 id="prepare-for-cors">Prepare for CORS</h2>
-<p>What we trying to do here is to actually access to Rails server(<a href="http://localhost:3000">localhost:3000</a>) from another server instance. So it&rsquo;ll inevitably face with <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> problem and here we&rsquo;ll cover that problem before it&rsquo;s occured with <a href="https://github.com/cyu/rack-cors">rack-cors</a></p>
+<p>What we trying to do here is to actually access to Rails server(<a href="http://localhost:3000">localhost:3000</a>) from another server instance. So it’ll inevitably face with <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> problem and here we’ll cover that problem before it’s occured with <a href="https://github.com/cyu/rack-cors">rack-cors</a></p>
 
 <p>Put this line in Gemfile</p>
 
@@ -221,7 +221,7 @@ Now we can try to access <a href="http://localhost:3000/contacts/1">localhost:30
 </pre></td><td class="code"><pre><code class="ruby"><span class="line">    <span class="n">bundle</span> <span class="n">install</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>Finally, put this code in config/application.rb inside class Application and it&rsquo;ll look like this.</p>
+<p>Finally, put this code in config/application.rb inside class Application and it’ll look like this.</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>config/application.rb </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
@@ -248,10 +248,10 @@ Now we can try to access <a href="http://localhost:3000/contacts/1">localhost:30
 </span><span class="line"><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>Restart Rails server and it&rsquo;ll become accessible from every origin.</p>
+<p>Restart Rails server and it’ll become accessible from every origin.</p>
 
 <h2 id="html-time">HTML time</h2>
-<p>It&rsquo;s time to build our static site to serve as a native client for contact-api. But before that, we have to choose which server to serve our static files. It can be many things such as another Rails, Node.js, PHP, etc. Whichever is fine but I choose to go with <a href="http://golang.org">Go</a>, no reason, I just want it. (See details of how easy Go handle static file in <a href="http://wittawasw.com/blog/2014/04/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang/">previous post</a>)</p>
+<p>It’s time to build our static site to serve as a native client for contact-api. But before that, we have to choose which server to serve our static files. It can be many things such as another Rails, Node.js, PHP, etc. Whichever is fine but I choose to go with <a href="http://golang.org">Go</a>, no reason, I just want it. (See details of how easy Go handle static file in <a href="http://wittawasw.com/blog/2014/04/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang/">previous post</a>)</p>
 
 <p>Below is my jsFiddle demo using angularjs as a client to add contact object by using Rails backend as API only. Or you can play a demo at this Google App Engine <a href="http://rails-angular-backend-demo.appspot.com/">Site</a></p>
 
@@ -309,6 +309,8 @@ Now we can try to access <a href="http://localhost:3000/contacts/1">localhost:30
       
         <a class="basic-alignment left" href="/blog/2014/03/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang/" title="Previous Post: Free and easy static website hosting using Google App Engine and Go's runtime">&laquo; Free and easy static website hosting using Google App Engine and Go's runtime</a>
       
+      
+        <a class="basic-alignment right" href="/blog/2014/07/07/my-experiences-on-angelhack-and-how-sucks-it-is/" title="Next Post: My experiences on AngelHack and how sucks it is.">My experiences on AngelHack and how sucks it is. &raquo;</a>
       
     </p>
   </footer>

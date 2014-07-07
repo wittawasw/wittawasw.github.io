@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Bangkok | I am Programmer]]></title>
+  <link href="http://wittawasw.com/blog/categories/bangkok/atom.xml" rel="self"/>
+  <link href="http://wittawasw.com/"/>
+  <updated>2014-07-07T07:39:16+07:00</updated>
+  <id>http://wittawasw.com/</id>
+  <author>
+    <name><![CDATA[Wittawas Wisarnkanchana]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[My Experiences on AngelHack and How Sucks It Is.]]></title>
+    <link href="http://wittawasw.com/blog/2014/07/07/my-experiences-on-angelhack-and-how-sucks-it-is/"/>
+    <updated>2014-07-07T06:30:50+07:00</updated>
+    <id>http://wittawasw.com/blog/2014/07/07/my-experiences-on-angelhack-and-how-sucks-it-is</id>
+    <content type="html"><![CDATA[<p>Below is a message I sent to info@angelhack.com around 12 hours ago and I want to keep this in my journal as well as to warn other developers before take part in any “Hacker” or “Developer” competitions in Bangkok .</p>
+
+<blockquote>
+  <p>I participated in AngelHackBKK that’s just ended hours ago and I have some feedback for you, please consider this seriously.</p>
+</blockquote>
+
+<blockquote>
+  <p>The Rules states clearly that Every team must have a DEMO aka. working prototype and no slide or powerpoint.</p>
+</blockquote>
+
+<blockquote>
+  <p>But the winner this year just show their mockups and without any front-end or backend code or mention any technical challenges in their presentation, This pissed a lot of us developers who play by the rules and coding all night :(</p>
+</blockquote>
+
+<blockquote>
+  <p>Investigated this now, I want a real event for us developers, not a fancy mockup or business model that have no proof whether you can build it or not.</p>
+</blockquote>
+
+<blockquote>
+  <p>I saw some developers coding through night and beautifully DEMO their working MVP but lose to someone who just presented using image files.</p>
+</blockquote>
+
+<blockquote>
+  <p>This is bullshit and very disrespect to us who play by the Rules. If you think that mockup and business model is so holy-grail in the first place, why not change the name to AngelMockup or AngelBizness. So that we developers won’t have to felt like shit working hardly and lose to someone who doing nothing.</p>
+</blockquote>
+
+<blockquote>
+  <p>We have a lot of great business model and Mockup too. But we want to play by the rules and pick the easiest one that we’re sure that we can finish it in 1 night.</p>
+</blockquote>
+
+<blockquote>
+  <p>It’s not much but I and some of my friends can assure you, that we won’t participate in this AngelMockupBKK event again if you still have this bullshit judges and organizers in their place.</p>
+</blockquote>
+
+<blockquote>
+  <p>Sincerely,</p>
+</blockquote>
+
+<p>the “MockUp” I mentioned in this message is just “Image files”. it’s even worse than slide in my opinion :(</p>
+
+<p>After that I <a href="https://twitter.com/wittawasw/status/485761876416942080">tweet</a> mentioned @angelhack and waiting. </p>
+
+<p>I will keep this post update if anything happens.</p>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -91,28 +91,28 @@
   </header>
 
 
-<div class="entry-content"><p>In this post, we&rsquo;re going to host a simple static website without so much pain. Using <a href="http://golang.org">Go</a> as a server script but fear not, you don&rsquo;t have to learn Go in this post since this post focus on the most simplest and reliable way to host static website.</p>
+<div class="entry-content"><p>In this post, we’re going to host a simple static website without so much pain. Using <a href="http://golang.org">Go</a> as a server script but fear not, you don’t have to learn Go in this post since this post focus on the most simplest and reliable way to host static website.</p>
 
 <h2 id="have-you-heard-of-google-app-engine-">Have you heard of Google App Engine ?</h2>
 
-<p><a href="https://appengine.google.com/">Google App Engine</a>(GAE) is a service from Google Cloud platform that let us host web applications from various development stack and one of that is web application using Go. Normally GAE is a paid-service but it come with a nice and good free-tier that&rsquo;s Similar with what you can find in <a href="http://heroku.com">Heroku</a> but if you just want some free hosting for straight-forward HTML and little Javascript and CSS, it won&rsquo;t hurt to try this trick since it won&rsquo;t take much time from you.</p>
+<p><a href="https://appengine.google.com/">Google App Engine</a>(GAE) is a service from Google Cloud platform that let us host web applications from various development stack and one of that is web application using Go. Normally GAE is a paid-service but it come with a nice and good free-tier that’s Similar with what you can find in <a href="http://heroku.com">Heroku</a> but if you just want some free hosting for straight-forward HTML and little Javascript and CSS, it won’t hurt to try this trick since it won’t take much time from you.</p>
 
 <h3 id="pros">Pros</h3>
 <ul>
   <li>Free</li>
   <li>Upgrade to paid service if required.</li>
-  <li>Can add server&rsquo;s features using Go later.</li>
+  <li>Can add server’s features using Go later.</li>
   <li>Free to use custom domain.</li>
 </ul>
 
 <h3 id="con">Con</h3>
 <ul>
-  <li>Not easy enough if you&rsquo;re not a developer or a geek.</li>
+  <li>Not easy enough if you’re not a developer or a geek.</li>
 </ul>
 
 <h2 id="prerequisite">Prerequisite</h2>
 <ul>
-  <li>Familiar with command-line interface. (If you&rsquo;re not, google it)</li>
+  <li>Familiar with command-line interface. (If you’re not, google it)</li>
   <li>Some knowledge about website.</li>
   <li>15-30 mins of your times at most.</li>
 </ul>
@@ -181,23 +181,23 @@
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <blockquote>
-  <p>Up to this point, you must be able to run &ldquo;goapp&rdquo; command (<a href="https://developers.google.com/appengine/docs/go/gettingstarted/devenvironment">details</a>).</p>
+  <p>Up to this point, you must be able to run “goapp” command (<a href="https://developers.google.com/appengine/docs/go/gettingstarted/devenvironment">details</a>).</p>
 </blockquote>
 
-<p>Try &ldquo;goapp serve&rdquo; command at website&rsquo;s root directory and check your result at <a href="http://localhost:8080">http://localhost:8080</a></p>
+<p>Try “goapp serve” command at website’s root directory and check your result at <a href="http://localhost:8080">http://localhost:8080</a></p>
 
 <h2 id="deploy-to-google-app-engine">Deploy to Google App Engine</h2>
 <ul>
   <li>Go to <a href="https://cloud.google.com/">https://cloud.google.com/</a>, Sign-in or Sign-up then get to your <a href="https://console.developers.google.com">console</a>. </li>
-  <li>Create New Project (If it&rsquo;s your first time here, they will prompt you to create new project immediately.)<img class="center" src="/images/post/gae-screenshot.png" title="image" alt="images" /></li>
+  <li>Create New Project (If it’s your first time here, they will prompt you to create new project immediately.)<img class="center" src="/images/post/gae-screenshot.png" title="image" alt="images" /></li>
   <li>After Successfully created your project, Save your Project-ID and put it in app.yaml</li>
-  <li>In your website&rsquo;s root directory, Run &ldquo;goapp deploy&rdquo; and input your Google credential to deploy your website.</li>
-  <li>Your website will now be running at &ldquo;project-id.appspot.com&rdquo; , check it out.</li>
+  <li>In your website’s root directory, Run “goapp deploy” and input your Google credential to deploy your website.</li>
+  <li>Your website will now be running at “project-id.appspot.com” , check it out.</li>
   <li>Custom domain can be set using this <a href="https://developers.google.com/appengine/docs/domain">details</a></li>
 </ul>
 
 <h2 id="maintenance-and-update">Maintenance and update</h2>
-<p>Can be easily done using &ldquo;goapp&rdquo; command by </p>
+<p>Can be easily done using “goapp” command by </p>
 
 <ul>
   <li>goapp serve: test website in development (No need to restart server, automatically change when files are changed.)</li>
