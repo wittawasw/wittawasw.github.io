@@ -6,7 +6,7 @@ comments: true
 categories: jekyll ruby octopress
 
 keywords: "jekyll, ruby, octopress, bootstrap"
-description: "I'm back to do the blogging with new Octopress engine"
+description: "It's been almost a year since I last updated this blog, to me, so many things happened and things are going to flow a lot faster this year. I've decided to do this since last month but I want to upgrade this blog from Octopress 2.0 -> 3.0 and I just didn't feel like I want to do it at that time since I thought it'd mean a lot of works to do the upgrade...."
 ---
 
 >I'm too lazy to do tutorial on this one, but you can look at the source [here](https://github.com/wittawasw/wittawasw.github.io/tree/source) directly.

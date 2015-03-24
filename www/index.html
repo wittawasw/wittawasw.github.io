@@ -9,19 +9,21 @@ header-img: "images/home.jpg"
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">            {{ post.title }}
         </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
     </a>
+        <p class="post-meta" style="color:#5bc0de;margin: 5px 0;">{{ post.date | date: "%B %-d, %Y" }}</p>
+        {% if post.description %}
+        <p class="post-subtitle" style="margin: 0;">
+            {{ post.description }}
+        </p>
+        {% endif %}
+    
     {% for category in post.categories %}
       <span class="label label-info" style="margin-right: 5px;"> {{category}} </span>
     {% endfor %}
-    <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
 
     
 </div>
+&nbsp
 <hr>
 {% endfor %}
 
