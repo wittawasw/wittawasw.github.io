@@ -4,7 +4,7 @@ title: "Upgraded to Octopress 3.0rc"
 date: 2015-03-24T13:53:32+07:00
 comments: true
 categories: jekyll ruby octopress
-
+cc: Upgraded to Octopress 3.0rc
 keywords: "jekyll, ruby, octopress, bootstrap"
 description: "It's been almost a year since I last updated this blog, to me, so many things happened and things are going to flow a lot faster this year. I've decided to do this since last month but I want to upgrade this blog from Octopress 2.0 -> 3.0 and I just didn't feel like I want to do it at that time since I thought it'd mean a lot of works to do the upgrade...."
 ---

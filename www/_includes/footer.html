@@ -44,7 +44,13 @@
                     {% endif %}
                 </ul>
                 <p class="copyright text-muted">Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}</p>
+                <p class="copyright text-muted">
+                {% include cc4.html %}
+                </p>
             </div>
+        </div>
+        <div class="row text-center">
+            
         </div>
     </div>
 </footer>
