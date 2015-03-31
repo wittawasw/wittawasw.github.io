@@ -2,7 +2,7 @@
 layout: page
 description: "Usability comes first."
 header-img: "images/home.jpg"
-cc: All contents of this blog
+cc: All contents in this blog
 ---
 
 {% for post in paginator.posts %}
@@ -17,12 +17,12 @@ cc: All contents of this blog
             {{ post.description }}
         </p>
         {% endif %}
-    
+
     {% for category in post.categories %}
       <span class="label label-info" style="margin-right: 5px;"> {{category}} </span>
     {% endfor %}
 
-    
+
 </div>
 &nbsp
 <hr>
