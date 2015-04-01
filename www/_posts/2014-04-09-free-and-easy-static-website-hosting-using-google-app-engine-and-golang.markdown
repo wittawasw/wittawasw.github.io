@@ -3,7 +3,7 @@ layout: post
 title: "Free and easy static website hosting using Google App Engine and Go's runtime"
 date: 2014-04-09 12:05:05 +0700
 comments: true
-categories: go website gae
+categories: go website gae hosting
 cc: Free and easy static website hosting using Google App Engine and Go's runtime
 keywords: "golang, website, development, google, google app engine, gae"
 description: "In this post, we're going to host a simple static website without so much pain. Using Go as a server script but fear not, you don't have to learn Go in this post since this post focus on the most simplest and reliable way to host static website...."
@@ -38,7 +38,7 @@ Download and install go_appengine_sdk on your own machine, by follow this [Link]
 
 Web structure.
 --------------
-You can play with your HTML all you want from this point on. Just add structure like this and copy script from below to server.go and app.yaml . 
+You can play with your HTML all you want from this point on. Just add structure like this and copy script from below to server.go and app.yaml .
 {% highlight ruby %}
 - css
   - app.css
@@ -60,18 +60,18 @@ application: your-app-id-here
 version: 1
 runtime: go
 api_version: go1
- 
+
 handlers:
 - url: /
   static_files: index.html
   upload: index\.html
- 
+
 - url: /js
   static_dir: js
- 
+
 - url: /css
   static_dir: css
- 
+
 - url: /images
   static_dir: images
 {% endcodeblock %}
@@ -82,7 +82,7 @@ Try "goapp serve" command at website's root directory and check your result at [
 
 Deploy to Google App Engine
 ---------------------------
-- Go to [https://cloud.google.com/](https://cloud.google.com/), Sign-in or Sign-up then get to your [console](https://console.developers.google.com). 
+- Go to [https://cloud.google.com/](https://cloud.google.com/), Sign-in or Sign-up then get to your [console](https://console.developers.google.com).
 - Create New Project (If it's your first time here, they will prompt you to create new project immediately.)}{% img center /images/post/gae-screenshot.png title:"Create new project" %}
 - After Successfully created your project, Save your Project-ID and put it in app.yaml
 - In your website's root directory, Run "goapp deploy" and input your Google credential to deploy your website.
@@ -91,7 +91,7 @@ Deploy to Google App Engine
 
 Maintenance and update
 -----------------------
-Can be easily done using "goapp" command by 
+Can be easily done using "goapp" command by
 
 - goapp serve: test website in development (No need to restart server, automatically change when files are changed.)
 - goapp deploy: deploy to GAE
