@@ -6,7 +6,7 @@ comments: true
 categories: go website gae hosting
 cc: Free and easy static website hosting using Google App Engine and Go's runtime
 keywords: "golang, website, development, google, google app engine, gae"
-description: "In this post, we're going to host a simple static website without so much pain. Using Go as a server script but fear not, you don't have to learn Go in this post since this post focus on the most simplest and reliable way to host static website...."
+description: "we're going to host a simple static website without so much pain. Using Go as a server script but fear not, you don't have to learn Go in this post since this post focus on the most simplest and reliable way to host static website...."
 ---
 
 In this post, we're going to host a simple static website without so much pain. Using [Go](http://golang.org) as a server script but fear not, you don't have to learn Go in this post since this post focus on the most simplest and reliable way to host static website.
