@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="I'm currently employed as Ruby on Rails developer at codemy.net. This site will be just a memo for me and for someone out there who's interested in similar topics to mine.">
+  <meta name="description" content="I work mostly on Ruby, Elixir. This site will be just a memo for me and for someone out there who's interested in similar topics to mine.">
   <meta property="og:title" content="Free and easy static website hosting using Google App Engine and Go's runtime"/>
 <meta property="og:type" content="article"/>
 <meta property="og:image" content="http://blog.wittawasw.com/images/home.jpg"/>
@@ -81,7 +81,7 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/about.html">About</a>
+          <a href="/about/">About</a>
         </li>
         
       </ul>
@@ -157,33 +157,33 @@ ga('send', 'pageview');
 <h2 id="web-structure">Web structure.</h2>
 <p>You can play with your HTML all you want from this point on. Just add structure like this and copy script from below to server.go and app.yaml .</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">-</span> <span class="n">css</span>
-  <span class="o">-</span> <span class="n">app</span><span class="o">.</span><span class="n">css</span>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">-</span> <span class="n">css</span>
+  <span class="o">-</span> <span class="n">app</span><span class="p">.</span><span class="nf">css</span>
 <span class="o">-</span> <span class="n">js</span>
-  <span class="o">-</span> <span class="n">app</span><span class="o">.</span><span class="n">js</span>
+  <span class="o">-</span> <span class="n">app</span><span class="p">.</span><span class="nf">js</span>
 <span class="o">-</span> <span class="n">images</span>
-  <span class="o">-</span> <span class="n">lion</span><span class="o">.</span><span class="n">jpg</span>
-<span class="o">-</span> <span class="n">index</span><span class="o">.</span><span class="n">html</span>
-<span class="o">-</span> <span class="n">app</span><span class="o">.</span><span class="n">yaml</span>
-<span class="o">-</span> <span class="n">server</span><span class="o">.</span><span class="n">go</span></code></pre></div>
+  <span class="o">-</span> <span class="n">lion</span><span class="p">.</span><span class="nf">jpg</span>
+<span class="o">-</span> <span class="n">index</span><span class="p">.</span><span class="nf">html</span>
+<span class="o">-</span> <span class="n">app</span><span class="p">.</span><span class="nf">yaml</span>
+<span class="o">-</span> <span class="n">server</span><span class="p">.</span><span class="nf">go</span></code></pre></figure>
 
-<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">server.go</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="kn">package</span> <span class="nx">server</span>
-</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c1">//just one line is enough to host static site</span></div></div></pre></div></figure>
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">server.go</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">package</span><span class="x"> </span><span class="n">server</span><span class="x"></span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">//just one line is enough to host static site</span></div></div></pre></div></figure>
 
-<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">app.yaml</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="l-Scalar-Plain">application</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">your-app-id-here</span>
-</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="l-Scalar-Plain">version</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1</span>
-</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="l-Scalar-Plain">runtime</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">go</span>
-</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="l-Scalar-Plain">api_version</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">go1</span>
-</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="l-Scalar-Plain">handlers</span><span class="p-Indicator">:</span>
-</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/</span>
-</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="l-Scalar-Plain">static_files</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">index.html</span>
-</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="l-Scalar-Plain">upload</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">index\.html</span>
-</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/js</span>
-</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="l-Scalar-Plain">static_dir</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">js</span>
-</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/css</span>
-</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="l-Scalar-Plain">static_dir</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">css</span>
-</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/images</span>
-</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="l-Scalar-Plain">static_dir</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">images</span></div></div></pre></div></figure>
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">app.yaml</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="s">application</span><span class="pi">:</span> <span class="s">your-app-id-here</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="s">version</span><span class="pi">:</span> <span class="s">1</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="s">runtime</span><span class="pi">:</span> <span class="s">go</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="s">api_version</span><span class="pi">:</span> <span class="s">go1</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="s">handlers</span><span class="pi">:</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="pi">-</span> <span class="s">url</span><span class="pi">:</span> <span class="s">/</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="s">static_files</span><span class="pi">:</span> <span class="s">index.html</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="s">upload</span><span class="pi">:</span> <span class="s">index\.html</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="pi">-</span> <span class="s">url</span><span class="pi">:</span> <span class="s">/js</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="s">static_dir</span><span class="pi">:</span> <span class="s">js</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="pi">-</span> <span class="s">url</span><span class="pi">:</span> <span class="s">/css</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="s">static_dir</span><span class="pi">:</span> <span class="s">css</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="pi">-</span> <span class="s">url</span><span class="pi">:</span> <span class="s">/images</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="s">static_dir</span><span class="pi">:</span> <span class="s">images</span></div></div></pre></div></figure>
 
 <blockquote>
   <p>Up to this point, you must be able to run “goapp” command (<a href="https://developers.google.com/appengine/docs/go/gettingstarted/devenvironment">details</a>).</p>
