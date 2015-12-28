@@ -1,0 +1,27 @@
+# Site settings
+title: wittawasw
+email: start@wittawasw.com
+header-img: "images/home.jpg"
+description: "I work mostly on Ruby, Elixir. This site will be just a memo for me and for someone out there who's interested in similar topics to mine."
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://blog.wittawasw.com" # the base hostname & protocol for your site
+twitter_username: wittawasw
+github_username:  wittawasw
+facebook_username: wittawasw
+# Build settings
+markdown: kramdown
+# Disqus Comments
+disqus_short_name: wittawasw
+disqus_show_comment_count: true
+# Google Analytics
+google_analytics_tracking_id: UA-35957895-1
+permalink: /blog/:year/:month/:day/:title/
+gems:
+  - jekyll-paginate
+  - octopress-codeblock
+  - octopress-image-tag
+  - octopress-quote-tag
+exclude: [vendor]
+sass:
+  style: compressed
+paginate: 5
