@@ -3,9 +3,9 @@ layout: post
 title: "5 tips I keep in mind when using Sass"
 date: 2015-03-28T02:10:53+07:00
 comments: true
-categories: Sass stylesheet tips
+categories: sass stylesheet tips
 cc: 5 tips I keep in mind when using Sass
-keywords: "Sass, stylesheet, tips"
+keywords: "sass, stylesheet, tips"
 description: "It's been some time already since I've been introduced to Sass, Though I normally use just Scss syntax. Sass's really nice additional tool and these tips are what I found myself comfortable with and tend to convince people around me to use..."
 header-img: "images/post/04-sass.jpg"
 ---
@@ -188,7 +188,7 @@ Here's an example.
 {% endcodeblock %}
 
 &nbsp;
-    
+
 
 5.Use @include, @extend wisely
 -----------------------------
@@ -210,11 +210,11 @@ Let try something to see it in action,
   background-repeat: no-repeat;
   background-image:url($social);
 }
- 
+
 .icon-facebook {
   @include icon('/img/icon-facebook.png');
 }
- 
+
 .icon-twitter {
   @include icon('/img/icon-twitter.png');
 }
@@ -224,7 +224,7 @@ Let try something to see it in action,
 }
 
 // Compiled CSS
- 
+
 .icon-facebook {
   display: inline-block;
   width: 14px;
@@ -233,7 +233,7 @@ Let try something to see it in action,
   background-repeat: no-repeat;
   background-image:url('/img/icon-facebook.png');
 }
- 
+
 .icon-twitter {
   display: inline-block;
   width: 14px;
@@ -265,12 +265,12 @@ Let try something to see it in action,
   background-size: 77px 35px;
   background-repeat: no-repeat;
 }
- 
+
 .icon-facebook {
   @extend %icon;
   background-image:url('/img/icon-facebook.png');
 }
- 
+
 .icon-twitter {
   @extend %icon;
   background-image:url('/img/icon-twitter.png');
@@ -289,11 +289,11 @@ Let try something to see it in action,
   background-size: 77px 35px
   background-repeat: no-repeat;
 }
- 
+
 .icon-facebook {
   background-image:url('/img/icon-facebook.png');
 }
- 
+
 .icon-twitter {
   background-image:url('/img/icon-twitter.png');
 }
