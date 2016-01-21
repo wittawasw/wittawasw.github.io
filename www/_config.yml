@@ -16,11 +16,6 @@ disqus_show_comment_count: true
 # Google Analytics
 google_analytics_tracking_id: UA-35957895-1
 permalink: /blog/:year/:month/:day/:title/
-gems:
-  - jekyll-paginate
-  - octopress-codeblock
-  - octopress-image-tag
-  - octopress-quote-tag
 exclude: [vendor]
 sass:
   style: compressed
