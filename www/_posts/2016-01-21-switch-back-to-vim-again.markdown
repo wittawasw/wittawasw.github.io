@@ -11,7 +11,7 @@ description: Unlike most of my programmer friends, my first editor in programmin
 ---
 
 Unlike most of my programmer friends, my first editor in programming is **vi** and
-second is **vim** as a slightly powerful editor. (I don't know about plugins at that
+second is **vim** as a slightly more powerful editor. (I don't know about plugins at that
 time). C# as a first programming language with mono as a compiler and vim as an editor.
 vim's like a best friend back then. But when I started working extensively on C#,
 I embrace VisualStudio as my new editor and tool to work on real application projects.
@@ -43,16 +43,28 @@ before I add anything new since this's sufficient for me now.
 {% codeblock lang:bash .vimrc %}
 set nu
 set showcmd
-set tabstop=2 shiftwidth=2 expandtab
+set tabstop=2
+set shiftwidth=2
+set expandtab
 set mouse=a
 set ls=2
+set backspace=2
 syntax on
 
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufNewFile,BufRead Gemfile set filetype=ruby
 autocmd BufNewFile,BufRead *.ru set filetype=ruby
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby']
+
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+  let g:ctrlp_custom_ignore = 'tmp$\|\vendor\/bundle$\|\.bundle$\|\node_modules$\|DS_Store\'
+  let g:ctrlp_max_files=0
+end
 
 command -nargs=1 E execute('silent! !mkdir -p "$(dirname "<args>")"') <Bar> e <args>
 
@@ -67,7 +79,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-rails'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'ntpeters/vim-better-whitespace'
-
 Plug 'elixir-lang/vim-elixir'
 Plug 'fatih/vim-go'
 Plug 'ngmy/vim-rubocop'
@@ -77,13 +88,12 @@ Plug 'mxw/vim-jsx'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'rking/ag.vim'
 Plug 'kien/ctrlp.vim'
-Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'tomtom/tcomment_vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-bundler'
 Plug 'janko-m/vim-test'
-
+Plug 'terryma/vim-multiple-cursors'
 Plug 'kchmck/vim-coffee-script'
 Plug 'isRuslan/vim-es6'
 
