@@ -7,7 +7,7 @@ categories: vim environment editor
 cc: Switch back to vim again
 keywords: "vim, environment, editor"
 description: Unlike most of my programmer friends, my first editor in programming is vi and second is vim as a slightly powerful editor. (I don't know about plugins at that time). C# as a first programming language with mono as a compiler and vim as an editor. vim's like a best friend back then. But when I started working extensively on C#, I embrace VisualStudio as my new editor and tool to work on real application projects.
-
+header-img: "images/post/vim-post-screenshot.jpg"
 ---
 
 Unlike most of my programmer friends, my first editor in programming is **vi** and
