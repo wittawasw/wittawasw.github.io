@@ -124,7 +124,7 @@ ga('send', 'pageview');
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <p>Unlike most of my programmer friends, my first editor in programming is <strong>vi</strong> and
-second is <strong>vim</strong> as a slightly powerful editor. (I don’t know about plugins at that
+second is <strong>vim</strong> as a slightly more powerful editor. (I don’t know about plugins at that
 time). C# as a first programming language with mono as a compiler and vim as an editor.
 vim’s like a best friend back then. But when I started working extensively on C#,
 I embrace VisualStudio as my new editor and tool to work on real application projects.</p>
@@ -153,44 +153,60 @@ that it’s worked with most of my works even with my blog posts.</p>
 my current <strong>.vimrc</strong> that I use in my OSX. I thought I will stick with this for a while
 before I add anything new since this’s sufficient for me now.</p>
 
+<blockquote>
+  <p>This .vimrc require <a href="https://github.com/junegunn/vim-plug">vim-plug</a> and
+<a href="https://github.com/ggreer/the_silver_searcher">the_silver_searcher</a> to run properly.</p>
+</blockquote>
+
 <figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">.vimrc</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">set </span>nu
 </div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">set </span>showcmd
-</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">set </span><span class="nv">tabstop</span><span class="o">=</span>2 <span class="nv">shiftwidth</span><span class="o">=</span>2 expandtab
-</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">set </span><span class="nv">mouse</span><span class="o">=</span>a
-</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">set </span><span class="nv">ls</span><span class="o">=</span>2
-</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">syntax on
-</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">autocmd BufWritePre <span class="k">*</span> :%s/<span class="se">\s\+</span><span class="nv">$/</span>/e
-</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">autocmd BufNewFile,BufRead Gemfile <span class="nb">set </span><span class="nv">filetype</span><span class="o">=</span>ruby
-</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">autocmd BufNewFile,BufRead <span class="k">*</span>.ru <span class="nb">set </span><span class="nv">filetype</span><span class="o">=</span>ruby
-</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">let </span>g:ctrlp_match_func <span class="o">=</span> <span class="o">&#x7b;</span><span class="s1">'match'</span> : <span class="s1">'matcher#cmatch'</span> <span class="o">&#x7d;</span>
-</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">command</span> -nargs<span class="o">=</span>1 E execute<span class="o">(</span><span class="s1">'silent! !mkdir -p "$(dirname "&lt;args&gt;")"'</span><span class="o">)</span> &lt;Bar&gt; e &lt;args&gt;
-</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">nmap &lt;silent&gt; &lt;leader&gt;t :TestNearest&lt;CR&gt;
-</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">nmap &lt;silent&gt; &lt;leader&gt;T :TestFile&lt;CR&gt;
-</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">nmap &lt;silent&gt; &lt;leader&gt;a :TestSuite&lt;CR&gt;
-</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line">nmap &lt;silent&gt; &lt;leader&gt;l :TestLast&lt;CR&gt;
-</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line">nmap &lt;silent&gt; &lt;leader&gt;g :TestVisit&lt;CR&gt;
-</div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line">call plug#begin<span class="o">(</span><span class="s1">'~/.vim/plugged'</span><span class="o">)</span>
-</div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'tpope/vim-rails'</span>
-</div></div><div data-line="25" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'pbrisbin/vim-mkdir'</span>
-</div></div><div data-line="26" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'ntpeters/vim-better-whitespace'</span>
-</div></div><div data-line="27" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="28" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'elixir-lang/vim-elixir'</span>
-</div></div><div data-line="29" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'fatih/vim-go'</span>
-</div></div><div data-line="30" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'ngmy/vim-rubocop'</span>
-</div></div><div data-line="31" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'cakebaker/scss-syntax.vim'</span>
-</div></div><div data-line="32" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'tpope/vim-haml'</span>
-</div></div><div data-line="33" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'mxw/vim-jsx'</span>
-</div></div><div data-line="34" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'ekalinin/Dockerfile.vim'</span>
-</div></div><div data-line="35" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'rking/ag.vim'</span>
-</div></div><div data-line="36" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'kien/ctrlp.vim'</span>
-</div></div><div data-line="37" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'JazzCore/ctrlp-cmatcher'</span>
-</div></div><div data-line="38" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'tomtom/tcomment_vim'</span>
-</div></div><div data-line="39" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'airblade/vim-gitgutter'</span>
-</div></div><div data-line="40" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'tpope/vim-fugitive'</span>
-</div></div><div data-line="41" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'tpope/vim-bundler'</span>
-</div></div><div data-line="42" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'janko-m/vim-test'</span>
-</div></div><div data-line="43" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="44" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'kchmck/vim-coffee-script'</span>
-</div></div><div data-line="45" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'isRuslan/vim-es6'</span>
-</div></div><div data-line="46" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="47" class="code-highlight-row numbered"><div class="code-highlight-line">call plug#end<span class="o">()</span></div></div></pre></div></figure>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">set </span><span class="nv">tabstop</span><span class="o">=</span>2
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">set </span><span class="nv">shiftwidth</span><span class="o">=</span>2
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">set </span>expandtab
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">set </span><span class="nv">mouse</span><span class="o">=</span>a
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">set </span><span class="nv">ls</span><span class="o">=</span>2
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">set </span><span class="nv">backspace</span><span class="o">=</span>2
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">syntax on
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">autocmd BufWritePre <span class="k">*</span> :%s/<span class="se">\s\+</span><span class="nv">$/</span>/e
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">autocmd BufNewFile,BufRead Gemfile <span class="nb">set </span><span class="nv">filetype</span><span class="o">=</span>ruby
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">autocmd BufNewFile,BufRead <span class="k">*</span>.ru <span class="nb">set </span><span class="nv">filetype</span><span class="o">=</span>ruby
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">autocmd BufNewFile,BufReadPost <span class="k">*</span>.md <span class="nb">set </span><span class="nv">filetype</span><span class="o">=</span>markdown
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">let </span>g:markdown_fenced_languages <span class="o">=</span> <span class="o">[</span><span class="s1">'html'</span>, <span class="s1">'python'</span>, <span class="s1">'bash=sh'</span>, <span class="s1">'ruby'</span><span class="o">]</span>
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">if </span>executable<span class="o">(</span><span class="s1">'ag'</span><span class="o">)</span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nb">set </span><span class="nv">grepprg</span><span class="o">=</span>ag<span class="se">\ </span>--nogroup<span class="se">\ </span>--nocolor
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nb">let </span>g:ctrlp_user_command <span class="o">=</span> <span class="s1">'ag %s -l --nocolor -g ""'</span>
+</div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nb">let </span>g:ctrlp_use_caching <span class="o">=</span> 0
+</div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nb">let </span>g:ctrlp_custom_ignore <span class="o">=</span> <span class="s1">'tmp$\|\vendor\/bundle$\|\.bundle$\|\node_modules$\|DS_Store\'</span>
+</div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nb">let </span>g:ctrlp_max_files<span class="o">=</span>0
+</div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line">end
+</div></div><div data-line="25" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="26" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">command</span> -nargs<span class="o">=</span>1 E execute<span class="o">(</span><span class="s1">'silent! !mkdir -p "$(dirname "&lt;args&gt;")"'</span><span class="o">)</span> &lt;Bar&gt; e &lt;args&gt;
+</div></div><div data-line="27" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="28" class="code-highlight-row numbered"><div class="code-highlight-line">nmap &lt;silent&gt; &lt;leader&gt;t :TestNearest&lt;CR&gt;
+</div></div><div data-line="29" class="code-highlight-row numbered"><div class="code-highlight-line">nmap &lt;silent&gt; &lt;leader&gt;T :TestFile&lt;CR&gt;
+</div></div><div data-line="30" class="code-highlight-row numbered"><div class="code-highlight-line">nmap &lt;silent&gt; &lt;leader&gt;a :TestSuite&lt;CR&gt;
+</div></div><div data-line="31" class="code-highlight-row numbered"><div class="code-highlight-line">nmap &lt;silent&gt; &lt;leader&gt;l :TestLast&lt;CR&gt;
+</div></div><div data-line="32" class="code-highlight-row numbered"><div class="code-highlight-line">nmap &lt;silent&gt; &lt;leader&gt;g :TestVisit&lt;CR&gt;
+</div></div><div data-line="33" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="34" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="35" class="code-highlight-row numbered"><div class="code-highlight-line">call plug#begin<span class="o">(</span><span class="s1">'~/.vim/plugged'</span><span class="o">)</span>
+</div></div><div data-line="36" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'tpope/vim-rails'</span>
+</div></div><div data-line="37" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'pbrisbin/vim-mkdir'</span>
+</div></div><div data-line="38" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'ntpeters/vim-better-whitespace'</span>
+</div></div><div data-line="39" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'elixir-lang/vim-elixir'</span>
+</div></div><div data-line="40" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'fatih/vim-go'</span>
+</div></div><div data-line="41" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'ngmy/vim-rubocop'</span>
+</div></div><div data-line="42" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'cakebaker/scss-syntax.vim'</span>
+</div></div><div data-line="43" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'tpope/vim-haml'</span>
+</div></div><div data-line="44" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'mxw/vim-jsx'</span>
+</div></div><div data-line="45" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'ekalinin/Dockerfile.vim'</span>
+</div></div><div data-line="46" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'rking/ag.vim'</span>
+</div></div><div data-line="47" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'kien/ctrlp.vim'</span>
+</div></div><div data-line="48" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'tomtom/tcomment_vim'</span>
+</div></div><div data-line="49" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'airblade/vim-gitgutter'</span>
+</div></div><div data-line="50" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'tpope/vim-fugitive'</span>
+</div></div><div data-line="51" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'tpope/vim-bundler'</span>
+</div></div><div data-line="52" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'janko-m/vim-test'</span>
+</div></div><div data-line="53" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'terryma/vim-multiple-cursors'</span>
+</div></div><div data-line="54" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'kchmck/vim-coffee-script'</span>
+</div></div><div data-line="55" class="code-highlight-row numbered"><div class="code-highlight-line">Plug <span class="s1">'isRuslan/vim-es6'</span>
+</div></div><div data-line="56" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="57" class="code-highlight-row numbered"><div class="code-highlight-line">call plug#end<span class="o">()</span></div></div></pre></div></figure>
 
 
           <hr>
