@@ -40,6 +40,9 @@ As a reminder for myself and everyone else who stumble apon this page. Below is
 my current **.vimrc** that I use in my OSX. I thought I will stick with this for a while
 before I add anything new since this's sufficient for me now.
 
+> This .vimrc require [vim-plug](https://github.com/junegunn/vim-plug) and
+> [the_silver_searcher](https://github.com/ggreer/the_silver_searcher) to run properly.
+
 {% codeblock lang:bash .vimrc %}
 set nu
 set showcmd

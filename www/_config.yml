@@ -20,3 +20,8 @@ exclude: [vendor]
 sass:
   style: compressed
 paginate: 5
+gems:
+  - jekyll-paginate
+  - octopress-codeblock
+  - octopress-image-tag
+  - octopress-quote-tag
