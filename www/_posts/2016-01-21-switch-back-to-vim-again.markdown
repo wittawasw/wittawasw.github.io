@@ -63,10 +63,8 @@ let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'ruby']
 
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -U -p ~/.agignore --hidden -g ""'
   let g:ctrlp_use_caching = 0
-  let g:ctrlp_custom_ignore = 'tmp$\|\vendor\/bundle$\|\.bundle$\|\node_modules$\|DS_Store\'
-  let g:ctrlp_max_files=0
 end
 
 command -nargs=1 E execute('silent! !mkdir -p "$(dirname "<args>")"') <Bar> e <args>
@@ -77,6 +75,9 @@ nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-k><C-b> :NERDTreeToggle<CR>
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-rails'
@@ -99,6 +100,7 @@ Plug 'janko-m/vim-test'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'kchmck/vim-coffee-script'
 Plug 'isRuslan/vim-es6'
+Plug 'scrooloose/nerdtree'
 
 call plug#end()
 
