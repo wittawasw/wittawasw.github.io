@@ -79,11 +79,9 @@ ga('send', 'pageview');
         <li>
           <a href="/">Home</a>
         </li>
-        
         <li>
-          <a href="/about/">About</a>
+          <a href="/about">About</a>
         </li>
-        
       </ul>
     </div>
     <!-- /.navbar-collapse -->
@@ -93,7 +91,10 @@ ga('send', 'pageview');
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/images/home.jpg')">
+<header
+  class="intro-header"
+  style="background-image: url('/images/home.jpg')"
+>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -113,13 +114,29 @@ ga('send', 'pageview');
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
-          <span class="label label-info" style="margin-right: 5px;"> backend </span>
+          <a href="/categories/backend">
+            <span class="label label-info" style="margin-right: 5px;">
+              backend
+            </span>
+          </a>
         
-          <span class="label label-info" style="margin-right: 5px;"> rails </span>
+          <a href="/categories/rails">
+            <span class="label label-info" style="margin-right: 5px;">
+              rails
+            </span>
+          </a>
         
-          <span class="label label-info" style="margin-right: 5px;"> api </span>
+          <a href="/categories/api">
+            <span class="label label-info" style="margin-right: 5px;">
+              api
+            </span>
+          </a>
         
-          <span class="label label-info" style="margin-right: 5px;"> angularjs </span>
+          <a href="/categories/angularjs">
+            <span class="label label-info" style="margin-right: 5px;">
+              angularjs
+            </span>
+          </a>
         
       </div>
     </div>
@@ -244,12 +261,26 @@ Now we can try to access <a href="http://localhost:3000/contacts/1">localhost:30
           <ul class="pager">
             
             <li class="previous">
-              <a href="/blog/2014/04/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang/" data-toggle="tooltip" data-placement="top" title="Free and easy static website hosting using Google App Engine and Go's runtime">&larr; Previous Post</a>
+              <a
+                href="/blog/2014/04/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang/"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Free and easy static website hosting using Google App Engine and Go's runtime"
+              >
+                &larr; Previous Post
+              </a>
             </li>
             
             
             <li class="next">
-              <a href="/blog/2015/03/24/upgraded-to-octopress-3-0rc/" data-toggle="tooltip" data-placement="top" title="Upgraded to Octopress 3.0rc">Next Post &rarr;</a>
+              <a
+                href="/blog/2015/03/24/upgraded-to-octopress-3-0rc/"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Upgraded to Octopress 3.0rc"
+              >
+                Next Post &rarr;
+              </a>
             </li>
             
           </ul>
