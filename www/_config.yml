@@ -20,8 +20,14 @@ exclude: [vendor]
 sass:
   style: compressed
 paginate: 5
+paginate_path: "page:num"
+
+category_dir: "categories"
+category_layout: "_layouts/category_index.html"
+
 gems:
   - jekyll-paginate
+  - jekyll-paginate-category
   - octopress-codeblock
   - octopress-image-tag
   - octopress-quote-tag

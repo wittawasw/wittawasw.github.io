@@ -3,6 +3,7 @@ ruby '2.3.0'
 
 gem 'jekyll', '~> 3.0.1'
 gem 'jekyll-paginate'
+gem 'jekyll-paginate-category'
 
 group :jekyll_plugins do
   gem 'octopress', '~> 3.0.11'

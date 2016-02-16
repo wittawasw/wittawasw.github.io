@@ -1,9 +1,9 @@
 ---
 layout: page
-description: "Usability comes first."
-header-img: "images/home.jpg"
-cc: All contents in this blog
 ---
+{% if page.paginator %}
+{% assign paginator = page.paginator %}
+{% endif %}
 
 {% for post in paginator.posts %}
 <div class="post-preview">
@@ -27,11 +27,8 @@ cc: All contents in this blog
         </span>
       </a>
     {% endfor %}
-
-
 </div>
 &nbsp
-<hr>
 {% endfor %}
 
 <!-- Pager -->
