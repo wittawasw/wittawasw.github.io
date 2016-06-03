@@ -2,15 +2,19 @@
 <html lang="en">
 
   <head>
-
+  <script type="text/javascript">
+    var host = "yoursite.com";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+  </script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="I work mostly on Ruby, Elixir. This site will be just a memo for me and for someone out there who's interested in similar topics to mine.">
   <meta property="og:title" content="rails"/>
 <meta property="og:type" content="article"/>
-<meta property="og:image" content="http://blog.wittawasw.com/images/home.jpg"/>
-<meta property="og:url" content="http://blog.wittawasw.com/categories/rails/index/"/>
+<meta property="og:image" content="https://wittawasw.com/images/home.jpg"/>
+<meta property="og:url" content="https://wittawasw.com/categories/rails/index/"/>
 
 <meta property="og:site_name" content="wittawasw"/>
 <meta property="og:description" content=""/>
@@ -24,12 +28,12 @@
 <meta name="twitter:creator" content="@wittawasw">
 <meta name="twitter:title" content="rails">
 <meta name="twitter:description" content="">
-<meta name="twitter:image:src" content="http://blog.wittawasw.com/images/home.jpg">
+<meta name="twitter:image:src" content="https://wittawasw.com/images/home.jpg">
 
 
   <title>rails - wittawasw</title>
 
-  <link rel="canonical" href="http://blog.wittawasw.com/categories/rails/index/">
+  <link rel="canonical" href="https://wittawasw.com/categories/rails/index/">
   <link rel="stylesheet" href="/css/main.css">
 
   <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>

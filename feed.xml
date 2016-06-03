@@ -3,10 +3,10 @@
   <channel>
     <title>wittawasw</title>
     <description>I work mostly on Ruby, Elixir. This site will be just a memo for me and for someone out there who&#39;s interested in similar topics to mine.</description>
-    <link>http://blog.wittawasw.com/</link>
-    <atom:link href="http://blog.wittawasw.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 04 Jun 2016 03:56:18 +0900</pubDate>
-    <lastBuildDate>Sat, 04 Jun 2016 03:56:18 +0900</lastBuildDate>
+    <link>https://wittawasw.com/</link>
+    <atom:link href="https://wittawasw.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 04 Jun 2016 04:07:19 +0900</pubDate>
+    <lastBuildDate>Sat, 04 Jun 2016 04:07:19 +0900</lastBuildDate>
     <generator>Jekyll v3.0.5</generator>
     
       <item>
@@ -75,8 +75,8 @@ what needs to be done almost immediately.&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 17 Feb 2016 04:08:05 +0900</pubDate>
-        <link>http://blog.wittawasw.com/blog/2016/02/17/reasons-to-build-ruby-methods-with-keyword-arguments/</link>
-        <guid isPermaLink="true">http://blog.wittawasw.com/blog/2016/02/17/reasons-to-build-ruby-methods-with-keyword-arguments/</guid>
+        <link>https://wittawasw.com/blog/2016/02/17/reasons-to-build-ruby-methods-with-keyword-arguments/</link>
+        <guid isPermaLink="true">https://wittawasw.com/blog/2016/02/17/reasons-to-build-ruby-methods-with-keyword-arguments/</guid>
         
         
         <category>ruby</category>
@@ -177,8 +177,8 @@ before I add anything new since this’s sufficient for me now.&lt;/p&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;58&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;59&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;call plug#end&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
 </description>
         <pubDate>Thu, 21 Jan 2016 04:20:22 +0900</pubDate>
-        <link>http://blog.wittawasw.com/blog/2016/01/21/switch-back-to-vim-again/</link>
-        <guid isPermaLink="true">http://blog.wittawasw.com/blog/2016/01/21/switch-back-to-vim-again/</guid>
+        <link>https://wittawasw.com/blog/2016/01/21/switch-back-to-vim-again/</link>
+        <guid isPermaLink="true">https://wittawasw.com/blog/2016/01/21/switch-back-to-vim-again/</guid>
         
         
         <category>vim</category>
@@ -437,8 +437,8 @@ This may sound insignificant at first but to not carefully ordering import state
 
 </description>
         <pubDate>Sat, 28 Mar 2015 04:10:53 +0900</pubDate>
-        <link>http://blog.wittawasw.com/blog/2015/03/28/5-tips-i-keep-in-mind-when-using-sass/</link>
-        <guid isPermaLink="true">http://blog.wittawasw.com/blog/2015/03/28/5-tips-i-keep-in-mind-when-using-sass/</guid>
+        <link>https://wittawasw.com/blog/2015/03/28/5-tips-i-keep-in-mind-when-using-sass/</link>
+        <guid isPermaLink="true">https://wittawasw.com/blog/2015/03/28/5-tips-i-keep-in-mind-when-using-sass/</guid>
         
         
         <category>sass</category>
@@ -469,8 +469,8 @@ This may sound insignificant at first but to not carefully ordering import state
 
 </description>
         <pubDate>Tue, 24 Mar 2015 15:53:32 +0900</pubDate>
-        <link>http://blog.wittawasw.com/blog/2015/03/24/upgraded-to-octopress-3-0rc/</link>
-        <guid isPermaLink="true">http://blog.wittawasw.com/blog/2015/03/24/upgraded-to-octopress-3-0rc/</guid>
+        <link>https://wittawasw.com/blog/2015/03/24/upgraded-to-octopress-3-0rc/</link>
+        <guid isPermaLink="true">https://wittawasw.com/blog/2015/03/24/upgraded-to-octopress-3-0rc/</guid>
         
         
         <category>jekyll</category>
@@ -597,8 +597,8 @@ Now we can try to access &lt;a href=&quot;http://localhost:3000/contacts/1&quot;
 
 </description>
         <pubDate>Thu, 10 Apr 2014 13:41:44 +0900</pubDate>
-        <link>http://blog.wittawasw.com/blog/2014/04/10/backend-once-and-client-everywhere-with-rails-api/</link>
-        <guid isPermaLink="true">http://blog.wittawasw.com/blog/2014/04/10/backend-once-and-client-everywhere-with-rails-api/</guid>
+        <link>https://wittawasw.com/blog/2014/04/10/backend-once-and-client-everywhere-with-rails-api/</link>
+        <guid isPermaLink="true">https://wittawasw.com/blog/2014/04/10/backend-once-and-client-everywhere-with-rails-api/</guid>
         
         
         <category>backend</category>
@@ -698,8 +698,8 @@ Now we can try to access &lt;a href=&quot;http://localhost:3000/contacts/1&quot;
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 09 Apr 2014 14:05:05 +0900</pubDate>
-        <link>http://blog.wittawasw.com/blog/2014/04/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang/</link>
-        <guid isPermaLink="true">http://blog.wittawasw.com/blog/2014/04/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang/</guid>
+        <link>https://wittawasw.com/blog/2014/04/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang/</link>
+        <guid isPermaLink="true">https://wittawasw.com/blog/2014/04/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang/</guid>
         
         
         <category>go</category>
