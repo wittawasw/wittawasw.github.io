@@ -3,6 +3,5 @@ www/.deploy
 www/_site
 www/.sass-cache
 
-.ruby-version
 .bundle
 vendor
