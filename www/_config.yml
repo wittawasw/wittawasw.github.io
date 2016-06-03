@@ -4,7 +4,8 @@ email: start@wittawasw.com
 header-img: "images/home.jpg"
 description: "I work mostly on Ruby, Elixir. This site will be just a memo for me and for someone out there who's interested in similar topics to mine."
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://blog.wittawasw.com" # the base hostname & protocol for your site
+url: https://wittawasw.com
+enforce_ssl: wittawasw.com
 twitter_username: wittawasw
 github_username:  wittawasw
 facebook_username: wittawasw
@@ -24,9 +25,6 @@ paginate_path: "page:num"
 
 category_dir: "categories"
 category_layout: "_layouts/category_index.html"
-
-url: https://wittawasw.com
-enforce_ssl: wittawasw.com
 
 gems:
   - jekyll-paginate
