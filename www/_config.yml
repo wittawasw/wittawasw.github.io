@@ -25,6 +25,9 @@ paginate_path: "page:num"
 category_dir: "categories"
 category_layout: "_layouts/category_index.html"
 
+url: https://wittawasw.com
+enforce_ssl: wittawasw.com
+
 gems:
   - jekyll-paginate
   - jekyll-paginate-category
