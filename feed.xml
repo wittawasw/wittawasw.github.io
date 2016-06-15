@@ -5,9 +5,58 @@
     <description>I work mostly on Ruby, Elixir. This site will be just a memo for me and for someone out there who&#39;s interested in similar topics to mine.</description>
     <link>https://wittawasw.com/</link>
     <atom:link href="https://wittawasw.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 04 Jun 2016 06:02:49 +0900</pubDate>
-    <lastBuildDate>Sat, 04 Jun 2016 06:02:49 +0900</lastBuildDate>
+    <pubDate>Wed, 15 Jun 2016 11:48:49 +0900</pubDate>
+    <lastBuildDate>Wed, 15 Jun 2016 11:48:49 +0900</lastBuildDate>
     <generator>Jekyll v3.0.5</generator>
+    
+      <item>
+        <title>Back to My Own Game, a Freelancer and Family Life.</title>
+        <description>&lt;p&gt;I started my career as a startup and when it failed, I became freelancer that
+float around to many places. 2 years ago I started working as full-time
+employee. It’s a good experiences and I think I’d gained something from it a
+lot. Despite how much I hate commuting in a big city, being in a same venue as
+one team is a nice feeling.&lt;/p&gt;
+
+&lt;p&gt;But I’ve had enough of that now. I think I’ve gained what I want. It’s time to
+say no to all commuting and such. I’ll go back to being freelancer and spend my
+time with family with ease.&lt;/p&gt;
+
+&lt;p&gt;If you’re not from Thailand or somewhere in this region, you probably think
+freelancer is not a fine choice since it’s not come with other benefits. But
+here in Thailand, I could make twice as much freelancing for oversea clients
+more than being full-time employee.&lt;/p&gt;
+
+&lt;p&gt;Freelancer is also a good opportunity to manage my own time and place to be.
+But it’s come with a lot of cost as well since I’m here in UTC+7 Timezone. That
+means I have to somehow make my time available at night to support or
+collaborate with others in Europe/USA. Not to mention that an uncertainty that
+can happens(such as project’s ending sooner than expected) very easily
+depending on how clients react unlike being full-time employee.&lt;/p&gt;
+
+&lt;p&gt;But this time it won’t be the same with all those past years. I do have some
+plans to make this a permanent job for me. I’ll start working with
+&lt;a href=&quot;https://toptal.com&quot;&gt;toptal&lt;/a&gt; to see how far I can go in this path.&lt;/p&gt;
+
+&lt;p&gt;I’ve heard of this site for quite some time. Stumble upon it while googling on
+the work and I think the description on the site is quite good. In fact, I
+really thought it’s too good to be true. An elite community with well-paid jobs
+with a lot of demand for developers, also nice blogging community as well. And
+since I have opportunity to join, now is the time to do it an begin my first
+step back to being full-time freelancer.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 15 Jun 2016 11:37:51 +0900</pubDate>
+        <link>https://wittawasw.com/blog/2016/06/15/back-to-my-own-game-a-freelancer-life/</link>
+        <guid isPermaLink="true">https://wittawasw.com/blog/2016/06/15/back-to-my-own-game-a-freelancer-life/</guid>
+        
+        
+        <category>work</category>
+        
+        <category>freelance</category>
+        
+        <category>life</category>
+        
+      </item>
     
       <item>
         <title>Reasons to Build Ruby Methods with Keyword Arguments</title>
