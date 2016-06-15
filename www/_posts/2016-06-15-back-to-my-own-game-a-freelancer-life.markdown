@@ -37,7 +37,7 @@ depending on how clients react unlike being full-time employee.
 
 But this time it won't be the same with all those past years. I do have some
 plans to make this a permanent job for me. I'll start working with
-[toptal](https://toptal.com) to see how far I can go in this path.
+[toptal](https://toptal.com) first and see how far I can with it.
 
 I've heard of this site for quite some time. Stumble upon it while googling on
 the work and I think the description on the site is quite good. In fact, I
