@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     colorator (0.1)
-    ffi (1.9.10)
+    ffi (1.9.14)
     jekyll (3.0.5)
       colorator (~> 0.1)
       jekyll-sass-converter (~> 1.0)
@@ -13,12 +13,12 @@ GEM
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
     jekyll-paginate (1.1.0)
-    jekyll-paginate-category (0.1.1)
-    jekyll-sass-converter (1.4.0)
+    jekyll-paginate-category (0.1.2)
+    jekyll-sass-converter (1.5.0)
       sass (~> 3.4)
-    jekyll-watch (1.4.0)
+    jekyll-watch (1.5.0)
       listen (~> 3.0, < 3.1)
-    kramdown (1.11.1)
+    kramdown (1.13.0)
     liquid (3.0.6)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -42,19 +42,19 @@ GEM
       colorator
     octopress-escape-code (2.1.1)
       jekyll (~> 3.0)
-    octopress-hooks (2.6.1)
+    octopress-hooks (2.6.2)
       jekyll (>= 2.0)
     octopress-image-tag (1.1.0)
       jekyll
     octopress-quote-tag (1.0.4)
       jekyll
       rubypants
-    rb-fsevent (0.9.7)
+    rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
     redcarpet (3.3.4)
-    rouge (1.10.1)
-    rubypants (0.2.0)
+    rouge (1.11.1)
+    rubypants (0.6.0)
     safe_yaml (1.0.4)
     sass (3.4.22)
     titlecase (0.1.1)
@@ -74,7 +74,7 @@ DEPENDENCIES
   octopress-quote-tag
 
 RUBY VERSION
-   ruby 2.3.1p112
+   ruby 2.3.3p222
 
 BUNDLED WITH
-   1.12.3
+   1.13.6
