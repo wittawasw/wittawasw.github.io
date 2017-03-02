@@ -13,8 +13,8 @@
   <meta name="description" content="I work mostly on Ruby, Elixir. This site will be just a memo for me and for someone out there who's interested in similar topics to mine.">
   <meta property="og:title" content="5 tips I keep in mind when using Sass"/>
 <meta property="og:type" content="article"/>
-<meta property="og:image" content="https://wittawasw.com/images/post/04-sass.jpg"/>
-<meta property="og:url" content="https://wittawasw.com/blog/2015/03/28/5-tips-i-keep-in-mind-when-using-sass/"/>
+<meta property="og:image" content="http://localhost:4000/images/post/04-sass.jpg"/>
+<meta property="og:url" content="http://localhost:4000/blog/2015/03/28/5-tips-i-keep-in-mind-when-using-sass/"/>
 
 <meta property="og:site_name" content="wittawasw"/>
 <meta property="og:description" content="It's been some time already since I've been introduced to Sass, Though I normally use just Scss syntax. Sass's really nice additional tool and these tips are what I found myself comfortable with and tend to convince people around me to use..."/>
@@ -28,12 +28,12 @@
 <meta name="twitter:creator" content="@wittawasw">
 <meta name="twitter:title" content="5 tips I keep in mind when using Sass">
 <meta name="twitter:description" content="It's been some time already since I've been introduced to Sass, Though I normally use just Scss syntax. Sass's really nice additional tool and these tips are what I found myself comfortable with and tend to convince people around me to use...">
-<meta name="twitter:image:src" content="https://wittawasw.com/images/post/04-sass.jpg">
+<meta name="twitter:image:src" content="http://localhost:4000/images/post/04-sass.jpg">
 
 
   <title>5 tips I keep in mind when using Sass - wittawasw</title>
 
-  <link rel="canonical" href="https://wittawasw.com/blog/2015/03/28/5-tips-i-keep-in-mind-when-using-sass/">
+  <link rel="canonical" href="http://localhost:4000/blog/2015/03/28/5-tips-i-keep-in-mind-when-using-sass/">
   <link rel="stylesheet" href="/css/main.css">
 
   <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -148,7 +148,7 @@ ga('send', 'pageview');
 
 <hr />
 
-<h2 id="structure-is-important">1.Structure is important</h2>
+<h2 id="1structure-is-important">1.Structure is important</h2>
 <p>Since I’m mostly using Rails, sometimes people tend to use Rails’s default structure of stylesheet files base on controllers which is not wrong but I think it’s less useful than it should be.</p>
 
 <figure class="code-highlight-figure"><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">- app
@@ -188,7 +188,7 @@ ga('send', 'pageview');
 
 <p> </p>
 
-<h2 id="keep-variables-together">2.Keep variables together</h2>
+<h2 id="2keep-variables-together">2.Keep variables together</h2>
 
 <p>A nice feature of Sass that every beginner would know about is how Sass cleverly handle values in form of variables. But to put it all over every files is not practical since I will have troubles finding them in later stage of development. So, this approach is simple, just try to lump it together as much as I can. In my most cases, one file is enought.</p>
 
@@ -208,7 +208,7 @@ ga('send', 'pageview');
 <hr />
 <p> </p>
 
-<h2 id="order-import-statements">3.Order import statements</h2>
+<h2 id="3order-import-statements">3.Order import statements</h2>
 
 <p>Another features of Sass that’s widely known, <strong>@import</strong>.
 This may sound insignificant at first but to not carefully ordering import statements can prove to be troubled later and it will also provide more readablity to our stylesheets. So, it’s a win in every way.</p>
@@ -226,7 +226,7 @@ This may sound insignificant at first but to not carefully ordering import state
 <hr />
 <p> </p>
 
-<h2 id="loop-and-conditions-are-handy">4.Loop and Conditions are handy.</h2>
+<h2 id="4loop-and-conditions-are-handy">4.Loop and Conditions are handy.</h2>
 <blockquote>
   <p>A nice Sass playground <a href="http://Sassmeister.com">here</a></p>
 </blockquote>
@@ -290,7 +290,7 @@ This may sound insignificant at first but to not carefully ordering import state
 
 <p> </p>
 
-<h2 id="use-include-extend-wisely">5.Use @include, @extend wisely</h2>
+<h2 id="5use-include-extend-wisely">5.Use @include, @extend wisely</h2>
 
 <p>I found this a lot in past year. When people know how to use @mixin, they failed to notice how large their compiled CSS has become. Sometimes it’s not really an issue since I can have almost or perhaps the same results when I use only @include with @mixin. But my compiled CSS file is not nearly the same though.</p>
 
