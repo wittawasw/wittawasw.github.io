@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
-ruby '2.3.3'
+ruby '2.4.0'
 
-gem 'jekyll', '~> 3.0.1'
+gem 'jekyll'
 gem 'jekyll-paginate'
 gem 'jekyll-paginate-category'
 
 group :jekyll_plugins do
-  gem 'octopress', '~> 3.0.11'
+  gem 'octopress'
   gem 'octopress-image-tag'
   gem 'octopress-codeblock'
   gem 'octopress-quote-tag'
