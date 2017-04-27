@@ -5,9 +5,97 @@
     <description>I work mostly on Ruby, Elixir. This site will be just a memo for me and for someone out there who's interested in similar topics to mine.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 02 Mar 2017 10:00:25 +0700</pubDate>
-    <lastBuildDate>Thu, 02 Mar 2017 10:00:25 +0700</lastBuildDate>
+    <pubDate>Fri, 28 Apr 2017 02:16:10 +0700</pubDate>
+    <lastBuildDate>Fri, 28 Apr 2017 02:16:10 +0700</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>Easy HTTPS Proxy Using Caddy on DigitalOcean.</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;The setup need DigitalOcean account and Domain on DigitalOcean’s nameserver.
+Otherwise, it’d need a different step to complete.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If you need a good HTTPS proxies that come with auto &lt;a href=&quot;https://letsencrypt.org/&quot;&gt;Let’s Encrypt&lt;/a&gt;
+certificates and already a user of DigitalOcean. Here I’ve got an easy but solid
+way to deploy one. Already using this on a production servers with no problem
+so far.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://caddyserver.com/&quot;&gt;Caddy&lt;/a&gt; server is already the easiest server that
+you can &lt;a href=&quot;https://caddyserver.com/tutorial&quot;&gt;install&lt;/a&gt; on Linux. But I decided to
+use docker with it because it’s easier for me to control volume and settings.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;from-beginning-to-deploy&quot;&gt;From beginning to deploy.&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Setup domain to use DigitalOcean’s nameserver.&lt;/li&gt;
+  &lt;li&gt;Create droplet using pre-defined &lt;code class=&quot;highlighter-rouge&quot;&gt;docker&lt;/code&gt; droplet.&lt;/li&gt;
+  &lt;li&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;CNAME&lt;/code&gt; that point domain to droplet’s IP address.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SSH&lt;/code&gt; into droplet and create directory &lt;code class=&quot;highlighter-rouge&quot;&gt;caddy&lt;/code&gt; in home directory.&lt;/li&gt;
+  &lt;li&gt;Enable &lt;code class=&quot;highlighter-rouge&quot;&gt;ufw&lt;/code&gt; port &lt;code class=&quot;highlighter-rouge&quot;&gt;443&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Create DigitalOcean auth token and keep it close.&lt;/li&gt;
+  &lt;li&gt;Create &lt;code class=&quot;highlighter-rouge&quot;&gt;Caddyfile&lt;/code&gt; in home directory.&lt;/li&gt;
+  &lt;li&gt;Create &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; in home directory.&lt;/li&gt;
+  &lt;li&gt;From home directory, use command &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose up -d&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Caddy’s online. That’s it. No more hassle.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;figcaption class=&quot;code-highlight-caption&quot;&gt;&lt;span class=&quot;code-highlight-caption-title&quot;&gt;Caddyfile&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;# proxy's url (domain that we set record earlier.)
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;front-end-url:443 &amp;#x7b;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  # backend's servers can be single or multiple servers
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  # SSL terminate here.
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  proxy / backend-url-1:80 backend-url-2:80 backend-url-3:80 &amp;#x7b;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    policy round_robin
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    header_upstream Host &amp;#x7b;host&amp;#x7d;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    header_upstream X-Real-IP &amp;#x7b;remote&amp;#x7d;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;9&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    header_upstream X-Forwarded-For &amp;#x7b;remote&amp;#x7d;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;10&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    header_upstream X-Forwarded-Proto &amp;#x7b;scheme&amp;#x7d;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;11&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &amp;#x7d;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;12&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;13&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  gzip
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;14&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;15&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  tls &amp;#x7b;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;16&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;   # verify ssl certificate using dns from DigitalOcean really save me from a lot of pain.
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;17&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;   dns digitalocean
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;18&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &amp;#x7d;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;19&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&amp;#x7d;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;figcaption class=&quot;code-highlight-caption&quot;&gt;&lt;span class=&quot;code-highlight-caption-title&quot;&gt;docker-compose.yml&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;s&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3'&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;s&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;s&quot;&gt;proxy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;s&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;zzrot/alpine-caddy&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;s&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt;   &lt;span class=&quot;s&quot;&gt;443:443&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;s&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt;   &lt;span class=&quot;s&quot;&gt;./Caddyfile:/etc/Caddyfile&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;9&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt;   &lt;span class=&quot;s&quot;&gt;./caddy:/root/.caddy&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;10&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;      &lt;span class=&quot;c1&quot;&gt;# don't forget to add volume, otherwise you will request new certificate&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;11&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;      &lt;span class=&quot;c1&quot;&gt;# every time server restart and exceed letsencrypt quota in the process.&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;12&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;s&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;13&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;DO_AUTH_TOKEN=&amp;lt;DO_ACCOUNT_TOKEN&amp;gt;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;14&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;      &lt;span class=&quot;c1&quot;&gt;# get this token from setting page.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;where-to-go-from-here&quot;&gt;Where to go from here&lt;/h3&gt;
+&lt;p&gt;See official &lt;a href=&quot;https://caddyserver.com/docs&quot;&gt;documentation&lt;/a&gt; of Caddy. There’s a
+lot of features that can be easily setup using simple directives.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 28 Apr 2017 02:11:27 +0700</pubDate>
+        <link>http://localhost:4000/blog/2017/04/28/easy-https-proxy-using-caddy-on-digitalocean/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2017/04/28/easy-https-proxy-using-caddy-on-digitalocean/</guid>
+        
+        
+        <category>https</category>
+        
+        <category>proxy</category>
+        
+        <category>digitalocean</category>
+        
+        <category>caddy</category>
+        
+        <category>webserver</category>
+        
+        <category>docker</category>
+        
+      </item>
     
       <item>
         <title>FizzBuzz First Time.</title>
