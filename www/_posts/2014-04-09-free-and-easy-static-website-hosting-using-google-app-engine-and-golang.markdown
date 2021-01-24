@@ -50,12 +50,13 @@ You can play with your HTML all you want from this point on. Just add structure 
 - app.yaml
 - server.go
 {% endhighlight %}
+
 {% highlight ruby %}
 package server
 //just one line is enough to host static site
 {% endhighlight %}
 
-{% highlight yaml%}
+{% highlight YAML%}
 application: your-app-id-here
 version: 1
 runtime: go
