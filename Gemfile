@@ -7,6 +7,7 @@ gem 'minima'
 gem 'webrick'
 
 group :jekyll_plugins do
+  gem 'jekyll-paginate'
   gem 'jekyll-feed', '~> 0.12'
   # gem 'github-pages'
 end
