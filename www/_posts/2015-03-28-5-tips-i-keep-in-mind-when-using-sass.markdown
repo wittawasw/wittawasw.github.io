@@ -22,7 +22,7 @@ It's been some time already since I've been introduced to Sass, Though I normall
 -----------------------
 Since I'm mostly using Rails, sometimes people tend to use Rails's default structure of stylesheet files base on controllers which is not wrong but I think it's less useful than it should be.
 
-{% codeblock %}
+{% highlight yaml %}
 - app
   + assets
     * stylesheets
@@ -30,14 +30,14 @@ Since I'm mostly using Rails, sometimes people tend to use Rails's default struc
       - post.scss
       - comment.scss
       - user.scss
-{% endcodeblock %}
+{% endhighlight %}
 
 But it's not reusable and just think about when this project grow up to 20+ controllers and 50+ pages is enough to makes me feels dizzy.
 
 
 My approach is to divide Sass files into modules and widgets based on how it's used.
 
-{% codeblock %}
+{% highlight yaml %}
 - app
   + assets
     * stylesheets
@@ -60,7 +60,7 @@ My approach is to divide Sass files into modules and widgets based on how it's u
           - comment_form.scss
         * cart
           - ...
-{% endcodeblock %}
+{% endhighlight %}
 
 &nbsp;
 
@@ -70,7 +70,7 @@ My approach is to divide Sass files into modules and widgets based on how it's u
 
 A nice feature of Sass that every beginner would know about is how Sass cleverly handle values in form of variables. But to put it all over every files is not practical since I will have troubles finding them in later stage of development. So, this approach is simple, just try to lump it together as much as I can. In my most cases, one file is enought.
 
-{% codeblock lang:scss variables.scss%}
+{% highlight SCSS %}
 // Our variables
 $base-font-family: Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
@@ -86,7 +86,7 @@ $brand-color:      #2a7ae2;
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
-{% endcodeblock %}
+{% endhighlight %}
 
 ******
 &nbsp;
@@ -98,7 +98,7 @@ $grey-color-dark:  darken($grey-color, 25%);
 Another features of Sass that's widely known, **@import**.
 This may sound insignificant at first but to not carefully ordering import statements can prove to be troubled later and it will also provide more readablity to our stylesheets. So, it's a win in every way.
 
-{% codeblock lang:scss application.scss%}
+{% highlight SCSS %}
 @import 'variables';
 
 @import 'partials/button';
@@ -113,7 +113,7 @@ This may sound insignificant at first but to not carefully ordering import state
 @import 'modules/forms';
 @import 'modules/cart';
 
-{% endcodeblock %}
+{% endhighlight %}
 ******
 &nbsp;
 
@@ -126,7 +126,7 @@ It's similar to every programming languages you've used so far but it actually i
 
 Here's an example.
 
-{% codeblock lang:scss _grid.scss%}
+{% highlight SCSS %}
 // SCSS
 @for $i from 1 through 12 {
   %columns-#{$i} {
@@ -185,7 +185,7 @@ Here's an example.
 }
 
 
-{% endcodeblock %}
+{% endhighlight %}
 
 &nbsp;
 
@@ -199,7 +199,7 @@ Let try something to see it in action,
 
 
 ### Use @include to include @mixin properties
-{% codeblock lang:scss include.scss%}
+{% highlight SCSS %}
 
 // SCSS
 @mixin icon($social) {
@@ -251,11 +251,11 @@ Let try something to see it in action,
   background-repeat: no-repeat;
   background-image:url('/img/icon-googleplus.png');
 }
-{% endcodeblock %}
+{% endhighlight %}
 &nbsp;
 
 ### Use @extend to extend properties
-{% codeblock lang:scss extend.scss%}
+{% highlight SCSS %}
 
 // SCSS
 %icon {
@@ -301,7 +301,7 @@ Let try something to see it in action,
 .icon-googleplus {
   background-image:url('/img/icon-googleplus.png');
 }
-{% endcodeblock %}
+{% endhighlight %}
 
 
 Both compiled CSS give us 26 and 19 lines with the same results on browser. There's still differrences in size though it's not much to the point that it doesn't matter but it's still our choices to choose which approach to do it.In this case, I choose latter choice to save some spaces for compiled css, more reasonable to me.

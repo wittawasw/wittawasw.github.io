@@ -23,7 +23,7 @@ quality to ship immediately if needed. I also write along some unit tests in
 case I might want to try refactor it after this. Though I'm already feel that
 this is already good enough for me.
 
-{% codeblock lang:ruby fizzbuzz.rb%}
+{% highlight ruby %}
 module FizzBuzz
   class << self
     def out(range: 1..100)
@@ -58,5 +58,4 @@ module FizzBuzz
   end
 end
 
-# puts FizzBuzz.out.to_s # printing results
-{% endcodeblock %}
+{% endhighlight %}

@@ -50,12 +50,12 @@ You can play with your HTML all you want from this point on. Just add structure 
 - app.yaml
 - server.go
 {% endhighlight %}
-{% codeblock lang:go server.go %}
+{% highlight ruby %}
 package server
 //just one line is enough to host static site
-{% endcodeblock %}
+{% endhighlight %}
 
-{% codeblock lang:yaml app.yaml %}
+{% highlight yaml%}
 application: your-app-id-here
 version: 1
 runtime: go
@@ -74,7 +74,7 @@ handlers:
 
 - url: /images
   static_dir: images
-{% endcodeblock %}
+{% endhighlight %}
 
 >Up to this point, you must be able to run "goapp" command ([details](https://developers.google.com/appengine/docs/go/gettingstarted/devenvironment)).
 
@@ -83,7 +83,8 @@ Try "goapp serve" command at website's root directory and check your result at [
 Deploy to Google App Engine
 ---------------------------
 - Go to [https://cloud.google.com/](https://cloud.google.com/), Sign-in or Sign-up then get to your [console](https://console.developers.google.com).
-- Create New Project (If it's your first time here, they will prompt you to create new project immediately.)}{% img center /images/post/gae-screenshot.png title:"Create new project" %}
+- Create New Project (If it's your first time here, they will prompt you to create new project immediately.)}
+![Create new project](/images/post/gae-screenshot.png)
 - After Successfully created your project, Save your Project-ID and put it in app.yaml
 - In your website's root directory, Run "goapp deploy" and input your Google credential to deploy your website.
 - Your website will now be running at "project-id.appspot.com" , check it out.

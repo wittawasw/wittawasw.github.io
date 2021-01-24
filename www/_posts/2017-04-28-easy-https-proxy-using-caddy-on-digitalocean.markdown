@@ -36,7 +36,7 @@ use docker with it because it's easier for me to control volume and settings.
 - From home directory, use command `docker-compose up -d`
 - Caddy's online. That's it. No more hassle.
 
-{% codeblock Caddyfile %}
+{% highlight YAML %}
   # proxy's url (domain that we set record earlier.)
 front-end-url:443 {
   # backend's servers can be single or multiple servers
@@ -57,9 +57,9 @@ front-end-url:443 {
   }
 }
 
-{% endcodeblock %}
+{% endhighlight %}
 
-{% codeblock lang:yml docker-compose.yml %}
+{% highlight YAML %}
 version: '3'
 services:
   proxy:
@@ -74,7 +74,7 @@ services:
     environment:
       - DO_AUTH_TOKEN=<DO_ACCOUNT_TOKEN>
       # get this token from setting page.
-{% endcodeblock %}
+{% endhighlight %}
 
 ### Where to go from here
 See official [documentation](https://caddyserver.com/docs) of Caddy. There's a

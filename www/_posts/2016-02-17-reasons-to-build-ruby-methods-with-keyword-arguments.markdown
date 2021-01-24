@@ -21,7 +21,7 @@ using it and come with many good points.
 ### It make method clearer at first glance.
 This is obvious. I don't have to look for source of method when I see the
 method being called at other places.
-{% codeblock lang:ruby linenos:true %}
+{% highlight ruby linenos %}
 # normal initializer
 class Post
   def initialize(subject, body)
@@ -32,11 +32,11 @@ end
 
 # you will have to find the above Class to understand just this line.
 Post.new('hello', 'this is a msg')
-{% endcodeblock  %}
+{% endhighlight  %}
 
 compare to how Keyword Arguments work
 
-{% codeblock lang:ruby linenos:true %}
+{% highlight ruby linenos %}
 # initializer with keywords
 class Post
   def initialize(subject:, body:)
@@ -49,7 +49,7 @@ end
 Post.new(subject: 'hello',
          body: 'this is a msg',
         )
-{% endcodeblock  %}
+{% endhighlight  %}
 
 &nbsp;
 
@@ -57,13 +57,13 @@ Post.new(subject: 'hello',
 ### Better understanding error message.
 Keyword Arguments methods provide better error message when thing gone wrong.
 
-{% codeblock lang:shell %}
+{% highlight shell %}
 # Post.new('hello')
 ArgumentError: wrong number of arguments(given 1, expected 2)
 
 # Post.new(title: 'hello')
 ArgumentError: missing keyword: body
-{% endcodeblock %}
+{% endhighlight %}
 
 &nbsp;
 
@@ -71,7 +71,7 @@ ArgumentError: missing keyword: body
 ### Default setter and required key
 This is indeed useful, for you can quickly look at given params and understand
 what needs to be done almost immediately.
-{% codeblock lang:ruby %}
+{% highlight ruby %}
 class Post
   # default setter for :title to be 'untitled' if nil
   # required key :body if leave the setter blank.
@@ -80,7 +80,7 @@ class Post
     @body = body
   end
 end)
-{% endcodeblock %}
+{% endhighlight %}
 
 &nbsp;
 
