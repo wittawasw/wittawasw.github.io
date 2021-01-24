@@ -26,7 +26,7 @@ paginate_path: "page:num"
 category_dir: "categories"
 category_layout: "_layouts/category_index.html"
 
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-paginate-category
   - octopress-codeblock

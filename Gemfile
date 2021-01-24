@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
-ruby '2.6.3'
+ruby '3.0.0'
 
-gem 'jekyll'
+gem 'jekyll', '4.2.0'
 gem 'jekyll-paginate'
 gem 'jekyll-paginate-category'
+gem 'kramdown-parser-gfm'
 
 group :jekyll_plugins do
   gem 'octopress'
