@@ -1,13 +1,7 @@
-www/.code-highlighter-cache
-www/.deploy
-www/_site
-www/.sass-cache
-
-www2/_site
-www2/.sass-cache
-www2/.jekyll-cache
-www2/.jekyll-metadata
-
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
 
 .bundle
 vendor
