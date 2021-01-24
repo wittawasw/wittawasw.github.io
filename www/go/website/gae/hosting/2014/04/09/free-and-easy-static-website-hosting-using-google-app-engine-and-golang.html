@@ -1,0 +1,88 @@
+<p>In this post, we’re going to host a simple static website without so much pain. Using <a href="http://golang.org">Go</a> as a server script but fear not, you don’t have to learn Go in this post since this post focus on the most simplest and reliable way to host static website.</p>
+
+<h2 id="have-you-heard-of-google-app-engine-">Have you heard of Google App Engine ?</h2>
+
+<p><a href="https://appengine.google.com/">Google App Engine</a>(GAE) is a service from Google Cloud platform that let us host web applications from various development stack and one of that is web application using Go. Normally GAE is a paid-service but it come with a nice and good free-tier that’s Similar with what you can find in <a href="http://heroku.com">Heroku</a> but if you just want some free hosting for straight-forward HTML and little Javascript and CSS, it won’t hurt to try this trick since it won’t take much time from you.</p>
+
+<h3 id="pros">Pros</h3>
+<ul>
+  <li>Free</li>
+  <li>Upgrade to paid service if required.</li>
+  <li>Can add server’s features using Go later.</li>
+  <li>Free to use custom domain.</li>
+</ul>
+
+<h3 id="con">Con</h3>
+<ul>
+  <li>Not easy enough if you’re not a developer or a geek.</li>
+</ul>
+
+<h2 id="prerequisite">Prerequisite</h2>
+<ul>
+  <li>Familiar with command-line interface. (If you’re not, google it)</li>
+  <li>Some knowledge about website.</li>
+  <li>15-30 mins of your times at most.</li>
+</ul>
+
+<h2 id="getting-start-prepare-your-simple-website">Getting Start: Prepare your simple website</h2>
+<p>Download and install go_appengine_sdk on your own machine, by follow this <a href="https://developers.google.com/appengine/downloads#Google_App_Engine_SDK_for_Go">Link</a></p>
+
+<h2 id="web-structure">Web structure.</h2>
+<p>You can play with your HTML all you want from this point on. Just add structure like this and copy script from below to server.go and app.yaml .</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">-</span> <span class="n">css</span>
+  <span class="o">-</span> <span class="n">app</span><span class="p">.</span><span class="nf">css</span>
+<span class="o">-</span> <span class="n">js</span>
+  <span class="o">-</span> <span class="n">app</span><span class="p">.</span><span class="nf">js</span>
+<span class="o">-</span> <span class="n">images</span>
+  <span class="o">-</span> <span class="n">lion</span><span class="p">.</span><span class="nf">jpg</span>
+<span class="o">-</span> <span class="n">index</span><span class="p">.</span><span class="nf">html</span>
+<span class="o">-</span> <span class="n">app</span><span class="p">.</span><span class="nf">yaml</span>
+<span class="o">-</span> <span class="n">server</span><span class="p">.</span><span class="nf">go</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">package</span> <span class="n">server</span>
+<span class="sr">//</span><span class="n">just</span> <span class="n">one</span> <span class="n">line</span> <span class="n">is</span> <span class="n">enough</span> <span class="n">to</span> <span class="n">host</span> <span class="n">static</span> <span class="n">site</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">application</span><span class="pi">:</span> <span class="s">your-app-id-here</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">1</span>
+<span class="na">runtime</span><span class="pi">:</span> <span class="s">go</span>
+<span class="na">api_version</span><span class="pi">:</span> <span class="s">go1</span>
+
+<span class="na">handlers</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">url</span><span class="pi">:</span> <span class="s">/</span>
+  <span class="na">static_files</span><span class="pi">:</span> <span class="s">index.html</span>
+  <span class="na">upload</span><span class="pi">:</span> <span class="s">index\.html</span>
+
+<span class="pi">-</span> <span class="na">url</span><span class="pi">:</span> <span class="s">/js</span>
+  <span class="na">static_dir</span><span class="pi">:</span> <span class="s">js</span>
+
+<span class="pi">-</span> <span class="na">url</span><span class="pi">:</span> <span class="s">/css</span>
+  <span class="na">static_dir</span><span class="pi">:</span> <span class="s">css</span>
+
+<span class="pi">-</span> <span class="na">url</span><span class="pi">:</span> <span class="s">/images</span>
+  <span class="na">static_dir</span><span class="pi">:</span> <span class="s">images</span></code></pre></figure>
+
+<blockquote>
+  <p>Up to this point, you must be able to run “goapp” command (<a href="https://developers.google.com/appengine/docs/go/gettingstarted/devenvironment">details</a>).</p>
+</blockquote>
+
+<p>Try “goapp serve” command at website’s root directory and check your result at <a href="http://localhost:8080">http://localhost:8080</a></p>
+
+<h2 id="deploy-to-google-app-engine">Deploy to Google App Engine</h2>
+<ul>
+  <li>Go to <a href="https://cloud.google.com/">https://cloud.google.com/</a>, Sign-in or Sign-up then get to your <a href="https://console.developers.google.com">console</a>.</li>
+  <li>Create New Project (If it’s your first time here, they will prompt you to create new project immediately.)}
+<img src="/images/post/gae-screenshot.png" alt="Create new project" /></li>
+  <li>After Successfully created your project, Save your Project-ID and put it in app.yaml</li>
+  <li>In your website’s root directory, Run “goapp deploy” and input your Google credential to deploy your website.</li>
+  <li>Your website will now be running at “project-id.appspot.com” , check it out.</li>
+  <li>Custom domain can be set using this <a href="https://developers.google.com/appengine/docs/domain">details</a></li>
+</ul>
+
+<h2 id="maintenance-and-update">Maintenance and update</h2>
+<p>Can be easily done using “goapp” command by</p>
+
+<ul>
+  <li>goapp serve: test website in development (No need to restart server, automatically change when files are changed.)</li>
+  <li>goapp deploy: deploy to GAE</li>
+</ul>

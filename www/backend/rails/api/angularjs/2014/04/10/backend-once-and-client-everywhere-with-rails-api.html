@@ -1,0 +1,113 @@
+<p>Normally when you build a web or mobile application, you will have to build seperate backend because most web framework originally means to generate data along with dynamic HTML templates. But if we think that web application is just a form of native applications and we treat it that way, generate only data and just use static HTML to handle the logic. This way, we can reuse our backend to almost every native applications we want.</p>
+
+<blockquote>
+  <p>If you’re asking for some BIG example out there that use this trick, Try <a href="https://twitter.com">Twitter.com</a></p>
+</blockquote>
+
+<h2 id="why-use-rails-">Why use Rails ?</h2>
+<ul>
+  <li>Huge resources and communities that provide almost everything you want to build applications.</li>
+  <li>Very clean Routing and easy to use.</li>
+  <li>Secure enough.</li>
+  <li>Easiest (in my opinion) to debug using <a href="https://github.com/charliesome/better_errors">better_errors</a> and <a href="https://github.com/banister/binding_of_caller">binding_of_caller</a>.</li>
+  <li>I want to use Rails, that’s all.</li>
+</ul>
+
+<blockquote>
+  <p>Beyond this point require Ruby and Rails installed already.</p>
+</blockquote>
+
+<h2 id="getting-started-rails-api">Getting started: Rails-API</h2>
+<p>Assuming that you’ve already installed Ruby(1.9.3+) and Rails(3.2+) already, today we use this nicely done gem to help us prepare new application</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>gem <span class="nb">install </span>rails-api
+<span class="nv">$ </span>rails-api new contact-api</code></pre></figure>
+
+<p>with Rails-API we’ll get only essential part of Rails to build API instead of getting all heavy and unnecessary features from traditional Rails. And now we have our newly created app called <a href="">contact-api</a></p>
+
+<p>Then put this on your gemfile and run “bundle install”, this will make your life a lot easier.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">group</span> <span class="ss">:development</span> <span class="k">do</span>
+  <span class="n">gem</span> <span class="s1">'better_errors'</span>
+  <span class="n">gem</span> <span class="s1">'binding_of_caller'</span>
+<span class="k">end</span></code></pre></figure>
+
+<h2 id="rails-time">Rails time</h2>
+<p>Since there’s only API, so we don’t need to setup things like HTML template or homepage here. Let’s generate contact by using</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>rails g scaffold contact name:string email:string
+<span class="nv">$ </span>rake db:migrate</code></pre></figure>
+
+<p>If you’re running on Rails 3+, you need to put these line in your app/model/contact.rb</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">attr_accessible</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:email</span></code></pre></figure>
+
+<p>If Rails 4+, in app/controllers/contacts_controller</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">create</span>
+  <span class="vi">@contact</span> <span class="o">=</span> <span class="no">Contact</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">contact_params</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="vi">@contact</span><span class="p">.</span><span class="nf">save</span>
+    <span class="n">render</span> <span class="ss">json: </span><span class="vi">@contact</span><span class="p">,</span> <span class="ss">status: :created</span><span class="p">,</span> <span class="ss">location: </span><span class="vi">@contact</span>
+  <span class="k">else</span>
+    <span class="n">render</span> <span class="ss">json: </span><span class="vi">@contact</span><span class="p">.</span><span class="nf">errors</span><span class="p">,</span> <span class="ss">status: :unprocessable_entity</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+<span class="kp">private</span>
+
+<span class="k">def</span> <span class="nf">contact_params</span>
+  <span class="n">params</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:contact</span><span class="p">).</span><span class="nf">permit</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:email</span><span class="p">)</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>and then run your rails server with</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nv">$ </span>rails s</code></pre></figure>
+
+<p>Try access by your browser to <a href="http://localhost:3000/contacts/">localhost:3000/contacts</a> and you will see an empty JSON “[]” there. Now let’s try to make it error by access to <a href="http://localhost:3000/contacts/test">localhost:3000/contacts/test</a> and you’ll see error like below.
+<img src="/images/post/contact-error.png" alt="contact error" /></p>
+
+<p>Obviously, it’s a “Not found” error because we try to access object Contact that have id = “test” which doesn’t exist. On the right side, you’ll see a very handy shell that you can play with it like how you play in “rails console”. And since we have our console right before our eyes, we should try something.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Contact</span><span class="p">.</span><span class="nf">create!</span><span class="p">(</span><span class="nb">name</span><span class="ss">:"John"</span><span class="p">,</span> <span class="n">email</span><span class="ss">:"fathername@example.com"</span><span class="p">)</span></code></pre></figure>
+
+<p>and result is</p>
+
+<p><img src="/images/post/contact-create.png" alt="contact create" /></p>
+
+<p>Now we can try to access <a href="http://localhost:3000/contacts/1">localhost:3000/contacts/1</a> and you will see JSON of your newly created contact.
+<img src="/images/post/contact-1.png" alt="contact 1" /></p>
+
+<h2 id="prepare-for-cors">Prepare for CORS</h2>
+<p>What we trying to do here is to actually access to Rails server(<a href="http://localhost:3000">localhost:3000</a>) from another server instance. So it’ll inevitably face with <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> problem and here we’ll cover that problem before it’s occured with <a href="https://github.com/cyu/rack-cors">rack-cors</a></p>
+
+<p>Put this line in Gemfile</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="n">gem</span> <span class="s1">'rack-cors'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'rack/cors'</span></code></pre></figure>
+
+<p>then</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="n">bundle</span> <span class="n">install</span></code></pre></figure>
+
+<p>Finally, put this code in config/application.rb inside class Application and it’ll look like this.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">ContactApi</span>
+  <span class="k">class</span> <span class="nc">Application</span> <span class="o">&lt;</span> <span class="no">Rails</span><span class="o">::</span><span class="no">Application</span>
+    <span class="c1">#.....</span>
+    <span class="n">config</span><span class="p">.</span><span class="nf">middleware</span><span class="p">.</span><span class="nf">use</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Cors</span> <span class="k">do</span>
+      <span class="n">allow</span> <span class="k">do</span>
+        <span class="n">origins</span> <span class="s1">'*'</span>
+        <span class="n">resource</span> <span class="s1">'*'</span><span class="p">,</span> <span class="ss">:headers</span> <span class="o">=&gt;</span> <span class="ss">:any</span><span class="p">,</span> <span class="ss">:methods</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:get</span><span class="p">,</span> <span class="ss">:post</span><span class="p">,</span> <span class="ss">:options</span><span class="p">]</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Restart Rails server and it’ll become accessible from every origin.</p>
+
+<h2 id="html-time">HTML time</h2>
+<p>It’s time to build our static site to serve as a native client for contact-api. But before that, we have to choose which server to serve our static files. It can be many things such as another Rails, Node.js, PHP, etc. Whichever is fine but I choose to go with <a href="http://golang.org">Go</a>, no reason, I just want it. (See details of how easy Go handle static file in <a href="http://wittawasw.com/blog/2014/04/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang/">previous post</a>)</p>
+
+<p>Below is my <del>jsFiddle</del>(obsoleted) demo using angularjs as a client to add contact object by using Rails backend as API only. Or you can play a demo at this Google App Engine <a href="http://rails-angular-backend-demo.appspot.com/">Site</a></p>
+
+<p>All the code can be found at <a href="https://github.com/wittawasw/rails-angular-backend-demo">Github</a></p>
+

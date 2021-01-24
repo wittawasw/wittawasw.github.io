@@ -1,0 +1,11 @@
+version: '3'
+services:
+  proxy:
+    image: zzrot/alpine-caddy
+    ports:
+      -   443:443
+    volumes:
+      -   ./Caddyfile:/etc/Caddyfile
+      -   ./caddy:/root/.caddy
+    environment:
+      - DO_AUTH_TOKEN=<DO_ACCOUNT_TOKEN>

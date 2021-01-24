@@ -1,0 +1,272 @@
+<blockquote>
+  <p>If you still don’t know what exactly is Sass, here is <a href="http://Sass-lang.org">its official site</a></p>
+</blockquote>
+
+<p>It’s been some time already since I’ve been introduced to Sass, Though I normally use just Scss syntax. Sass’s really nice additional tool and these tips are what I found myself comfortable with and tend to convince people around me to use.</p>
+
+<hr />
+
+<h2 id="1structure-is-important">1.Structure is important</h2>
+<p>Since I’m mostly using Rails, sometimes people tend to use Rails’s default structure of stylesheet files base on controllers which is not wrong but I think it’s less useful than it should be.</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">-</span> <span class="s">app</span>
+  <span class="s">+ assets</span>
+    <span class="s">* stylesheets</span>
+      <span class="s">- application.scss</span>
+      <span class="s">- post.scss</span>
+      <span class="s">- comment.scss</span>
+      <span class="s">- user.scss</span></code></pre></figure>
+
+<p>But it’s not reusable and just think about when this project grow up to 20+ controllers and 50+ pages is enough to makes me feels dizzy.</p>
+
+<p>My approach is to divide Sass files into modules and widgets based on how it’s used.</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">-</span> <span class="s">app</span>
+  <span class="s">+ assets</span>
+    <span class="s">* stylesheets</span>
+      <span class="s">- application.scss</span>
+      <span class="s">- variables.scss</span>
+      <span class="s">- layouts</span>
+        <span class="s">* navigation_bar.scss</span>
+        <span class="s">* footer.scss</span>
+        <span class="s">* container.scss</span>
+      <span class="s">- partials // use '_' in front of partials</span>
+        <span class="s">* _all.scss</span>
+        <span class="s">* _button.scss</span>
+        <span class="s">* _grid.scss</span>
+        <span class="s">* _bar.scss</span>
+        <span class="s">* _typography.scss</span>
+      <span class="s">- modules // divide functionality code into modules</span>
+        <span class="s">* forms</span>
+          <span class="s">- register_form.scss</span>
+          <span class="s">- post_form.scss</span>
+          <span class="s">- comment_form.scss</span>
+        <span class="s">* cart</span>
+          <span class="s">- ...</span></code></pre></figure>
+
+<p> </p>
+
+<h2 id="2keep-variables-together">2.Keep variables together</h2>
+
+<p>A nice feature of Sass that every beginner would know about is how Sass cleverly handle values in form of variables. But to put it all over every files is not practical since I will have troubles finding them in later stage of development. So, this approach is simple, just try to lump it together as much as I can. In my most cases, one file is enought.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Our variables</span>
+<span class="nv">$base-font-family</span><span class="p">:</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="nv">$base-font-size</span><span class="p">:</span>   <span class="m">16px</span><span class="p">;</span>
+<span class="nv">$small-font-size</span><span class="p">:</span>  <span class="nv">$base-font-size</span> <span class="o">*</span> <span class="m">0</span><span class="mi">.875</span><span class="p">;</span>
+<span class="nv">$base-line-height</span><span class="p">:</span> <span class="m">1</span><span class="mi">.5</span><span class="p">;</span>
+
+<span class="nv">$spacing-unit</span><span class="p">:</span>     <span class="m">30px</span><span class="p">;</span>
+
+<span class="nv">$text-color</span><span class="p">:</span>       <span class="mh">#111</span><span class="p">;</span>
+<span class="nv">$background-color</span><span class="p">:</span> <span class="mh">#fdfdfd</span><span class="p">;</span>
+<span class="nv">$brand-color</span><span class="p">:</span>      <span class="mh">#2a7ae2</span><span class="p">;</span>
+
+<span class="nv">$grey-color</span><span class="p">:</span>       <span class="mh">#828282</span><span class="p">;</span>
+<span class="nv">$grey-color-light</span><span class="p">:</span> <span class="nf">lighten</span><span class="p">(</span><span class="nv">$grey-color</span><span class="o">,</span> <span class="m">40%</span><span class="p">);</span>
+<span class="nv">$grey-color-dark</span><span class="p">:</span>  <span class="nf">darken</span><span class="p">(</span><span class="nv">$grey-color</span><span class="o">,</span> <span class="m">25%</span><span class="p">);</span></code></pre></figure>
+
+<hr />
+<p> </p>
+
+<h2 id="3order-import-statements">3.Order import statements</h2>
+
+<p>Another features of Sass that’s widely known, <strong>@import</strong>.
+This may sound insignificant at first but to not carefully ordering import statements can prove to be troubled later and it will also provide more readablity to our stylesheets. So, it’s a win in every way.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@import</span> <span class="s1">'variables'</span><span class="p">;</span>
+
+<span class="k">@import</span> <span class="s1">'partials/button'</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s1">'partials/grid'</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s1">'partials/bar'</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s1">'partials/typography'</span><span class="p">;</span>
+
+<span class="k">@import</span> <span class="s1">'layouts/navigation_bar'</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s1">'layouts/footer'</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s1">'layouts/container'</span><span class="p">;</span>
+
+<span class="k">@import</span> <span class="s1">'modules/forms'</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s1">'modules/cart'</span><span class="p">;</span></code></pre></figure>
+
+<hr />
+<p> </p>
+
+<h2 id="4loop-and-conditions-are-handy">4.Loop and Conditions are handy.</h2>
+<blockquote>
+  <p>A nice Sass playground <a href="http://Sassmeister.com">here</a></p>
+</blockquote>
+
+<p>It’s similar to every programming languages you’ve used so far but it actually in stylesheet files. Learn to use it and you’ll never want to go back to plain css again.</p>
+
+<p>Here’s an example.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// SCSS</span>
+<span class="k">@for</span> <span class="nv">$i</span> <span class="ow">from</span> <span class="m">1</span> <span class="ow">through</span> <span class="m">12</span> <span class="p">{</span>
+  <span class="nv">%columns-</span><span class="si">#{</span><span class="nv">$i</span><span class="si">}</span> <span class="p">{</span>
+    <span class="nv">$width</span><span class="p">:</span> <span class="p">((</span><span class="m">100</span> <span class="o">/</span> <span class="m">12</span><span class="p">)</span> <span class="o">*</span> <span class="nv">$i</span><span class="p">)</span> <span class="o">*</span> <span class="m">1%</span><span class="p">;</span>
+    <span class="k">@if</span> <span class="nv">$width</span> <span class="o">==</span> <span class="m">100%</span> <span class="p">{</span>
+      <span class="nv">$width</span><span class="p">:</span> <span class="m">99%</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="nv">$width</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@for</span> <span class="nv">$i</span> <span class="ow">from</span> <span class="m">1</span> <span class="ow">through</span> <span class="m">12</span> <span class="p">{</span>
+  <span class="nc">.span-</span><span class="si">#{</span><span class="nv">$i</span><span class="si">}</span> <span class="p">{</span>
+    <span class="k">@extend</span> <span class="nv">%columns-</span><span class="si">#{</span><span class="nv">$i</span><span class="si">}</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="c1">// Compiled CSS</span>
+
+<span class="nc">.span-1</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">8</span><span class="mi">.33333%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.span-2</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">16</span><span class="mi">.66667%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.span-3</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">25%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.span-4</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">33</span><span class="mi">.33333%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.span-5</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">41</span><span class="mi">.66667%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.span-6</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.span-7</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">58</span><span class="mi">.33333%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.span-8</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">66</span><span class="mi">.66667%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.span-9</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">75%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.span-10</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">83</span><span class="mi">.33333%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.span-11</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">91</span><span class="mi">.66667%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.span-12</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">99%</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p> </p>
+
+<h2 id="5use-include-extend-wisely">5.Use @include, @extend wisely</h2>
+
+<p>I found this a lot in past year. When people know how to use @mixin, they failed to notice how large their compiled CSS has become. Sometimes it’s not really an issue since I can have almost or perhaps the same results when I use only @include with @mixin. But my compiled CSS file is not nearly the same though.</p>
+
+<p>Let try something to see it in action,</p>
+
+<h3 id="use-include-to-include-mixin-properties">Use @include to include @mixin properties</h3>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// SCSS</span>
+<span class="k">@mixin</span> <span class="nf">icon</span><span class="p">(</span><span class="nv">$social</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+  <span class="nl">background-size</span><span class="p">:</span> <span class="m">77px</span> <span class="m">35px</span><span class="p">;</span>
+  <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
+  <span class="nt">background-image</span><span class="nd">:url</span><span class="o">(</span><span class="err">$</span><span class="nt">social</span><span class="o">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.icon-facebook</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">icon</span><span class="p">(</span><span class="s1">'/img/icon-facebook.png'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.icon-twitter</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">icon</span><span class="p">(</span><span class="s1">'/img/icon-twitter.png'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.icon-googleplus</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">icon</span><span class="p">(</span><span class="s1">'/img/icon-googleplus.png'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Compiled CSS</span>
+
+<span class="nc">.icon-facebook</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+  <span class="nl">background-size</span><span class="p">:</span> <span class="m">77px</span> <span class="m">35px</span><span class="p">;</span>
+  <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
+  <span class="nt">background-image</span><span class="nd">:url</span><span class="o">(</span><span class="s1">'/img/icon-facebook.png'</span><span class="o">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.icon-twitter</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+  <span class="nl">background-size</span><span class="p">:</span> <span class="m">77px</span> <span class="m">35px</span><span class="p">;</span>
+  <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
+  <span class="nt">background-image</span><span class="nd">:url</span><span class="o">(</span><span class="s1">'/img/icon-twitter.png'</span><span class="o">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.icon-googleplus</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+  <span class="nl">background-size</span><span class="p">:</span> <span class="m">77px</span> <span class="m">35px</span><span class="p">;</span>
+  <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
+  <span class="nt">background-image</span><span class="nd">:url</span><span class="o">(</span><span class="s1">'/img/icon-googleplus.png'</span><span class="o">)</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p> </p>
+
+<h3 id="use-extend-to-extend-properties">Use @extend to extend properties</h3>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// SCSS</span>
+<span class="nv">%icon</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+  <span class="nl">background-size</span><span class="p">:</span> <span class="m">77px</span> <span class="m">35px</span><span class="p">;</span>
+  <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.icon-facebook</span> <span class="p">{</span>
+  <span class="k">@extend</span> <span class="nv">%icon</span><span class="p">;</span>
+  <span class="nt">background-image</span><span class="nd">:url</span><span class="o">(</span><span class="s1">'/img/icon-facebook.png'</span><span class="o">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.icon-twitter</span> <span class="p">{</span>
+  <span class="k">@extend</span> <span class="nv">%icon</span><span class="p">;</span>
+  <span class="nt">background-image</span><span class="nd">:url</span><span class="o">(</span><span class="s1">'/img/icon-twitter.png'</span><span class="o">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.icon-googleplus</span> <span class="p">{</span>
+  <span class="k">@extend</span> <span class="nv">%icon</span><span class="p">;</span>
+  <span class="nt">background-image</span><span class="nd">:url</span><span class="o">(</span><span class="s1">'/img/icon-googleplus.png'</span><span class="o">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Compiled CSS</span>
+<span class="nc">.icon-facebook</span><span class="o">,</span> <span class="nc">.icon-twitter</span><span class="o">,</span> <span class="nc">.icon-googleplus</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span>
+  <span class="n">width</span><span class="o">:</span> <span class="m">14px</span>
+  <span class="n">height</span><span class="o">:</span> <span class="m">14px</span>
+  <span class="n">background-size</span><span class="o">:</span> <span class="m">77px</span> <span class="m">35px</span>
+  <span class="n">background-repeat</span><span class="o">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.icon-facebook</span> <span class="p">{</span>
+  <span class="nt">background-image</span><span class="nd">:url</span><span class="o">(</span><span class="s1">'/img/icon-facebook.png'</span><span class="o">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.icon-twitter</span> <span class="p">{</span>
+  <span class="nt">background-image</span><span class="nd">:url</span><span class="o">(</span><span class="s1">'/img/icon-twitter.png'</span><span class="o">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.icon-googleplus</span> <span class="p">{</span>
+  <span class="nt">background-image</span><span class="nd">:url</span><span class="o">(</span><span class="s1">'/img/icon-googleplus.png'</span><span class="o">)</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Both compiled CSS give us 26 and 19 lines with the same results on browser. There’s still differrences in size though it’s not much to the point that it doesn’t matter but it’s still our choices to choose which approach to do it.In this case, I choose latter choice to save some spaces for compiled css, more reasonable to me.
+ </p>
+
