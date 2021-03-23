@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Easy HTTPS Proxy Using Caddy on DigitalOcean. | wittawasw</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Easy HTTPS Proxy Using Caddy on DigitalOcean." />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="If you need a good HTTPS proxies that come with auto Let’s Encrypt certificates and already a user of DigitalOcean. Here I’ve got an easy but solid way to deploy one. Already using this on a production servers with no problem so far." />
+<meta property="og:description" content="If you need a good HTTPS proxies that come with auto Let’s Encrypt certificates and already a user of DigitalOcean. Here I’ve got an easy but solid way to deploy one. Already using this on a production servers with no problem so far." />
+<link rel="canonical" href="https://wittawasw.com/https/proxy/digitalocean/caddy/webserver/docker/2017/04/28/easy-https-proxy-using-caddy-on-digitalocean.html" />
+<meta property="og:url" content="https://wittawasw.com/https/proxy/digitalocean/caddy/webserver/docker/2017/04/28/easy-https-proxy-using-caddy-on-digitalocean.html" />
+<meta property="og:site_name" content="wittawasw" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-04-28T02:11:27+07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Easy HTTPS Proxy Using Caddy on DigitalOcean." />
+<script type="application/ld+json">
+{"url":"https://wittawasw.com/https/proxy/digitalocean/caddy/webserver/docker/2017/04/28/easy-https-proxy-using-caddy-on-digitalocean.html","@type":"BlogPosting","description":"If you need a good HTTPS proxies that come with auto Let’s Encrypt certificates and already a user of DigitalOcean. Here I’ve got an easy but solid way to deploy one. Already using this on a production servers with no problem so far.","mainEntityOfPage":{"@type":"WebPage","@id":"https://wittawasw.com/https/proxy/digitalocean/caddy/webserver/docker/2017/04/28/easy-https-proxy-using-caddy-on-digitalocean.html"},"headline":"Easy HTTPS Proxy Using Caddy on DigitalOcean.","dateModified":"2017-04-28T02:11:27+07:00","datePublished":"2017-04-28T02:11:27+07:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://wittawasw.com/feed.xml" title="wittawasw" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">wittawasw</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Easy HTTPS Proxy Using Caddy on DigitalOcean.</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2017-04-28T02:11:27+07:00" itemprop="datePublished">Apr 28, 2017
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <blockquote>
+  <p>The setup need DigitalOcean account and Domain on DigitalOcean’s nameserver.
+Otherwise, it’d need a different step to complete.</p>
+</blockquote>
+
+<p>If you need a good HTTPS proxies that come with auto <a href="https://letsencrypt.org/">Let’s Encrypt</a>
+certificates and already a user of DigitalOcean. Here I’ve got an easy but solid
+way to deploy one. Already using this on a production servers with no problem
+so far.</p>
+
+<blockquote>
+  <p><a href="https://caddyserver.com/">Caddy</a> server is already the easiest server that
+you can <a href="https://caddyserver.com/tutorial">install</a> on Linux. But I decided to
+use docker with it because it’s easier for me to control volume and settings.</p>
+</blockquote>
+
+<h3 id="from-beginning-to-deploy">From beginning to deploy.</h3>
+<ul>
+  <li>Setup domain to use DigitalOcean’s nameserver.</li>
+  <li>Create droplet using pre-defined <code class="language-plaintext highlighter-rouge">docker</code> droplet.</li>
+  <li>Add <code class="language-plaintext highlighter-rouge">A</code> or <code class="language-plaintext highlighter-rouge">CNAME</code> that point domain to droplet’s IP address.</li>
+  <li><code class="language-plaintext highlighter-rouge">SSH</code> into droplet and create directory <code class="language-plaintext highlighter-rouge">caddy</code> in home directory.</li>
+  <li>Enable <code class="language-plaintext highlighter-rouge">ufw</code> port <code class="language-plaintext highlighter-rouge">443</code>.</li>
+  <li>Create DigitalOcean auth token and keep it close.</li>
+  <li>Create <code class="language-plaintext highlighter-rouge">Caddyfile</code> in home directory.</li>
+  <li>Create <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> in home directory.</li>
+  <li>From home directory, use command <code class="language-plaintext highlighter-rouge">docker-compose up -d</code></li>
+  <li>Caddy’s online. That’s it. No more hassle.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml">  <span class="c1"># proxy's url (domain that we set record earlier.)</span>
+<span class="s">front-end-url:443 {</span>
+  <span class="s"># backend's servers can be single or multiple servers</span>
+  <span class="s"># SSL terminate here.</span>
+  <span class="s">proxy / backend-url-1:80 backend-url-2:80 backend-url-3:80 {</span>
+    <span class="s">policy round_robin</span>
+    <span class="s">header_upstream Host {host}</span>
+    <span class="s">header_upstream X-Real-IP {remote}</span>
+    <span class="s">header_upstream X-Forwarded-For {remote}</span>
+    <span class="s">header_upstream X-Forwarded-Proto {scheme}</span>
+  <span class="s">}</span>
+
+  <span class="s">gzip</span>
+
+  <span class="s">tls {</span>
+   <span class="s"># verify ssl certificate using dns from DigitalOcean really save me from a lot of pain.</span>
+   <span class="s">dns digitalocean</span>
+  <span class="s">}</span>
+<span class="err">}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">proxy</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">zzrot/alpine-caddy</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span>   <span class="s">443:443</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span>   <span class="s">./Caddyfile:/etc/Caddyfile</span>
+      <span class="pi">-</span>   <span class="s">./caddy:/root/.caddy</span>
+      <span class="c1"># don't forget to add volume, otherwise you will request new certificate</span>
+      <span class="c1"># every time server restart and exceed letsencrypt quota in the process.</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">DO_AUTH_TOKEN=&lt;DO_ACCOUNT_TOKEN&gt;</span>
+      <span class="c1"># get this token from setting page.</span></code></pre></figure>
+
+<h3 id="where-to-go-from-here">Where to go from here</h3>
+<p>See official <a href="https://caddyserver.com/docs">documentation</a> of Caddy. There’s a
+lot of features that can be easily setup using simple directives.</p>
+
+  </div><a class="u-url" href="/https/proxy/digitalocean/caddy/webserver/docker/2017/04/28/easy-https-proxy-using-caddy-on-digitalocean.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">wittawasw</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">wittawasw</li><li><a class="u-email" href="mailto:start@wittawasw.com">start@wittawasw.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/wittawasw"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">wittawasw</span></a></li><li><a href="https://www.twitter.com/wittawasw"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">wittawasw</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Software engineer. Ruby. Golang.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
