@@ -11,3 +11,5 @@ group :jekyll_plugins do
   gem 'jekyll-feed', '~> 0.12'
   # gem 'github-pages'
 end
+
+gem "jgd", "~> 1.12"
