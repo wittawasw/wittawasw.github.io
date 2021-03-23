@@ -8,7 +8,7 @@ twitter_username: wittawasw
 github_username:  wittawasw
 
 # Build settings
-theme: jekyll-theme-hacker
+theme: minima
 plugins:
   - jekyll-feed
   - jekyll-paginate

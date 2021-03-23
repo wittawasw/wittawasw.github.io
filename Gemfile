@@ -12,6 +12,7 @@ group :jekyll_plugins do
   gem "jekyll-gist", "~> 1.5"
   gem "jekyll-sitemap", "~> 1.4"
   gem "jekyll-seo-tag", "~> 2.7"
-  gem "jekyll-theme-hacker", "~> 0.1.2"
+  gem "minima", "~> 2.5"
 end
+
 
