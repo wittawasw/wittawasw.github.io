@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <script type="text/javascript">
+    var host = "wittawasw.com";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+  </script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I work mostly on Ruby, Elixir. This site will be just a memo for me and for someone out there who's interested in similar topics to mine.">
+  <meta property="og:title" content="Free and easy static website hosting using Google App Engine and Go's runtime"/>
+<meta property="og:type" content="article"/>
+<meta property="og:image" content="https://wittawasw.com/images/home.jpg"/>
+<meta property="og:url" content="https://wittawasw.com/blog/2014/04/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang/"/>
+
+<meta property="og:site_name" content="wittawasw"/>
+<meta property="og:description" content="we're going to host a simple static website without so much pain. Using Go as a server script but fear not, you don't have to learn Go in this post since this post focus on the most simplest and reliable way to host static website...."/>
+
+<meta property="article:author" content="https://www.facebook.com/wittawasw" />
+
+<meta name="author" content="Wittawas Wisarnkanchana"/>
+<meta name="description" content="we're going to host a simple static website without so much pain. Using Go as a server script but fear not, you don't have to learn Go in this post since this post focus on the most simplest and reliable way to host static website...."/>
+
+  <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@wittawasw">
+<meta name="twitter:creator" content="@wittawasw">
+<meta name="twitter:title" content="Free and easy static website hosting using Google App Engine and Go's runtime">
+<meta name="twitter:description" content="we're going to host a simple static website without so much pain. Using Go as a server script but fear not, you don't have to learn Go in this post since this post focus on the most simplest and reliable way to host static website....">
+<meta name="twitter:image:src" content="https://wittawasw.com/images/home.jpg">
+
+
+  <title>Free and easy static website hosting using Google App Engine and Go's runtime - wittawasw</title>
+
+  <link rel="canonical" href="https://wittawasw.com/blog/2014/04/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang/">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-35957895-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+
+  <body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">wittawasw</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<header
+  class="intro-header"
+  style="background-image: url('/images/home.jpg')"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Free and easy static website hosting using Google App Engine and Go's runtime</h1>
+          
+          <span class="meta">April 9, 2014</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+          <a href="/categories/go">
+            <span class="label label-info" style="margin-right: 5px;">
+              go
+            </span>
+          </a>
+        
+          <a href="/categories/website">
+            <span class="label label-info" style="margin-right: 5px;">
+              website
+            </span>
+          </a>
+        
+          <a href="/categories/gae">
+            <span class="label label-info" style="margin-right: 5px;">
+              gae
+            </span>
+          </a>
+        
+          <a href="/categories/hosting">
+            <span class="label label-info" style="margin-right: 5px;">
+              hosting
+            </span>
+          </a>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p>In this post, we’re going to host a simple static website without so much pain. Using <a href="http://golang.org">Go</a> as a server script but fear not, you don’t have to learn Go in this post since this post focus on the most simplest and reliable way to host static website.</p>
+
+<h2 id="have-you-heard-of-google-app-engine-">Have you heard of Google App Engine ?</h2>
+
+<p><a href="https://appengine.google.com/">Google App Engine</a>(GAE) is a service from Google Cloud platform that let us host web applications from various development stack and one of that is web application using Go. Normally GAE is a paid-service but it come with a nice and good free-tier that’s Similar with what you can find in <a href="http://heroku.com">Heroku</a> but if you just want some free hosting for straight-forward HTML and little Javascript and CSS, it won’t hurt to try this trick since it won’t take much time from you.</p>
+
+<h3 id="pros">Pros</h3>
+<ul>
+  <li>Free</li>
+  <li>Upgrade to paid service if required.</li>
+  <li>Can add server’s features using Go later.</li>
+  <li>Free to use custom domain.</li>
+</ul>
+
+<h3 id="con">Con</h3>
+<ul>
+  <li>Not easy enough if you’re not a developer or a geek.</li>
+</ul>
+
+<h2 id="prerequisite">Prerequisite</h2>
+<ul>
+  <li>Familiar with command-line interface. (If you’re not, google it)</li>
+  <li>Some knowledge about website.</li>
+  <li>15-30 mins of your times at most.</li>
+</ul>
+
+<h2 id="getting-start-prepare-your-simple-website">Getting Start: Prepare your simple website</h2>
+<p>Download and install go_appengine_sdk on your own machine, by follow this <a href="https://developers.google.com/appengine/downloads#Google_App_Engine_SDK_for_Go">Link</a></p>
+
+<h2 id="web-structure">Web structure.</h2>
+<p>You can play with your HTML all you want from this point on. Just add structure like this and copy script from below to server.go and app.yaml .</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">-</span> <span class="n">css</span>
+  <span class="o">-</span> <span class="n">app</span><span class="p">.</span><span class="nf">css</span>
+<span class="o">-</span> <span class="n">js</span>
+  <span class="o">-</span> <span class="n">app</span><span class="p">.</span><span class="nf">js</span>
+<span class="o">-</span> <span class="n">images</span>
+  <span class="o">-</span> <span class="n">lion</span><span class="p">.</span><span class="nf">jpg</span>
+<span class="o">-</span> <span class="n">index</span><span class="p">.</span><span class="nf">html</span>
+<span class="o">-</span> <span class="n">app</span><span class="p">.</span><span class="nf">yaml</span>
+<span class="o">-</span> <span class="n">server</span><span class="p">.</span><span class="nf">go</span></code></pre></figure>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">server.go</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">package</span><span class="x"> </span><span class="n">server</span><span class="x"></span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">//just one line is enough to host static site</span></div></div></pre></div></figure>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">app.yaml</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="s">application</span><span class="pi">:</span> <span class="s">your-app-id-here</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="s">version</span><span class="pi">:</span> <span class="s">1</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="s">runtime</span><span class="pi">:</span> <span class="s">go</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="s">api_version</span><span class="pi">:</span> <span class="s">go1</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="s">handlers</span><span class="pi">:</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="pi">-</span> <span class="s">url</span><span class="pi">:</span> <span class="s">/</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="s">static_files</span><span class="pi">:</span> <span class="s">index.html</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="s">upload</span><span class="pi">:</span> <span class="s">index\.html</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="pi">-</span> <span class="s">url</span><span class="pi">:</span> <span class="s">/js</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="s">static_dir</span><span class="pi">:</span> <span class="s">js</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="pi">-</span> <span class="s">url</span><span class="pi">:</span> <span class="s">/css</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="s">static_dir</span><span class="pi">:</span> <span class="s">css</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="pi">-</span> <span class="s">url</span><span class="pi">:</span> <span class="s">/images</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="s">static_dir</span><span class="pi">:</span> <span class="s">images</span></div></div></pre></div></figure>
+
+<blockquote>
+  <p>Up to this point, you must be able to run “goapp” command (<a href="https://developers.google.com/appengine/docs/go/gettingstarted/devenvironment">details</a>).</p>
+</blockquote>
+
+<p>Try “goapp serve” command at website’s root directory and check your result at <a href="http://localhost:8080">http://localhost:8080</a></p>
+
+<h2 id="deploy-to-google-app-engine">Deploy to Google App Engine</h2>
+<ul>
+  <li>Go to <a href="https://cloud.google.com/">https://cloud.google.com/</a>, Sign-in or Sign-up then get to your <a href="https://console.developers.google.com">console</a>.</li>
+  <li>Create New Project (If it’s your first time here, they will prompt you to create new project immediately.)}<img class="center" src="/images/post/gae-screenshot.png" alt="" title="Create new project" /></li>
+  <li>After Successfully created your project, Save your Project-ID and put it in app.yaml</li>
+  <li>In your website’s root directory, Run “goapp deploy” and input your Google credential to deploy your website.</li>
+  <li>Your website will now be running at “project-id.appspot.com” , check it out.</li>
+  <li>Custom domain can be set using this <a href="https://developers.google.com/appengine/docs/domain">details</a></li>
+</ul>
+
+<h2 id="maintenance-and-update">Maintenance and update</h2>
+<p>Can be easily done using “goapp” command by</p>
+
+<ul>
+  <li>goapp serve: test website in development (No need to restart server, automatically change when files are changed.)</li>
+  <li>goapp deploy: deploy to GAE</li>
+</ul>
+
+
+          <hr>
+
+          <ul class="pager">
+            
+            
+            <li class="next">
+              <a
+                href="/blog/2014/04/10/backend-once-and-client-everywhere-with-rails-api/"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Backend once and Client everywhere with Rails-API"
+              >
+                Next Post &rarr;
+              </a>
+            </li>
+            
+          </ul>
+
+      </div>
+    </div>
+  </div>
+</article>
+
+<hr>
+
+<section id="disqus">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    // Required: on line below, replace text in quotes with your forum shortname
+    var disqus_shortname = 'wittawasw';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://twitter.com/wittawasw">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://www.facebook.com/wittawasw">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://github.com/wittawasw">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; wittawasw </p>
+                <p class="copyright text-muted">
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" class="text-center">
+  <img alt="Creative Commons License"
+       style="border-width:0;width: 100px; position:relative;margin:auto;"
+       src="https://i.creativecommons.org/l/by/4.0/88x31.png"
+  />
+</a>
+<br />
+<span xmlns:dct="http://purl.org/dc/terms/"
+      href="http://purl.org/dc/dcmitype/Text"
+      property="dct:title"
+      rel="dct:type">
+  All contents in this blog are licensed under a
+  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+    Creative Commons Attribution 4.0 International License
+  </a>.
+</span>
+<br/>
+<span>
+  Also, special thanks to
+  <a href="http://startbootstrap.com/">
+    StartBootstrap.com
+  </a>
+  for this beautiful
+  <a href="http://startbootstrap.com/template-overviews/clean-blog/">
+    CleanBlog
+  </a> theme.
+</span>
+
+                </p>
+            </div>
+        </div>
+        <div class="row text-center">
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+
+  </body>
+
+</html>
