@@ -1,11 +1,12 @@
 title: wittawasw
 email: start@wittawasw.com
 description: >-
-  Software engineer. Ruby. Golang.
 baseurl: ""
 url: https://wittawasw.com
 twitter_username: wittawasw
 github_username:  wittawasw
+author:
+  name: wittawasw
 
 # Build settings
 theme: minima
