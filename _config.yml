@@ -14,9 +14,9 @@ minima:
   skin: dark
 
 plugins:
-  - jekyll-compose
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-compose
 
 paginate: 7
 
