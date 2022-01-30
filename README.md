@@ -1,2 +1,2 @@
 ## Deployment
-- `bundle exec jgd -r deploy`
+- `bundle exec jgd -r develop`
