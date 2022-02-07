@@ -3,4 +3,4 @@ layout: post
 title:
 ---
 
-downtime is inevitable, hot to mitigate
+downtime is inevitable, how to mitigate
