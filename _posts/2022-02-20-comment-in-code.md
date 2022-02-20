@@ -195,7 +195,7 @@ end
 
 
 
-> หรือถ้าเราแค่อยากบอกว่า copy มาจาก stackoverflow
+> หรือถ้าแค่จะบอกว่า copy มาจาก stackoverflow ก็ไม่จำเป็นต้องอธิบายเยอะ แค่ URL ก็พอ
 
 {% highlight javascript %}
 // https://stackoverflow.com/a/2117523/1177228
