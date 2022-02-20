@@ -16,4 +16,6 @@ group :jekyll_plugins do
   gem "minima", github: "jekyll/minima"
 end
 
-
+# Code Hightlighting
+gem "kramdown", "~> 2.3"
+gem "rouge", "~> 3.27"

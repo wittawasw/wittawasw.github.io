@@ -122,7 +122,9 @@ DEPENDENCIES
   jekyll-seo-tag (~> 2.7)
   jekyll-sitemap (~> 1.4)
   jgd (~> 1.12)
+  kramdown (~> 2.3)
   minima!
+  rouge (~> 3.27)
   webrick
 
 RUBY VERSION
