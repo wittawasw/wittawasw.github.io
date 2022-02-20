@@ -9,6 +9,7 @@
 
 ## Development with Docker Compose
 - `docker-compose up` or `docker-compose run` for daemon process
+- `docker-compose run jekyll bundle exec jgd -r [SOURCE_BRANCH]` for deployment to Github pages.
 
 Using `docker` either standalone or with `docker-compose` will results in
 making jekyll cache directory `.jekyll-cache` ended up with docker's permission
