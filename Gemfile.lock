@@ -127,8 +127,5 @@ DEPENDENCIES
   rouge (~> 3.27)
   webrick
 
-RUBY VERSION
-   ruby 3.0.3p157
-
 BUNDLED WITH
    2.3.6
