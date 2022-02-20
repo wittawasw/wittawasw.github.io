@@ -208,5 +208,5 @@ function documentReady(callback) {
 }
 {% endhighlight %}
 
-ที่มา: [ankane/ahoy/vendor/assets/javascripts/ahoy.js#L187](https://github.com/ankane/ahoy/blob/1cfff6ae3cd96af87574393bf63f5a294e33dd46/vendor/assets/javascripts/ahoy.js#L178)
+ที่มา: [ankane/ahoy/vendor/assets/javascripts/ahoy.js#L178](https://github.com/ankane/ahoy/blob/1cfff6ae3cd96af87574393bf63f5a294e33dd46/vendor/assets/javascripts/ahoy.js#L178)
 
