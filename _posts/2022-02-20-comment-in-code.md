@@ -195,17 +195,18 @@ end
 
 
 
-> หรือถ้าแค่จะบอกว่า copy มาจาก stackoverflow ก็ไม่จำเป็นต้องอธิบายเยอะ แค่ URL ก็พอ
+> หรือถ้าแค่จะบอกว่า copy มาจาก web ก็ไม่จำเป็นต้องอธิบายเยอะ แค่ใส่ URL ไว้ก็พอ
 
 {% highlight javascript %}
-// https://stackoverflow.com/a/2117523/1177228
-function generateId() {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-    var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
-    return v.toString(16);
-  });
+// http://beeker.io/jquery-document-ready-equivalent-vanilla-javascript
+function documentReady(callback) {
+  if (document.readyState === "interactive" || document.readyState === "complete") {
+    setTimeout(callback, 0);
+  } else {
+    document.addEventListener("DOMContentLoaded", callback);
+  }
 }
 {% endhighlight %}
 
-ที่มา: [ankane/ahoy/vendor/assets/javascripts/ahoy.js#L187](https://github.com/ankane/ahoy/blob/1cfff6ae3cd96af87574393bf63f5a294e33dd46/vendor/assets/javascripts/ahoy.js#L187)
+ที่มา: [ankane/ahoy/vendor/assets/javascripts/ahoy.js#L187](https://github.com/ankane/ahoy/blob/1cfff6ae3cd96af87574393bf63f5a294e33dd46/vendor/assets/javascripts/ahoy.js#L178)
 
