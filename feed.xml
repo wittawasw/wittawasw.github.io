@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2022-02-20T17:38:14+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน</title><link href="https://wittawasw.com/2022/02/20/comment-in-code.html" rel="alternate" type="text/html" title="รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน" /><published>2022-02-20T17:31:00+07:00</published><updated>2022-02-20T17:31:00+07:00</updated><id>https://wittawasw.com/2022/02/20/comment-in-code</id><content type="html" xml:base="https://wittawasw.com/2022/02/20/comment-in-code.html">&lt;p&gt;การ comment คือ การทำให้ประโยคหรือตัวอักษรที่เราเขียนในโปรแกรมไม่ถูกประมวลผล โดยอาจมีไว้เพื่อให้บอท
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2022-02-21T06:46:51+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน</title><link href="https://wittawasw.com/2022/02/20/comment-in-code.html" rel="alternate" type="text/html" title="รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน" /><published>2022-02-20T17:31:00+07:00</published><updated>2022-02-20T17:31:00+07:00</updated><id>https://wittawasw.com/2022/02/20/comment-in-code</id><content type="html" xml:base="https://wittawasw.com/2022/02/20/comment-in-code.html">&lt;p&gt;การ comment คือ การทำให้ประโยคหรือตัวอักษรที่เราเขียนในโปรแกรมไม่ถูกประมวลผล โดยอาจมีไว้เพื่อให้บอท
 (bot) หรือโปรแกรมเมอร์คนอื่นอ่าน เป็นรูปแบบการการสื่อสารแบบหนึ่งที่โปรแกรมเมอร์สามารถสื่อสารได้
 เพื่อให้การทำงานร่วมกันมีประสิทธิภาพมากขึ้น&lt;/p&gt;
 
@@ -67,7 +67,7 @@
 นอกจากจะช่วยประหยัดเวลาของโปรแกรมเมอร์ที่อาจถูกมอบหมายให้ทำงานต่อจากเรา
 ยังช่วยลดปัญหาที่อาจเกิดจากการตีความผิดอีกด้วย&lt;/p&gt;
 
-&lt;p&gt;ลองอ่านตัวอย่าง code ด้านล่างดูโดยเริ่มจาก comment จะเห็นประโยชน์ชัดเจนว่าการได้อ่าน comment ที่อธิบายการทำงานก่อนมีประโยชน์มากให้สามารถเข้าใจ code ได้เร็วขึ้นด้วย&lt;/p&gt;
+&lt;p&gt;ลองอ่านตัวอย่าง code ด้านล่างดูโดยเริ่มจาก comment จะเห็นประโยชน์ชัดเจนว่าการได้อ่าน comment ที่อธิบายการทำงานก่อนทำให้สามารถเข้าใจ code ได้เร็วขึ้น และยังป้องกันความผิดพลาดจากการตีความผิด&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;call_with_retry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
@@ -338,7 +338,7 @@ subjective เข้าไป&lt;/p&gt;
 &lt;p&gt;รูปแบบการทำธุรกิจแบบหนึ่ง ที่มองตัวเองว่ากำลังอยู่ในช่วง “เริ่มต้น” (Start Up) เท่านั้น&lt;/p&gt;
 
 &lt;h3 id=&quot;แนวคิดของ-startup&quot;&gt;&lt;strong&gt;แนวคิดของ Startup&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;จุดประสงค์ของการทำ Startup คือต้องการ “เริ่มต้นทำธุรกิจ” โดยผู้ที่ยังไม่รู้ว่าจะทำธุรกิจอะไรหรือยังไม่แน่ใจว่าไอเดียธุรกิจของตัวเองจำทำได้จริงหรือไม่  โดยการดำเนินงานของ Startup จะเป็นไปในรูปแบบของการลองผิดลองถูกให้มากที่สุดเพื่อให้เจอรูปแบบธุรกิจที่ดีที่สุดสำหรับตัวเองให้เร็วที่สุด&lt;/p&gt;
+&lt;p&gt;จุดประสงค์ของการทำ Startup คือต้องการ “เริ่มต้นทำธุรกิจ” โดยผู้ที่ยังไม่รู้ว่าจะทำธุรกิจอะไรหรือยังไม่แน่ใจว่าไอเดียธุรกิจของตัวเองจะทำได้จริงหรือไม่  โดยการดำเนินงานของ Startup จะเป็นไปในรูปแบบของการลองผิดลองถูกให้มากที่สุดเพื่อให้เจอรูปแบบธุรกิจที่ดีพอสำหรับตัวเองโดยเร็วที่สุด&lt;/p&gt;
 
 &lt;h3 id=&quot;ต้องเป็นบริษัทที่มีเทคโนโลยีคอมพิวเตอร์นำเท่านั้นหรือไม่&quot;&gt;&lt;strong&gt;ต้องเป็นบริษัทที่มีเทคโนโลยีคอมพิวเตอร์นำเท่านั้นหรือไม่&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;ไม่ใช่ รูปแบบของการเปลี่ยนแปลงที่ใช้ปรับปรุงธุรกิจ ไม่ได้จำกัดอยู่แค่ที่คอมพิวเตอร์หรือการทำซอฟต์แวร์&lt;/p&gt;
