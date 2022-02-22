@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2022-02-21T06:46:51+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน</title><link href="https://wittawasw.com/2022/02/20/comment-in-code.html" rel="alternate" type="text/html" title="รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน" /><published>2022-02-20T17:31:00+07:00</published><updated>2022-02-20T17:31:00+07:00</updated><id>https://wittawasw.com/2022/02/20/comment-in-code</id><content type="html" xml:base="https://wittawasw.com/2022/02/20/comment-in-code.html">&lt;p&gt;การ comment คือ การทำให้ประโยคหรือตัวอักษรที่เราเขียนในโปรแกรมไม่ถูกประมวลผล โดยอาจมีไว้เพื่อให้บอท
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2022-02-22T15:19:36+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน</title><link href="https://wittawasw.com/2022/02/20/comment-in-code.html" rel="alternate" type="text/html" title="รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน" /><published>2022-02-20T17:31:00+07:00</published><updated>2022-02-20T17:31:00+07:00</updated><id>https://wittawasw.com/2022/02/20/comment-in-code</id><content type="html" xml:base="https://wittawasw.com/2022/02/20/comment-in-code.html">&lt;p&gt;การ comment คือ การทำให้ประโยคหรือตัวอักษรที่เราเขียนในโปรแกรมไม่ถูกประมวลผล โดยอาจมีไว้เพื่อให้บอท
 (bot) หรือโปรแกรมเมอร์คนอื่นอ่าน เป็นรูปแบบการการสื่อสารแบบหนึ่งที่โปรแกรมเมอร์สามารถสื่อสารได้
 เพื่อให้การทำงานร่วมกันมีประสิทธิภาพมากขึ้น&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;ไม่จำเป็นต้อง comment ก็ได้ ถ้าดีวางรูปแบบและชื่อตัวแปรของ code ดีพอ&lt;/p&gt;
+  &lt;p&gt;ไม่จำเป็นต้อง comment ก็ได้ ถ้าวางรูปแบบและตั้งชื่อตัวแปรของ code ดีพอ&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;คำพูดนี้เป็นประโยคที่พบได้บ่อยในการแลกเปลี่ยนกันในหัวข้อ &lt;strong&gt;เราควร comment ใน code หรือไม่?&lt;/strong&gt;
+&lt;p&gt;คำพูดลักษณะนี้พบได้บ่อยในการแลกเปลี่ยนกันในหัวข้อ &lt;strong&gt;เราควร comment ใน code หรือไม่?&lt;/strong&gt;
 ในความเห็นของผมคือ การ comment ยังมีความจำเป็นในบางโอกาสและมีประโยชน์มากกว่าโทษ
 ในบางโอกาสที่ถึงแม้จะไม่มีความจำเป็นแต่ก็จะเป็นประโยชน์กับเพื่อนร่วมงานมากกว่าการที่เราไม่ comment
 เพราะคำอธิบายที่เป็นคำพูด ส่วนมากแล้วจะเข้าใจได้ง่ายกว่า&lt;/p&gt;
