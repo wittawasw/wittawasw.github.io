@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>การใช้ docker สำหรับเตรียมพื้นที่พัฒนาเว็บแอปพลิเคชัน | wittawasw</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="การใช้ docker สำหรับเตรียมพื้นที่พัฒนาเว็บแอปพลิเคชัน" />
+<meta name="author" content="wittawasw" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="การพัฒนาเว็บแอปพลิเคชันในปัจจุบัน มีความซับซ้อนและความต้องการทางเทคนิคที่เพิ่มขึ้นมาก การพัฒนาจึงกลายเป็นการทำงานที่ต้องทำร่วมกันกับคนจำนวนมากขึ้น ไม่ได้จำกัดแค่คนกลุ่มเล็กเท่านั้น แต่อาจหมายถึงการรวมกลุ่มทำงานในทีมที่อาจมีขนาดถึง 50-100 คน การเตรียมชุดซอฟต์แวร์เพื่อให้ทีมงานจำนวนมากสามารถใช้ร่วมกันได้ โดยที่มีความใกล้เคียงกับพื้นที่จริงบน production environment จึงกลายเป็นความจำเป็น ซึ่ง docker สามารถช่วยตอบโจทย์ความต้องการนี้ได้ ทว่าการใช้งาน docker จำเป็นต้องเข้าใจพื้นฐานการเชื่อมต่อ network เพื่อให้สามารถตั้งค่าการใช้งานภายในโรแกรมได้เอง ตามที่กำลังจะอธิบายต่อไปด้านล่าง" />
+<meta property="og:description" content="การพัฒนาเว็บแอปพลิเคชันในปัจจุบัน มีความซับซ้อนและความต้องการทางเทคนิคที่เพิ่มขึ้นมาก การพัฒนาจึงกลายเป็นการทำงานที่ต้องทำร่วมกันกับคนจำนวนมากขึ้น ไม่ได้จำกัดแค่คนกลุ่มเล็กเท่านั้น แต่อาจหมายถึงการรวมกลุ่มทำงานในทีมที่อาจมีขนาดถึง 50-100 คน การเตรียมชุดซอฟต์แวร์เพื่อให้ทีมงานจำนวนมากสามารถใช้ร่วมกันได้ โดยที่มีความใกล้เคียงกับพื้นที่จริงบน production environment จึงกลายเป็นความจำเป็น ซึ่ง docker สามารถช่วยตอบโจทย์ความต้องการนี้ได้ ทว่าการใช้งาน docker จำเป็นต้องเข้าใจพื้นฐานการเชื่อมต่อ network เพื่อให้สามารถตั้งค่าการใช้งานภายในโรแกรมได้เอง ตามที่กำลังจะอธิบายต่อไปด้านล่าง" />
+<link rel="canonical" href="https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development.html" />
+<meta property="og:url" content="https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development.html" />
+<meta property="og:site_name" content="wittawasw" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-04-25T00:32:00+07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="การใช้ docker สำหรับเตรียมพื้นที่พัฒนาเว็บแอปพลิเคชัน" />
+<script type="application/ld+json">
+{"description":"การพัฒนาเว็บแอปพลิเคชันในปัจจุบัน มีความซับซ้อนและความต้องการทางเทคนิคที่เพิ่มขึ้นมาก การพัฒนาจึงกลายเป็นการทำงานที่ต้องทำร่วมกันกับคนจำนวนมากขึ้น ไม่ได้จำกัดแค่คนกลุ่มเล็กเท่านั้น แต่อาจหมายถึงการรวมกลุ่มทำงานในทีมที่อาจมีขนาดถึง 50-100 คน การเตรียมชุดซอฟต์แวร์เพื่อให้ทีมงานจำนวนมากสามารถใช้ร่วมกันได้ โดยที่มีความใกล้เคียงกับพื้นที่จริงบน production environment จึงกลายเป็นความจำเป็น ซึ่ง docker สามารถช่วยตอบโจทย์ความต้องการนี้ได้ ทว่าการใช้งาน docker จำเป็นต้องเข้าใจพื้นฐานการเชื่อมต่อ network เพื่อให้สามารถตั้งค่าการใช้งานภายในโรแกรมได้เอง ตามที่กำลังจะอธิบายต่อไปด้านล่าง","mainEntityOfPage":{"@type":"WebPage","@id":"https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development.html"},"dateModified":"2022-04-25T00:32:00+07:00","url":"https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development.html","author":{"@type":"Person","name":"wittawasw"},"@type":"BlogPosting","headline":"การใช้ docker สำหรับเตรียมพื้นที่พัฒนาเว็บแอปพลิเคชัน","datePublished":"2022-04-25T00:32:00+07:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://wittawasw.com/feed.xml" title="wittawasw" />
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">wittawasw</a></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">การใช้ docker สำหรับเตรียมพื้นที่พัฒนาเว็บแอปพลิเคชัน</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2022-04-25T00:32:00+07:00" itemprop="datePublished">
+        Apr 25, 2022
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>การพัฒนาเว็บแอปพลิเคชันในปัจจุบัน มีความซับซ้อนและความต้องการทางเทคนิคที่เพิ่มขึ้นมาก
+การพัฒนาจึงกลายเป็นการทำงานที่ต้องทำร่วมกันกับคนจำนวนมากขึ้น ไม่ได้จำกัดแค่คนกลุ่มเล็กเท่านั้น
+แต่อาจหมายถึงการรวมกลุ่มทำงานในทีมที่อาจมีขนาดถึง 50-100 คน
+การเตรียมชุดซอฟต์แวร์เพื่อให้ทีมงานจำนวนมากสามารถใช้ร่วมกันได้ โดยที่มีความใกล้เคียงกับพื้นที่จริงบน
+production environment จึงกลายเป็นความจำเป็น ซึ่ง docker สามารถช่วยตอบโจทย์ความต้องการนี้ได้
+ทว่าการใช้งาน docker จำเป็นต้องเข้าใจพื้นฐานการเชื่อมต่อ network เพื่อให้สามารถตั้งค่าการใช้งานภายในโรแกรมได้เอง ตามที่กำลังจะอธิบายต่อไปด้านล่าง</p>
+
+<h2 id="การเชื่อมต่อผ่าน-docker-network">การเชื่อมต่อผ่าน docker network</h2>
+<ul>
+  <li>หากไม่มีการตั้งค่าเพิ่มเติม docker จะทำงานภายในเครือข่าย network ในรูปแบบของ <code class="language-plaintext highlighter-rouge">bridge mode</code>
+network ที่ใช้ชื่อว่า bridge
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># คำสั่ง cli ที่ใช้ในการดูรายละเอียดของ docker network</span>
+
+<span class="c"># ดูรายชื่อ docker network</span>
+docker network <span class="nb">ls</span>
+
+<span class="c"># ดูรายละเอียดของ docker network</span>
+docker network inspect &lt;ชื่อของ network&gt;
+
+<span class="c"># ดูรายละเอียดของ docker network ค่าเริ่มต้น</span>
+docker network inspect bridge
+</code></pre></div>    </div>
+  </li>
+  <li>การเชื่อมต่อผ่าน docker network ควรสร้าง network ชื่อเฉพาะของแต่ล่ะงานขึ้นมา
+เพื่อแยกระบบออกจากการกันให้ชัดเจน
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ตัวอย่างการสร้าง network</span>
+
+<span class="c"># สร้าง network ชื่อ myweb</span>
+➜  ~ docker network create myweb
+94e2714b100d6634299bbbc7dfb30bf7bc7d150e27f4f48764bec91d32d4686e
+
+
+<span class="c"># ทดลองสร้าง container ขื่อ redis-store สำหรับ redis ขึ้นมาบน network ชื่อ myweb</span>
+➜  ~ docker run <span class="nt">--name</span> redis-store <span class="nt">--network</span> myweb redis:6-alpine
+1:C <span class="c"># oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo</span>
+1:C <span class="c"># Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started</span>
+1:C <span class="c"># Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf</span>
+1:M <span class="k">*</span> monotonic clock: POSIX clock_gettime
+1:M <span class="k">*</span> Running <span class="nv">mode</span><span class="o">=</span>standalone, <span class="nv">port</span><span class="o">=</span>6379.
+1:M <span class="c"># Server initialized</span>
+1:M <span class="k">*</span> Ready to accept connections
+
+➜  ~ docker ps
+CONTAINER ID   IMAGE            COMMAND                  CREATED              STATUS              PORTS      NAMES
+cb67ff6bd900   redis:6-alpine   <span class="s2">"docker-entrypoint.s…"</span>   About a minute ago   Up About a minute   6379/tcp   redis-store
+
+
+<span class="c"># ดูรายละเอียดของ docker network ค่าเริ่มต้น</span>
+➜  ~ docker network inspect myweb
+<span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s2">"Name"</span>: <span class="s2">"myweb"</span>,
+        <span class="nb">.</span>
+        <span class="c"># ของจริงมีรายละเอียดเยอะกว่านี้แต่ย่อมาให้เห็นเฉพาะส่วนของ containers</span>
+        <span class="nb">.</span>
+        <span class="s2">"Containers"</span>: <span class="o">{</span>
+            <span class="s2">"cb67ff6bd90061869639e950e908b169d830e54173d479c9ff2186597d2fd1b7"</span>: <span class="o">{</span>
+                <span class="s2">"Name"</span>: <span class="s2">"redis-store"</span>,
+                <span class="s2">"EndpointID"</span>: <span class="s2">"ed4aa0f9da01cbb7bfb7f6ae6a8eea8af8b58b5c66f16aef9b13831dc652fc22"</span>,
+                <span class="s2">"MacAddress"</span>: <span class="s2">"02:42:ac:1b:00:02"</span>,
+                <span class="s2">"IPv4Address"</span>: <span class="s2">"172.27.0.2/16"</span>,
+                <span class="s2">"IPv6Address"</span>: <span class="s2">""</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">]</span>
+
+</code></pre></div>    </div>
+  </li>
+  <li>จากตัวอย่างด้านบนจะเห็นได้ว่าเราสามารถเข้าถึง container ที่ชื่อว่า redis-store ได้ด้วย
+IP address <code class="language-plaintext highlighter-rouge">172.27.0.2</code> แต่ทว่า IP address นี้จะเปลี่ยนไปทุกครั้งที่มีการ restart container
+ดังนั้นการนำค่า IP Address ไปใช้งานโดยตรงจึงไม่ใช่เรื่องที่ดีนักเพราะเราต้องเสียเวลามาเปลี่ยน IP Address
+อยู่เรื่อยๆ</li>
+  <li>วิธีการที่ถูกต้องคือควรจะนำแอปพลิเคชันที่เรียกใช้ redis ใส่ไว้ใน network ที่ชื่อ myweb ด้วย
+และภายใน code ที่ทำการเชื่อมต่อก็ใช้ชื่อของ container แทน hostname, IP address ได้เลย
+ในตัวอย่างนี้ code ที่ทำการเชื่อต่อ redis จะสามารถเชื่อมต่อกับ redis ผ่านตัวอย่าง URL ต่อไปนี้ได้
+    <ul>
+      <li>redis://172.27.0.2:6379  <em>(ใช้ IP Address โดยตรงก็ได้แต่เป็นวิธีที่ไม่แนะนำ)</em></li>
+      <li>redis://redis-store:6379  <em>(ควรใช้ชื่อ container แทน hostname)</em></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="การเข้าถึง-container-ด้วย-port-mapping">การเข้าถึง container ด้วย port mapping</h2>
+<ul>
+  <li>ในกรณีที่เราต้องการเข้าถึงผ่าน <code class="language-plaintext highlighter-rouge">localhost</code> หรือ <code class="language-plaintext highlighter-rouge">127.0.0.1</code> เราสามารใช้ใช้ option -p เพื่อทำการ
+port mapping ออกมาจาก docker network
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># แอปพลิเคชันที่อยู่ภายใน localhost จะสามารถเชื่อต่อได้ผ่าน redis://localhost:6379</span>
+docker run <span class="nt">--name</span> redis-store <span class="nt">--network</span> myweb <span class="nt">-p</span> 127.0.0.1:6379:6379/tcp redis:6-alpine
+
+<span class="c"># /tcp อนุโลมให้ไม่ใส่ได้เพราะค่าเริ่มต้นคือ tcp อยู่แล้ว และอีก protocol ที่ชื่อ udp ก็ไม่เป็นที่นิยมใช้</span>
+docker run <span class="nt">--name</span> redis-store <span class="nt">--network</span> myweb <span class="nt">-p</span> 127.0.0.1:6379:6379 redis:6-alpine
+</code></pre></div>    </div>
+  </li>
+  <li>จะสังเกตได้ว่าเราทำการ map ให้เข้ากับ host <code class="language-plaintext highlighter-rouge">127.0.0.1</code>
+ซึ่งข้อผิดพลาดหรือความไม่ระวังอย่างหนึ่งที่พบได้บ่อยคือการใช้ option -p โดยไม่ระบุ host
+ทำให้ container สามารถถูกเข้าถึงได้จาก host ภายนอกทั้งหมด
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># สังเกตตรง -p 6379:6379 ซึ่งเป็นลักษณะที่ไม่พึงประสงค์ ควรใช้ก็ต่อเมื่อเข้าใจความเสี่ยงเท่านั้น</span>
+docker run <span class="nt">--name</span> redis-store <span class="nt">--network</span> myweb <span class="nt">-p</span> 6379:6379 redis:6-alpine
+</code></pre></div>    </div>
+    <p>-</p>
+  </li>
+</ul>
+
+<h2 id="บันทึกและติดตามการเปลี่ยนแปลงการตั้งค่า-docker-ด้วย-docker-compose">บันทึกและติดตามการเปลี่ยนแปลงการตั้งค่า docker ด้วย docker-compose</h2>
+<ul>
+  <li>การทำเว็บแอปพลิเคชัน องค์ประกอบจะเพิ่มความซับซ้อนมากขึ้นเรื่อยๆ ตามความต้องการของแอปพลิเชัน
+ซึ่งทำให้การตั้งค่า docker ก็ต้องมีการบันทึกเก็บไว้ใน version control
+เพื่อให้สามารถติดตามการเปลี่ยนแปลงได้</li>
+  <li>สามารถตั้งค่า docker network จากภายในไฟล์ <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> ได้เลย
+โดยไม่จำเป็นต้องสร้าง network ด้วยคำสั่ง docker network create &lt;ชื่อ network&gt; เอาไว้ก่อนก็ได้</li>
+  <li>
+    <p>docker-compose ไม่ได้เป็นเพียงรูปแบบที่ช่วยบันทึก แต่เรายังสามารถเรียกใช้งานทุกองค์ประกอบได้โดยที่ไม่ต้อง
+docker run ทีล่ะ container ลดความยุ่งยากในการจำตัวเลือกการตั้งค่าต่างๆเหลือเพียงให้จำเพียงชื่อ
+service ของ container เท่านั้น</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># docker-compose.yml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">web</span><span class="pi">:</span>
+    <span class="na">build</span><span class="pi">:</span>
+      <span class="na">context</span><span class="pi">:</span> <span class="s">.</span>
+      <span class="na">dockerfile</span><span class="pi">:</span> <span class="s">./Dockerfile</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">8080:8080</span> <span class="c1"># port mapping เพื่อให้สามารถใช้ localhost:8080 แทน internal IP ได้</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">.:/var/www/html</span>
+    <span class="na">networks</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">myweb</span>
+  <span class="na">redis</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s1">'</span><span class="s">redis:6-alpine'</span>
+    <span class="c1"># ใช้สัญลักษณ์ # ในการ comment เพื่อให้ docker-compose ไม่อ่านค่า</span>
+    <span class="c1"># comment port mapping ออก โดยสามารถนำเครื่องหมาย # ข้างหน้าออกเพื่อเปิดใช้งานได้ในกรณี</span>
+    <span class="c1"># ที่ต้องการ debug</span>
+    <span class="c1"># ports:</span>
+    <span class="c1">#  - 6379:6379</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">ALLOW_EMPTY_PASSWORD=yes</span>
+    <span class="na">networks</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">myweb</span>
+
+<span class="na">networks</span><span class="pi">:</span>
+  <span class="na">myweb</span><span class="pi">:</span>
+    <span class="na">driver</span><span class="pi">:</span> <span class="s">bridge</span>
+</code></pre></div>    </div>
+  </li>
+  <li>การเรียกใช้งานเบื้องต้น
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># เรียกใช้งานในรูปแบบ active process สามารถ kill โดยการกด ctrl-C หรือ ปิด terminal ได้</span>
+docker-compose up
+
+<span class="c"># เรียกใช้งานในรูปแบบ daemon process</span>
+docker-compose up <span class="nt">-d</span>
+
+<span class="c"># ตัวอย่างการเรียกใช้งานเฉพาะบาง service</span>
+docker-compose up web
+docker-compose up redis
+
+<span class="c"># ตัวอย่างการเรียกใช้งานหลาย service แบบเจาะจง</span>
+docker-compose up web redis
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="environment-variables">Environment Variables</h2>
+<p>คำสั่ง docker-compose จะอ่านค่าจากไฟล์ <code class="language-plaintext highlighter-rouge">.env</code> โดยอัตโนมัติ ทำให้ไม่จำเป็นต้องใส่ค่าบางค่า ที่ผู้พัฒนาบางคนอาจใช้ไม่ตรงกันได้ เช่น port ของแอปพลิเคชัน หรือ ชื่อของ network ที่ใช้</p>
+
+<pre><code class="language-.env"># .env
+EXPOSED_WEB_PORT=8080
+WEB_DIRECTORY=.
+EXPOSED_REDIS_PORT=6379
+MY_WEB_NETWORK_NAME=myweb
+</code></pre>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># docker-compose.yml</span>
+
+  <span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
+  <span class="na">services</span><span class="pi">:</span>
+    <span class="na">web</span><span class="pi">:</span>
+      <span class="na">build</span><span class="pi">:</span>
+        <span class="na">context</span><span class="pi">:</span> <span class="s">.</span>
+        <span class="na">dockerfile</span><span class="pi">:</span> <span class="s">./Dockerfile</span>
+      <span class="na">ports</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">${EXPOSED_WEB_PORT}:8080</span>
+      <span class="na">volumes</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">${WEB_DIRECTORY}:/var/www/html</span>
+      <span class="na">networks</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">myweb</span>
+    <span class="na">redis</span><span class="pi">:</span>
+      <span class="na">image</span><span class="pi">:</span> <span class="s1">'</span><span class="s">redis:6-alpine'</span>
+      <span class="c1"># ports:</span>
+      <span class="c1">#  - ${EXPOSED_REDIS_PORT}:6379</span>
+      <span class="na">environment</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">ALLOW_EMPTY_PASSWORD=yes</span>
+      <span class="na">networks</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">myweb</span>
+
+  <span class="na">networks</span><span class="pi">:</span>
+    <span class="na">myweb</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">${MY_WEB_NETWORK_NAME}</span>
+      <span class="na">driver</span><span class="pi">:</span> <span class="s">bridge</span>
+</code></pre></div></div>
+
+  </div><a class="u-url" href="/2022/04/25/use-docker-in-local-web-application-development.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      <!--
+        <ul class="contact-list">
+          <li class="p-name">wittawasw</li>
+          <li><a class="u-email" href="mailto:your-email@domain.com">your-email@domain.com</a></li>
+        </ul> -->
+      </div>
+      <div class="footer-col">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="social-links">
+      <!--<ul class="social-media-list"><li><a rel="me" href="https://github.com/jekyll" target="_blank" title="jekyll"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/jekyllrb" target="_blank" title="jekyllrb"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+-->
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

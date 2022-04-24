@@ -1,4 +1,204 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2022-02-22T15:19:36+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน</title><link href="https://wittawasw.com/2022/02/20/comment-in-code.html" rel="alternate" type="text/html" title="รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน" /><published>2022-02-20T17:31:00+07:00</published><updated>2022-02-20T17:31:00+07:00</updated><id>https://wittawasw.com/2022/02/20/comment-in-code</id><content type="html" xml:base="https://wittawasw.com/2022/02/20/comment-in-code.html">&lt;p&gt;การ comment คือ การทำให้ประโยคหรือตัวอักษรที่เราเขียนในโปรแกรมไม่ถูกประมวลผล โดยอาจมีไว้เพื่อให้บอท
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2022-04-25T00:33:01+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">การใช้ docker สำหรับเตรียมพื้นที่พัฒนาเว็บแอปพลิเคชัน</title><link href="https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development.html" rel="alternate" type="text/html" title="การใช้ docker สำหรับเตรียมพื้นที่พัฒนาเว็บแอปพลิเคชัน" /><published>2022-04-25T00:32:00+07:00</published><updated>2022-04-25T00:32:00+07:00</updated><id>https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development</id><content type="html" xml:base="https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development.html">&lt;p&gt;การพัฒนาเว็บแอปพลิเคชันในปัจจุบัน มีความซับซ้อนและความต้องการทางเทคนิคที่เพิ่มขึ้นมาก
+การพัฒนาจึงกลายเป็นการทำงานที่ต้องทำร่วมกันกับคนจำนวนมากขึ้น ไม่ได้จำกัดแค่คนกลุ่มเล็กเท่านั้น
+แต่อาจหมายถึงการรวมกลุ่มทำงานในทีมที่อาจมีขนาดถึง 50-100 คน
+การเตรียมชุดซอฟต์แวร์เพื่อให้ทีมงานจำนวนมากสามารถใช้ร่วมกันได้ โดยที่มีความใกล้เคียงกับพื้นที่จริงบน
+production environment จึงกลายเป็นความจำเป็น ซึ่ง docker สามารถช่วยตอบโจทย์ความต้องการนี้ได้
+ทว่าการใช้งาน docker จำเป็นต้องเข้าใจพื้นฐานการเชื่อมต่อ network เพื่อให้สามารถตั้งค่าการใช้งานภายในโรแกรมได้เอง ตามที่กำลังจะอธิบายต่อไปด้านล่าง&lt;/p&gt;
+
+&lt;h2 id=&quot;การเชื่อมต่อผ่าน-docker-network&quot;&gt;การเชื่อมต่อผ่าน docker network&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;หากไม่มีการตั้งค่าเพิ่มเติม docker จะทำงานภายในเครือข่าย network ในรูปแบบของ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bridge mode&lt;/code&gt;
+network ที่ใช้ชื่อว่า bridge
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# คำสั่ง cli ที่ใช้ในการดูรายละเอียดของ docker network&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# ดูรายชื่อ docker network&lt;/span&gt;
+docker network &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# ดูรายละเอียดของ docker network&lt;/span&gt;
+docker network inspect &amp;lt;ชื่อของ network&amp;gt;
+
+&lt;span class=&quot;c&quot;&gt;# ดูรายละเอียดของ docker network ค่าเริ่มต้น&lt;/span&gt;
+docker network inspect bridge
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;การเชื่อมต่อผ่าน docker network ควรสร้าง network ชื่อเฉพาะของแต่ล่ะงานขึ้นมา
+เพื่อแยกระบบออกจากการกันให้ชัดเจน
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# ตัวอย่างการสร้าง network&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# สร้าง network ชื่อ myweb&lt;/span&gt;
+➜  ~ docker network create myweb
+94e2714b100d6634299bbbc7dfb30bf7bc7d150e27f4f48764bec91d32d4686e
+
+
+&lt;span class=&quot;c&quot;&gt;# ทดลองสร้าง container ขื่อ redis-store สำหรับ redis ขึ้นมาบน network ชื่อ myweb&lt;/span&gt;
+➜  ~ docker run &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; redis-store &lt;span class=&quot;nt&quot;&gt;--network&lt;/span&gt; myweb redis:6-alpine
+1:C &lt;span class=&quot;c&quot;&gt;# oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo&lt;/span&gt;
+1:C &lt;span class=&quot;c&quot;&gt;# Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started&lt;/span&gt;
+1:C &lt;span class=&quot;c&quot;&gt;# Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf&lt;/span&gt;
+1:M &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; monotonic clock: POSIX clock_gettime
+1:M &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Running &lt;span class=&quot;nv&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;standalone, &lt;span class=&quot;nv&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;6379.
+1:M &lt;span class=&quot;c&quot;&gt;# Server initialized&lt;/span&gt;
+1:M &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Ready to accept connections
+
+➜  ~ docker ps
+CONTAINER ID   IMAGE            COMMAND                  CREATED              STATUS              PORTS      NAMES
+cb67ff6bd900   redis:6-alpine   &lt;span class=&quot;s2&quot;&gt;&quot;docker-entrypoint.s…&quot;&lt;/span&gt;   About a minute ago   Up About a minute   6379/tcp   redis-store
+
+
+&lt;span class=&quot;c&quot;&gt;# ดูรายละเอียดของ docker network ค่าเริ่มต้น&lt;/span&gt;
+➜  ~ docker network inspect myweb
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;Name&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;myweb&quot;&lt;/span&gt;,
+        &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;# ของจริงมีรายละเอียดเยอะกว่านี้แต่ย่อมาให้เห็นเฉพาะส่วนของ containers&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;Containers&quot;&lt;/span&gt;: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&quot;cb67ff6bd90061869639e950e908b169d830e54173d479c9ff2186597d2fd1b7&quot;&lt;/span&gt;: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;s2&quot;&gt;&quot;Name&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;redis-store&quot;&lt;/span&gt;,
+                &lt;span class=&quot;s2&quot;&gt;&quot;EndpointID&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;ed4aa0f9da01cbb7bfb7f6ae6a8eea8af8b58b5c66f16aef9b13831dc652fc22&quot;&lt;/span&gt;,
+                &lt;span class=&quot;s2&quot;&gt;&quot;MacAddress&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;02:42:ac:1b:00:02&quot;&lt;/span&gt;,
+                &lt;span class=&quot;s2&quot;&gt;&quot;IPv4Address&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;172.27.0.2/16&quot;&lt;/span&gt;,
+                &lt;span class=&quot;s2&quot;&gt;&quot;IPv6Address&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;จากตัวอย่างด้านบนจะเห็นได้ว่าเราสามารถเข้าถึง container ที่ชื่อว่า redis-store ได้ด้วย
+IP address &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;172.27.0.2&lt;/code&gt; แต่ทว่า IP address นี้จะเปลี่ยนไปทุกครั้งที่มีการ restart container
+ดังนั้นการนำค่า IP Address ไปใช้งานโดยตรงจึงไม่ใช่เรื่องที่ดีนักเพราะเราต้องเสียเวลามาเปลี่ยน IP Address
+อยู่เรื่อยๆ&lt;/li&gt;
+  &lt;li&gt;วิธีการที่ถูกต้องคือควรจะนำแอปพลิเคชันที่เรียกใช้ redis ใส่ไว้ใน network ที่ชื่อ myweb ด้วย
+และภายใน code ที่ทำการเชื่อมต่อก็ใช้ชื่อของ container แทน hostname, IP address ได้เลย
+ในตัวอย่างนี้ code ที่ทำการเชื่อต่อ redis จะสามารถเชื่อมต่อกับ redis ผ่านตัวอย่าง URL ต่อไปนี้ได้
+    &lt;ul&gt;
+      &lt;li&gt;redis://172.27.0.2:6379  &lt;em&gt;(ใช้ IP Address โดยตรงก็ได้แต่เป็นวิธีที่ไม่แนะนำ)&lt;/em&gt;&lt;/li&gt;
+      &lt;li&gt;redis://redis-store:6379  &lt;em&gt;(ควรใช้ชื่อ container แทน hostname)&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;การเข้าถึง-container-ด้วย-port-mapping&quot;&gt;การเข้าถึง container ด้วย port mapping&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;ในกรณีที่เราต้องการเข้าถึงผ่าน &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;localhost&lt;/code&gt; หรือ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;127.0.0.1&lt;/code&gt; เราสามารใช้ใช้ option -p เพื่อทำการ
+port mapping ออกมาจาก docker network
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# แอปพลิเคชันที่อยู่ภายใน localhost จะสามารถเชื่อต่อได้ผ่าน redis://localhost:6379&lt;/span&gt;
+docker run &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; redis-store &lt;span class=&quot;nt&quot;&gt;--network&lt;/span&gt; myweb &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 127.0.0.1:6379:6379/tcp redis:6-alpine
+
+&lt;span class=&quot;c&quot;&gt;# /tcp อนุโลมให้ไม่ใส่ได้เพราะค่าเริ่มต้นคือ tcp อยู่แล้ว และอีก protocol ที่ชื่อ udp ก็ไม่เป็นที่นิยมใช้&lt;/span&gt;
+docker run &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; redis-store &lt;span class=&quot;nt&quot;&gt;--network&lt;/span&gt; myweb &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 127.0.0.1:6379:6379 redis:6-alpine
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;จะสังเกตได้ว่าเราทำการ map ให้เข้ากับ host &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;127.0.0.1&lt;/code&gt;
+ซึ่งข้อผิดพลาดหรือความไม่ระวังอย่างหนึ่งที่พบได้บ่อยคือการใช้ option -p โดยไม่ระบุ host
+ทำให้ container สามารถถูกเข้าถึงได้จาก host ภายนอกทั้งหมด
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# สังเกตตรง -p 6379:6379 ซึ่งเป็นลักษณะที่ไม่พึงประสงค์ ควรใช้ก็ต่อเมื่อเข้าใจความเสี่ยงเท่านั้น&lt;/span&gt;
+docker run &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; redis-store &lt;span class=&quot;nt&quot;&gt;--network&lt;/span&gt; myweb &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 6379:6379 redis:6-alpine
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;-&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;บันทึกและติดตามการเปลี่ยนแปลงการตั้งค่า-docker-ด้วย-docker-compose&quot;&gt;บันทึกและติดตามการเปลี่ยนแปลงการตั้งค่า docker ด้วย docker-compose&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;การทำเว็บแอปพลิเคชัน องค์ประกอบจะเพิ่มความซับซ้อนมากขึ้นเรื่อยๆ ตามความต้องการของแอปพลิเชัน
+ซึ่งทำให้การตั้งค่า docker ก็ต้องมีการบันทึกเก็บไว้ใน version control
+เพื่อให้สามารถติดตามการเปลี่ยนแปลงได้&lt;/li&gt;
+  &lt;li&gt;สามารถตั้งค่า docker network จากภายในไฟล์ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; ได้เลย
+โดยไม่จำเป็นต้องสร้าง network ด้วยคำสั่ง docker network create &amp;lt;ชื่อ network&amp;gt; เอาไว้ก่อนก็ได้&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;docker-compose ไม่ได้เป็นเพียงรูปแบบที่ช่วยบันทึก แต่เรายังสามารถเรียกใช้งานทุกองค์ประกอบได้โดยที่ไม่ต้อง
+docker run ทีล่ะ container ลดความยุ่งยากในการจำตัวเลือกการตั้งค่าต่างๆเหลือเพียงให้จำเพียงชื่อ
+service ของ container เท่านั้น&lt;/p&gt;
+
+    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# docker-compose.yml&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3&apos;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;web&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;dockerfile&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./Dockerfile&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;8080:8080&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# port mapping เพื่อให้สามารถใช้ localhost:8080 แทน internal IP ได้&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.:/var/www/html&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;networks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;myweb&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;redis&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;redis:6-alpine&apos;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# ใช้สัญลักษณ์ # ในการ comment เพื่อให้ docker-compose ไม่อ่านค่า&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# comment port mapping ออก โดยสามารถนำเครื่องหมาย # ข้างหน้าออกเพื่อเปิดใช้งานได้ในกรณี&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# ที่ต้องการ debug&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# ports:&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;#  - 6379:6379&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ALLOW_EMPTY_PASSWORD=yes&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;networks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;myweb&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;networks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;myweb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bridge&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;การเรียกใช้งานเบื้องต้น
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# เรียกใช้งานในรูปแบบ active process สามารถ kill โดยการกด ctrl-C หรือ ปิด terminal ได้&lt;/span&gt;
+docker-compose up
+
+&lt;span class=&quot;c&quot;&gt;# เรียกใช้งานในรูปแบบ daemon process&lt;/span&gt;
+docker-compose up &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# ตัวอย่างการเรียกใช้งานเฉพาะบาง service&lt;/span&gt;
+docker-compose up web
+docker-compose up redis
+
+&lt;span class=&quot;c&quot;&gt;# ตัวอย่างการเรียกใช้งานหลาย service แบบเจาะจง&lt;/span&gt;
+docker-compose up web redis
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;environment-variables&quot;&gt;Environment Variables&lt;/h2&gt;
+&lt;p&gt;คำสั่ง docker-compose จะอ่านค่าจากไฟล์ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.env&lt;/code&gt; โดยอัตโนมัติ ทำให้ไม่จำเป็นต้องใส่ค่าบางค่า ที่ผู้พัฒนาบางคนอาจใช้ไม่ตรงกันได้ เช่น port ของแอปพลิเคชัน หรือ ชื่อของ network ที่ใช้&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-.env&quot;&gt;# .env
+EXPOSED_WEB_PORT=8080
+WEB_DIRECTORY=.
+EXPOSED_REDIS_PORT=6379
+MY_WEB_NETWORK_NAME=myweb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# docker-compose.yml&lt;/span&gt;
+
+  &lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3&apos;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;web&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;dockerfile&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./Dockerfile&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${EXPOSED_WEB_PORT}:8080&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${WEB_DIRECTORY}:/var/www/html&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;networks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;myweb&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;redis&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;redis:6-alpine&apos;&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# ports:&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;#  - ${EXPOSED_REDIS_PORT}:6379&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ALLOW_EMPTY_PASSWORD=yes&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;networks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;myweb&lt;/span&gt;
+
+  &lt;span class=&quot;na&quot;&gt;networks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;myweb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${MY_WEB_NETWORK_NAME}&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bridge&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>wittawasw</name><email>your-email@domain.com</email></author><summary type="html">การพัฒนาเว็บแอปพลิเคชันในปัจจุบัน มีความซับซ้อนและความต้องการทางเทคนิคที่เพิ่มขึ้นมาก การพัฒนาจึงกลายเป็นการทำงานที่ต้องทำร่วมกันกับคนจำนวนมากขึ้น ไม่ได้จำกัดแค่คนกลุ่มเล็กเท่านั้น แต่อาจหมายถึงการรวมกลุ่มทำงานในทีมที่อาจมีขนาดถึง 50-100 คน การเตรียมชุดซอฟต์แวร์เพื่อให้ทีมงานจำนวนมากสามารถใช้ร่วมกันได้ โดยที่มีความใกล้เคียงกับพื้นที่จริงบน production environment จึงกลายเป็นความจำเป็น ซึ่ง docker สามารถช่วยตอบโจทย์ความต้องการนี้ได้ ทว่าการใช้งาน docker จำเป็นต้องเข้าใจพื้นฐานการเชื่อมต่อ network เพื่อให้สามารถตั้งค่าการใช้งานภายในโรแกรมได้เอง ตามที่กำลังจะอธิบายต่อไปด้านล่าง</summary></entry><entry><title type="html">รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน</title><link href="https://wittawasw.com/2022/02/20/comment-in-code.html" rel="alternate" type="text/html" title="รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน" /><published>2022-02-20T17:31:00+07:00</published><updated>2022-02-20T17:31:00+07:00</updated><id>https://wittawasw.com/2022/02/20/comment-in-code</id><content type="html" xml:base="https://wittawasw.com/2022/02/20/comment-in-code.html">&lt;p&gt;การ comment คือ การทำให้ประโยคหรือตัวอักษรที่เราเขียนในโปรแกรมไม่ถูกประมวลผล โดยอาจมีไว้เพื่อให้บอท
 (bot) หรือโปรแกรมเมอร์คนอื่นอ่าน เป็นรูปแบบการการสื่อสารแบบหนึ่งที่โปรแกรมเมอร์สามารถสื่อสารได้
 เพื่อให้การทำงานร่วมกันมีประสิทธิภาพมากขึ้น&lt;/p&gt;
 
