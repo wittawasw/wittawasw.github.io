@@ -48,7 +48,7 @@ production environment จึงกลายเป็นความจำเป
 <h2 id="การเชื่อมต่อผ่าน-docker-network">การเชื่อมต่อผ่าน docker network</h2>
 <ul>
   <li>หากไม่มีการตั้งค่าเพิ่มเติม docker จะทำงานภายในเครือข่าย network ในรูปแบบของ <code class="language-plaintext highlighter-rouge">bridge mode</code>
-network ที่ใช้ชื่อว่า bridge
+network ที่ใช้ชื่อว่า <code class="language-plaintext highlighter-rouge">bridge</code>
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># คำสั่ง cli ที่ใช้ในการดูรายละเอียดของ docker network</span>
 
 <span class="c"># ดูรายชื่อ docker network</span>
@@ -69,7 +69,6 @@ docker network inspect bridge
 ➜  ~ docker network create myweb
 94e2714b100d6634299bbbc7dfb30bf7bc7d150e27f4f48764bec91d32d4686e
 
-
 <span class="c"># ทดลองสร้าง container ขื่อ redis-store สำหรับ redis ขึ้นมาบน network ชื่อ myweb</span>
 ➜  ~ docker run <span class="nt">--name</span> redis-store <span class="nt">--network</span> myweb redis:6-alpine
 1:C <span class="c"># oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo</span>
@@ -83,7 +82,6 @@ docker network inspect bridge
 ➜  ~ docker ps
 CONTAINER ID   IMAGE            COMMAND                  CREATED              STATUS              PORTS      NAMES
 cb67ff6bd900   redis:6-alpine   <span class="s2">"docker-entrypoint.s…"</span>   About a minute ago   Up About a minute   6379/tcp   redis-store
-
 
 <span class="c"># ดูรายละเอียดของ docker network ค่าเริ่มต้น</span>
 ➜  ~ docker network inspect myweb
@@ -115,10 +113,12 @@ IP address <code class="language-plaintext highlighter-rouge">172.27.0.2</code> 
 และภายใน code ที่ทำการเชื่อมต่อก็ใช้ชื่อของ container แทน hostname, IP address ได้เลย
 ในตัวอย่างนี้ code ที่ทำการเชื่อต่อ redis จะสามารถเชื่อมต่อกับ redis ผ่านตัวอย่าง URL ต่อไปนี้ได้
     <ul>
-      <li>redis://172.27.0.2:6379  <em>(ใช้ IP Address โดยตรงก็ได้แต่เป็นวิธีที่ไม่แนะนำ)</em></li>
-      <li>redis://redis-store:6379  <em>(ควรใช้ชื่อ container แทน hostname)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">redis://172.27.0.2:6379</code>  <em>(ใช้ IP Address โดยตรงก็ได้แต่เป็นวิธีที่ไม่แนะนำ)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">redis://redis-store:6379</code>  <em>(ควรใช้ชื่อ container แทน hostname)</em></li>
     </ul>
   </li>
+  <li>หากในขั้นตอนด้านบน ไม่ได้ทำการสร้าง network และใช้ network ชื่อ <code class="language-plaintext highlighter-rouge">bridge</code> ตามค่าเริ่มต้น
+การใช้ชื่อ container แทน hostname แบบ <code class="language-plaintext highlighter-rouge">redis://redis-store:6379</code> จะไม่สามารถทำได้</li>
 </ul>
 
 <h2 id="การเข้าถึง-container-ด้วย-port-mapping">การเข้าถึง container ด้วย port mapping</h2>
@@ -138,7 +138,6 @@ docker run <span class="nt">--name</span> redis-store <span class="nt">--network
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># สังเกตตรง -p 6379:6379 ซึ่งเป็นลักษณะที่ไม่พึงประสงค์ ควรใช้ก็ต่อเมื่อเข้าใจความเสี่ยงเท่านั้น</span>
 docker run <span class="nt">--name</span> redis-store <span class="nt">--network</span> myweb <span class="nt">-p</span> 6379:6379 redis:6-alpine
 </code></pre></div>    </div>
-    <p>-</p>
   </li>
 </ul>
 
@@ -148,10 +147,10 @@ docker run <span class="nt">--name</span> redis-store <span class="nt">--network
 ซึ่งทำให้การตั้งค่า docker ก็ต้องมีการบันทึกเก็บไว้ใน version control
 เพื่อให้สามารถติดตามการเปลี่ยนแปลงได้</li>
   <li>สามารถตั้งค่า docker network จากภายในไฟล์ <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> ได้เลย
-โดยไม่จำเป็นต้องสร้าง network ด้วยคำสั่ง docker network create &lt;ชื่อ network&gt; เอาไว้ก่อนก็ได้</li>
+โดยไม่จำเป็นต้องสร้าง network ด้วยคำสั่ง <code class="language-plaintext highlighter-rouge">docker network create &lt;ชื่อ network&gt;</code> เอาไว้ก่อนก็ได้</li>
   <li>
     <p>docker-compose ไม่ได้เป็นเพียงรูปแบบที่ช่วยบันทึก แต่เรายังสามารถเรียกใช้งานทุกองค์ประกอบได้โดยที่ไม่ต้อง
-docker run ทีล่ะ container ลดความยุ่งยากในการจำตัวเลือกการตั้งค่าต่างๆเหลือเพียงให้จำเพียงชื่อ
+<code class="language-plaintext highlighter-rouge">docker run</code> ทีล่ะ container ลดความยุ่งยากในการจำตัวเลือกการตั้งค่าต่างๆเหลือเพียงให้จำเพียงชื่อ
 service ของ container เท่านั้น</p>
 
     <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># docker-compose.yml</span>
@@ -165,6 +164,8 @@ service ของ container เท่านั้น</p>
       <span class="pi">-</span> <span class="s">8080:8080</span> <span class="c1"># port mapping เพื่อให้สามารถใช้ localhost:8080 แทน internal IP ได้</span>
     <span class="na">volumes</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">.:/var/www/html</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">REDIS_URL=redis://redis:6379</span>
     <span class="na">networks</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">myweb</span>
   <span class="na">redis</span><span class="pi">:</span>
@@ -184,6 +185,10 @@ service ของ container เท่านั้น</p>
     <span class="na">driver</span><span class="pi">:</span> <span class="s">bridge</span>
 </code></pre></div>    </div>
   </li>
+  <li>
+    <p>การใช้งานผ่าน docker-compose จะทำให้การเชื่อมต่อ redis จากภายใน code ของ container web
+สามารถใช้ชื่อ service <code class="language-plaintext highlighter-rouge">redis</code> แทน hostname ได้เลย เช่น <code class="language-plaintext highlighter-rouge">redis://redis:6379</code> ทำให้ไม่มีความจำเป็นต้องจำชื่อ container  อีกต่อไป</p>
+  </li>
   <li>การเรียกใช้งานเบื้องต้น
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># เรียกใช้งานในรูปแบบ active process สามารถ kill โดยการกด ctrl-C หรือ ปิด terminal ได้</span>
 docker-compose up
@@ -201,12 +206,20 @@ docker-compose up web redis
   </li>
 </ul>
 
-<h2 id="environment-variables">Environment Variables</h2>
-<p>คำสั่ง docker-compose จะอ่านค่าจากไฟล์ <code class="language-plaintext highlighter-rouge">.env</code> โดยอัตโนมัติ ทำให้ไม่จำเป็นต้องใส่ค่าบางค่า ที่ผู้พัฒนาบางคนอาจใช้ไม่ตรงกันได้ เช่น port ของแอปพลิเคชัน หรือ ชื่อของ network ที่ใช้</p>
+<h2 id="environment-variables-จากไฟล์-env">Environment Variables จากไฟล์ .env</h2>
+<ul>
+  <li>คำสั่ง docker-compose จะอ่านค่าจากไฟล์ <code class="language-plaintext highlighter-rouge">.env</code> โดยอัตโนมัติ
+ทำให้ไม่จำเป็นต้องใส่ค่าบางค่า ที่ผู้พัฒนาบางคนอาจใช้ไม่ตรงกันได้ เช่น port ของแอปพลิเคชัน
+หรือ ชื่อของ network ที่ใช้</li>
+  <li>การใช้ค่าจาก Environment variables ภายใน code เป็นแนวทางที่ถูกแนะนำภายใต้หลักการ
+<a href="https://12factor.net/">12-factor</a> เพื่อให้การ deploy เว็บแอปพลิเคชัน สามารถแยกตาม
+environment ได้</li>
+</ul>
 
 <pre><code class="language-.env"># .env
 EXPOSED_WEB_PORT=8080
 WEB_DIRECTORY=.
+REDIS_HOSTNAME=redis
 EXPOSED_REDIS_PORT=6379
 MY_WEB_NETWORK_NAME=myweb
 </code></pre>
@@ -223,6 +236,8 @@ MY_WEB_NETWORK_NAME=myweb
         <span class="pi">-</span> <span class="s">${EXPOSED_WEB_PORT}:8080</span>
       <span class="na">volumes</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s">${WEB_DIRECTORY}:/var/www/html</span>
+      <span class="na">environment</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">REDIS_URL=redis://${REDIS_HOSTNAME}:${EXPOSED_REDIS_PORT}</span>
       <span class="na">networks</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s">myweb</span>
     <span class="na">redis</span><span class="pi">:</span>
