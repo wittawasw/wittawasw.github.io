@@ -12,7 +12,7 @@ production environment จึงกลายเป็นความจำเป
 
 ## การเชื่อมต่อผ่าน docker network
 - หากไม่มีการตั้งค่าเพิ่มเติม docker จะทำงานภายในเครือข่าย network ในรูปแบบของ `bridge mode`
-  network ที่ใช้ชื่อว่า bridge
+  network ที่ใช้ชื่อว่า `bridge`
   ```shell
   # คำสั่ง cli ที่ใช้ในการดูรายละเอียดของ docker network
 
@@ -34,7 +34,6 @@ production environment จึงกลายเป็นความจำเป
   ➜  ~ docker network create myweb
   94e2714b100d6634299bbbc7dfb30bf7bc7d150e27f4f48764bec91d32d4686e
 
-
   # ทดลองสร้าง container ขื่อ redis-store สำหรับ redis ขึ้นมาบน network ชื่อ myweb
   ➜  ~ docker run --name redis-store --network myweb redis:6-alpine
   1:C # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
@@ -48,7 +47,6 @@ production environment จึงกลายเป็นความจำเป
   ➜  ~ docker ps
   CONTAINER ID   IMAGE            COMMAND                  CREATED              STATUS              PORTS      NAMES
   cb67ff6bd900   redis:6-alpine   "docker-entrypoint.s…"   About a minute ago   Up About a minute   6379/tcp   redis-store
-
 
   # ดูรายละเอียดของ docker network ค่าเริ่มต้น
   ➜  ~ docker network inspect myweb
@@ -78,8 +76,10 @@ production environment จึงกลายเป็นความจำเป
 - วิธีการที่ถูกต้องคือควรจะนำแอปพลิเคชันที่เรียกใช้ redis ใส่ไว้ใน network ที่ชื่อ myweb ด้วย
   และภายใน code ที่ทำการเชื่อมต่อก็ใช้ชื่อของ container แทน hostname, IP address ได้เลย
   ในตัวอย่างนี้ code ที่ทำการเชื่อต่อ redis จะสามารถเชื่อมต่อกับ redis ผ่านตัวอย่าง URL ต่อไปนี้ได้
-  - redis://172.27.0.2:6379  *(ใช้ IP Address โดยตรงก็ได้แต่เป็นวิธีที่ไม่แนะนำ)*
-  - redis://redis-store:6379  *(ควรใช้ชื่อ container แทน hostname)*
+  - `redis://172.27.0.2:6379`  *(ใช้ IP Address โดยตรงก็ได้แต่เป็นวิธีที่ไม่แนะนำ)*
+  - `redis://redis-store:6379`  *(ควรใช้ชื่อ container แทน hostname)*
+- หากในขั้นตอนด้านบน ไม่ได้ทำการสร้าง network และใช้ network ชื่อ `bridge` ตามค่าเริ่มต้น
+  การใช้ชื่อ container แทน hostname แบบ `redis://redis-store:6379` จะไม่สามารถทำได้
 
 ## การเข้าถึง container ด้วย port mapping
 - ในกรณีที่เราต้องการเข้าถึงผ่าน `localhost` หรือ `127.0.0.1` เราสามารใช้ใช้ option -p เพื่อทำการ
@@ -98,16 +98,16 @@ production environment จึงกลายเป็นความจำเป
   # สังเกตตรง -p 6379:6379 ซึ่งเป็นลักษณะที่ไม่พึงประสงค์ ควรใช้ก็ต่อเมื่อเข้าใจความเสี่ยงเท่านั้น
   docker run --name redis-store --network myweb -p 6379:6379 redis:6-alpine
   ```
--
+
 
 ## บันทึกและติดตามการเปลี่ยนแปลงการตั้งค่า docker ด้วย docker-compose
 - การทำเว็บแอปพลิเคชัน องค์ประกอบจะเพิ่มความซับซ้อนมากขึ้นเรื่อยๆ ตามความต้องการของแอปพลิเชัน
   ซึ่งทำให้การตั้งค่า docker ก็ต้องมีการบันทึกเก็บไว้ใน version control
   เพื่อให้สามารถติดตามการเปลี่ยนแปลงได้
 - สามารถตั้งค่า docker network จากภายในไฟล์ `docker-compose.yml` ได้เลย
-  โดยไม่จำเป็นต้องสร้าง network ด้วยคำสั่ง docker network create <ชื่อ network> เอาไว้ก่อนก็ได้
+  โดยไม่จำเป็นต้องสร้าง network ด้วยคำสั่ง `docker network create <ชื่อ network>` เอาไว้ก่อนก็ได้
 - docker-compose ไม่ได้เป็นเพียงรูปแบบที่ช่วยบันทึก แต่เรายังสามารถเรียกใช้งานทุกองค์ประกอบได้โดยที่ไม่ต้อง
-  docker run ทีล่ะ container ลดความยุ่งยากในการจำตัวเลือกการตั้งค่าต่างๆเหลือเพียงให้จำเพียงชื่อ
+  `docker run` ทีล่ะ container ลดความยุ่งยากในการจำตัวเลือกการตั้งค่าต่างๆเหลือเพียงให้จำเพียงชื่อ
   service ของ container เท่านั้น
 
   ```yaml
@@ -122,6 +122,8 @@ production environment จึงกลายเป็นความจำเป
         - 8080:8080 # port mapping เพื่อให้สามารถใช้ localhost:8080 แทน internal IP ได้
       volumes:
         - .:/var/www/html
+      environment:
+        - REDIS_URL=redis://redis:6379
       networks:
         - myweb
     redis:
@@ -140,6 +142,10 @@ production environment จึงกลายเป็นความจำเป
     myweb:
       driver: bridge
   ```
+
+- การใช้งานผ่าน docker-compose จะทำให้การเชื่อมต่อ redis จากภายใน code ของ container web
+  สามารถใช้ชื่อ service `redis` แทน hostname ได้เลย เช่น `redis://redis:6379` ทำให้ไม่มีความจำเป็นต้องจำชื่อ container  อีกต่อไป
+
 - การเรียกใช้งานเบื้องต้น
   ```shell
   # เรียกใช้งานในรูปแบบ active process สามารถ kill โดยการกด ctrl-C หรือ ปิด terminal ได้
@@ -156,13 +162,19 @@ production environment จึงกลายเป็นความจำเป
   docker-compose up web redis
   ```
 
-## Environment Variables
-คำสั่ง docker-compose จะอ่านค่าจากไฟล์ `.env` โดยอัตโนมัติ ทำให้ไม่จำเป็นต้องใส่ค่าบางค่า ที่ผู้พัฒนาบางคนอาจใช้ไม่ตรงกันได้ เช่น port ของแอปพลิเคชัน หรือ ชื่อของ network ที่ใช้
+## Environment Variables จากไฟล์ .env
+- คำสั่ง docker-compose จะอ่านค่าจากไฟล์ `.env` โดยอัตโนมัติ
+  ทำให้ไม่จำเป็นต้องใส่ค่าบางค่า ที่ผู้พัฒนาบางคนอาจใช้ไม่ตรงกันได้ เช่น port ของแอปพลิเคชัน
+  หรือ ชื่อของ network ที่ใช้
+- การใช้ค่าจาก Environment variables ภายใน code เป็นแนวทางที่ถูกแนะนำภายใต้หลักการ
+  [12-factor](https://12factor.net/) เพื่อให้การ deploy เว็บแอปพลิเคชัน สามารถแยกตาม
+  environment ได้
 
 ```.env
 # .env
 EXPOSED_WEB_PORT=8080
 WEB_DIRECTORY=.
+REDIS_HOSTNAME=redis
 EXPOSED_REDIS_PORT=6379
 MY_WEB_NETWORK_NAME=myweb
 ```
@@ -180,6 +192,8 @@ MY_WEB_NETWORK_NAME=myweb
         - ${EXPOSED_WEB_PORT}:8080
       volumes:
         - ${WEB_DIRECTORY}:/var/www/html
+      environment:
+        - REDIS_URL=redis://${REDIS_HOSTNAME}:${EXPOSED_REDIS_PORT}
       networks:
         - myweb
     redis:
