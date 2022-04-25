@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2022-04-25T00:49:16+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">การใช้ docker สำหรับเตรียมพื้นที่พัฒนาเว็บแอปพลิเคชัน</title><link href="https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development.html" rel="alternate" type="text/html" title="การใช้ docker สำหรับเตรียมพื้นที่พัฒนาเว็บแอปพลิเคชัน" /><published>2022-04-25T00:32:00+07:00</published><updated>2022-04-25T00:32:00+07:00</updated><id>https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development</id><content type="html" xml:base="https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development.html">&lt;p&gt;การพัฒนาเว็บแอปพลิเคชันในปัจจุบัน มีความซับซ้อนและความต้องการทางเทคนิคที่เพิ่มขึ้นมาก
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2022-04-25T11:45:03+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">การใช้ docker สำหรับเตรียมพื้นที่พัฒนาเว็บแอปพลิเคชัน</title><link href="https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development.html" rel="alternate" type="text/html" title="การใช้ docker สำหรับเตรียมพื้นที่พัฒนาเว็บแอปพลิเคชัน" /><published>2022-04-25T00:32:00+07:00</published><updated>2022-04-25T00:32:00+07:00</updated><id>https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development</id><content type="html" xml:base="https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development.html">&lt;p&gt;การพัฒนาเว็บแอปพลิเคชันในปัจจุบัน มีความซับซ้อนและความต้องการทางเทคนิคที่เพิ่มขึ้นมาก
 การพัฒนาจึงกลายเป็นการทำงานที่ต้องทำร่วมกันกับคนจำนวนมากขึ้น ไม่ได้จำกัดแค่คนกลุ่มเล็กเท่านั้น
 แต่อาจหมายถึงการรวมกลุ่มทำงานในทีมที่อาจมีขนาดถึง 50-100 คน
 การเตรียมชุดซอฟต์แวร์เพื่อให้ทีมงานจำนวนมากสามารถใช้ร่วมกันได้ โดยที่มีความใกล้เคียงกับพื้นที่จริงบน
@@ -106,8 +106,6 @@ docker run &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; redis-store &lt;
   &lt;li&gt;การทำเว็บแอปพลิเคชัน องค์ประกอบจะเพิ่มความซับซ้อนมากขึ้นเรื่อยๆ ตามความต้องการของแอปพลิเชัน
 ซึ่งทำให้การตั้งค่า docker ก็ต้องมีการบันทึกเก็บไว้ใน version control
 เพื่อให้สามารถติดตามการเปลี่ยนแปลงได้&lt;/li&gt;
-  &lt;li&gt;สามารถตั้งค่า docker network จากภายในไฟล์ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; ได้เลย
-โดยไม่จำเป็นต้องสร้าง network ด้วยคำสั่ง &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker network create &amp;lt;ชื่อ network&amp;gt;&lt;/code&gt; เอาไว้ก่อนก็ได้&lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;docker-compose ไม่ได้เป็นเพียงรูปแบบที่ช่วยบันทึก แต่เรายังสามารถเรียกใช้งานทุกองค์ประกอบได้โดยที่ไม่ต้อง
 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker run&lt;/code&gt; ทีล่ะ container ลดความยุ่งยากในการจำตัวเลือกการตั้งค่าต่างๆเหลือเพียงให้จำเพียงชื่อ
@@ -143,6 +141,18 @@ service ของ container เท่านั้น&lt;/p&gt;
 &lt;span class=&quot;na&quot;&gt;networks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;myweb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bridge&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;สามารถตั้งค่า docker network จากภายในไฟล์ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; ได้เลย
+โดยไม่จำเป็นต้องสร้าง network ด้วยคำสั่ง &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker network create &amp;lt;ชื่อ network&amp;gt;&lt;/code&gt; เอาไว้ก่อน&lt;/li&gt;
+  &lt;li&gt;แต่หากต้องการใช้ network ที่ไม่ได้สร้างจากภายในไฟล์ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; จำเป็นต้องระบุว่าเป็น
+external network ตามรูปแบบนี้
+    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# docker-compose.yml&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;networks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;external&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;myweb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bridge&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;

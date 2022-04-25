@@ -146,8 +146,6 @@ docker run <span class="nt">--name</span> redis-store <span class="nt">--network
   <li>การทำเว็บแอปพลิเคชัน องค์ประกอบจะเพิ่มความซับซ้อนมากขึ้นเรื่อยๆ ตามความต้องการของแอปพลิเชัน
 ซึ่งทำให้การตั้งค่า docker ก็ต้องมีการบันทึกเก็บไว้ใน version control
 เพื่อให้สามารถติดตามการเปลี่ยนแปลงได้</li>
-  <li>สามารถตั้งค่า docker network จากภายในไฟล์ <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> ได้เลย
-โดยไม่จำเป็นต้องสร้าง network ด้วยคำสั่ง <code class="language-plaintext highlighter-rouge">docker network create &lt;ชื่อ network&gt;</code> เอาไว้ก่อนก็ได้</li>
   <li>
     <p>docker-compose ไม่ได้เป็นเพียงรูปแบบที่ช่วยบันทึก แต่เรายังสามารถเรียกใช้งานทุกองค์ประกอบได้โดยที่ไม่ต้อง
 <code class="language-plaintext highlighter-rouge">docker run</code> ทีล่ะ container ลดความยุ่งยากในการจำตัวเลือกการตั้งค่าต่างๆเหลือเพียงให้จำเพียงชื่อ
@@ -183,6 +181,18 @@ service ของ container เท่านั้น</p>
 <span class="na">networks</span><span class="pi">:</span>
   <span class="na">myweb</span><span class="pi">:</span>
     <span class="na">driver</span><span class="pi">:</span> <span class="s">bridge</span>
+</code></pre></div>    </div>
+  </li>
+  <li>สามารถตั้งค่า docker network จากภายในไฟล์ <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> ได้เลย
+โดยไม่จำเป็นต้องสร้าง network ด้วยคำสั่ง <code class="language-plaintext highlighter-rouge">docker network create &lt;ชื่อ network&gt;</code> เอาไว้ก่อน</li>
+  <li>แต่หากต้องการใช้ network ที่ไม่ได้สร้างจากภายในไฟล์ <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> จำเป็นต้องระบุว่าเป็น
+external network ตามรูปแบบนี้
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># docker-compose.yml</span>
+
+<span class="na">networks</span><span class="pi">:</span>
+  <span class="na">external</span><span class="pi">:</span>
+    <span class="na">myweb</span><span class="pi">:</span>
+      <span class="na">driver</span><span class="pi">:</span> <span class="s">bridge</span>
 </code></pre></div>    </div>
   </li>
   <li>
