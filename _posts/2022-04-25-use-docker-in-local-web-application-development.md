@@ -104,8 +104,6 @@ production environment จึงกลายเป็นความจำเป
 - การทำเว็บแอปพลิเคชัน องค์ประกอบจะเพิ่มความซับซ้อนมากขึ้นเรื่อยๆ ตามความต้องการของแอปพลิเชัน
   ซึ่งทำให้การตั้งค่า docker ก็ต้องมีการบันทึกเก็บไว้ใน version control
   เพื่อให้สามารถติดตามการเปลี่ยนแปลงได้
-- สามารถตั้งค่า docker network จากภายในไฟล์ `docker-compose.yml` ได้เลย
-  โดยไม่จำเป็นต้องสร้าง network ด้วยคำสั่ง `docker network create <ชื่อ network>` เอาไว้ก่อนก็ได้
 - docker-compose ไม่ได้เป็นเพียงรูปแบบที่ช่วยบันทึก แต่เรายังสามารถเรียกใช้งานทุกองค์ประกอบได้โดยที่ไม่ต้อง
   `docker run` ทีล่ะ container ลดความยุ่งยากในการจำตัวเลือกการตั้งค่าต่างๆเหลือเพียงให้จำเพียงชื่อ
   service ของ container เท่านั้น
@@ -142,7 +140,18 @@ production environment จึงกลายเป็นความจำเป
     myweb:
       driver: bridge
   ```
+- สามารถตั้งค่า docker network จากภายในไฟล์ `docker-compose.yml` ได้เลย
+  โดยไม่จำเป็นต้องสร้าง network ด้วยคำสั่ง `docker network create <ชื่อ network>` เอาไว้ก่อน
+- แต่หากต้องการใช้ network ที่ไม่ได้สร้างจากภายในไฟล์ `docker-compose.yml` จำเป็นต้องระบุว่าเป็น
+  external network ตามรูปแบบนี้
+  ```yaml
+  # docker-compose.yml
 
+  networks:
+    external:
+      myweb:
+        driver: bridge
+  ```
 - การใช้งานผ่าน docker-compose จะทำให้การเชื่อมต่อ redis จากภายใน code ของ container web
   สามารถใช้ชื่อ service `redis` แทน hostname ได้เลย เช่น `redis://redis:6379` ทำให้ไม่มีความจำเป็นต้องจำชื่อ container  อีกต่อไป
 
