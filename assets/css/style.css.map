@@ -3,12 +3,12 @@
 	"file": "style.css",
 	"sources": [
 		"style.scss",
-		"../../../home/wittawasw/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/bundler/gems/minima-6513ea8b9c1c/_sass/minima/skins/dark.scss",
-		"../../../home/wittawasw/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/bundler/gems/minima-6513ea8b9c1c/_sass/minima/initialize.scss",
-		"../../../home/wittawasw/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/bundler/gems/minima-6513ea8b9c1c/_sass/minima/custom-variables.scss",
-		"../../../home/wittawasw/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/bundler/gems/minima-6513ea8b9c1c/_sass/minima/_base.scss",
-		"../../../home/wittawasw/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/bundler/gems/minima-6513ea8b9c1c/_sass/minima/_layout.scss",
-		"../../../home/wittawasw/.rbenv/versions/3.1.0/lib/ruby/gems/3.1.0/bundler/gems/minima-6513ea8b9c1c/_sass/minima/custom-styles.scss"
+		"../../../home/wittawasw/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/bundler/gems/minima-6513ea8b9c1c/_sass/minima/skins/dark.scss",
+		"../../../home/wittawasw/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/bundler/gems/minima-6513ea8b9c1c/_sass/minima/initialize.scss",
+		"../../../home/wittawasw/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/bundler/gems/minima-6513ea8b9c1c/_sass/minima/custom-variables.scss",
+		"../../../home/wittawasw/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/bundler/gems/minima-6513ea8b9c1c/_sass/minima/_base.scss",
+		"../../../home/wittawasw/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/bundler/gems/minima-6513ea8b9c1c/_sass/minima/_layout.scss",
+		"../../../home/wittawasw/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/bundler/gems/minima-6513ea8b9c1c/_sass/minima/custom-styles.scss"
 	],
 	"sourcesContent": [
 		"@import\n  \"minima/skins/dark\",\n  \"minima/initialize\";\n",
