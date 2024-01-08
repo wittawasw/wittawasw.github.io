@@ -1,4 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2023-02-22T20:49:00+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">ต้นทุนของพัฒนาผลิตภัณฑ์แบบ ChatGPT</title><link href="https://wittawasw.com/2023/02/22/%E0%B8%95%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B8%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B9%81%E0%B8%9A%E0%B8%9A-ChatGPT.html" rel="alternate" type="text/html" title="ต้นทุนของพัฒนาผลิตภัณฑ์แบบ ChatGPT" /><published>2023-02-22T20:25:00+07:00</published><updated>2023-02-22T20:25:00+07:00</updated><id>https://wittawasw.com/2023/02/22/%E0%B8%95%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B8%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B9%81%E0%B8%9A%E0%B8%9A-ChatGPT</id><content type="html" xml:base="https://wittawasw.com/2023/02/22/%E0%B8%95%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B8%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B9%81%E0%B8%9A%E0%B8%9A-ChatGPT.html">&lt;p&gt;มีโอกาสได้คุยเรื่องการนำ ChatGPT มาทำ use case เฉพาะใช้เองหลายครั้ง เป็นคุยจริงจังแบบโอกาสทำธุรกิจแค่ครั้งเดียว นอกนั้นเป็นคุยเล่นๆ แต่ทุกครั้ง ทุกกลุ่มที่ไปคุยให้ฟังก็ต้องอธิบายเรื่องนี้&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-01-08T12:15:33+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails</title><link href="https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html" rel="alternate" type="text/html" title="ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails" /><published>2024-01-08T12:13:00+07:00</published><updated>2024-01-08T12:13:00+07:00</updated><id>https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails</id><content type="html" xml:base="https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html">&lt;p&gt;&lt;a href=&quot;https://hotwired.dev/&quot;&gt;Hotwired&lt;/a&gt; คือชุด Javascript library ที่เป็นค่าเริ่มต้นของ Ruby on Rails ตั้งแต่เวอร์ชั่นที่ 7 เป็นต้นมา
+แต่การที่ library ถูกเขียนด้วย Javascript ทั้งหมด การใช้งานจึงไม่ได้ถูกผูกอยู่กับ Ruby on Rails เท่านั้น
+โดย &lt;a href=&quot;https://turbo.hotwired.dev/handbook/drive&quot;&gt;Turbo Drive&lt;/a&gt; เป็น feature แรกของ Hotwired ที่เริ่มใช้งานได้ง่ายที่สุด&lt;/p&gt;
+
+&lt;h2 id=&quot;การติดตั้งในหน้าเว็บเพื่อเริ่มใช้งาน&quot;&gt;การติดตั้งในหน้าเว็บเพื่อเริ่มใช้งาน&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;วาง script tag นี้ที่หน้า HTML layout ของทุกหน้า
+    &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;module&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Turbo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;https://cdn.skypack.dev/@hotwired/turbo@7.1.0&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ตัวอย่าง
+    &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+    .
+    .
+    .
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;module&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Turbo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;https://cdn.skypack.dev/@hotwired/turbo@7.1.0&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    .
+    .
+    .
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;เท่านี้ก็สามารถเริ่มใช้งาน Turbo Drive ได้เลย&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ตั้งค่าเวอร์ชั่นของ turbo ที่ 7.1.0 ซึ่งเป็นรุ่น stable&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;วิธีใช้งาน&quot;&gt;วิธีใช้งาน&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;ไม่ต้องเพิ่มคำสั่งอะไรใน source code เพราะการ import turbo ด้วย script tag ก็ทำให้ Turbo Drive เริ่มทำงานแล้ว&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;แล้วต่างจากเดิมยังไง ในเมื่อยังไม่ได้ทำอะไรเพิ่ม ?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;สิ่งที่เปลี่ยนไปหลังจากเพิ่ม-script&quot;&gt;สิ่งที่เปลี่ยนไปหลังจากเพิ่ม script&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;การ navigation ผ่าน tag &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;a&amp;gt;&lt;/code&gt; และ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;form&amp;gt;&lt;/code&gt; ทุกอันจะถูกแทนที่ด้วย Turbo Drive&lt;/li&gt;
+  &lt;li&gt;การ navigate ด้วย Turbo Drive จะทำงานคล้ายกับ SPA (Single Page Application)
+แต่แตกต่างตรงที่เราไม่ต้องเขียน logic เอง และ Turbo Drive จะทำการ replace HTML ภายใน
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt; ให้โดยอัตโนมัติ โดยไม่มีการ refresh page&lt;/li&gt;
+  &lt;li&gt;หากทำการ inspect ที่ network tab จะเห็นความแตกต่าง ตามตัวอย่างข้างล่าง&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div style=&quot;display: flex; justify-content: space-between;margin-bottom:50px;&quot;&gt;
+  &lt;div&gt;
+    &lt;video width=&quot;98%&quot; preload=&quot;auto&quot; muted=&quot;&quot; controls=&quot;&quot;&gt;
+      &lt;source src=&quot;/videos/normal-navigation.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+      Your browser does not support the video tag.
+    &lt;/video&gt;
+    &lt;quote&gt;
+      navigation แบบปกติก่อนใส่ script
+    &lt;/quote&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;video width=&quot;98%&quot; preload=&quot;auto&quot; muted=&quot;&quot; controls=&quot;&quot;&gt;
+      &lt;source src=&quot;/videos/navigation-with-turbodrive.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+      Your browser does not support the video tag.
+    &lt;/video&gt;
+    &lt;quote&gt;
+      navigation ด้วย Turbo Drive หลังใส่ script
+    &lt;/quote&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;สามารถทำการ inspect network และ script tag ของเว็บนี้เพื่อดูเป็นตัวอย่างได้&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="rails," /><category term="turbo," /><category term="hotwired," /><category term="html," /><category term="javascript" /><summary type="html">Hotwired คือชุด Javascript library ที่เป็นค่าเริ่มต้นของ Ruby on Rails ตั้งแต่เวอร์ชั่นที่ 7 เป็นต้นมา แต่การที่ library ถูกเขียนด้วย Javascript ทั้งหมด การใช้งานจึงไม่ได้ถูกผูกอยู่กับ Ruby on Rails เท่านั้น โดย Turbo Drive เป็น feature แรกของ Hotwired ที่เริ่มใช้งานได้ง่ายที่สุด</summary></entry><entry><title type="html">ต้นทุนของพัฒนาผลิตภัณฑ์แบบ ChatGPT</title><link href="https://wittawasw.com/2023/02/22/%E0%B8%95%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B8%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B9%81%E0%B8%9A%E0%B8%9A-ChatGPT.html" rel="alternate" type="text/html" title="ต้นทุนของพัฒนาผลิตภัณฑ์แบบ ChatGPT" /><published>2023-02-22T20:25:00+07:00</published><updated>2023-02-22T20:25:00+07:00</updated><id>https://wittawasw.com/2023/02/22/%E0%B8%95%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B8%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B9%81%E0%B8%9A%E0%B8%9A-ChatGPT</id><content type="html" xml:base="https://wittawasw.com/2023/02/22/%E0%B8%95%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B8%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B9%81%E0%B8%9A%E0%B8%9A-ChatGPT.html">&lt;p&gt;มีโอกาสได้คุยเรื่องการนำ ChatGPT มาทำ use case เฉพาะใช้เองหลายครั้ง เป็นคุยจริงจังแบบโอกาสทำธุรกิจแค่ครั้งเดียว นอกนั้นเป็นคุยเล่นๆ แต่ทุกครั้ง ทุกกลุ่มที่ไปคุยให้ฟังก็ต้องอธิบายเรื่องนี้&lt;/p&gt;
 
 &lt;p&gt;ว่า ChatGPT มันมีต้นทุนสูงมาก มากจริงๆถ้าจะทำให้มันแม่นในระดับเดียวกับที่เค้าปล่อยให้เล่น มันไม่ใช่แค่การโยน text จากหนังสือใส่ลงไปใน GPT3 แล้วมันจะใช้งานได้เลย เพราะ ChatGPT มันทำงานได้ดีจากการใช้จำนวน Human Input มหาศาลในการสร้าง Reward Model ภายใน ลองคิดค่าใช้จ่ายดู เอาแบบเร็วๆ น่าจะต้องจ้างพนักงานเต็มเวลาอย่างน้อย 10-20 คน มานั่งคิด prompt แล้วก็คอยให้ feedback คำตอบของ AI  ประมาณ 0.5-1 ปี ถ้าออกมาดีก็มีทางไปต่อได้ ถ้าไม่ดีพอก็ต้องเลือกว่าจะหยุดเพื่อ cut loss เมื่อไหร่ นับว่าเป็นแผนธุรกิจที่มีความเสี่ยงสูงพอสมควร&lt;/p&gt;
 

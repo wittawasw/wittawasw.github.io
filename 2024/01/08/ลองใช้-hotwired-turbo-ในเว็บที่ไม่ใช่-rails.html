@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails | wittawasw</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails" />
+<meta name="author" content="wittawasw" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hotwired คือชุด Javascript library ที่เป็นค่าเริ่มต้นของ Ruby on Rails ตั้งแต่เวอร์ชั่นที่ 7 เป็นต้นมา แต่การที่ library ถูกเขียนด้วย Javascript ทั้งหมด การใช้งานจึงไม่ได้ถูกผูกอยู่กับ Ruby on Rails เท่านั้น โดย Turbo Drive เป็น feature แรกของ Hotwired ที่เริ่มใช้งานได้ง่ายที่สุด" />
+<meta property="og:description" content="Hotwired คือชุด Javascript library ที่เป็นค่าเริ่มต้นของ Ruby on Rails ตั้งแต่เวอร์ชั่นที่ 7 เป็นต้นมา แต่การที่ library ถูกเขียนด้วย Javascript ทั้งหมด การใช้งานจึงไม่ได้ถูกผูกอยู่กับ Ruby on Rails เท่านั้น โดย Turbo Drive เป็น feature แรกของ Hotwired ที่เริ่มใช้งานได้ง่ายที่สุด" />
+<link rel="canonical" href="https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html" />
+<meta property="og:url" content="https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html" />
+<meta property="og:site_name" content="wittawasw" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-08T12:13:00+07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails" />
+<script type="application/ld+json">
+{"description":"Hotwired คือชุด Javascript library ที่เป็นค่าเริ่มต้นของ Ruby on Rails ตั้งแต่เวอร์ชั่นที่ 7 เป็นต้นมา แต่การที่ library ถูกเขียนด้วย Javascript ทั้งหมด การใช้งานจึงไม่ได้ถูกผูกอยู่กับ Ruby on Rails เท่านั้น โดย Turbo Drive เป็น feature แรกของ Hotwired ที่เริ่มใช้งานได้ง่ายที่สุด","headline":"ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails","dateModified":"2024-01-08T12:13:00+07:00","datePublished":"2024-01-08T12:13:00+07:00","author":{"@type":"Person","name":"wittawasw"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html"},"@type":"BlogPosting","url":"https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://wittawasw.com/feed.xml" title="wittawasw" />
+<script type="module">
+    import * as Turbo from 'https://cdn.skypack.dev/@hotwired/turbo@7.1.0';
+  </script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">wittawasw</a></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2024-01-08T12:13:00+07:00" itemprop="datePublished">
+        Jan 8, 2024
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><a href="https://hotwired.dev/">Hotwired</a> คือชุด Javascript library ที่เป็นค่าเริ่มต้นของ Ruby on Rails ตั้งแต่เวอร์ชั่นที่ 7 เป็นต้นมา
+แต่การที่ library ถูกเขียนด้วย Javascript ทั้งหมด การใช้งานจึงไม่ได้ถูกผูกอยู่กับ Ruby on Rails เท่านั้น
+โดย <a href="https://turbo.hotwired.dev/handbook/drive">Turbo Drive</a> เป็น feature แรกของ Hotwired ที่เริ่มใช้งานได้ง่ายที่สุด</p>
+
+<h2 id="การติดตั้งในหน้าเว็บเพื่อเริ่มใช้งาน">การติดตั้งในหน้าเว็บเพื่อเริ่มใช้งาน</h2>
+
+<ul>
+  <li>วาง script tag นี้ที่หน้า HTML layout ของทุกหน้า
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
+  <span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">Turbo</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">https://cdn.skypack.dev/@hotwired/turbo@7.1.0</span><span class="dl">'</span><span class="p">;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>ตัวอย่าง
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>...<span class="nt">&lt;/title&gt;</span>
+    .
+    .
+    .
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
+      <span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">Turbo</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">https://cdn.skypack.dev/@hotwired/turbo@7.1.0</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    .
+    .
+    .
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>เท่านี้ก็สามารถเริ่มใช้งาน Turbo Drive ได้เลย</li>
+</ul>
+
+<blockquote>
+  <p>ตั้งค่าเวอร์ชั่นของ turbo ที่ 7.1.0 ซึ่งเป็นรุ่น stable</p>
+</blockquote>
+
+<h2 id="วิธีใช้งาน">วิธีใช้งาน</h2>
+<ul>
+  <li>ไม่ต้องเพิ่มคำสั่งอะไรใน source code เพราะการ import turbo ด้วย script tag ก็ทำให้ Turbo Drive เริ่มทำงานแล้ว</li>
+</ul>
+
+<blockquote>
+  <p>แล้วต่างจากเดิมยังไง ในเมื่อยังไม่ได้ทำอะไรเพิ่ม ?</p>
+</blockquote>
+
+<h2 id="สิ่งที่เปลี่ยนไปหลังจากเพิ่ม-script">สิ่งที่เปลี่ยนไปหลังจากเพิ่ม script</h2>
+<ul>
+  <li>การ navigation ผ่าน tag <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> และ <code class="language-plaintext highlighter-rouge">&lt;form&gt;</code> ทุกอันจะถูกแทนที่ด้วย Turbo Drive</li>
+  <li>การ navigate ด้วย Turbo Drive จะทำงานคล้ายกับ SPA (Single Page Application)
+แต่แตกต่างตรงที่เราไม่ต้องเขียน logic เอง และ Turbo Drive จะทำการ replace HTML ภายใน
+<code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> ให้โดยอัตโนมัติ โดยไม่มีการ refresh page</li>
+  <li>หากทำการ inspect ที่ network tab จะเห็นความแตกต่าง ตามตัวอย่างข้างล่าง</li>
+</ul>
+
+<div style="display: flex; justify-content: space-between;margin-bottom:50px;">
+  <div>
+    <video width="98%" preload="auto" muted="" controls="">
+      <source src="/videos/normal-navigation.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <quote>
+      navigation แบบปกติก่อนใส่ script
+    </quote>
+  </div>
+  <div>
+    <video width="98%" preload="auto" muted="" controls="">
+      <source src="/videos/navigation-with-turbodrive.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <quote>
+      navigation ด้วย Turbo Drive หลังใส่ script
+    </quote>
+  </div>
+</div>
+
+<blockquote>
+  <p>สามารถทำการ inspect network และ script tag ของเว็บนี้เพื่อดูเป็นตัวอย่างได้</p>
+</blockquote>
+
+  </div><a class="u-url" href="/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      <!--
+        <ul class="contact-list">
+          <li class="p-name">wittawasw</li>
+          <li><a class="u-email" href="mailto:your-email@domain.com">your-email@domain.com</a></li>
+        </ul> -->
+      </div>
+      <div class="footer-col">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="social-links">
+      <!--<ul class="social-media-list"><li><a rel="me" href="https://github.com/jekyll" target="_blank" title="jekyll"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/jekyllrb" target="_blank" title="jekyllrb"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+-->
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
