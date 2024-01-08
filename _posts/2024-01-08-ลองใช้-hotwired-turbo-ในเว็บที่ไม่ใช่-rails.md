@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails"
+title: 'ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails'
+tags: rails, turbo, hotwired, html, javascript
+date: 2024-01-08 12:13 +0700
 ---
-
 [Hotwired](https://hotwired.dev/) คือชุด Javascript library ที่เป็นค่าเริ่มต้นของ Ruby on Rails ตั้งแต่เวอร์ชั่นที่ 7 เป็นต้นมา
 แต่การที่ library ถูกเขียนด้วย Javascript ทั้งหมด การใช้งานจึงไม่ได้ถูกผูกอยู่กับ Ruby on Rails เท่านั้น
 โดย [Turbo Drive](https://turbo.hotwired.dev/handbook/drive) เป็น feature แรกของ Hotwired ที่เริ่มใช้งานได้ง่ายที่สุด
