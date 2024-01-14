@@ -12,10 +12,19 @@ minima:
 
 plugins:
   - jekyll-feed
-  - jekyll-paginate
+  - jekyll-paginate-v2
   - jekyll-compose
-
-paginate: 7
 
 markdown: kramdown
 highlighter: rouge
+
+pagination:
+  enabled: true
+  debug: false
+  collection: 'posts'
+  per_page: 5
+  sort_field: 'date'
+  sort_reverse: true
+
+autopages:
+  enabled: true
