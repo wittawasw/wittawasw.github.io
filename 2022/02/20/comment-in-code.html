@@ -2,9 +2,9 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน | wittawasw</title>
-<meta name="generator" content="Jekyll v4.2.1" />
+<meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน" />
 <meta name="author" content="wittawasw" />
 <meta property="og:locale" content="en_US" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน" />
 <script type="application/ld+json">
-{"description":"การ comment คือ การทำให้ประโยคหรือตัวอักษรที่เราเขียนในโปรแกรมไม่ถูกประมวลผล โดยอาจมีไว้เพื่อให้บอท (bot) หรือโปรแกรมเมอร์คนอื่นอ่าน เป็นรูปแบบการการสื่อสารแบบหนึ่งที่โปรแกรมเมอร์สามารถสื่อสารได้ เพื่อให้การทำงานร่วมกันมีประสิทธิภาพมากขึ้น","headline":"รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน","dateModified":"2022-02-20T17:31:00+07:00","datePublished":"2022-02-20T17:31:00+07:00","author":{"@type":"Person","name":"wittawasw"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://wittawasw.com/2022/02/20/comment-in-code.html"},"@type":"BlogPosting","url":"https://wittawasw.com/2022/02/20/comment-in-code.html","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"wittawasw"},"dateModified":"2022-02-20T17:31:00+07:00","datePublished":"2022-02-20T17:31:00+07:00","description":"การ comment คือ การทำให้ประโยคหรือตัวอักษรที่เราเขียนในโปรแกรมไม่ถูกประมวลผล โดยอาจมีไว้เพื่อให้บอท (bot) หรือโปรแกรมเมอร์คนอื่นอ่าน เป็นรูปแบบการการสื่อสารแบบหนึ่งที่โปรแกรมเมอร์สามารถสื่อสารได้ เพื่อให้การทำงานร่วมกันมีประสิทธิภาพมากขึ้น","headline":"รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน","mainEntityOfPage":{"@type":"WebPage","@id":"https://wittawasw.com/2022/02/20/comment-in-code.html"},"url":"https://wittawasw.com/2022/02/20/comment-in-code.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://wittawasw.com/feed.xml" title="wittawasw" />
 <script type="module">
@@ -27,7 +27,19 @@
 </head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">wittawasw</a></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">wittawasw</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+        </div>
+      </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -75,8 +87,8 @@
 การระบุชื่อ socket ที่ใช้  ผู้เขียนจึงได้ comment เอาไว้ว่าไฟล์ <code class="language-plaintext highlighter-rouge">connection.c</code> นี้เป็นเพียง abstraction
 ให้เรียกใช้เท่านั้น ส่วนของการตั้งค่าต่างๆของ network อยู่ใน <code class="language-plaintext highlighter-rouge">networking.c</code></p>
 
-<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include "server.h"
-#include "connhelpers.h"
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">"server.h"</span><span class="cp">
+#include</span> <span class="cpf">"connhelpers.h"</span><span class="cp">
 </span>
 <span class="cm">/* The connections module provides a lean abstraction of network connections
  * to avoid direct socket and async event management across the Redis code base.
@@ -273,7 +285,7 @@
     </div>
 
     <div class="social-links">
-      <!--<ul class="social-media-list"><li><a rel="me" href="https://github.com/jekyll" target="_blank" title="jekyll"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/jekyllrb" target="_blank" title="jekyllrb"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+      <!--<ul class="social-media-list"></ul>
 -->
     </div>
 

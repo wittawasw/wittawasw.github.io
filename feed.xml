@@ -1,360 +1,360 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-01-08T12:29:56+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails</title><link href="https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html" rel="alternate" type="text/html" title="ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails" /><published>2024-01-08T12:13:00+07:00</published><updated>2024-01-08T12:13:00+07:00</updated><id>https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails</id><content type="html" xml:base="https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html">&lt;p&gt;&lt;img src=&quot;/images/post/hotwired.png&quot; alt=&quot;hotwired&quot; /&gt;
-&lt;br /&gt;
-&lt;br /&gt;
-&lt;a href=&quot;https://hotwired.dev/&quot;&gt;Hotwired&lt;/a&gt; คือชุด Javascript library ที่เป็นค่าเริ่มต้นของ
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-01-15T05:49:57+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails</title><link href="https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html" rel="alternate" type="text/html" title="ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails" /><published>2024-01-08T12:13:00+07:00</published><updated>2024-01-08T12:13:00+07:00</updated><id>https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails</id><content type="html" xml:base="https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html"><![CDATA[<p><img src="/images/post/hotwired.png" alt="hotwired" />
+<br />
+<br />
+<a href="https://hotwired.dev/">Hotwired</a> คือชุด Javascript library ที่เป็นค่าเริ่มต้นของ
 Ruby on Rails ตั้งแต่เวอร์ชั่นที่ 7 เป็นต้นมา แต่การที่ library ถูกเขียนด้วย Javascript ทั้งหมด
 การใช้งานจึงไม่ได้ถูกผูกอยู่กับ Ruby on Rails เท่านั้น โดย
-&lt;a href=&quot;https://turbo.hotwired.dev/handbook/drive&quot;&gt;Turbo Drive&lt;/a&gt; เป็น feature แรกของ
+<a href="https://turbo.hotwired.dev/handbook/drive">Turbo Drive</a> เป็น feature แรกของ
 Hotwired ที่เริ่มใช้งานได้ง่ายที่สุด แต่ก็สามารถเห็นผลลัพธ์ได้ทันทีและมีผลกระทบน้อย
-หากเป็นเว็บไซต์ที่มีลักษณะการใช้งานเพียงเพื่อการแสดง content เท่านั้น เช่น เว็บไซต์สำนักข่าว หรือ บล็อกส่วนตัว&lt;/p&gt;
+หากเป็นเว็บไซต์ที่มีลักษณะการใช้งานเพียงเพื่อการแสดง content เท่านั้น เช่น เว็บไซต์สำนักข่าว หรือ บล็อกส่วนตัว</p>
 
-&lt;h2 id=&quot;การติดตั้งในหน้าเว็บเพื่อเริ่มใช้งาน&quot;&gt;การติดตั้งในหน้าเว็บเพื่อเริ่มใช้งาน&lt;/h2&gt;
+<h2 id="การติดตั้งในหน้าเว็บเพื่อเริ่มใช้งาน">การติดตั้งในหน้าเว็บเพื่อเริ่มใช้งาน</h2>
 
-&lt;ul&gt;
-  &lt;li&gt;วาง script tag นี้ที่หน้า HTML layout ของทุกหน้า
-    &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;module&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Turbo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;https://cdn.skypack.dev/@hotwired/turbo@7.3.0&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;ตัวอย่าง
-    &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+<ul>
+  <li>วาง script tag นี้ที่หน้า HTML layout ของทุกหน้า
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
+  <span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">Turbo</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">https://cdn.skypack.dev/@hotwired/turbo@7.3.0</span><span class="dl">'</span><span class="p">;</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>ตัวอย่าง
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>...<span class="nt">&lt;/title&gt;</span>
     .
     .
     .
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;module&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Turbo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;https://cdn.skypack.dev/@hotwired/turbo@7.3.0&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
+      <span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">Turbo</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">https://cdn.skypack.dev/@hotwired/turbo@7.3.0</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
     .
     .
     .
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;เท่านี้ก็สามารถเริ่มใช้งาน Turbo Drive ได้เลย&lt;/li&gt;
-&lt;/ul&gt;
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>เท่านี้ก็สามารถเริ่มใช้งาน Turbo Drive ได้เลย</li>
+</ul>
 
-&lt;blockquote&gt;
-  &lt;p&gt;ตั้งค่าเวอร์ชั่นของ turbo ที่ 7.3.0 ซึ่งเป็นรุ่น stable&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>ตั้งค่าเวอร์ชั่นของ turbo ที่ 7.3.0 ซึ่งเป็นรุ่น stable</p>
+</blockquote>
 
-&lt;h2 id=&quot;วิธีใช้งาน&quot;&gt;วิธีใช้งาน&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;ไม่ต้องเพิ่มคำสั่งอะไรใน source code เพราะการ import turbo ด้วย script tag ก็ทำให้ Turbo Drive เริ่มทำงานแล้ว&lt;/li&gt;
-&lt;/ul&gt;
+<h2 id="วิธีใช้งาน">วิธีใช้งาน</h2>
+<ul>
+  <li>ไม่ต้องเพิ่มคำสั่งอะไรใน source code เพราะการ import turbo ด้วย script tag ก็ทำให้ Turbo Drive เริ่มทำงานแล้ว</li>
+</ul>
 
-&lt;blockquote&gt;
-  &lt;p&gt;แล้วต่างจากเดิมยังไง ในเมื่อยังไม่ได้ทำอะไรเพิ่ม ?&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>แล้วต่างจากเดิมยังไง ในเมื่อยังไม่ได้ทำอะไรเพิ่ม ?</p>
+</blockquote>
 
-&lt;h2 id=&quot;สิ่งที่เปลี่ยนไปหลังจากเพิ่ม-script&quot;&gt;สิ่งที่เปลี่ยนไปหลังจากเพิ่ม script&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;การ navigation ผ่าน tag &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;a&amp;gt;&lt;/code&gt; และ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;form&amp;gt;&lt;/code&gt; ทุกอันจะถูกแทนที่ด้วย Turbo Drive&lt;/li&gt;
-  &lt;li&gt;การ navigate ด้วย Turbo Drive จะทำงานคล้ายกับ SPA (Single Page Application)
+<h2 id="สิ่งที่เปลี่ยนไปหลังจากเพิ่ม-script">สิ่งที่เปลี่ยนไปหลังจากเพิ่ม script</h2>
+<ul>
+  <li>การ navigation ผ่าน tag <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> และ <code class="language-plaintext highlighter-rouge">&lt;form&gt;</code> ทุกอันจะถูกแทนที่ด้วย Turbo Drive</li>
+  <li>การ navigate ด้วย Turbo Drive จะทำงานคล้ายกับ SPA (Single Page Application)
 แต่แตกต่างตรงที่เราไม่ต้องเขียน logic เอง และ Turbo Drive จะทำการ replace HTML ภายใน
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt; ให้โดยอัตโนมัติ โดยไม่มีการ refresh page&lt;/li&gt;
-  &lt;li&gt;หากทำการ inspect ที่ network tab จะเห็นความแตกต่าง ตามตัวอย่างข้างล่าง&lt;/li&gt;
-&lt;/ul&gt;
+<code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> ให้โดยอัตโนมัติ โดยไม่มีการ refresh page</li>
+  <li>หากทำการ inspect ที่ network tab จะเห็นความแตกต่าง ตามตัวอย่างข้างล่าง</li>
+</ul>
 
-&lt;div style=&quot;display: flex; justify-content: space-between;margin-bottom:50px;&quot;&gt;
-  &lt;div&gt;
-    &lt;video width=&quot;98%&quot; preload=&quot;auto&quot; muted=&quot;&quot; controls=&quot;&quot;&gt;
-      &lt;source src=&quot;/videos/normal-navigation.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+<div style="display: flex; justify-content: space-between;margin-bottom:50px;">
+  <div>
+    <video width="98%" preload="auto" muted="" controls="">
+      <source src="/videos/normal-navigation.mp4" type="video/mp4" />
       Your browser does not support the video tag.
-    &lt;/video&gt;
-    &lt;quote&gt;
+    </video>
+    <quote>
       navigation แบบปกติก่อนใส่ script
-    &lt;/quote&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-    &lt;video width=&quot;98%&quot; preload=&quot;auto&quot; muted=&quot;&quot; controls=&quot;&quot;&gt;
-      &lt;source src=&quot;/videos/navigation-with-turbodrive.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+    </quote>
+  </div>
+  <div>
+    <video width="98%" preload="auto" muted="" controls="">
+      <source src="/videos/navigation-with-turbodrive.mp4" type="video/mp4" />
       Your browser does not support the video tag.
-    &lt;/video&gt;
-    &lt;quote&gt;
+    </video>
+    <quote>
       navigation ด้วย Turbo Drive หลังใส่ script
-    &lt;/quote&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+    </quote>
+  </div>
+</div>
 
-&lt;blockquote&gt;
-  &lt;p&gt;สามารถทำการ inspect network และ script tag ของเว็บนี้เพื่อดูเป็นตัวอย่างได้&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="rails," /><category term="turbo," /><category term="hotwired," /><category term="html," /><category term="javascript" /><summary type="html">Hotwired คือชุด Javascript library ที่เป็นค่าเริ่มต้นของ Ruby on Rails ตั้งแต่เวอร์ชั่นที่ 7 เป็นต้นมา แต่การที่ library ถูกเขียนด้วย Javascript ทั้งหมด การใช้งานจึงไม่ได้ถูกผูกอยู่กับ Ruby on Rails เท่านั้น โดย Turbo Drive เป็น feature แรกของ Hotwired ที่เริ่มใช้งานได้ง่ายที่สุด แต่ก็สามารถเห็นผลลัพธ์ได้ทันทีและมีผลกระทบน้อย หากเป็นเว็บไซต์ที่มีลักษณะการใช้งานเพียงเพื่อการแสดง content เท่านั้น เช่น เว็บไซต์สำนักข่าว หรือ บล็อกส่วนตัว</summary></entry><entry><title type="html">ต้นทุนของพัฒนาผลิตภัณฑ์แบบ ChatGPT</title><link href="https://wittawasw.com/2023/02/22/%E0%B8%95%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B8%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B9%81%E0%B8%9A%E0%B8%9A-ChatGPT.html" rel="alternate" type="text/html" title="ต้นทุนของพัฒนาผลิตภัณฑ์แบบ ChatGPT" /><published>2023-02-22T20:25:00+07:00</published><updated>2023-02-22T20:25:00+07:00</updated><id>https://wittawasw.com/2023/02/22/%E0%B8%95%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B8%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B9%81%E0%B8%9A%E0%B8%9A-ChatGPT</id><content type="html" xml:base="https://wittawasw.com/2023/02/22/%E0%B8%95%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B8%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B9%81%E0%B8%9A%E0%B8%9A-ChatGPT.html">&lt;p&gt;มีโอกาสได้คุยเรื่องการนำ ChatGPT มาทำ use case เฉพาะใช้เองหลายครั้ง เป็นคุยจริงจังแบบโอกาสทำธุรกิจแค่ครั้งเดียว นอกนั้นเป็นคุยเล่นๆ แต่ทุกครั้ง ทุกกลุ่มที่ไปคุยให้ฟังก็ต้องอธิบายเรื่องนี้&lt;/p&gt;
+<blockquote>
+  <p>สามารถทำการ inspect network และ script tag ของเว็บนี้เพื่อดูเป็นตัวอย่างได้</p>
+</blockquote>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="rails," /><category term="turbo," /><category term="hotwired," /><category term="html," /><category term="javascript" /><summary type="html"><![CDATA[Hotwired คือชุด Javascript library ที่เป็นค่าเริ่มต้นของ Ruby on Rails ตั้งแต่เวอร์ชั่นที่ 7 เป็นต้นมา แต่การที่ library ถูกเขียนด้วย Javascript ทั้งหมด การใช้งานจึงไม่ได้ถูกผูกอยู่กับ Ruby on Rails เท่านั้น โดย Turbo Drive เป็น feature แรกของ Hotwired ที่เริ่มใช้งานได้ง่ายที่สุด แต่ก็สามารถเห็นผลลัพธ์ได้ทันทีและมีผลกระทบน้อย หากเป็นเว็บไซต์ที่มีลักษณะการใช้งานเพียงเพื่อการแสดง content เท่านั้น เช่น เว็บไซต์สำนักข่าว หรือ บล็อกส่วนตัว]]></summary></entry><entry><title type="html">ต้นทุนของพัฒนาผลิตภัณฑ์แบบ ChatGPT</title><link href="https://wittawasw.com/2023/02/22/%E0%B8%95%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B8%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B9%81%E0%B8%9A%E0%B8%9A-ChatGPT.html" rel="alternate" type="text/html" title="ต้นทุนของพัฒนาผลิตภัณฑ์แบบ ChatGPT" /><published>2023-02-22T20:25:00+07:00</published><updated>2023-02-22T20:25:00+07:00</updated><id>https://wittawasw.com/2023/02/22/%E0%B8%95%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B8%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B9%81%E0%B8%9A%E0%B8%9A-ChatGPT</id><content type="html" xml:base="https://wittawasw.com/2023/02/22/%E0%B8%95%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B8%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9E%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B9%81%E0%B8%9A%E0%B8%9A-ChatGPT.html"><![CDATA[<p>มีโอกาสได้คุยเรื่องการนำ ChatGPT มาทำ use case เฉพาะใช้เองหลายครั้ง เป็นคุยจริงจังแบบโอกาสทำธุรกิจแค่ครั้งเดียว นอกนั้นเป็นคุยเล่นๆ แต่ทุกครั้ง ทุกกลุ่มที่ไปคุยให้ฟังก็ต้องอธิบายเรื่องนี้</p>
 
-&lt;p&gt;ว่า ChatGPT มันมีต้นทุนสูงมาก มากจริงๆถ้าจะทำให้มันแม่นในระดับเดียวกับที่เค้าปล่อยให้เล่น มันไม่ใช่แค่การโยน text จากหนังสือใส่ลงไปใน GPT3 แล้วมันจะใช้งานได้เลย เพราะ ChatGPT มันทำงานได้ดีจากการใช้จำนวน Human Input มหาศาลในการสร้าง Reward Model ภายใน ลองคิดค่าใช้จ่ายดู เอาแบบเร็วๆ น่าจะต้องจ้างพนักงานเต็มเวลาอย่างน้อย 10-20 คน มานั่งคิด prompt แล้วก็คอยให้ feedback คำตอบของ AI  ประมาณ 0.5-1 ปี ถ้าออกมาดีก็มีทางไปต่อได้ ถ้าไม่ดีพอก็ต้องเลือกว่าจะหยุดเพื่อ cut loss เมื่อไหร่ นับว่าเป็นแผนธุรกิจที่มีความเสี่ยงสูงพอสมควร&lt;/p&gt;
+<p>ว่า ChatGPT มันมีต้นทุนสูงมาก มากจริงๆถ้าจะทำให้มันแม่นในระดับเดียวกับที่เค้าปล่อยให้เล่น มันไม่ใช่แค่การโยน text จากหนังสือใส่ลงไปใน GPT3 แล้วมันจะใช้งานได้เลย เพราะ ChatGPT มันทำงานได้ดีจากการใช้จำนวน Human Input มหาศาลในการสร้าง Reward Model ภายใน ลองคิดค่าใช้จ่ายดู เอาแบบเร็วๆ น่าจะต้องจ้างพนักงานเต็มเวลาอย่างน้อย 10-20 คน มานั่งคิด prompt แล้วก็คอยให้ feedback คำตอบของ AI  ประมาณ 0.5-1 ปี ถ้าออกมาดีก็มีทางไปต่อได้ ถ้าไม่ดีพอก็ต้องเลือกว่าจะหยุดเพื่อ cut loss เมื่อไหร่ นับว่าเป็นแผนธุรกิจที่มีความเสี่ยงสูงพอสมควร</p>
 
-&lt;p&gt;ยกตัวอย่าง เช่น การทำโมเดล instructGPT เพื่อใช้ตอบคำถามในงานกฎหมาย ที่เกือบทุกคนจะมีความคิดประมาณว่า แค่ยัดประมวลแพ่ง ประมวลอาญาลงไปก็ใช้ได้ แต่ในความเป็นจริงเรื่องนี้ก็เป็นเรื่องยากและน่าจะต้องใช้ต้นทุนสูงกว่าโมเดลทั่วไปมาก โดยนอกจากจะต้องรองรับภาษาไทยแล้ว ยังมีเรื่องของ “ภาษากฎหมาย” ที่ในกฎหมายเก่า เช่น ประมวลต่างๆ จะใช้คำพูดที่ต่างกับชีวิตประจำวันโดยสิ้นเชิง การให้ feedback ของ prompt คิดว่าอย่างน้อยช่วงแรก ต้องให้คนทำ AI นั่งประกบกับนักกฎหมายช่วยกันทำไปก่อน ไม่สามารถปล่อยให้ฝ่ายใดฝ่ายหนึ่งทำคนเดียวได้ ซึ่งก็เท่ากับต้นทุนต้อง x2&lt;/p&gt;
+<p>ยกตัวอย่าง เช่น การทำโมเดล instructGPT เพื่อใช้ตอบคำถามในงานกฎหมาย ที่เกือบทุกคนจะมีความคิดประมาณว่า แค่ยัดประมวลแพ่ง ประมวลอาญาลงไปก็ใช้ได้ แต่ในความเป็นจริงเรื่องนี้ก็เป็นเรื่องยากและน่าจะต้องใช้ต้นทุนสูงกว่าโมเดลทั่วไปมาก โดยนอกจากจะต้องรองรับภาษาไทยแล้ว ยังมีเรื่องของ “ภาษากฎหมาย” ที่ในกฎหมายเก่า เช่น ประมวลต่างๆ จะใช้คำพูดที่ต่างกับชีวิตประจำวันโดยสิ้นเชิง การให้ feedback ของ prompt คิดว่าอย่างน้อยช่วงแรก ต้องให้คนทำ AI นั่งประกบกับนักกฎหมายช่วยกันทำไปก่อน ไม่สามารถปล่อยให้ฝ่ายใดฝ่ายหนึ่งทำคนเดียวได้ ซึ่งก็เท่ากับต้นทุนต้อง x2</p>
 
-&lt;p&gt;สรุปก็คือ ต้องมีทุนที่เยอะพอและเป็นทุนที่ความเสี่ยงสูงด้วย ลองช่วยกันกับคนที่มาปรึกษานั่งทำ budget plan 3 ปีด้วยกัน ตกออกมาได้เฉลี่ยอย่างน้อยปีล่ะ 10-20 ล้านบาท สำหรับงานจริงจัง หรือปีล่ะ 1-3 ล้าน สำหรับงานเล็กๆ ใกล้เคียงกับ hobbyist&lt;/p&gt;
+<p>สรุปก็คือ ต้องมีทุนที่เยอะพอและเป็นทุนที่ความเสี่ยงสูงด้วย ลองช่วยกันกับคนที่มาปรึกษานั่งทำ budget plan 3 ปีด้วยกัน ตกออกมาได้เฉลี่ยอย่างน้อยปีล่ะ 10-20 ล้านบาท สำหรับงานจริงจัง หรือปีล่ะ 1-3 ล้าน สำหรับงานเล็กๆ ใกล้เคียงกับ hobbyist</p>
 
-&lt;p&gt;ถ้าเป็นเอกชนที่คิดจะพัฒนาเองเพื่อเอาไว้เป็น asset ของบริษัทก็ควรหาคนร่วมทุนหรือให้ทุนจะดีกว่า แต่มันก็ยากเพราะเราต้องบอกคนให้ทุนตั้งแต่ต้นว่าความเสี่ยงมันสูง ยกเว้นจะได้ระดับ SCB, Kbank ลงมาให้ทุนหรือทำเอง ก็คงไม่ต้องห่วงอะไร เพราะเงินจมไปร้อยล้านก็ไม่เดือดร้อน&lt;/p&gt;</content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="startup," /><category term="GPT" /><summary type="html">มีโอกาสได้คุยเรื่องการนำ ChatGPT มาทำ use case เฉพาะใช้เองหลายครั้ง เป็นคุยจริงจังแบบโอกาสทำธุรกิจแค่ครั้งเดียว นอกนั้นเป็นคุยเล่นๆ แต่ทุกครั้ง ทุกกลุ่มที่ไปคุยให้ฟังก็ต้องอธิบายเรื่องนี้</summary></entry><entry><title type="html">การใช้ docker สำหรับเตรียมพื้นที่พัฒนาเว็บแอปพลิเคชัน</title><link href="https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development.html" rel="alternate" type="text/html" title="การใช้ docker สำหรับเตรียมพื้นที่พัฒนาเว็บแอปพลิเคชัน" /><published>2022-04-25T00:32:00+07:00</published><updated>2022-04-25T00:32:00+07:00</updated><id>https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development</id><content type="html" xml:base="https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development.html">&lt;p&gt;การพัฒนาเว็บแอปพลิเคชันในปัจจุบัน มีความซับซ้อนและความต้องการทางเทคนิคที่เพิ่มขึ้นมาก
+<p>ถ้าเป็นเอกชนที่คิดจะพัฒนาเองเพื่อเอาไว้เป็น asset ของบริษัทก็ควรหาคนร่วมทุนหรือให้ทุนจะดีกว่า แต่มันก็ยากเพราะเราต้องบอกคนให้ทุนตั้งแต่ต้นว่าความเสี่ยงมันสูง ยกเว้นจะได้ระดับ SCB, Kbank ลงมาให้ทุนหรือทำเอง ก็คงไม่ต้องห่วงอะไร เพราะเงินจมไปร้อยล้านก็ไม่เดือดร้อน</p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="startup," /><category term="GPT" /><summary type="html"><![CDATA[มีโอกาสได้คุยเรื่องการนำ ChatGPT มาทำ use case เฉพาะใช้เองหลายครั้ง เป็นคุยจริงจังแบบโอกาสทำธุรกิจแค่ครั้งเดียว นอกนั้นเป็นคุยเล่นๆ แต่ทุกครั้ง ทุกกลุ่มที่ไปคุยให้ฟังก็ต้องอธิบายเรื่องนี้]]></summary></entry><entry><title type="html">การใช้ docker สำหรับเตรียมพื้นที่พัฒนาเว็บแอปพลิเคชัน</title><link href="https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development.html" rel="alternate" type="text/html" title="การใช้ docker สำหรับเตรียมพื้นที่พัฒนาเว็บแอปพลิเคชัน" /><published>2022-04-25T00:32:00+07:00</published><updated>2022-04-25T00:32:00+07:00</updated><id>https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development</id><content type="html" xml:base="https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development.html"><![CDATA[<p>การพัฒนาเว็บแอปพลิเคชันในปัจจุบัน มีความซับซ้อนและความต้องการทางเทคนิคที่เพิ่มขึ้นมาก
 การพัฒนาจึงกลายเป็นการทำงานที่ต้องทำร่วมกันกับคนจำนวนมากขึ้น ไม่ได้จำกัดแค่คนกลุ่มเล็กเท่านั้น
 แต่อาจหมายถึงการรวมกลุ่มทำงานในทีมที่อาจมีขนาดถึง 50-100 คน
 การเตรียมชุดซอฟต์แวร์เพื่อให้ทีมงานจำนวนมากสามารถใช้ร่วมกันได้ โดยที่มีความใกล้เคียงกับพื้นที่จริงบน
 production environment จึงกลายเป็นความจำเป็น ซึ่ง docker สามารถช่วยตอบโจทย์ความต้องการนี้ได้
-ทว่าการใช้งาน docker จำเป็นต้องเข้าใจพื้นฐานการเชื่อมต่อ network เพื่อให้สามารถตั้งค่าการใช้งานภายในโรแกรมได้เอง ตามที่กำลังจะอธิบายต่อไปด้านล่าง&lt;/p&gt;
+ทว่าการใช้งาน docker จำเป็นต้องเข้าใจพื้นฐานการเชื่อมต่อ network เพื่อให้สามารถตั้งค่าการใช้งานภายในโรแกรมได้เอง ตามที่กำลังจะอธิบายต่อไปด้านล่าง</p>
 
-&lt;h2 id=&quot;การเชื่อมต่อผ่าน-docker-network&quot;&gt;การเชื่อมต่อผ่าน docker network&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;หากไม่มีการตั้งค่าเพิ่มเติม docker จะทำงานภายในเครือข่าย network ในรูปแบบของ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bridge mode&lt;/code&gt;
-network ที่ใช้ชื่อว่า &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bridge&lt;/code&gt;
-    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# คำสั่ง cli ที่ใช้ในการดูรายละเอียดของ docker network&lt;/span&gt;
+<h2 id="การเชื่อมต่อผ่าน-docker-network">การเชื่อมต่อผ่าน docker network</h2>
+<ul>
+  <li>หากไม่มีการตั้งค่าเพิ่มเติม docker จะทำงานภายในเครือข่าย network ในรูปแบบของ <code class="language-plaintext highlighter-rouge">bridge mode</code>
+network ที่ใช้ชื่อว่า <code class="language-plaintext highlighter-rouge">bridge</code>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># คำสั่ง cli ที่ใช้ในการดูรายละเอียดของ docker network</span>
 
-&lt;span class=&quot;c&quot;&gt;# ดูรายชื่อ docker network&lt;/span&gt;
-docker network &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;
+<span class="c"># ดูรายชื่อ docker network</span>
+docker network <span class="nb">ls</span>
 
-&lt;span class=&quot;c&quot;&gt;# ดูรายละเอียดของ docker network&lt;/span&gt;
-docker network inspect &amp;lt;ชื่อของ network&amp;gt;
+<span class="c"># ดูรายละเอียดของ docker network</span>
+docker network inspect &lt;ชื่อของ network&gt;
 
-&lt;span class=&quot;c&quot;&gt;# ดูรายละเอียดของ docker network ค่าเริ่มต้น&lt;/span&gt;
+<span class="c"># ดูรายละเอียดของ docker network ค่าเริ่มต้น</span>
 docker network inspect bridge
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;การเชื่อมต่อผ่าน docker network ควรสร้าง network ชื่อเฉพาะของแต่ล่ะงานขึ้นมา
+</code></pre></div>    </div>
+  </li>
+  <li>การเชื่อมต่อผ่าน docker network ควรสร้าง network ชื่อเฉพาะของแต่ล่ะงานขึ้นมา
 เพื่อแยกระบบออกจากการกันให้ชัดเจน
-    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# ตัวอย่างการสร้าง network&lt;/span&gt;
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ตัวอย่างการสร้าง network</span>
 
-&lt;span class=&quot;c&quot;&gt;# สร้าง network ชื่อ myweb&lt;/span&gt;
+<span class="c"># สร้าง network ชื่อ myweb</span>
 ➜  ~ docker network create myweb
 94e2714b100d6634299bbbc7dfb30bf7bc7d150e27f4f48764bec91d32d4686e
 
-&lt;span class=&quot;c&quot;&gt;# ทดลองสร้าง container ขื่อ redis-store สำหรับ redis ขึ้นมาบน network ชื่อ myweb&lt;/span&gt;
-➜  ~ docker run &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; redis-store &lt;span class=&quot;nt&quot;&gt;--network&lt;/span&gt; myweb redis:6-alpine
-1:C &lt;span class=&quot;c&quot;&gt;# oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo&lt;/span&gt;
-1:C &lt;span class=&quot;c&quot;&gt;# Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started&lt;/span&gt;
-1:C &lt;span class=&quot;c&quot;&gt;# Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf&lt;/span&gt;
-1:M &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; monotonic clock: POSIX clock_gettime
-1:M &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Running &lt;span class=&quot;nv&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;standalone, &lt;span class=&quot;nv&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;6379.
-1:M &lt;span class=&quot;c&quot;&gt;# Server initialized&lt;/span&gt;
-1:M &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Ready to accept connections
+<span class="c"># ทดลองสร้าง container ขื่อ redis-store สำหรับ redis ขึ้นมาบน network ชื่อ myweb</span>
+➜  ~ docker run <span class="nt">--name</span> redis-store <span class="nt">--network</span> myweb redis:6-alpine
+1:C <span class="c"># oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo</span>
+1:C <span class="c"># Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started</span>
+1:C <span class="c"># Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf</span>
+1:M <span class="k">*</span> monotonic clock: POSIX clock_gettime
+1:M <span class="k">*</span> Running <span class="nv">mode</span><span class="o">=</span>standalone, <span class="nv">port</span><span class="o">=</span>6379.
+1:M <span class="c"># Server initialized</span>
+1:M <span class="k">*</span> Ready to accept connections
 
 ➜  ~ docker ps
 CONTAINER ID   IMAGE            COMMAND                  CREATED              STATUS              PORTS      NAMES
-cb67ff6bd900   redis:6-alpine   &lt;span class=&quot;s2&quot;&gt;&quot;docker-entrypoint.s…&quot;&lt;/span&gt;   About a minute ago   Up About a minute   6379/tcp   redis-store
+cb67ff6bd900   redis:6-alpine   <span class="s2">"docker-entrypoint.s…"</span>   About a minute ago   Up About a minute   6379/tcp   redis-store
 
-&lt;span class=&quot;c&quot;&gt;# ดูรายละเอียดของ docker network ค่าเริ่มต้น&lt;/span&gt;
+<span class="c"># ดูรายละเอียดของ docker network ค่าเริ่มต้น</span>
 ➜  ~ docker network inspect myweb
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;Name&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;myweb&quot;&lt;/span&gt;,
-        &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;# ของจริงมีรายละเอียดเยอะกว่านี้แต่ย่อมาให้เห็นเฉพาะส่วนของ containers&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;Containers&quot;&lt;/span&gt;: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;s2&quot;&gt;&quot;cb67ff6bd90061869639e950e908b169d830e54173d479c9ff2186597d2fd1b7&quot;&lt;/span&gt;: &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;s2&quot;&gt;&quot;Name&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;redis-store&quot;&lt;/span&gt;,
-                &lt;span class=&quot;s2&quot;&gt;&quot;EndpointID&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;ed4aa0f9da01cbb7bfb7f6ae6a8eea8af8b58b5c66f16aef9b13831dc652fc22&quot;&lt;/span&gt;,
-                &lt;span class=&quot;s2&quot;&gt;&quot;MacAddress&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;02:42:ac:1b:00:02&quot;&lt;/span&gt;,
-                &lt;span class=&quot;s2&quot;&gt;&quot;IPv4Address&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;172.27.0.2/16&quot;&lt;/span&gt;,
-                &lt;span class=&quot;s2&quot;&gt;&quot;IPv6Address&quot;&lt;/span&gt;: &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+<span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s2">"Name"</span>: <span class="s2">"myweb"</span>,
+        <span class="nb">.</span>
+        <span class="c"># ของจริงมีรายละเอียดเยอะกว่านี้แต่ย่อมาให้เห็นเฉพาะส่วนของ containers</span>
+        <span class="nb">.</span>
+        <span class="s2">"Containers"</span>: <span class="o">{</span>
+            <span class="s2">"cb67ff6bd90061869639e950e908b169d830e54173d479c9ff2186597d2fd1b7"</span>: <span class="o">{</span>
+                <span class="s2">"Name"</span>: <span class="s2">"redis-store"</span>,
+                <span class="s2">"EndpointID"</span>: <span class="s2">"ed4aa0f9da01cbb7bfb7f6ae6a8eea8af8b58b5c66f16aef9b13831dc652fc22"</span>,
+                <span class="s2">"MacAddress"</span>: <span class="s2">"02:42:ac:1b:00:02"</span>,
+                <span class="s2">"IPv4Address"</span>: <span class="s2">"172.27.0.2/16"</span>,
+                <span class="s2">"IPv6Address"</span>: <span class="s2">""</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">]</span>
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;จากตัวอย่างด้านบนจะเห็นได้ว่าเราสามารถเข้าถึง container ที่ชื่อว่า redis-store ได้ด้วย
-IP address &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;172.27.0.2&lt;/code&gt; แต่ทว่า IP address นี้จะเปลี่ยนไปทุกครั้งที่มีการ restart container
+</code></pre></div>    </div>
+  </li>
+  <li>จากตัวอย่างด้านบนจะเห็นได้ว่าเราสามารถเข้าถึง container ที่ชื่อว่า redis-store ได้ด้วย
+IP address <code class="language-plaintext highlighter-rouge">172.27.0.2</code> แต่ทว่า IP address นี้จะเปลี่ยนไปทุกครั้งที่มีการ restart container
 ดังนั้นการนำค่า IP Address ไปใช้งานโดยตรงจึงไม่ใช่เรื่องที่ดีนักเพราะเราต้องเสียเวลามาเปลี่ยน IP Address
-อยู่เรื่อยๆ&lt;/li&gt;
-  &lt;li&gt;วิธีการที่ถูกต้องคือควรจะนำแอปพลิเคชันที่เรียกใช้ redis ใส่ไว้ใน network ที่ชื่อ myweb ด้วย
+อยู่เรื่อยๆ</li>
+  <li>วิธีการที่ถูกต้องคือควรจะนำแอปพลิเคชันที่เรียกใช้ redis ใส่ไว้ใน network ที่ชื่อ myweb ด้วย
 และภายใน code ที่ทำการเชื่อมต่อก็ใช้ชื่อของ container แทน hostname, IP address ได้เลย
 ในตัวอย่างนี้ code ที่ทำการเชื่อต่อ redis จะสามารถเชื่อมต่อกับ redis ผ่านตัวอย่าง URL ต่อไปนี้ได้
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;redis://172.27.0.2:6379&lt;/code&gt;  &lt;em&gt;(ใช้ IP Address โดยตรงก็ได้แต่เป็นวิธีที่ไม่แนะนำ)&lt;/em&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;redis://redis-store:6379&lt;/code&gt;  &lt;em&gt;(ควรใช้ชื่อ container แทน hostname)&lt;/em&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;หากในขั้นตอนด้านบน ไม่ได้ทำการสร้าง network และใช้ network ชื่อ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bridge&lt;/code&gt; ตามค่าเริ่มต้น
-การใช้ชื่อ container แทน hostname แบบ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;redis://redis-store:6379&lt;/code&gt; จะไม่สามารถทำได้&lt;/li&gt;
-&lt;/ul&gt;
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">redis://172.27.0.2:6379</code>  <em>(ใช้ IP Address โดยตรงก็ได้แต่เป็นวิธีที่ไม่แนะนำ)</em></li>
+      <li><code class="language-plaintext highlighter-rouge">redis://redis-store:6379</code>  <em>(ควรใช้ชื่อ container แทน hostname)</em></li>
+    </ul>
+  </li>
+  <li>หากในขั้นตอนด้านบน ไม่ได้ทำการสร้าง network และใช้ network ชื่อ <code class="language-plaintext highlighter-rouge">bridge</code> ตามค่าเริ่มต้น
+การใช้ชื่อ container แทน hostname แบบ <code class="language-plaintext highlighter-rouge">redis://redis-store:6379</code> จะไม่สามารถทำได้</li>
+</ul>
 
-&lt;h2 id=&quot;การเข้าถึง-container-ด้วย-port-mapping&quot;&gt;การเข้าถึง container ด้วย port mapping&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;ในกรณีที่เราต้องการเข้าถึงผ่าน &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;localhost&lt;/code&gt; หรือ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;127.0.0.1&lt;/code&gt; เราสามารใช้ใช้ option -p เพื่อทำการ
+<h2 id="การเข้าถึง-container-ด้วย-port-mapping">การเข้าถึง container ด้วย port mapping</h2>
+<ul>
+  <li>ในกรณีที่เราต้องการเข้าถึงผ่าน <code class="language-plaintext highlighter-rouge">localhost</code> หรือ <code class="language-plaintext highlighter-rouge">127.0.0.1</code> เราสามารใช้ใช้ option -p เพื่อทำการ
 port mapping ออกมาจาก docker network
-    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# แอปพลิเคชันที่อยู่ภายใน localhost จะสามารถเชื่อต่อได้ผ่าน redis://localhost:6379&lt;/span&gt;
-docker run &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; redis-store &lt;span class=&quot;nt&quot;&gt;--network&lt;/span&gt; myweb &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 127.0.0.1:6379:6379/tcp redis:6-alpine
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># แอปพลิเคชันที่อยู่ภายใน localhost จะสามารถเชื่อต่อได้ผ่าน redis://localhost:6379</span>
+docker run <span class="nt">--name</span> redis-store <span class="nt">--network</span> myweb <span class="nt">-p</span> 127.0.0.1:6379:6379/tcp redis:6-alpine
 
-&lt;span class=&quot;c&quot;&gt;# /tcp อนุโลมให้ไม่ใส่ได้เพราะค่าเริ่มต้นคือ tcp อยู่แล้ว และอีก protocol ที่ชื่อ udp ก็ไม่เป็นที่นิยมใช้&lt;/span&gt;
-docker run &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; redis-store &lt;span class=&quot;nt&quot;&gt;--network&lt;/span&gt; myweb &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 127.0.0.1:6379:6379 redis:6-alpine
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;จะสังเกตได้ว่าเราทำการ map ให้เข้ากับ host &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;127.0.0.1&lt;/code&gt;
+<span class="c"># /tcp อนุโลมให้ไม่ใส่ได้เพราะค่าเริ่มต้นคือ tcp อยู่แล้ว และอีก protocol ที่ชื่อ udp ก็ไม่เป็นที่นิยมใช้</span>
+docker run <span class="nt">--name</span> redis-store <span class="nt">--network</span> myweb <span class="nt">-p</span> 127.0.0.1:6379:6379 redis:6-alpine
+</code></pre></div>    </div>
+  </li>
+  <li>จะสังเกตได้ว่าเราทำการ map ให้เข้ากับ host <code class="language-plaintext highlighter-rouge">127.0.0.1</code>
 ซึ่งข้อผิดพลาดหรือความไม่ระวังอย่างหนึ่งที่พบได้บ่อยคือการใช้ option -p โดยไม่ระบุ host
 ทำให้ container สามารถถูกเข้าถึงได้จาก host ภายนอกทั้งหมด
-    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# สังเกตตรง -p 6379:6379 ซึ่งเป็นลักษณะที่ไม่พึงประสงค์ ควรใช้ก็ต่อเมื่อเข้าใจความเสี่ยงเท่านั้น&lt;/span&gt;
-docker run &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; redis-store &lt;span class=&quot;nt&quot;&gt;--network&lt;/span&gt; myweb &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 6379:6379 redis:6-alpine
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># สังเกตตรง -p 6379:6379 ซึ่งเป็นลักษณะที่ไม่พึงประสงค์ ควรใช้ก็ต่อเมื่อเข้าใจความเสี่ยงเท่านั้น</span>
+docker run <span class="nt">--name</span> redis-store <span class="nt">--network</span> myweb <span class="nt">-p</span> 6379:6379 redis:6-alpine
+</code></pre></div>    </div>
+  </li>
+</ul>
 
-&lt;h2 id=&quot;บันทึกและติดตามการเปลี่ยนแปลงการตั้งค่า-docker-ด้วย-docker-compose&quot;&gt;บันทึกและติดตามการเปลี่ยนแปลงการตั้งค่า docker ด้วย docker-compose&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;การทำเว็บแอปพลิเคชัน องค์ประกอบจะเพิ่มความซับซ้อนมากขึ้นเรื่อยๆ ตามความต้องการของแอปพลิเชัน
+<h2 id="บันทึกและติดตามการเปลี่ยนแปลงการตั้งค่า-docker-ด้วย-docker-compose">บันทึกและติดตามการเปลี่ยนแปลงการตั้งค่า docker ด้วย docker-compose</h2>
+<ul>
+  <li>การทำเว็บแอปพลิเคชัน องค์ประกอบจะเพิ่มความซับซ้อนมากขึ้นเรื่อยๆ ตามความต้องการของแอปพลิเชัน
 ซึ่งทำให้การตั้งค่า docker ก็ต้องมีการบันทึกเก็บไว้ใน version control
-เพื่อให้สามารถติดตามการเปลี่ยนแปลงได้&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;docker-compose ไม่ได้เป็นเพียงรูปแบบที่ช่วยบันทึก แต่เรายังสามารถเรียกใช้งานทุกองค์ประกอบได้โดยที่ไม่ต้อง
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker run&lt;/code&gt; ทีล่ะ container ลดความยุ่งยากในการจำตัวเลือกการตั้งค่าต่างๆเหลือเพียงให้จำเพียงชื่อ
-service ของ container เท่านั้น&lt;/p&gt;
+เพื่อให้สามารถติดตามการเปลี่ยนแปลงได้</li>
+  <li>
+    <p>docker-compose ไม่ได้เป็นเพียงรูปแบบที่ช่วยบันทึก แต่เรายังสามารถเรียกใช้งานทุกองค์ประกอบได้โดยที่ไม่ต้อง
+<code class="language-plaintext highlighter-rouge">docker run</code> ทีล่ะ container ลดความยุ่งยากในการจำตัวเลือกการตั้งค่าต่างๆเหลือเพียงให้จำเพียงชื่อ
+service ของ container เท่านั้น</p>
 
-    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# docker-compose.yml&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3&apos;&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;web&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;dockerfile&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./Dockerfile&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;8080:8080&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# port mapping เพื่อให้สามารถใช้ localhost:8080 แทน internal IP ได้&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.:/var/www/html&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;REDIS_URL=redis://redis:6379&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;networks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;myweb&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;redis&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;redis:6-alpine&apos;&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# ใช้สัญลักษณ์ # ในการ comment เพื่อให้ docker-compose ไม่อ่านค่า&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# comment port mapping ออก โดยสามารถนำเครื่องหมาย # ข้างหน้าออกเพื่อเปิดใช้งานได้ในกรณี&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# ที่ต้องการ debug&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# ports:&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#  - 6379:6379&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ALLOW_EMPTY_PASSWORD=yes&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;networks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;myweb&lt;/span&gt;
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># docker-compose.yml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">web</span><span class="pi">:</span>
+    <span class="na">build</span><span class="pi">:</span>
+      <span class="na">context</span><span class="pi">:</span> <span class="s">.</span>
+      <span class="na">dockerfile</span><span class="pi">:</span> <span class="s">./Dockerfile</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">8080:8080</span> <span class="c1"># port mapping เพื่อให้สามารถใช้ localhost:8080 แทน internal IP ได้</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">.:/var/www/html</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">REDIS_URL=redis://redis:6379</span>
+    <span class="na">networks</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">myweb</span>
+  <span class="na">redis</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s1">'</span><span class="s">redis:6-alpine'</span>
+    <span class="c1"># ใช้สัญลักษณ์ # ในการ comment เพื่อให้ docker-compose ไม่อ่านค่า</span>
+    <span class="c1"># comment port mapping ออก โดยสามารถนำเครื่องหมาย # ข้างหน้าออกเพื่อเปิดใช้งานได้ในกรณี</span>
+    <span class="c1"># ที่ต้องการ debug</span>
+    <span class="c1"># ports:</span>
+    <span class="c1">#  - 6379:6379</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">ALLOW_EMPTY_PASSWORD=yes</span>
+    <span class="na">networks</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">myweb</span>
 
-&lt;span class=&quot;na&quot;&gt;networks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;myweb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bridge&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;สามารถตั้งค่า docker network จากภายในไฟล์ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; ได้เลย
-โดยไม่จำเป็นต้องสร้าง network ด้วยคำสั่ง &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker network create &amp;lt;ชื่อ network&amp;gt;&lt;/code&gt; เอาไว้ก่อน&lt;/li&gt;
-  &lt;li&gt;แต่หากต้องการใช้ network ที่ไม่ได้สร้างจากภายในไฟล์ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; จำเป็นต้องระบุว่าเป็น
+<span class="na">networks</span><span class="pi">:</span>
+  <span class="na">myweb</span><span class="pi">:</span>
+    <span class="na">driver</span><span class="pi">:</span> <span class="s">bridge</span>
+</code></pre></div>    </div>
+  </li>
+  <li>สามารถตั้งค่า docker network จากภายในไฟล์ <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> ได้เลย
+โดยไม่จำเป็นต้องสร้าง network ด้วยคำสั่ง <code class="language-plaintext highlighter-rouge">docker network create &lt;ชื่อ network&gt;</code> เอาไว้ก่อน</li>
+  <li>แต่หากต้องการใช้ network ที่ไม่ได้สร้างจากภายในไฟล์ <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> จำเป็นต้องระบุว่าเป็น
 external network ตามรูปแบบนี้
-    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# docker-compose.yml&lt;/span&gt;
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># docker-compose.yml</span>
 
-&lt;span class=&quot;na&quot;&gt;networks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;external&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;myweb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bridge&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;การใช้งานผ่าน docker-compose จะทำให้การเชื่อมต่อ redis จากภายใน code ของ container web
-สามารถใช้ชื่อ service &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;redis&lt;/code&gt; แทน hostname ได้เลย เช่น &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;redis://redis:6379&lt;/code&gt; ทำให้ไม่มีความจำเป็นต้องจำชื่อ container  อีกต่อไป&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;การเรียกใช้งานเบื้องต้น
-    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# เรียกใช้งานในรูปแบบ active process สามารถ kill โดยการกด ctrl-C หรือ ปิด terminal ได้&lt;/span&gt;
+<span class="na">networks</span><span class="pi">:</span>
+  <span class="na">external</span><span class="pi">:</span>
+    <span class="na">myweb</span><span class="pi">:</span>
+      <span class="na">driver</span><span class="pi">:</span> <span class="s">bridge</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>การใช้งานผ่าน docker-compose จะทำให้การเชื่อมต่อ redis จากภายใน code ของ container web
+สามารถใช้ชื่อ service <code class="language-plaintext highlighter-rouge">redis</code> แทน hostname ได้เลย เช่น <code class="language-plaintext highlighter-rouge">redis://redis:6379</code> ทำให้ไม่มีความจำเป็นต้องจำชื่อ container  อีกต่อไป</p>
+  </li>
+  <li>การเรียกใช้งานเบื้องต้น
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># เรียกใช้งานในรูปแบบ active process สามารถ kill โดยการกด ctrl-C หรือ ปิด terminal ได้</span>
 docker-compose up
 
-&lt;span class=&quot;c&quot;&gt;# เรียกใช้งานในรูปแบบ daemon process&lt;/span&gt;
-docker-compose up &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt;
+<span class="c"># เรียกใช้งานในรูปแบบ daemon process</span>
+docker-compose up <span class="nt">-d</span>
 
-&lt;span class=&quot;c&quot;&gt;# ตัวอย่างการเรียกใช้งานเฉพาะบาง service&lt;/span&gt;
+<span class="c"># ตัวอย่างการเรียกใช้งานเฉพาะบาง service</span>
 docker-compose up web
 docker-compose up redis
 
-&lt;span class=&quot;c&quot;&gt;# ตัวอย่างการเรียกใช้งานหลาย service แบบเจาะจง&lt;/span&gt;
+<span class="c"># ตัวอย่างการเรียกใช้งานหลาย service แบบเจาะจง</span>
 docker-compose up web redis
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+</code></pre></div>    </div>
+  </li>
+</ul>
 
-&lt;h2 id=&quot;environment-variables-จากไฟล์-env&quot;&gt;Environment Variables จากไฟล์ .env&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;คำสั่ง docker-compose จะอ่านค่าจากไฟล์ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.env&lt;/code&gt; โดยอัตโนมัติ
+<h2 id="environment-variables-จากไฟล์-env">Environment Variables จากไฟล์ .env</h2>
+<ul>
+  <li>คำสั่ง docker-compose จะอ่านค่าจากไฟล์ <code class="language-plaintext highlighter-rouge">.env</code> โดยอัตโนมัติ
 ทำให้ไม่จำเป็นต้องใส่ค่าบางค่า ที่ผู้พัฒนาบางคนอาจใช้ไม่ตรงกันได้ เช่น port ของแอปพลิเคชัน
-หรือ ชื่อของ network ที่ใช้&lt;/li&gt;
-  &lt;li&gt;การใช้ค่าจาก Environment variables ภายใน code เป็นแนวทางที่ถูกแนะนำภายใต้หลักการ
-&lt;a href=&quot;https://12factor.net/&quot;&gt;12-factor&lt;/a&gt; เพื่อให้การ deploy เว็บแอปพลิเคชัน สามารถแยกตาม
-environment ได้&lt;/li&gt;
-&lt;/ul&gt;
+หรือ ชื่อของ network ที่ใช้</li>
+  <li>การใช้ค่าจาก Environment variables ภายใน code เป็นแนวทางที่ถูกแนะนำภายใต้หลักการ
+<a href="https://12factor.net/">12-factor</a> เพื่อให้การ deploy เว็บแอปพลิเคชัน สามารถแยกตาม
+environment ได้</li>
+</ul>
 
-&lt;pre&gt;&lt;code class=&quot;language-.env&quot;&gt;# .env
+<pre><code class="language-.env"># .env
 EXPOSED_WEB_PORT=8080
 WEB_DIRECTORY=.
 REDIS_HOSTNAME=redis
 EXPOSED_REDIS_PORT=6379
 MY_WEB_NETWORK_NAME=myweb
-&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
 
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# docker-compose.yml&lt;/span&gt;
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># docker-compose.yml</span>
 
-  &lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3&apos;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;web&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;dockerfile&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./Dockerfile&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${EXPOSED_WEB_PORT}:8080&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${WEB_DIRECTORY}:/var/www/html&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;REDIS_URL=redis://${REDIS_HOSTNAME}:${EXPOSED_REDIS_PORT}&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;networks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;myweb&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;redis&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;redis:6-alpine&apos;&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;# ports:&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;#  - ${EXPOSED_REDIS_PORT}:6379&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ALLOW_EMPTY_PASSWORD=yes&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;networks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;myweb&lt;/span&gt;
+  <span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
+  <span class="na">services</span><span class="pi">:</span>
+    <span class="na">web</span><span class="pi">:</span>
+      <span class="na">build</span><span class="pi">:</span>
+        <span class="na">context</span><span class="pi">:</span> <span class="s">.</span>
+        <span class="na">dockerfile</span><span class="pi">:</span> <span class="s">./Dockerfile</span>
+      <span class="na">ports</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">${EXPOSED_WEB_PORT}:8080</span>
+      <span class="na">volumes</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">${WEB_DIRECTORY}:/var/www/html</span>
+      <span class="na">environment</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">REDIS_URL=redis://${REDIS_HOSTNAME}:${EXPOSED_REDIS_PORT}</span>
+      <span class="na">networks</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">myweb</span>
+    <span class="na">redis</span><span class="pi">:</span>
+      <span class="na">image</span><span class="pi">:</span> <span class="s1">'</span><span class="s">redis:6-alpine'</span>
+      <span class="c1"># ports:</span>
+      <span class="c1">#  - ${EXPOSED_REDIS_PORT}:6379</span>
+      <span class="na">environment</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">ALLOW_EMPTY_PASSWORD=yes</span>
+      <span class="na">networks</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">myweb</span>
 
-  &lt;span class=&quot;na&quot;&gt;networks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;myweb&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${MY_WEB_NETWORK_NAME}&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;driver&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bridge&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>wittawasw</name><email>your-email@domain.com</email></author><summary type="html">การพัฒนาเว็บแอปพลิเคชันในปัจจุบัน มีความซับซ้อนและความต้องการทางเทคนิคที่เพิ่มขึ้นมาก การพัฒนาจึงกลายเป็นการทำงานที่ต้องทำร่วมกันกับคนจำนวนมากขึ้น ไม่ได้จำกัดแค่คนกลุ่มเล็กเท่านั้น แต่อาจหมายถึงการรวมกลุ่มทำงานในทีมที่อาจมีขนาดถึง 50-100 คน การเตรียมชุดซอฟต์แวร์เพื่อให้ทีมงานจำนวนมากสามารถใช้ร่วมกันได้ โดยที่มีความใกล้เคียงกับพื้นที่จริงบน production environment จึงกลายเป็นความจำเป็น ซึ่ง docker สามารถช่วยตอบโจทย์ความต้องการนี้ได้ ทว่าการใช้งาน docker จำเป็นต้องเข้าใจพื้นฐานการเชื่อมต่อ network เพื่อให้สามารถตั้งค่าการใช้งานภายในโรแกรมได้เอง ตามที่กำลังจะอธิบายต่อไปด้านล่าง</summary></entry><entry><title type="html">รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน</title><link href="https://wittawasw.com/2022/02/20/comment-in-code.html" rel="alternate" type="text/html" title="รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน" /><published>2022-02-20T17:31:00+07:00</published><updated>2022-02-20T17:31:00+07:00</updated><id>https://wittawasw.com/2022/02/20/comment-in-code</id><content type="html" xml:base="https://wittawasw.com/2022/02/20/comment-in-code.html">&lt;p&gt;การ comment คือ การทำให้ประโยคหรือตัวอักษรที่เราเขียนในโปรแกรมไม่ถูกประมวลผล โดยอาจมีไว้เพื่อให้บอท
+  <span class="na">networks</span><span class="pi">:</span>
+    <span class="na">myweb</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">${MY_WEB_NETWORK_NAME}</span>
+      <span class="na">driver</span><span class="pi">:</span> <span class="s">bridge</span>
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><summary type="html"><![CDATA[การพัฒนาเว็บแอปพลิเคชันในปัจจุบัน มีความซับซ้อนและความต้องการทางเทคนิคที่เพิ่มขึ้นมาก การพัฒนาจึงกลายเป็นการทำงานที่ต้องทำร่วมกันกับคนจำนวนมากขึ้น ไม่ได้จำกัดแค่คนกลุ่มเล็กเท่านั้น แต่อาจหมายถึงการรวมกลุ่มทำงานในทีมที่อาจมีขนาดถึง 50-100 คน การเตรียมชุดซอฟต์แวร์เพื่อให้ทีมงานจำนวนมากสามารถใช้ร่วมกันได้ โดยที่มีความใกล้เคียงกับพื้นที่จริงบน production environment จึงกลายเป็นความจำเป็น ซึ่ง docker สามารถช่วยตอบโจทย์ความต้องการนี้ได้ ทว่าการใช้งาน docker จำเป็นต้องเข้าใจพื้นฐานการเชื่อมต่อ network เพื่อให้สามารถตั้งค่าการใช้งานภายในโรแกรมได้เอง ตามที่กำลังจะอธิบายต่อไปด้านล่าง]]></summary></entry><entry><title type="html">รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน</title><link href="https://wittawasw.com/2022/02/20/comment-in-code.html" rel="alternate" type="text/html" title="รูปแบบ comment ที่เป็นประโยชน์ในการเขียนโปรแกรมร่วมกัน" /><published>2022-02-20T17:31:00+07:00</published><updated>2022-02-20T17:31:00+07:00</updated><id>https://wittawasw.com/2022/02/20/comment-in-code</id><content type="html" xml:base="https://wittawasw.com/2022/02/20/comment-in-code.html"><![CDATA[<p>การ comment คือ การทำให้ประโยคหรือตัวอักษรที่เราเขียนในโปรแกรมไม่ถูกประมวลผล โดยอาจมีไว้เพื่อให้บอท
 (bot) หรือโปรแกรมเมอร์คนอื่นอ่าน เป็นรูปแบบการการสื่อสารแบบหนึ่งที่โปรแกรมเมอร์สามารถสื่อสารได้
-เพื่อให้การทำงานร่วมกันมีประสิทธิภาพมากขึ้น&lt;/p&gt;
+เพื่อให้การทำงานร่วมกันมีประสิทธิภาพมากขึ้น</p>
 
-&lt;blockquote&gt;
-  &lt;p&gt;ไม่จำเป็นต้อง comment ก็ได้ ถ้าวางรูปแบบและตั้งชื่อตัวแปรของ code ดีพอ&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>ไม่จำเป็นต้อง comment ก็ได้ ถ้าวางรูปแบบและตั้งชื่อตัวแปรของ code ดีพอ</p>
+</blockquote>
 
-&lt;p&gt;คำพูดลักษณะนี้พบได้บ่อยในการแลกเปลี่ยนกันในหัวข้อ &lt;strong&gt;เราควร comment ใน code หรือไม่?&lt;/strong&gt;
+<p>คำพูดลักษณะนี้พบได้บ่อยในการแลกเปลี่ยนกันในหัวข้อ <strong>เราควร comment ใน code หรือไม่?</strong>
 ในความเห็นของผมคือ การ comment ยังมีความจำเป็นในบางโอกาสและมีประโยชน์มากกว่าโทษ
 ในบางโอกาสที่ถึงแม้จะไม่มีความจำเป็นแต่ก็จะเป็นประโยชน์กับเพื่อนร่วมงานมากกว่าการที่เราไม่ comment
-เพราะคำอธิบายที่เป็นคำพูด ส่วนมากแล้วจะเข้าใจได้ง่ายกว่า&lt;/p&gt;
+เพราะคำอธิบายที่เป็นคำพูด ส่วนมากแล้วจะเข้าใจได้ง่ายกว่า</p>
 
-&lt;p&gt;ในการทำงานร่วมกันกับคนหลายคน ถึงแม้ว่าผู้ที่เขียน code นั้น
+<p>ในการทำงานร่วมกันกับคนหลายคน ถึงแม้ว่าผู้ที่เขียน code นั้น
 จะเชื่อว่าสิ่งที่เขียนลงไป เป็นสิ่งที่ง่ายสำหรับผู้เขียน แต่ทุกคนมีที่มาและพื้นฐานของความรู้ที่แตกต่างกัน
 หากเราหลีกเลี่ยงการ comment ในส่วนที่สำคัญ นอกจากจะไม่เกิดประโยชน์ ยังอาจทำให้การทำงานร่วมกัน
-สามารถทำได้ช้าลงเนื่องจากเพื่อนร่วมงานอาจจะไม่สามารถทำความเข้าใจกับ code ได้&lt;/p&gt;
+สามารถทำได้ช้าลงเนื่องจากเพื่อนร่วมงานอาจจะไม่สามารถทำความเข้าใจกับ code ได้</p>
 
-&lt;p&gt;โดยปกติของการ comment ไม่ได้มีการระบุหลักการหรือรูปแบบที่ตายตัวเอาไว้ ทำให้ผู้ที่เริ่มต้นเขียนโปรแกรม
+<p>โดยปกติของการ comment ไม่ได้มีการระบุหลักการหรือรูปแบบที่ตายตัวเอาไว้ ทำให้ผู้ที่เริ่มต้นเขียนโปรแกรม
 มักจะไม่กล้าเริ่มเขียน comment เพราะกลัวว่าจะทำให้ code ของตนเองดูไม่ดี แต่หลักคิดของผมคือ
 หากโปรแกรมเมอร์ที่มาเขียนโปรแกรมต่อจากเรา จำเป็นต้องได้รับคำอธิบายก่อนการเริ่มทำงาน
-ไม่ว่าจะเรื่องอะไร คำอธิบายเรื่องนั้นก็สมควรถูกใส่เอาไว้ใน comment ของ code เช่นตัวอย่างต่อไปนี้&lt;/p&gt;
+ไม่ว่าจะเรื่องอะไร คำอธิบายเรื่องนั้นก็สมควรถูกใส่เอาไว้ใน comment ของ code เช่นตัวอย่างต่อไปนี้</p>
 
-&lt;h3 id=&quot;อธิบายความสำคัญหรือหน้าที่ของ-class-module-หรือ-namespace&quot;&gt;อธิบายความสำคัญหรือหน้าที่ของ class, module หรือ namespace&lt;/h3&gt;
+<h3 id="อธิบายความสำคัญหรือหน้าที่ของ-class-module-หรือ-namespace">อธิบายความสำคัญหรือหน้าที่ของ class, module หรือ namespace</h3>
 
-&lt;p&gt;ในการเขียนโปรแกรมที่มีการแบ่งส่วนการทำงานออกเป็น class, module หรือ namespace
+<p>ในการเขียนโปรแกรมที่มีการแบ่งส่วนการทำงานออกเป็น class, module หรือ namespace
 หลายๆครั้งจะตั้งชื่อด้วยคำที่มีความหมายทั่วไป เพื่อให้สามารถคาดเดาการทำงานได้จากชื่อ
-แต่บางครั้งชื่อที่ใช้ก็อาจจะมีควาหมายที่กว้าง และสามารถใช้ได้กับหลายอย่าง&lt;/p&gt;
+แต่บางครั้งชื่อที่ใช้ก็อาจจะมีควาหมายที่กว้าง และสามารถใช้ได้กับหลายอย่าง</p>
 
-&lt;p&gt;ยกตัวอย่าง comment จาก source code ของ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Redis&lt;/code&gt; ในส่วน &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Connection&lt;/code&gt; ที่หากเปิดไฟล์ขึ้นมาอ่านครั้งแรก
-อาจเข้าใจว่า &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Connection&lt;/code&gt; ในที่นี้หมายถึงการตั้งค่า network connection เช่น การระบุขนาด buffer ,
-การระบุชื่อ socket ที่ใช้  ผู้เขียนจึงได้ comment เอาไว้ว่าไฟล์ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;connection.c&lt;/code&gt; นี้เป็นเพียง abstraction
-ให้เรียกใช้เท่านั้น ส่วนของการตั้งค่าต่างๆของ network อยู่ใน &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;networking.c&lt;/code&gt;&lt;/p&gt;
+<p>ยกตัวอย่าง comment จาก source code ของ <code class="language-plaintext highlighter-rouge">Redis</code> ในส่วน <code class="language-plaintext highlighter-rouge">Connection</code> ที่หากเปิดไฟล์ขึ้นมาอ่านครั้งแรก
+อาจเข้าใจว่า <code class="language-plaintext highlighter-rouge">Connection</code> ในที่นี้หมายถึงการตั้งค่า network connection เช่น การระบุขนาด buffer ,
+การระบุชื่อ socket ที่ใช้  ผู้เขียนจึงได้ comment เอาไว้ว่าไฟล์ <code class="language-plaintext highlighter-rouge">connection.c</code> นี้เป็นเพียง abstraction
+ให้เรียกใช้เท่านั้น ส่วนของการตั้งค่าต่างๆของ network อยู่ใน <code class="language-plaintext highlighter-rouge">networking.c</code></p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &quot;server.h&quot;
-#include &quot;connhelpers.h&quot;
-&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;/* The connections module provides a lean abstraction of network connections
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">"server.h"</span><span class="cp">
+#include</span> <span class="cpf">"connhelpers.h"</span><span class="cp">
+</span>
+<span class="cm">/* The connections module provides a lean abstraction of network connections
  * to avoid direct socket and async event management across the Redis code base.
  *
  * It does NOT provide advanced connection features commonly found in similar
@@ -370,343 +370,343 @@ MY_WEB_NETWORK_NAME=myweb
  * 2. The caller may register/unregister logical read/write handlers to be
  *    called when the connection has data to read from/can accept writes.
  *    These logical handlers may or may not correspond to actual AE events,
- *    depending on the implementation (for TCP they are; for TLS they aren&apos;t).
- */&lt;/span&gt;
+ *    depending on the implementation (for TCP they are; for TLS they aren't).
+ */</span>
 
- &lt;span class=&quot;n&quot;&gt;ConnectionType&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CT_Socket&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
- &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+ <span class="n">ConnectionType</span> <span class="n">CT_Socket</span><span class="p">;</span>
+ <span class="p">.</span>
+ <span class="p">.</span></code></pre></figure>
 
-&lt;p&gt;ที่มา: &lt;a href=&quot;https://github.com/redis/redis/blob/9b0fd9f4d0e7e41f3cc78b4bd37619b574246aef/src/connection.c#L33&quot;&gt;redis/src/connection.c#L33&lt;/a&gt;&lt;/p&gt;
+<p>ที่มา: <a href="https://github.com/redis/redis/blob/9b0fd9f4d0e7e41f3cc78b4bd37619b574246aef/src/connection.c#L33">redis/src/connection.c#L33</a></p>
 
-&lt;h3 id=&quot;อธิบายการทำงานของ-code&quot;&gt;อธิบายการทำงานของ code&lt;/h3&gt;
+<h3 id="อธิบายการทำงานของ-code">อธิบายการทำงานของ code</h3>
 
-&lt;p&gt;เราสามารถตีความจุดประสงค์ของผู้เขียนโปรแกรมจากโปรแกรมที่เขียนได้
+<p>เราสามารถตีความจุดประสงค์ของผู้เขียนโปรแกรมจากโปรแกรมที่เขียนได้
 แต่กระบวนการนั้นต้องใช้ระยะเวลาและความเชี่ยวชาญที่บางคนในทีมไม่มี การเขียนอธิบายการทำงานคร่าวๆเอาไว้
 นอกจากจะช่วยประหยัดเวลาของโปรแกรมเมอร์ที่อาจถูกมอบหมายให้ทำงานต่อจากเรา
-ยังช่วยลดปัญหาที่อาจเกิดจากการตีความผิดอีกด้วย&lt;/p&gt;
+ยังช่วยลดปัญหาที่อาจเกิดจากการตีความผิดอีกด้วย</p>
 
-&lt;p&gt;ลองอ่านตัวอย่าง code ด้านล่างดูโดยเริ่มจาก comment จะเห็นประโยชน์ชัดเจนว่าการได้อ่าน comment ที่อธิบายการทำงานก่อนทำให้สามารถเข้าใจ code ได้เร็วขึ้น และยังป้องกันความผิดพลาดจากการตีความผิด&lt;/p&gt;
+<p>ลองอ่านตัวอย่าง code ด้านล่างดูโดยเริ่มจาก comment จะเห็นประโยชน์ชัดเจนว่าการได้อ่าน comment ที่อธิบายการทำงานก่อนทำให้สามารถเข้าใจ code ได้เร็วขึ้น และยังป้องกันความผิดพลาดจากการตีความผิด</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;call_with_retry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">call_with_retry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">do</span><span class="p">,</span> <span class="n">fail</span><span class="p">):</span>
+    <span class="s">"""
     Execute an operation that might fail and returns its result, or
     raise the exception that was thrown depending on the `Backoff` object.
     `do`: the operation to call. Expects no argument.
     `fail`: the failure handler, expects the last error that was thrown
-    &quot;&quot;&quot;&lt;/span&gt;
-    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_backoff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;failures&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_supported_errors&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;failures&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;fail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;failures&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_retries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;raise&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;backoff&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_backoff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;compute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;failures&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;backoff&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;backoff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    """</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">_backoff</span><span class="p">.</span><span class="n">reset</span><span class="p">()</span>
+    <span class="n">failures</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">do</span><span class="p">()</span>
+        <span class="k">except</span> <span class="bp">self</span><span class="p">.</span><span class="n">_supported_errors</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="n">failures</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">fail</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">failures</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="p">.</span><span class="n">_retries</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">error</span>
+            <span class="n">backoff</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_backoff</span><span class="p">.</span><span class="n">compute</span><span class="p">(</span><span class="n">failures</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">backoff</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">sleep</span><span class="p">(</span><span class="n">backoff</span><span class="p">)</span></code></pre></figure>
 
-&lt;p&gt;ที่มา: &lt;a href=&quot;https://github.com/redis/redis-py/blob/e3c989d93e914e6502bd5a72f15ded49a135c5be/redis/retry.py#L34&quot;&gt;redis-py/redis/retry.py#L34&lt;/a&gt;&lt;/p&gt;
+<p>ที่มา: <a href="https://github.com/redis/redis-py/blob/e3c989d93e914e6502bd5a72f15ded49a135c5be/redis/retry.py#L34">redis-py/redis/retry.py#L34</a></p>
 
-&lt;blockquote&gt;
-  &lt;p&gt;ในกรณีที่เป็น lib ให้มีการเรียกใช้จากภายนอกได้ การยกตัวอย่างใน comment ก็เป็นทางเลือกที่ดี&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>ในกรณีที่เป็น lib ให้มีการเรียกใช้จากภายนอกได้ การยกตัวอย่างใน comment ก็เป็นทางเลือกที่ดี</p>
+</blockquote>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AsyncDataLoaderMixin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">AsyncDataLoaderMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="s">"""
     Async Mixin on top of implementation of BaseDataLoader. It contains a seperate thread
     which reads batch from self._iterate() and push them in the queue. The self.__iter__() function
     will pop the batch from the queue.
     If async_loader_queue_size is set to 0, the data loader will not work in async mode.
     For example:
         class PytorchAsyncDataLoader(AsyncDataLoaderMixin, PytorchDataLoader):
-    &quot;&quot;&quot;&lt;/span&gt;
+    """</span>
 
-    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async_loader_queue_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;debug_data_loader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">async_loader_queue_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">debug_data_loader</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="s">"""
         initialize the async data loader. Need to add this in the __init__() of the implementation
-        &quot;&quot;&quot;&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;async_loader_queue_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;async_loader_queue_size&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;debug_data_loader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;debug_data_loader&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        """</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">async_loader_queue_size</span> <span class="o">=</span> <span class="n">async_loader_queue_size</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">debug_data_loader</span> <span class="o">=</span> <span class="n">debug_data_loader</span>
+        <span class="nb">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Apply the AsyncDataLoaderMixin on top of the data loader, async_loader_queue_size=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;async_loader_queue_size&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;. &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Apply the AsyncDataLoaderMixin on top of the data loader, async_loader_queue_size=</span><span class="si">{</span><span class="n">async_loader_queue_size</span><span class="si">}</span><span class="s">. "</span><span class="p">)</span>
 
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;async_loader_queue_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;finished_event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;async_loader_queue_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;thread&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_async_worker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;thread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;daemon&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;started&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+        <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">async_loader_queue_size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">finished_event</span> <span class="o">=</span> <span class="n">Event</span><span class="p">()</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">async_loader_queue_size</span><span class="p">)</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">thread</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="p">.</span><span class="n">_async_worker</span><span class="p">)</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">thread</span><span class="p">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">started</span> <span class="o">=</span> <span class="bp">False</span></code></pre></figure>
 
-&lt;p&gt;ที่มา: &lt;a href=&quot;https://github.com/horovod/horovod/blob/046c071cb6b0dfbeb6082c6bdf2366e2bf7a6ad9/horovod/data/data_loader_base.py#L49&quot;&gt;horovod/data/data_loader_base.py#L49&lt;/a&gt;&lt;/p&gt;
+<p>ที่มา: <a href="https://github.com/horovod/horovod/blob/046c071cb6b0dfbeb6082c6bdf2366e2bf7a6ad9/horovod/data/data_loader_base.py#L49">horovod/data/data_loader_base.py#L49</a></p>
 
-&lt;h3 id=&quot;อธิบายความหมายของตัวแปรแต่ล่ะตัว&quot;&gt;อธิบายความหมายของตัวแปรแต่ล่ะตัว&lt;/h3&gt;
+<h3 id="อธิบายความหมายของตัวแปรแต่ล่ะตัว">อธิบายความหมายของตัวแปรแต่ล่ะตัว</h3>
 
-&lt;p&gt;ชื่อตัวแปรก็อยู่ในแนวคิดที่ใกล้เคียงกับการอธิบายชื่อ module, class โดยมีประโยชน์มากสำหรับผู้เริ่มต้น
+<p>ชื่อตัวแปรก็อยู่ในแนวคิดที่ใกล้เคียงกับการอธิบายชื่อ module, class โดยมีประโยชน์มากสำหรับผู้เริ่มต้น
 หรือเพื่อนร่วมงานที่เพิ่งเริ่มต้นทำงานร่วมกัน ให้สามารถรู้ถึงความสำคัญของตัวแปรแต่ล่ะตัวได้
-ว่ามีผลกระทบอะไรบ้างกับโปรแกรม&lt;/p&gt;
+ว่ามีผลกระทบอะไรบ้างกับโปรแกรม</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# Create a new classifier with multi-layer preceptron.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# @param hidden_units [Array] The number of units in the i-th hidden layer.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# @param dropout_rate [Float] The rate of the units to drop.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# @param learning_rate [Float] The initial value of learning rate in Adam optimizer.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# @param decay1 [Float] The smoothing parameter for the first moment in Adam optimizer.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# @param decay2 [Float] The smoothing parameter for the second moment in Adam optimizer.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# @param max_iter [Integer] The maximum number of epochs that indicates&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#   how many times the whole data is given to the training process.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# @param batch_size [Intger] The size of the mini batches.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# @param tol [Float] The tolerance of loss for terminating optimization.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# @param verbose [Boolean] The flag indicating whether to output loss during iteration.&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# @param random_seed [Integer] The seed value using to initialize the random generator.&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;hidden_units: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;128&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;128&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;dropout_rate: &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;learning_rate: &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.001&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;decay1: &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;decay2: &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.999&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;ss&quot;&gt;max_iter: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;batch_size: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;tol: &lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1e-4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;verbose: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;random_seed: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;check_params_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;hidden_units: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hidden_units&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;check_params_numeric&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;dropout_rate: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dropout_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;learning_rate: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;learning_rate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;decay1: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decay1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;decay2: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decay2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                        &lt;span class=&quot;ss&quot;&gt;max_iter: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_iter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;batch_size: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;batch_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;tol: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;check_params_boolean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;verbose: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;verbose&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;check_params_numeric_or_nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;random_seed: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random_seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;
-  &lt;span class=&quot;vi&quot;&gt;@classes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;
-  &lt;span class=&quot;vi&quot;&gt;@network&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># Create a new classifier with multi-layer preceptron.</span>
+<span class="c1">#</span>
+<span class="c1"># @param hidden_units [Array] The number of units in the i-th hidden layer.</span>
+<span class="c1"># @param dropout_rate [Float] The rate of the units to drop.</span>
+<span class="c1"># @param learning_rate [Float] The initial value of learning rate in Adam optimizer.</span>
+<span class="c1"># @param decay1 [Float] The smoothing parameter for the first moment in Adam optimizer.</span>
+<span class="c1"># @param decay2 [Float] The smoothing parameter for the second moment in Adam optimizer.</span>
+<span class="c1"># @param max_iter [Integer] The maximum number of epochs that indicates</span>
+<span class="c1">#   how many times the whole data is given to the training process.</span>
+<span class="c1"># @param batch_size [Intger] The size of the mini batches.</span>
+<span class="c1"># @param tol [Float] The tolerance of loss for terminating optimization.</span>
+<span class="c1"># @param verbose [Boolean] The flag indicating whether to output loss during iteration.</span>
+<span class="c1"># @param random_seed [Integer] The seed value using to initialize the random generator.</span>
+<span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="ss">hidden_units: </span><span class="p">[</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">],</span> <span class="ss">dropout_rate: </span><span class="mf">0.4</span><span class="p">,</span> <span class="ss">learning_rate: </span><span class="mf">0.001</span><span class="p">,</span> <span class="ss">decay1: </span><span class="mf">0.9</span><span class="p">,</span> <span class="ss">decay2: </span><span class="mf">0.999</span><span class="p">,</span>
+                <span class="ss">max_iter: </span><span class="mi">200</span><span class="p">,</span> <span class="ss">batch_size: </span><span class="mi">50</span><span class="p">,</span> <span class="ss">tol: </span><span class="mf">1e-4</span><span class="p">,</span> <span class="ss">verbose: </span><span class="kp">false</span><span class="p">,</span> <span class="ss">random_seed: </span><span class="kp">nil</span><span class="p">)</span>
+  <span class="n">check_params_type</span><span class="p">(</span><span class="no">Array</span><span class="p">,</span> <span class="ss">hidden_units: </span><span class="n">hidden_units</span><span class="p">)</span>
+  <span class="n">check_params_numeric</span><span class="p">(</span><span class="ss">dropout_rate: </span><span class="n">dropout_rate</span><span class="p">,</span> <span class="ss">learning_rate: </span><span class="n">learning_rate</span><span class="p">,</span> <span class="ss">decay1: </span><span class="n">decay1</span><span class="p">,</span> <span class="ss">decay2: </span><span class="n">decay2</span><span class="p">,</span>
+                        <span class="ss">max_iter: </span><span class="n">max_iter</span><span class="p">,</span> <span class="ss">batch_size: </span><span class="n">batch_size</span><span class="p">,</span> <span class="ss">tol: </span><span class="n">tol</span><span class="p">)</span>
+  <span class="n">check_params_boolean</span><span class="p">(</span><span class="ss">verbose: </span><span class="n">verbose</span><span class="p">)</span>
+  <span class="n">check_params_numeric_or_nil</span><span class="p">(</span><span class="ss">random_seed: </span><span class="n">random_seed</span><span class="p">)</span>
+  <span class="k">super</span>
+  <span class="vi">@classes</span> <span class="o">=</span> <span class="kp">nil</span>
+  <span class="vi">@network</span> <span class="o">=</span> <span class="kp">nil</span>
+<span class="k">end</span></code></pre></figure>
 
-&lt;p&gt;ที่มา: &lt;a href=&quot;https://github.com/yoshoku/rumale/blob/main/lib/rumale/neural_network/mlp_classifier.rb#L49&quot;&gt;yoshoku/rumale/lib/rumale/neural_network/mlp_classifier.rb#L49&lt;/a&gt;&lt;/p&gt;
+<p>ที่มา: <a href="https://github.com/yoshoku/rumale/blob/main/lib/rumale/neural_network/mlp_classifier.rb#L49">yoshoku/rumale/lib/rumale/neural_network/mlp_classifier.rb#L49</a></p>
 
-&lt;h3 id=&quot;อธิบายที่มาของแนวคิดหรือทฤษฎีบทที่ใช้ในการทำงาน&quot;&gt;อธิบายที่มาของแนวคิดหรือทฤษฎีบทที่ใช้ในการทำงาน&lt;/h3&gt;
+<h3 id="อธิบายที่มาของแนวคิดหรือทฤษฎีบทที่ใช้ในการทำงาน">อธิบายที่มาของแนวคิดหรือทฤษฎีบทที่ใช้ในการทำงาน</h3>
 
-&lt;p&gt;การเขียนโปรแกรม โดยเฉพาะโปรแกรมที่เขียนโดยอ้างอิงมาจากทฤษฎีต่างๆ การ comment
+<p>การเขียนโปรแกรม โดยเฉพาะโปรแกรมที่เขียนโดยอ้างอิงมาจากทฤษฎีต่างๆ การ comment
 ระบุทฤษฎีที่เกี่ยวข้องเอาไว้ จะช่วยให้โปรแกรมเมอร์สามารถสืบค้นย้อนกลับไปได้
-หากต้องการแก้ไขปัญหาที่อาจจะไม่ได้มาจาก error ของโปรแกรม แต่มาจากความผิดพลาดในการนำทฤษฎีมา implement&lt;/p&gt;
+หากต้องการแก้ไขปัญหาที่อาจจะไม่ได้มาจาก error ของโปรแกรม แต่มาจากความผิดพลาดในการนำทฤษฎีมา implement</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Rumale&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;NeuralNetwork&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# MLPClassifier is a class that implements classifier based on multi-layer perceptron.&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# MLPClassifier use ReLu as the activation function and Adam as the optimization method&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# and softmax cross entropy as the loss function.&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;# @example&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#   estimator = Rumale::NeuralNetwork::MLPClassifier.new(hidden_units: [100, 100], dropout_rate: 0.3)&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#   estimator.fit(training_samples, traininig_labels)&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#   results = estimator.predict(testing_samples)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MLPClassifier&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BaseMLP&lt;/span&gt;
-      &lt;span class=&quot;kp&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Base&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Classifier&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;# .&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;# .&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Rumale</span>
+  <span class="k">module</span> <span class="nn">NeuralNetwork</span>
+    <span class="c1"># MLPClassifier is a class that implements classifier based on multi-layer perceptron.</span>
+    <span class="c1"># MLPClassifier use ReLu as the activation function and Adam as the optimization method</span>
+    <span class="c1"># and softmax cross entropy as the loss function.</span>
+    <span class="c1">#</span>
+    <span class="c1"># @example</span>
+    <span class="c1">#   estimator = Rumale::NeuralNetwork::MLPClassifier.new(hidden_units: [100, 100], dropout_rate: 0.3)</span>
+    <span class="c1">#   estimator.fit(training_samples, traininig_labels)</span>
+    <span class="c1">#   results = estimator.predict(testing_samples)</span>
+    <span class="k">class</span> <span class="nc">MLPClassifier</span> <span class="o">&lt;</span> <span class="no">BaseMLP</span>
+      <span class="kp">include</span> <span class="no">Base</span><span class="o">::</span><span class="no">Classifier</span>
+      <span class="c1"># .</span>
+      <span class="c1"># .</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
 
-&lt;p&gt;ที่มา: &lt;a href=&quot;https://github.com/yoshoku/rumale/blob/345d02d18c596aa496549ad40cbbda0303dea19b/lib/rumale/neural_network/mlp_classifier.rb#L9&quot;&gt;yoshoku/rumale/lib/rumale/neural_network/mlp_classifier.rb#L9&lt;/a&gt;&lt;/p&gt;
+<p>ที่มา: <a href="https://github.com/yoshoku/rumale/blob/345d02d18c596aa496549ad40cbbda0303dea19b/lib/rumale/neural_network/mlp_classifier.rb#L9">yoshoku/rumale/lib/rumale/neural_network/mlp_classifier.rb#L9</a></p>
 
-&lt;blockquote&gt;
-  &lt;p&gt;หรือถ้าแค่จะบอกว่า copy มาจาก web ก็ไม่จำเป็นต้องอธิบายเยอะ แค่ใส่ URL ไว้ก็พอ&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>หรือถ้าแค่จะบอกว่า copy มาจาก web ก็ไม่จำเป็นต้องอธิบายเยอะ แค่ใส่ URL ไว้ก็พอ</p>
+</blockquote>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// http://beeker.io/jquery-document-ready-equivalent-vanilla-javascript&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;documentReady&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readyState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;interactive&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readyState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;complete&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;DOMContentLoaded&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// http://beeker.io/jquery-document-ready-equivalent-vanilla-javascript</span>
+<span class="kd">function</span> <span class="nx">documentReady</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">interactive</span><span class="dl">"</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">complete</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">DOMContentLoaded</span><span class="dl">"</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
-&lt;p&gt;ที่มา: &lt;a href=&quot;https://github.com/ankane/ahoy/blob/1cfff6ae3cd96af87574393bf63f5a294e33dd46/vendor/assets/javascripts/ahoy.js#L178&quot;&gt;ankane/ahoy/vendor/assets/javascripts/ahoy.js#L178&lt;/a&gt;&lt;/p&gt;</content><author><name>wittawasw</name><email>your-email@domain.com</email></author><summary type="html">การ comment คือ การทำให้ประโยคหรือตัวอักษรที่เราเขียนในโปรแกรมไม่ถูกประมวลผล โดยอาจมีไว้เพื่อให้บอท (bot) หรือโปรแกรมเมอร์คนอื่นอ่าน เป็นรูปแบบการการสื่อสารแบบหนึ่งที่โปรแกรมเมอร์สามารถสื่อสารได้ เพื่อให้การทำงานร่วมกันมีประสิทธิภาพมากขึ้น</summary></entry><entry><title type="html">Resume ที่จะได้งานคือ Resume ที่มีคุณภาพและตรงความต้องการผู้รับสมัคร</title><link href="https://wittawasw.com/2022/02/08/resume-%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99.html" rel="alternate" type="text/html" title="Resume ที่จะได้งานคือ Resume ที่มีคุณภาพและตรงความต้องการผู้รับสมัคร" /><published>2022-02-08T00:19:00+07:00</published><updated>2022-02-08T00:19:00+07:00</updated><id>https://wittawasw.com/2022/02/08/resume-%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99</id><content type="html" xml:base="https://wittawasw.com/2022/02/08/resume-%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99.html">&lt;p&gt;&lt;strong&gt;การสมัครงาน&lt;/strong&gt; เป็นขั้นตอนหนึ่งที่โรงเรียนหรือสถาบันการศึกษามักไม่มีสอน
+<p>ที่มา: <a href="https://github.com/ankane/ahoy/blob/1cfff6ae3cd96af87574393bf63f5a294e33dd46/vendor/assets/javascripts/ahoy.js#L178">ankane/ahoy/vendor/assets/javascripts/ahoy.js#L178</a></p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><summary type="html"><![CDATA[การ comment คือ การทำให้ประโยคหรือตัวอักษรที่เราเขียนในโปรแกรมไม่ถูกประมวลผล โดยอาจมีไว้เพื่อให้บอท (bot) หรือโปรแกรมเมอร์คนอื่นอ่าน เป็นรูปแบบการการสื่อสารแบบหนึ่งที่โปรแกรมเมอร์สามารถสื่อสารได้ เพื่อให้การทำงานร่วมกันมีประสิทธิภาพมากขึ้น]]></summary></entry><entry><title type="html">Resume ที่จะได้งานคือ Resume ที่มีคุณภาพและตรงความต้องการผู้รับสมัคร</title><link href="https://wittawasw.com/2022/02/08/resume-%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99.html" rel="alternate" type="text/html" title="Resume ที่จะได้งานคือ Resume ที่มีคุณภาพและตรงความต้องการผู้รับสมัคร" /><published>2022-02-08T00:19:00+07:00</published><updated>2022-02-08T00:19:00+07:00</updated><id>https://wittawasw.com/2022/02/08/resume-%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99</id><content type="html" xml:base="https://wittawasw.com/2022/02/08/resume-%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99.html"><![CDATA[<p><strong>การสมัครงาน</strong> เป็นขั้นตอนหนึ่งที่โรงเรียนหรือสถาบันการศึกษามักไม่มีสอน
 ส่วนหนึ่งก็เพราะผู้สอนในระบบส่วนมาก ไม่เคยมีประสบการณ์สมัครงานด้วยตัวเองมาก่อน
 เนื่องจากอาชีพครูผู้สอนมักมาจากการสอบแข่งขัน จึงไม่มีประสบการร์ตรงและได้แต่
-ถ่ายทอดวิธีสมัครงานตามที่ฟังมาจากคนอื่น&lt;/p&gt;
+ถ่ายทอดวิธีสมัครงานตามที่ฟังมาจากคนอื่น</p>
 
-&lt;h3 id=&quot;การสมัครงานต่างจากการสอบแข่งขันยังไง&quot;&gt;การสมัครงานต่างจากการสอบแข่งขันยังไง&lt;/h3&gt;
-&lt;p&gt;การสอบแข่งขันจะมีการกำหนดคุณสมบัติที่ต้องการในเชิงปริมาณอย่างชัดเจน ต่างกับการ
+<h3 id="การสมัครงานต่างจากการสอบแข่งขันยังไง">การสมัครงานต่างจากการสอบแข่งขันยังไง</h3>
+<p>การสอบแข่งขันจะมีการกำหนดคุณสมบัติที่ต้องการในเชิงปริมาณอย่างชัดเจน ต่างกับการ
 สมัครงานโดยตรงที่ผู้รับสมัครจำนวนมาก ยังไม่รู้ด้วยซ้ำว่าบริษัทของตนต้องการคน
-แบบไหน กระบวนการคัดเลือกจึงเป็นมากกว่าการวัดกันด้วยปริมาณคะแนนที่ทำได้&lt;/p&gt;
+แบบไหน กระบวนการคัดเลือกจึงเป็นมากกว่าการวัดกันด้วยปริมาณคะแนนที่ทำได้</p>
 
-&lt;h3 id=&quot;เริ่มต้นที่-resume&quot;&gt;เริ่มต้นที่ Resume&lt;/h3&gt;
-&lt;p&gt;resume (เรซูเม่) คือ ส่วนประกอบหลักที่ผู้รับสมัครใช้ตัดสินใจในการคัดเลือกเบื้อง
+<h3 id="เริ่มต้นที่-resume">เริ่มต้นที่ Resume</h3>
+<p>resume (เรซูเม่) คือ ส่วนประกอบหลักที่ผู้รับสมัครใช้ตัดสินใจในการคัดเลือกเบื้อง
 ต้น โดยคนจำนวนมากมักเข้าใจผิดว่าผู้รับสมัครงานต้องการรู้จักตัวตนทุกด้านของตน
 ลักษณะของ resume จำนวนมากในตลาดรับสมัครงานจึงเต็มไปด้วยข้อมูลที่ผู้รับสมัคร
 ไม่ได้มองหา เช่น งานอดิเรก กิจกรรมนอกเวลาที่ชอบ ข้อมูลการอบรมที่ไม่เกี่ยวข้อง
-กับตำแหน่งงาน&lt;/p&gt;
+กับตำแหน่งงาน</p>
 
-&lt;p&gt;สิ่งที่ต้องคำนึงถึงก่อนเป็นลำดับแรกของการเขียน resume คือ ปลายทางที่อ่านเป็นคน
+<p>สิ่งที่ต้องคำนึงถึงก่อนเป็นลำดับแรกของการเขียน resume คือ ปลายทางที่อ่านเป็นคน
 ที่ต้องการคนแบบไหนมาทำงานด้วย โดยก่อนจะเริ่มเขียนควรจะอ่านรายละเอียดของงาน
 (Job Description) ให้ละเอียดและความเข้าใจก่อน จากนั้นจึงเขียนสิ่งที่รายละเอียด
-ของงานต้องการลงไปใน resume&lt;/p&gt;
+ของงานต้องการลงไปใน resume</p>
 
-&lt;h3 id=&quot;ข้อผิดพลาดที่พบได้บ่อย-คือ-ใส่ประสบการณ์และความสามารถไม่ชัดเจน&quot;&gt;ข้อผิดพลาดที่พบได้บ่อย คือ ใส่ประสบการณ์และความสามารถไม่ชัดเจน&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;คุณสมบัติ: สามารถใช้โปรแกรม MS word ได้เป็นอย่างดี&lt;/p&gt;
-&lt;/blockquote&gt;
+<h3 id="ข้อผิดพลาดที่พบได้บ่อย-คือ-ใส่ประสบการณ์และความสามารถไม่ชัดเจน">ข้อผิดพลาดที่พบได้บ่อย คือ ใส่ประสบการณ์และความสามารถไม่ชัดเจน</h3>
+<blockquote>
+  <p>คุณสมบัติ: สามารถใช้โปรแกรม MS word ได้เป็นอย่างดี</p>
+</blockquote>
 
-&lt;p&gt;ยกตัวอย่าง เช่น หากในรายละเอียดของงานมีส่วนที่ขอให้ผู้สมัครมีประสบการณ์ใช้
+<p>ยกตัวอย่าง เช่น หากในรายละเอียดของงานมีส่วนที่ขอให้ผู้สมัครมีประสบการณ์ใช้
 program MS word ผู้สมัครควรใส่รายละเอียดของประสบการณ์ที่เคยใช้ MS word มาก่อน แต่ส่วนมากแล้ว
-มักจะใส่เพียงแค่&lt;/p&gt;
+มักจะใส่เพียงแค่</p>
 
-&lt;blockquote&gt;
-  &lt;p&gt;ประสบการณ์: ใช้ MS word มา 3 ปี&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>ประสบการณ์: ใช้ MS word มา 3 ปี</p>
+</blockquote>
 
-&lt;p&gt;การใส่ข้อความเพียงเท่านี้ ทำให้ผู้รับสมัครรู้เพียงแค่ว่าผู้สมัครเคยใช้ครั้งแรก
+<p>การใส่ข้อความเพียงเท่านี้ ทำให้ผู้รับสมัครรู้เพียงแค่ว่าผู้สมัครเคยใช้ครั้งแรก
 เมื่อ 3 ปีก่อน หรือเคยใช้มา 3 ปี โดยไม่รู้เลยว่าผู้สมัครเคยใช้ MS word ทำอะไร
-และจะตรงกับความต้องการหรือไม่ หรืออีกแบบที่เห็นได้บ่อยก็คือ&lt;/p&gt;
+และจะตรงกับความต้องการหรือไม่ หรืออีกแบบที่เห็นได้บ่อยก็คือ</p>
 
-&lt;blockquote&gt;
-  &lt;p&gt;ประสบการณ์: ความสามารถในการใช้ MS word 4/5 คะแนน&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>ประสบการณ์: ความสามารถในการใช้ MS word 4/5 คะแนน</p>
+</blockquote>
 
-&lt;p&gt;การใส่เพียงแค่ คะแนนที่ไม่ได้บอกว่า 3/5 ทำอะไรได้บ้าง 5/5 ทำอะไรได้บ้าง
-ก็ยากที่จะบอกได้ว่าความสามารถของผู้สมัครที่มีคะแนน 4/5 จะตรงกับความต้องการหรือไม่&lt;/p&gt;
+<p>การใส่เพียงแค่ คะแนนที่ไม่ได้บอกว่า 3/5 ทำอะไรได้บ้าง 5/5 ทำอะไรได้บ้าง
+ก็ยากที่จะบอกได้ว่าความสามารถของผู้สมัครที่มีคะแนน 4/5 จะตรงกับความต้องการหรือไม่</p>
 
-&lt;h3 id=&quot;ตัวอย่างการลงรายละเอียดของความสามารถ&quot;&gt;ตัวอย่างการลงรายละเอียดของความสามารถ&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;ประสบการณ์: ใช้ MS word 3 ปี&lt;/p&gt;
-&lt;/blockquote&gt;
+<h3 id="ตัวอย่างการลงรายละเอียดของความสามารถ">ตัวอย่างการลงรายละเอียดของความสามารถ</h3>
+<blockquote>
+  <p>ประสบการณ์: ใช้ MS word 3 ปี</p>
+</blockquote>
 
-&lt;blockquote&gt;
-  &lt;p&gt;เป็นผู้จัดทำรูปแบบรายงานประจำปี ซึ่งต้องมีรูปแบบถูกต้องตามแบบของราชการ
+<blockquote>
+  <p>เป็นผู้จัดทำรูปแบบรายงานประจำปี ซึ่งต้องมีรูปแบบถูกต้องตามแบบของราชการ
 โดยความรับผิดชอบหลักของการใช้งาน MS word คือ การสรุปข้อมูลจากรายงานของ
 แผนกต่างๆเป็นรูปแบบของเล่มรายงานเพื่อนำเสนอผู้บังคับบัญชา และใช้ประกอบการ
-ประชุมของผู้บริหาร&lt;/p&gt;
-&lt;/blockquote&gt;
+ประชุมของผู้บริหาร</p>
+</blockquote>
 
-&lt;p&gt;รายละเอียดที่ชัดเจนนอกจากจะบอกถึงความสามารถในด้านที่อธิบายแล้ว ยังบอกได้ถึง
-ความสามารถในการเขียนเรียบเรียง จับประเด็นของผู้สมัครเอง&lt;/p&gt;
+<p>รายละเอียดที่ชัดเจนนอกจากจะบอกถึงความสามารถในด้านที่อธิบายแล้ว ยังบอกได้ถึง
+ความสามารถในการเขียนเรียบเรียง จับประเด็นของผู้สมัครเอง</p>
 
-&lt;h3 id=&quot;แต่การใส่รายละเอียดจะเปลืองหน้ากระดาษ-&quot;&gt;แต่การใส่รายละเอียดจะเปลืองหน้ากระดาษ ?&lt;/h3&gt;
-&lt;p&gt;การใส่ข้อมูลรายละเอียดให้เพียงพอต่อการพิจารณามักจะไม่เกิน 1-2 หน้ากระดาษ แต่หาก
+<h3 id="แต่การใส่รายละเอียดจะเปลืองหน้ากระดาษ-">แต่การใส่รายละเอียดจะเปลืองหน้ากระดาษ ?</h3>
+<p>การใส่ข้อมูลรายละเอียดให้เพียงพอต่อการพิจารณามักจะไม่เกิน 1-2 หน้ากระดาษ แต่หาก
 มีความรู้สึกว่าควรจะใส่เพิ่มจริงๆ ควรเรียงลำดับความสำคัญของสิ่งที่คิดว่าผู้รับ
-สมัครต้องการที่สุดให้อยู่ด้านบนก่อน&lt;/p&gt;
+สมัครต้องการที่สุดให้อยู่ด้านบนก่อน</p>
 
-&lt;h3 id=&quot;ใส่รายละเอียดแล้วก็ยังไม่ได้รับการตอบรับอยู่ดี&quot;&gt;ใส่รายละเอียดแล้วก็ยังไม่ได้รับการตอบรับอยู่ดี&lt;/h3&gt;
-&lt;p&gt;เพราะการสมัครงาน ไม่ใช่การวัดคะแนนสูงต่ำ หากเราใส่รายละเอียดดีแล้ว ก็อาจจะเป็น
+<h3 id="ใส่รายละเอียดแล้วก็ยังไม่ได้รับการตอบรับอยู่ดี">ใส่รายละเอียดแล้วก็ยังไม่ได้รับการตอบรับอยู่ดี</h3>
+<p>เพราะการสมัครงาน ไม่ใช่การวัดคะแนนสูงต่ำ หากเราใส่รายละเอียดดีแล้ว ก็อาจจะเป็น
 ไปได้ว่าความต้องการของผู้รับสมัคร ไม่ตรงกับประสบการณ์ที่ผู้สมัครมี ในกรณีที่มี
 การตอบรับด้วยการปฏิเสธแล้ว ควรสอบถามเพิ่มเติมถึงสาเหตุของการปฏิเสธเพื่อนำมา
-เป็นบทเรียนในการพัฒนาตนเองต่อไป&lt;/p&gt;
+เป็นบทเรียนในการพัฒนาตนเองต่อไป</p>
 
-&lt;h3 id=&quot;เน้น-resume-ที่มีคุณภาพมากกว่าปริมาณ&quot;&gt;เน้น resume ที่มีคุณภาพมากกว่าปริมาณ&lt;/h3&gt;
-&lt;p&gt;เพราะการสมัครงานยุคนี้สามารถทำได้ง่ายเพียงแค่ใช้การคลิ้กหรือใช้มือถือส่งอีเมล
+<h3 id="เน้น-resume-ที่มีคุณภาพมากกว่าปริมาณ">เน้น resume ที่มีคุณภาพมากกว่าปริมาณ</h3>
+<p>เพราะการสมัครงานยุคนี้สามารถทำได้ง่ายเพียงแค่ใช้การคลิ้กหรือใช้มือถือส่งอีเมล
 เท่านั้น ผู้สมัครจำนวนมากจึงใช้วิธีส่ง resume ออกเป็นจำนวนมากและหวังที่จะได้รับ
-การตอบรับ เพียงแค่เล็กน้อยของที่ส่งออกไป เช่น 1 ใน 100&lt;/p&gt;
+การตอบรับ เพียงแค่เล็กน้อยของที่ส่งออกไป เช่น 1 ใน 100</p>
 
-&lt;p&gt;แต่การสมัครงานไม่ใช่การเสี่ยงดวง และไม่ควรนำมาปนกัน เพราะ resume ที่ทำขึ้นเพื่อ
+<p>แต่การสมัครงานไม่ใช่การเสี่ยงดวง และไม่ควรนำมาปนกัน เพราะ resume ที่ทำขึ้นเพื่อ
 ให้เข้ากับคุณสมบัติของหลายบริษัท มักจะขาดรายละเอียดและถูกมองข้ามโดยทันที และ
-การวัดคุณสมบัติของผู้สมัครจากคุณภาพของ resume เป็นสิ่งที่ทำได้ง่ายมาก&lt;/p&gt;
+การวัดคุณสมบัติของผู้สมัครจากคุณภาพของ resume เป็นสิ่งที่ทำได้ง่ายมาก</p>
 
-&lt;p&gt;คำแนะนำ คือ หากต้องการ focus กับคุณภาพของการสมัครงานโดยรวม การเลือกบริษัทที่
+<p>คำแนะนำ คือ หากต้องการ focus กับคุณภาพของการสมัครงานโดยรวม การเลือกบริษัทที่
 ต้องการไม่เกิน 4-5 บริษัทแล้วตั้งใจเขียน resume ตามรายละเอียดที่แต่ล่ะบริษัท
-ประกาศเอาไว้ จะทำให้ผู้สมัครไม่เสียเวลามากเกินไปและยังคงคุณภาพของ resume ไว้ได้&lt;/p&gt;</content><author><name>wittawasw</name><email>your-email@domain.com</email></author><summary type="html">การสมัครงาน เป็นขั้นตอนหนึ่งที่โรงเรียนหรือสถาบันการศึกษามักไม่มีสอน ส่วนหนึ่งก็เพราะผู้สอนในระบบส่วนมาก ไม่เคยมีประสบการณ์สมัครงานด้วยตัวเองมาก่อน เนื่องจากอาชีพครูผู้สอนมักมาจากการสอบแข่งขัน จึงไม่มีประสบการร์ตรงและได้แต่ ถ่ายทอดวิธีสมัครงานตามที่ฟังมาจากคนอื่น</summary></entry><entry><title type="html">แนวคิดการสื่อสารในการทำงานเป็นทีม</title><link href="https://wittawasw.com/2022/01/31/%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B8%A1.html" rel="alternate" type="text/html" title="แนวคิดการสื่อสารในการทำงานเป็นทีม" /><published>2022-01-31T06:34:00+07:00</published><updated>2022-01-31T06:34:00+07:00</updated><id>https://wittawasw.com/2022/01/31/%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B8%A1</id><content type="html" xml:base="https://wittawasw.com/2022/01/31/%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B8%A1.html">&lt;p&gt;ในการทำงานร่วมกันหลายคน รูปแบบการสื่อสารเป็นปัจจัยที่สำคัญที่จะทำให้การ
+ประกาศเอาไว้ จะทำให้ผู้สมัครไม่เสียเวลามากเกินไปและยังคงคุณภาพของ resume ไว้ได้</p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><summary type="html"><![CDATA[การสมัครงาน เป็นขั้นตอนหนึ่งที่โรงเรียนหรือสถาบันการศึกษามักไม่มีสอน ส่วนหนึ่งก็เพราะผู้สอนในระบบส่วนมาก ไม่เคยมีประสบการณ์สมัครงานด้วยตัวเองมาก่อน เนื่องจากอาชีพครูผู้สอนมักมาจากการสอบแข่งขัน จึงไม่มีประสบการร์ตรงและได้แต่ ถ่ายทอดวิธีสมัครงานตามที่ฟังมาจากคนอื่น]]></summary></entry><entry><title type="html">แนวคิดการสื่อสารในการทำงานเป็นทีม</title><link href="https://wittawasw.com/2022/01/31/%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B8%A1.html" rel="alternate" type="text/html" title="แนวคิดการสื่อสารในการทำงานเป็นทีม" /><published>2022-01-31T06:34:00+07:00</published><updated>2022-01-31T06:34:00+07:00</updated><id>https://wittawasw.com/2022/01/31/%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B8%A1</id><content type="html" xml:base="https://wittawasw.com/2022/01/31/%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B8%A1.html"><![CDATA[<p>ในการทำงานร่วมกันหลายคน รูปแบบการสื่อสารเป็นปัจจัยที่สำคัญที่จะทำให้การ
 ประสานงานและการทำงานร่วมกัน ยิ่งในยุคของการทำงาน remote ที่เริ่มชัดเจนมากขึ้นใน
 ช่วงโรคระบาด ยิ่งทำให้ปัญหาของการสื่อสารที่ไม่ดีถูกทำให้เห็นชัด และเกิดปัญหาที่
 กระทบต่อประสิทธิภาพของงาน บทความนี้จะถอดบทเรียนจากประสบการณ์ของผู้เขียนเป็นตัว
 อย่างให้สามารถนำไปประยุกต์ใช้หรือปรับปรุงวิธีการสื่อสารของตนเองภายในทีมที่ทำงาน
-ร่วมกันอยู่&lt;/p&gt;
+ร่วมกันอยู่</p>
 
-&lt;h4 id=&quot;ระบุเจตนาของการสื่อสารให้ชัดเจน&quot;&gt;&lt;strong&gt;ระบุเจตนาของการสื่อสารให้ชัดเจน&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;ไม่ว่าเราต้องการให้ผู้รับสารทำอะไร การระบุอย่างชัดเจนถึงสิ่งที่เราคาดหวังให้ผู้
-รับสารทำ เป็นเรื่องสำคัญที่จะทำให้ผู้รับสารสามารถวางแผนการทำงานของตนเองได้&lt;/p&gt;
+<h4 id="ระบุเจตนาของการสื่อสารให้ชัดเจน"><strong>ระบุเจตนาของการสื่อสารให้ชัดเจน</strong></h4>
+<p>ไม่ว่าเราต้องการให้ผู้รับสารทำอะไร การระบุอย่างชัดเจนถึงสิ่งที่เราคาดหวังให้ผู้
+รับสารทำ เป็นเรื่องสำคัญที่จะทำให้ผู้รับสารสามารถวางแผนการทำงานของตนเองได้</p>
 
-&lt;h4 id=&quot;เลือกใช้คำที่ไม่หยาบคาย&quot;&gt;&lt;strong&gt;เลือกใช้คำที่ไม่หยาบคาย&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;การเลือกใช้คำ ไม่ว่าจะเป็นการพูดหรือการเขียน มีผลต่ออารมณ์ของผู้รับสารเสมอ ทิป
+<h4 id="เลือกใช้คำที่ไม่หยาบคาย"><strong>เลือกใช้คำที่ไม่หยาบคาย</strong></h4>
+<p>การเลือกใช้คำ ไม่ว่าจะเป็นการพูดหรือการเขียน มีผลต่ออารมณ์ของผู้รับสารเสมอ ทิป
 เล็กๆของวิธีนี้ คือ ขอให้นึกเสมอว่าถ้าเราต้องพูดแบบเดียวกันบนเวที หรือในที่
 สาธารณะที่มีคนอื่นได้ยิน เราจะกล้าพูดหรือไม่ ก่อนที่จะพูดออกไปหรือพิมพ์คำพูดลงไป
-โดยคำที่เราเลือก ไม่จำเป็นต้องมีความเป็นทางการหรือสุภาพขอเพียงแค่ไม่หยาบคาย&lt;/p&gt;
+โดยคำที่เราเลือก ไม่จำเป็นต้องมีความเป็นทางการหรือสุภาพขอเพียงแค่ไม่หยาบคาย</p>
 
-&lt;h4 id=&quot;ไม่ใช้คำที่เป็น-subjective-ในการวิจารณ์ผลงานของคนอื่นในด้านลบ&quot;&gt;&lt;strong&gt;ไม่ใช้คำที่เป็น subjective ในการวิจารณ์ผลงานของคนอื่นในด้านลบ&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;เช่น คำว่า แย่ ห่วย กระจอก หากต้องตำหนิผลงานของเพื่อนร่วมทีม ควรเลือกใช้คำที่
+<h4 id="ไม่ใช้คำที่เป็น-subjective-ในการวิจารณ์ผลงานของคนอื่นในด้านลบ"><strong>ไม่ใช้คำที่เป็น subjective ในการวิจารณ์ผลงานของคนอื่นในด้านลบ</strong></h4>
+<p>เช่น คำว่า แย่ ห่วย กระจอก หากต้องตำหนิผลงานของเพื่อนร่วมทีม ควรเลือกใช้คำที่
 เป็น constructive หรือเจาะจงไปที่ปัญหาโดยตรง ยิ่งหากสามารถแนะนำทางแก้ได้ ก็ยิ่ง
 ควรทำ แต่ถ้าหากว่าเราไม่รู้ปัญหาว่าเกิดจากอะไร ไม่สามารถพูดปัญหาแบบ constructive
 ได้ อย่างน้อยที่สุดก็ควรวิจารณ์และแนะนำแบบ objective อย่างตรงไปตรงมา ไม่เพิ่มความ
-subjective เข้าไป&lt;/p&gt;
+subjective เข้าไป</p>
 
-&lt;blockquote&gt;
-  &lt;p&gt;subjective: “โปรแกรมมันช้า เพราะคุณเขียนโปรแกรมกระจอกๆแบบนี้ไง”&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>subjective: “โปรแกรมมันช้า เพราะคุณเขียนโปรแกรมกระจอกๆแบบนี้ไง”</p>
+</blockquote>
 
-&lt;blockquote&gt;
-  &lt;p&gt;objective: “โปรแกรมมันช้า ผมก็ไม่รู้เหมือนกันว่าเพราะอะไร แต่คุณลองหาทางแก้ดูนะ”&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>objective: “โปรแกรมมันช้า ผมก็ไม่รู้เหมือนกันว่าเพราะอะไร แต่คุณลองหาทางแก้ดูนะ”</p>
+</blockquote>
 
-&lt;blockquote&gt;
-  &lt;p&gt;constructive: “โปรแกรมมันช้า เพราะคุณเขียนส่วนที่ต่อ Database โดยการสร้าง connection ใหม่ทุกครั้ง ลองแก้เป็นให้ใช้ connection เดียวกันโดยไม่ต้องสร้างใหม่ครับ”&lt;/p&gt;
-&lt;/blockquote&gt;
+<blockquote>
+  <p>constructive: “โปรแกรมมันช้า เพราะคุณเขียนส่วนที่ต่อ Database โดยการสร้าง connection ใหม่ทุกครั้ง ลองแก้เป็นให้ใช้ connection เดียวกันโดยไม่ต้องสร้างใหม่ครับ”</p>
+</blockquote>
 
-&lt;h4 id=&quot;แล้วถ้าวิจารณ์ด้านบวกล่ะ-&quot;&gt;&lt;strong&gt;แล้วถ้าวิจารณ์ด้านบวกล่ะ ?&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;ชมไปเถอะครับ subjective ให้เต็มที่ไปเลย อย่าให้ถึงขั้นประชดก็พอ กำลังใจในการ
-ทำงานมีความสำคัญต่อคนทำงาน และยังช่วยให้การทำงานร่วมกันในทีมดีขึ้น&lt;/p&gt;
+<h4 id="แล้วถ้าวิจารณ์ด้านบวกล่ะ-"><strong>แล้วถ้าวิจารณ์ด้านบวกล่ะ ?</strong></h4>
+<p>ชมไปเถอะครับ subjective ให้เต็มที่ไปเลย อย่าให้ถึงขั้นประชดก็พอ กำลังใจในการ
+ทำงานมีความสำคัญต่อคนทำงาน และยังช่วยให้การทำงานร่วมกันในทีมดีขึ้น</p>
 
-&lt;h4 id=&quot;หากเกิดข้อผิดพลาด-ข้อสงสัย-หรืออะไรที่มีผลกับการทำงาน-ควรติดต่อขอความช่วยเหลือทันที&quot;&gt;&lt;strong&gt;หากเกิดข้อผิดพลาด ข้อสงสัย หรืออะไรที่มีผลกับการทำงาน ควรติดต่อขอความช่วยเหลือทันที&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;ในหลายๆครั้ง เพื่อนร่วมทีมอาจจะมีความ “เกรงใจ” ไม่อยากรบกวนการทำงานของคนอื่น
+<h4 id="หากเกิดข้อผิดพลาด-ข้อสงสัย-หรืออะไรที่มีผลกับการทำงาน-ควรติดต่อขอความช่วยเหลือทันที"><strong>หากเกิดข้อผิดพลาด ข้อสงสัย หรืออะไรที่มีผลกับการทำงาน ควรติดต่อขอความช่วยเหลือทันที</strong></h4>
+<p>ในหลายๆครั้ง เพื่อนร่วมทีมอาจจะมีความ “เกรงใจ” ไม่อยากรบกวนการทำงานของคนอื่น
 ทำให้ไม่กล้าที่จะติดต่อทันที หรืออาจจะคิดว่าควรพยายามทำด้วยตัวเองก่อน ซึ่งวิธี
 คิดแบบนี้นอกจากจะทำให้ประสิทธิภาพงานของตัวเองน้อยลงแล้ว ยังอาจทำให้ประสิทธิภาพ
-ของทีมลดลงอย่างมากเพราะขาดความต่อเนื่อง&lt;/p&gt;
+ของทีมลดลงอย่างมากเพราะขาดความต่อเนื่อง</p>
 
-&lt;p&gt;โดยหากคิดว่าการขอความช่วยเหลือจะรบกวนการทำงานของคนอื่น อย่างน้อยก็สามารถใช้วิธี
-ส่งข้อความที่ผู้รับไม่ต้องตอบกลับทันทีไปก่อนได้ เช่น การส่งอีเมล หรือ ข้อความแชท&lt;/p&gt;
+<p>โดยหากคิดว่าการขอความช่วยเหลือจะรบกวนการทำงานของคนอื่น อย่างน้อยก็สามารถใช้วิธี
+ส่งข้อความที่ผู้รับไม่ต้องตอบกลับทันทีไปก่อนได้ เช่น การส่งอีเมล หรือ ข้อความแชท</p>
 
-&lt;h4 id=&quot;ไม่กลัวที่จะรายงานความผิดพลาดของตัวเอง&quot;&gt;&lt;strong&gt;ไม่กลัวที่จะรายงานความผิดพลาดของตัวเอง&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;ความจริงแล้วเรื่องนี้เป็นเรื่องเดียวกับข้อข้างบน แต่การจะสร้างสภาพแวดล้อมการ
+<h4 id="ไม่กลัวที่จะรายงานความผิดพลาดของตัวเอง"><strong>ไม่กลัวที่จะรายงานความผิดพลาดของตัวเอง</strong></h4>
+<p>ความจริงแล้วเรื่องนี้เป็นเรื่องเดียวกับข้อข้างบน แต่การจะสร้างสภาพแวดล้อมการ
 ทำงานที่เอื้อให้คนในทีมกล้าที่จะรายงานความผิดพลาด อยู่ที่การกระทำของกลุ่มผู้นำ
 องค์กร ไม่ได้อยู่ที่คนส่วนใหญ่ในองค์กร แต่ทุกคนเก็บข้อคิดนี้เอาไว้ว่าหากเราได้
 เป็นผู้นำ ไม่ว่าจะเป็นในระดับที่มีผู้ตามไม่ถึงสิบคนหรือหลายร้อยคน สภาพแวดล้อม
-ที่คนไม่กล้ารายงานความผิดพลาดของตนเองจะมีผลเสียมากกว่าผลดีเสมอ&lt;/p&gt;</content><author><name>wittawasw</name><email>your-email@domain.com</email></author><summary type="html">ในการทำงานร่วมกันหลายคน รูปแบบการสื่อสารเป็นปัจจัยที่สำคัญที่จะทำให้การ ประสานงานและการทำงานร่วมกัน ยิ่งในยุคของการทำงาน remote ที่เริ่มชัดเจนมากขึ้นใน ช่วงโรคระบาด ยิ่งทำให้ปัญหาของการสื่อสารที่ไม่ดีถูกทำให้เห็นชัด และเกิดปัญหาที่ กระทบต่อประสิทธิภาพของงาน บทความนี้จะถอดบทเรียนจากประสบการณ์ของผู้เขียนเป็นตัว อย่างให้สามารถนำไปประยุกต์ใช้หรือปรับปรุงวิธีการสื่อสารของตนเองภายในทีมที่ทำงาน ร่วมกันอยู่</summary></entry><entry><title type="html">นิยามของ Startup</title><link href="https://wittawasw.com/2022/01/27/%E0%B8%99%E0%B8%B4%E0%B8%A2%E0%B8%B2%E0%B8%A1%E0%B8%82%E0%B8%AD%E0%B8%87-startup.html" rel="alternate" type="text/html" title="นิยามของ Startup" /><published>2022-01-27T02:16:00+07:00</published><updated>2022-01-27T02:16:00+07:00</updated><id>https://wittawasw.com/2022/01/27/%E0%B8%99%E0%B8%B4%E0%B8%A2%E0%B8%B2%E0%B8%A1%E0%B8%82%E0%B8%AD%E0%B8%87-startup</id><content type="html" xml:base="https://wittawasw.com/2022/01/27/%E0%B8%99%E0%B8%B4%E0%B8%A2%E0%B8%B2%E0%B8%A1%E0%B8%82%E0%B8%AD%E0%B8%87-startup.html">&lt;h2 id=&quot;startup-คืออะไร&quot;&gt;&lt;strong&gt;Startup คืออะไร&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;รูปแบบการทำธุรกิจแบบหนึ่ง ที่มองตัวเองว่ากำลังอยู่ในช่วง “เริ่มต้น” (Start Up) เท่านั้น&lt;/p&gt;
+ที่คนไม่กล้ารายงานความผิดพลาดของตนเองจะมีผลเสียมากกว่าผลดีเสมอ</p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><summary type="html"><![CDATA[ในการทำงานร่วมกันหลายคน รูปแบบการสื่อสารเป็นปัจจัยที่สำคัญที่จะทำให้การ ประสานงานและการทำงานร่วมกัน ยิ่งในยุคของการทำงาน remote ที่เริ่มชัดเจนมากขึ้นใน ช่วงโรคระบาด ยิ่งทำให้ปัญหาของการสื่อสารที่ไม่ดีถูกทำให้เห็นชัด และเกิดปัญหาที่ กระทบต่อประสิทธิภาพของงาน บทความนี้จะถอดบทเรียนจากประสบการณ์ของผู้เขียนเป็นตัว อย่างให้สามารถนำไปประยุกต์ใช้หรือปรับปรุงวิธีการสื่อสารของตนเองภายในทีมที่ทำงาน ร่วมกันอยู่]]></summary></entry><entry><title type="html">นิยามของ Startup</title><link href="https://wittawasw.com/2022/01/27/%E0%B8%99%E0%B8%B4%E0%B8%A2%E0%B8%B2%E0%B8%A1%E0%B8%82%E0%B8%AD%E0%B8%87-startup.html" rel="alternate" type="text/html" title="นิยามของ Startup" /><published>2022-01-27T02:16:00+07:00</published><updated>2022-01-27T02:16:00+07:00</updated><id>https://wittawasw.com/2022/01/27/%E0%B8%99%E0%B8%B4%E0%B8%A2%E0%B8%B2%E0%B8%A1%E0%B8%82%E0%B8%AD%E0%B8%87-startup</id><content type="html" xml:base="https://wittawasw.com/2022/01/27/%E0%B8%99%E0%B8%B4%E0%B8%A2%E0%B8%B2%E0%B8%A1%E0%B8%82%E0%B8%AD%E0%B8%87-startup.html"><![CDATA[<h2 id="startup-คืออะไร"><strong>Startup คืออะไร</strong></h2>
+<p>รูปแบบการทำธุรกิจแบบหนึ่ง ที่มองตัวเองว่ากำลังอยู่ในช่วง “เริ่มต้น” (Start Up) เท่านั้น</p>
 
-&lt;h3 id=&quot;แนวคิดของ-startup&quot;&gt;&lt;strong&gt;แนวคิดของ Startup&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;จุดประสงค์ของการทำ Startup คือต้องการ “เริ่มต้นทำธุรกิจ” โดยผู้ที่ยังไม่รู้ว่าจะทำธุรกิจอะไรหรือยังไม่แน่ใจว่าไอเดียธุรกิจของตัวเองจะทำได้จริงหรือไม่  โดยการดำเนินงานของ Startup จะเป็นไปในรูปแบบของการลองผิดลองถูกให้มากที่สุดเพื่อให้เจอรูปแบบธุรกิจที่ดีพอสำหรับตัวเองโดยเร็วที่สุด&lt;/p&gt;
+<h3 id="แนวคิดของ-startup"><strong>แนวคิดของ Startup</strong></h3>
+<p>จุดประสงค์ของการทำ Startup คือต้องการ “เริ่มต้นทำธุรกิจ” โดยผู้ที่ยังไม่รู้ว่าจะทำธุรกิจอะไรหรือยังไม่แน่ใจว่าไอเดียธุรกิจของตัวเองจะทำได้จริงหรือไม่  โดยการดำเนินงานของ Startup จะเป็นไปในรูปแบบของการลองผิดลองถูกให้มากที่สุดเพื่อให้เจอรูปแบบธุรกิจที่ดีพอสำหรับตัวเองโดยเร็วที่สุด</p>
 
-&lt;h3 id=&quot;ต้องเป็นบริษัทที่มีเทคโนโลยีคอมพิวเตอร์นำเท่านั้นหรือไม่&quot;&gt;&lt;strong&gt;ต้องเป็นบริษัทที่มีเทคโนโลยีคอมพิวเตอร์นำเท่านั้นหรือไม่&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;ไม่ใช่ รูปแบบของการเปลี่ยนแปลงที่ใช้ปรับปรุงธุรกิจ ไม่ได้จำกัดอยู่แค่ที่คอมพิวเตอร์หรือการทำซอฟต์แวร์&lt;/p&gt;
+<h3 id="ต้องเป็นบริษัทที่มีเทคโนโลยีคอมพิวเตอร์นำเท่านั้นหรือไม่"><strong>ต้องเป็นบริษัทที่มีเทคโนโลยีคอมพิวเตอร์นำเท่านั้นหรือไม่</strong></h3>
+<p>ไม่ใช่ รูปแบบของการเปลี่ยนแปลงที่ใช้ปรับปรุงธุรกิจ ไม่ได้จำกัดอยู่แค่ที่คอมพิวเตอร์หรือการทำซอฟต์แวร์</p>
 
-&lt;h3 id=&quot;ตัวอย่างลักษณะของการทำ-startup&quot;&gt;&lt;strong&gt;ตัวอย่างลักษณะของการทำ Startup&lt;/strong&gt;&lt;/h3&gt;
+<h3 id="ตัวอย่างลักษณะของการทำ-startup"><strong>ตัวอย่างลักษณะของการทำ Startup</strong></h3>
 
-&lt;p&gt;&lt;strong&gt;เริ่มต้นจากไอเดีย&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;นาย F ต้องการจะตั้งบริษัทเพื่อประกอบกิจการร้านอาหาร โดยนาย F มีความตั้งใจว่าจะทำร้านอาหารตามสั่งแบบนั่งทานในร้านที่มีบรรยากาศดีและจำนวนโต๊ะอย่างน้อย 100 โต๊ะ&lt;/li&gt;
-  &lt;li&gt;แต่เมื่อ นาย F ลองคิดดูแล้ว นาย F คิดได้ว่ามีความเสี่ยงและความไม่แน่นอนมากมายในการเริ่มต้นลงทุนเพื่อสร้างร้านอาหารตามสั่งที่ต้องการในทันที ร้านจะมีคนมานั่งทานเยอะขนาดนั้นหรือไม่, เมนูที่คิดไว้จะมีคนซื้อหรือไม่, ต้องใช้พ่อครัวและคนเสิร์ฟอาหารกี่คน,etc.&lt;/li&gt;
-&lt;/ul&gt;
+<p><strong>เริ่มต้นจากไอเดีย</strong></p>
+<ul>
+  <li>นาย F ต้องการจะตั้งบริษัทเพื่อประกอบกิจการร้านอาหาร โดยนาย F มีความตั้งใจว่าจะทำร้านอาหารตามสั่งแบบนั่งทานในร้านที่มีบรรยากาศดีและจำนวนโต๊ะอย่างน้อย 100 โต๊ะ</li>
+  <li>แต่เมื่อ นาย F ลองคิดดูแล้ว นาย F คิดได้ว่ามีความเสี่ยงและความไม่แน่นอนมากมายในการเริ่มต้นลงทุนเพื่อสร้างร้านอาหารตามสั่งที่ต้องการในทันที ร้านจะมีคนมานั่งทานเยอะขนาดนั้นหรือไม่, เมนูที่คิดไว้จะมีคนซื้อหรือไม่, ต้องใช้พ่อครัวและคนเสิร์ฟอาหารกี่คน,etc.</li>
+</ul>
 
-&lt;p&gt;&lt;strong&gt;สร้าง MVP&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;นาย F จึงคิดว่าก่อนที่จะเริ่มต้นลงทุนสร้างร้านอาหารตามสั่งที่มีบรรยากาศตามที่คิดไว้ นาย F ควรเริ่มจากร้านอาหารตามสั่งขนาดเล็กที่ “คล้าย” กับร้านอาหารตามสั่งในแบบที่คิดก่อน โดยเริ่มต้นจากจำนวนโต๊ะแค่ 5 โต๊ะเท่านั้น เราเรียกแนวคิดนี้ว่าการทำ MVP (Minimum Viable Product)&lt;/li&gt;
-&lt;/ul&gt;
+<p><strong>สร้าง MVP</strong></p>
+<ul>
+  <li>นาย F จึงคิดว่าก่อนที่จะเริ่มต้นลงทุนสร้างร้านอาหารตามสั่งที่มีบรรยากาศตามที่คิดไว้ นาย F ควรเริ่มจากร้านอาหารตามสั่งขนาดเล็กที่ “คล้าย” กับร้านอาหารตามสั่งในแบบที่คิดก่อน โดยเริ่มต้นจากจำนวนโต๊ะแค่ 5 โต๊ะเท่านั้น เราเรียกแนวคิดนี้ว่าการทำ MVP (Minimum Viable Product)</li>
+</ul>
 
-&lt;p&gt;&lt;strong&gt;ศึกษาความล้มเหลว&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;ระหว่างที่ดำเนินธุรกิจร้านอาหารตามสั่งที่มีรายได้ไม่มั่นคงและน้อยกว่าที่คาดไว้มาก นาย F ได้ค้นพบปัญหาที่เกิดขึ้นหลายประการ
-    &lt;ul&gt;
-      &lt;li&gt;ค้นพบว่าลูกค้านั่งทานอาหารนานจนเสียโอกาสรับลูกค้าใหม่&lt;/li&gt;
-      &lt;li&gt;ค้นพบว่าลูกค้าสั่งอาหารประเภทข้าวจานเดียวน้อย และมักซื้อครั้งเดียว ไม่กลับมาซื้อซ้ำอีก บ่งบอกว่าผลิตภัณฑ์ของนาย F ไม่เป็นที่ต้องการของตลาด&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+<p><strong>ศึกษาความล้มเหลว</strong></p>
+<ul>
+  <li>ระหว่างที่ดำเนินธุรกิจร้านอาหารตามสั่งที่มีรายได้ไม่มั่นคงและน้อยกว่าที่คาดไว้มาก นาย F ได้ค้นพบปัญหาที่เกิดขึ้นหลายประการ
+    <ul>
+      <li>ค้นพบว่าลูกค้านั่งทานอาหารนานจนเสียโอกาสรับลูกค้าใหม่</li>
+      <li>ค้นพบว่าลูกค้าสั่งอาหารประเภทข้าวจานเดียวน้อย และมักซื้อครั้งเดียว ไม่กลับมาซื้อซ้ำอีก บ่งบอกว่าผลิตภัณฑ์ของนาย F ไม่เป็นที่ต้องการของตลาด</li>
+    </ul>
+  </li>
+</ul>
 
-&lt;p&gt;&lt;strong&gt;การเตรียมเพื่อปรับเปลี่ยนและระดมทุนเพิ่ม&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;นาย F เริ่มศึกษาพฤติกรรมการเลือกซื้อจากร้านอื่น และตัดสินใจว่าต้องการทดลองเพิ่มเมนูแฮมเบอร์เกอร์และสเต็ก เพราะได้วิเคราะห์แล้วว่าในละแวกร้านยังมีคู่แข่งอยู่น้อยและเป็นรูปแบบอาหารที่ขายดีในพื้นที่อื่นที่คล้ายกัน&lt;/li&gt;
-  &lt;li&gt;นาย F ได้ศึกษาวิธีการทำแฮมเบอร์เกอร์และค้นพบว่าการจะทำแฮมเบอร์เกอร์ที่ดี ต้องใช้วัตถุดิบที่มีราคาสูง&lt;/li&gt;
-  &lt;li&gt;นาย F ต้องการลบจุดอ่อนที่ไม่สามารถรับลูกค้าได้หากไม่ที่นั่ง โดยเพิ่มแผนการออกแบบบรรจุภัณฑ์เพื่อให้ลูกค้าซื้อกลับบ้านได้สะดวก&lt;/li&gt;
-  &lt;li&gt;นาย F สรุปสิ่งที่ต้องทำออกมาได้ แต่ก็ค้นพบว่าอาจต้องใช้เงินทุนจำนวนมากซึ่งนาย F ไม่พร้อมที่จะลงทุนเอง จึงได้ติดต่อนาย M เพื่อขอคำปรึกษาในการทำแผนธุรกิจเพื่อระดมทุน&lt;/li&gt;
-  &lt;li&gt;นาย F กับสร้างแผนธุรกิจขึ้นมาเพื่อขยายร้านอาหารตามสั่งให้สามารถขายแฮมเบอร์เกอร์ที่เป็นเอกลักษณ์ได้ โดยมีงบประมาณทั้งการทดลองเพื่อให้ได้สูตรอาหาร การออกแบบและผลิตบรรจุภัณฑ์ การตลาดเพื่อประชาสัมพันธ์ให้ลูกค้ารู้จัก ตามคำแนะนำของนาย M&lt;/li&gt;
-  &lt;li&gt;นางสาว V และ นาย C ได้อ่านแผนธุรกิจของนาย F แล้วคิดว่ามีโอกาสที่จะทำได้จริง จึงได้ตกลงที่จะร่วมลงทุนโดยมอบเงินลงทุนเพื่อแลกกับหุ้นส่วนของร้านอาหารนาย F&lt;/li&gt;
-&lt;/ul&gt;
+<p><strong>การเตรียมเพื่อปรับเปลี่ยนและระดมทุนเพิ่ม</strong></p>
+<ul>
+  <li>นาย F เริ่มศึกษาพฤติกรรมการเลือกซื้อจากร้านอื่น และตัดสินใจว่าต้องการทดลองเพิ่มเมนูแฮมเบอร์เกอร์และสเต็ก เพราะได้วิเคราะห์แล้วว่าในละแวกร้านยังมีคู่แข่งอยู่น้อยและเป็นรูปแบบอาหารที่ขายดีในพื้นที่อื่นที่คล้ายกัน</li>
+  <li>นาย F ได้ศึกษาวิธีการทำแฮมเบอร์เกอร์และค้นพบว่าการจะทำแฮมเบอร์เกอร์ที่ดี ต้องใช้วัตถุดิบที่มีราคาสูง</li>
+  <li>นาย F ต้องการลบจุดอ่อนที่ไม่สามารถรับลูกค้าได้หากไม่ที่นั่ง โดยเพิ่มแผนการออกแบบบรรจุภัณฑ์เพื่อให้ลูกค้าซื้อกลับบ้านได้สะดวก</li>
+  <li>นาย F สรุปสิ่งที่ต้องทำออกมาได้ แต่ก็ค้นพบว่าอาจต้องใช้เงินทุนจำนวนมากซึ่งนาย F ไม่พร้อมที่จะลงทุนเอง จึงได้ติดต่อนาย M เพื่อขอคำปรึกษาในการทำแผนธุรกิจเพื่อระดมทุน</li>
+  <li>นาย F กับสร้างแผนธุรกิจขึ้นมาเพื่อขยายร้านอาหารตามสั่งให้สามารถขายแฮมเบอร์เกอร์ที่เป็นเอกลักษณ์ได้ โดยมีงบประมาณทั้งการทดลองเพื่อให้ได้สูตรอาหาร การออกแบบและผลิตบรรจุภัณฑ์ การตลาดเพื่อประชาสัมพันธ์ให้ลูกค้ารู้จัก ตามคำแนะนำของนาย M</li>
+  <li>นางสาว V และ นาย C ได้อ่านแผนธุรกิจของนาย F แล้วคิดว่ามีโอกาสที่จะทำได้จริง จึงได้ตกลงที่จะร่วมลงทุนโดยมอบเงินลงทุนเพื่อแลกกับหุ้นส่วนของร้านอาหารนาย F</li>
+</ul>
 
-&lt;p&gt;&lt;strong&gt;ธุรกิจสามารถทำกำไรและมีความยั่งยืนในระดับที่น่าพอใจ&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;หลังจากผ่านไป x ปี ธุรกิจของนาย F ได้กลายเป็นร้านอาหารตะวันตกขนาดใหญ่ที่สามารถห่อกลับบ้านและกลุ่มลูกค้าที่ซื้อเป็นของฝากมากกว่าลูกค้าที่ร้าน แตกต่างจากเป้าหมายเดิมที่ต้องการทำร้านอาหารตามสั่ง&lt;/li&gt;
-&lt;/ul&gt;
+<p><strong>ธุรกิจสามารถทำกำไรและมีความยั่งยืนในระดับที่น่าพอใจ</strong></p>
+<ul>
+  <li>หลังจากผ่านไป x ปี ธุรกิจของนาย F ได้กลายเป็นร้านอาหารตะวันตกขนาดใหญ่ที่สามารถห่อกลับบ้านและกลุ่มลูกค้าที่ซื้อเป็นของฝากมากกว่าลูกค้าที่ร้าน แตกต่างจากเป้าหมายเดิมที่ต้องการทำร้านอาหารตามสั่ง</li>
+</ul>
 
-&lt;h3 id=&quot;startup-ecosystem&quot;&gt;&lt;strong&gt;Startup Ecosystem&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;ในโลกแห่งความเป็นจริง การที่คนหนึ่งคนจะสามารถหาความรู้ที่จำเป็นมาเพื่อปรับเปลี่ยนธุรกิจให้อยู่รอด หรือหานักลงทุนเพื่อช่วยระดมทุนให้ได้นั้นไม่ใช่เรื่องง่าย เพราะเหตุนี้หลายๆที่จึงพยายามสร้าง Ecosystem ที่ผู้ต้องการทำธุรกิจสามารถเชื่อมต่อกับความรู้ที่จำเป็นและแหล่งเงินทุนได้&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Founder - ผู้ก่อตั้ง startup&lt;/li&gt;
-  &lt;li&gt;Mentor - ผู้ให้คำปรึกษาที่มักจะเป็นผู้ที่เคยทำธุรกิจที่คล้ายกันมาก่อน&lt;/li&gt;
-  &lt;li&gt;Investor - นักลงทุนที่พร้อมจะลงทุนกับธุรกิจที่มีความเสี่ยงสูง&lt;/li&gt;
-&lt;/ul&gt;
+<h3 id="startup-ecosystem"><strong>Startup Ecosystem</strong></h3>
+<p>ในโลกแห่งความเป็นจริง การที่คนหนึ่งคนจะสามารถหาความรู้ที่จำเป็นมาเพื่อปรับเปลี่ยนธุรกิจให้อยู่รอด หรือหานักลงทุนเพื่อช่วยระดมทุนให้ได้นั้นไม่ใช่เรื่องง่าย เพราะเหตุนี้หลายๆที่จึงพยายามสร้าง Ecosystem ที่ผู้ต้องการทำธุรกิจสามารถเชื่อมต่อกับความรู้ที่จำเป็นและแหล่งเงินทุนได้</p>
+<ul>
+  <li>Founder - ผู้ก่อตั้ง startup</li>
+  <li>Mentor - ผู้ให้คำปรึกษาที่มักจะเป็นผู้ที่เคยทำธุรกิจที่คล้ายกันมาก่อน</li>
+  <li>Investor - นักลงทุนที่พร้อมจะลงทุนกับธุรกิจที่มีความเสี่ยงสูง</li>
+</ul>
 
-&lt;h3 id=&quot;ทำไมนักลงทุนถึงอยากลงทุนกับ-startup&quot;&gt;&lt;strong&gt;ทำไมนักลงทุนถึงอยากลงทุนกับ startup&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;มีโอกาสทำกำไรเยอะ ถ้าธุรกิจทำสำเร็จ เพราะมูลค่าของบริษัทตอนเริ่มต้นกับตอนที่ประสบความสำเร็จแล้ว โดยปกติแล้วจะต่างกันหลายเท่าตัวและหลายครั้งก็มีมูลค่าเพิ่มขึ้นได้ถึง 50 - 100 เท่าตัว โดยจะลดลงเรื่อยๆตามรอบของการระดมทุน แต่โดยปกติแล้ว ถ้าลงทุนรอบแรก 1 ล้านบาทตอน startup เริ่มต้น หลังจากผ่านไปหลายปีที่ startup นั้นประสบความสำเร็จและสามารถขายหุ้นได้ มูลค่าหุ้นที่ขายได้ตอนนั้นอาจจะอยู่ที่ 50 ล้านบาท&lt;/p&gt;</content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="startup" /><summary type="html">Startup คืออะไร รูปแบบการทำธุรกิจแบบหนึ่ง ที่มองตัวเองว่ากำลังอยู่ในช่วง “เริ่มต้น” (Start Up) เท่านั้น</summary></entry></feed>
+<h3 id="ทำไมนักลงทุนถึงอยากลงทุนกับ-startup"><strong>ทำไมนักลงทุนถึงอยากลงทุนกับ startup</strong></h3>
+<p>มีโอกาสทำกำไรเยอะ ถ้าธุรกิจทำสำเร็จ เพราะมูลค่าของบริษัทตอนเริ่มต้นกับตอนที่ประสบความสำเร็จแล้ว โดยปกติแล้วจะต่างกันหลายเท่าตัวและหลายครั้งก็มีมูลค่าเพิ่มขึ้นได้ถึง 50 - 100 เท่าตัว โดยจะลดลงเรื่อยๆตามรอบของการระดมทุน แต่โดยปกติแล้ว ถ้าลงทุนรอบแรก 1 ล้านบาทตอน startup เริ่มต้น หลังจากผ่านไปหลายปีที่ startup นั้นประสบความสำเร็จและสามารถขายหุ้นได้ มูลค่าหุ้นที่ขายได้ตอนนั้นอาจจะอยู่ที่ 50 ล้านบาท</p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="startup" /><summary type="html"><![CDATA[Startup คืออะไร รูปแบบการทำธุรกิจแบบหนึ่ง ที่มองตัวเองว่ากำลังอยู่ในช่วง “เริ่มต้น” (Start Up) เท่านั้น]]></summary></entry></feed>
