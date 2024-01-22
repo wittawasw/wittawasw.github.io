@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-01-15T05:49:57+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails</title><link href="https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html" rel="alternate" type="text/html" title="ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails" /><published>2024-01-08T12:13:00+07:00</published><updated>2024-01-08T12:13:00+07:00</updated><id>https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails</id><content type="html" xml:base="https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html"><![CDATA[<p><img src="/images/post/hotwired.png" alt="hotwired" />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-01-22T07:49:29+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">Convert PDF เป็นสีขาวดำบน Ubuntu ด้วย imagemagick</title><link href="https://wittawasw.com/2024/01/22/convert-pdf-grayscale-ubuntu.html" rel="alternate" type="text/html" title="Convert PDF เป็นสีขาวดำบน Ubuntu ด้วย imagemagick" /><published>2024-01-22T07:48:00+07:00</published><updated>2024-01-22T07:48:00+07:00</updated><id>https://wittawasw.com/2024/01/22/convert-pdf-grayscale-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/01/22/convert-pdf-grayscale-ubuntu.html"><![CDATA[<p>ใช้คำสั่ง</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>convert <span class="nt">-monochrome</span> <span class="nt">-density</span> 600 input.pdf output.pdf
+</code></pre></div></div>
+
+<p>ถ้าติดปัญหา <code class="language-plaintext highlighter-rouge">not authorize .....</code>  หรือ <code class="language-plaintext highlighter-rouge">not allowed by security policy</code> ให้เข้าไปแก้
+security policy ของ PDF ก่อน</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># หา path ของไฟล์ policy ด้วยคำสั่ง -list policy</span>
+identify <span class="nt">-list</span> policy | less
+
+<span class="c"># Output:</span>
+<span class="c"># Path: /etc/ImageMagick-6/policy.xml</span>
+<span class="c">#   Policy: Resource</span>
+<span class="c">#     name: disk</span>
+<span class="c">#     value: 1GiB</span>
+<span class="c">#   Policy: Resource</span>
+<span class="c">#     name: map</span>
+<span class="c">#     value: 512MiB</span>
+<span class="c">#   Policy: Resource</span>
+<span class="c">#     name: memory</span>
+<span class="c">#     value: 256MiB</span>
+<span class="c">#   Policy: Resource</span>
+<span class="c">#   ...</span>
+</code></pre></div></div>
+
+<p>เข้าไป comment หรือลบบรรทัดที่เป็น policy ของ PDF ออก</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- &lt;policy domain="coder" rights="none" pattern="PDF" /&gt; --&gt;</span>
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="pdf," /><category term="converter," /><category term="imagemagick" /><summary type="html"><![CDATA[ใช้คำสั่ง]]></summary></entry><entry><title type="html">ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails</title><link href="https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html" rel="alternate" type="text/html" title="ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails" /><published>2024-01-08T12:13:00+07:00</published><updated>2024-01-08T12:13:00+07:00</updated><id>https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails</id><content type="html" xml:base="https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html"><![CDATA[<p><img src="/images/post/hotwired.png" alt="hotwired" />
 <br />
 <br />
 <a href="https://hotwired.dev/">Hotwired</a> คือชุด Javascript library ที่เป็นค่าเริ่มต้นของ
