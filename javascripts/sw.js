@@ -1,13 +1,21 @@
-const CACHE_VERSION = '20240130';
+---
+---
+const CACHE_VERSION = '202401300614';
+
+const urlsToCache = [
+  '/',
+  {% for page in site.pages %}
+  '{{ page.url }}',
+  {% endfor %}
+  {% for post in site.posts %}
+  '{{ post.url }}',
+  {% endfor %}
+];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_VERSION).then((cache) => {
-      return cache.addAll([
-        '/',
-        '/javascripts/sw.js',
-        '/assets/css/styles.css',
-      ]);
+      return cache.addAll(urlsToCache);
     })
   );
 });
@@ -31,13 +39,15 @@ self.addEventListener('fetch', (event) => {
     caches.match(event.request).then((response) => {
       // Try to fetch from the network if not in cache
       return (
-        response ||
         fetch(event.request).then((fetchResponse) => {
           // Cache the fetched response for future offline access
-          return caches.open(CACHE_VERSION).then((cache) => {
+          caches.open(CACHE_VERSION).then((cache) => {
             cache.put(event.request, fetchResponse.clone());
-            return fetchResponse;
           });
+          return fetchResponse;
+        }).catch(() => {
+          // If network fetch fails, use the cached response
+          return response || caches.match('/');
         })
       );
     })
@@ -50,10 +60,10 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       fetch(event.request).then((response) => {
         // Cache the Turbo module for offline use
-        return caches.open(CACHE_VERSION).then((cache) => {
+        caches.open(CACHE_VERSION).then((cache) => {
           cache.put(event.request, response.clone());
-          return response;
         });
+        return response;
       })
     );
   }
