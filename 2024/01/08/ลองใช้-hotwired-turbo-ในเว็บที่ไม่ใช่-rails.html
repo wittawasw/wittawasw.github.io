@@ -24,6 +24,13 @@
 <script type="module">
     import * as Turbo from 'https://cdn.skypack.dev/@hotwired/turbo@7.3.0';
   </script>
+
+  <script src="/javascripts/sw.js"></script>
+  <style>
+    .turbo-progress-bar {
+      background: #79b8ff;
+    }
+  </style>
 </head>
 <body><header class="site-header">
 
@@ -140,6 +147,17 @@ Hotwired ที่เริ่มใช้งานได้ง่ายที�
 <blockquote>
   <p>สามารถทำการ inspect network และ script tag ของเว็บนี้เพื่อดูเป็นตัวอย่างได้</p>
 </blockquote>
+
+<h2 id="เปลี่ยนสีของ-progress-bar">เปลี่ยนสีของ Progress Bar</h2>
+<ul>
+  <li>Turbo Drive มีแถบ Progress Bar ให้เป็นค่าตั้งต้น โดยเราสารถกำหนดสีได้เองผ่าน CSS
+    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">//</span> <span class="nt">ตัวอย่างที่ใช้งานจริงบนเว็บไซต์นี้</span>
+<span class="nc">.turbo-progress-bar</span> <span class="p">{</span>
+<span class="nl">background</span><span class="p">:</span> <span class="m">#79b8ff</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
 
   </div><a class="u-url" href="/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html" hidden></a>
 </article>
