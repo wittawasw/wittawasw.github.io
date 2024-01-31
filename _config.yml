@@ -15,6 +15,9 @@ plugins:
   - jekyll-paginate-v2
   - jekyll-compose
 
+exclude:
+  - aboutme.md
+
 markdown: kramdown
 highlighter: rouge
 
