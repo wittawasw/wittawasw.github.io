@@ -10,6 +10,7 @@ footer: Built with [marp.app](https://marp.app)
 
   footer {
     font-size: 20px;
+    text-align: right;
   }
 </style>
 
