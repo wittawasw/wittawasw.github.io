@@ -4,7 +4,7 @@ theme: default
 ---
 
 # **Code Review**
-## and **Code Quality** Short Guide
+## Short Guide
 
 
 ---
@@ -108,12 +108,11 @@ ref: [redis/redis#PR13030](https://github.com/redis/redis/pull/13030)
 
 ---
 
-# Key Takeaways
+# Commenting in Code Review
 
-- Don't make it personal.
-- Read every lines.
-- Read the room.
+- Be Respectful.
+- Explain clearly.
+- Give advice.
 - Ask. If not sure about anything.
-
 
 
