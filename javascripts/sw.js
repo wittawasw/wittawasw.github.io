@@ -7,6 +7,10 @@ const urlsToCache = [
   
   '/about.html',
   
+  '/slides/code_reviews.html',
+  
+  '/slides/examples.html',
+  
   '/javascripts/sw.js',
   
   '/assets/css/style.css',
