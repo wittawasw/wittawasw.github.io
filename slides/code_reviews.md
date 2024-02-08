@@ -115,4 +115,13 @@ ref: [redis/redis#PR13030](https://github.com/redis/redis/pull/13030)
 - Give advice.
 - Ask. If not sure about anything.
 
+---
 
+# Key takeaways
+
+- Code from Pair programming is considered as `reviewed`
+  - but we should still do it anyway
+- Code Review is a process in Quality Control, reducing risks from
+  - Bonfused logic.
+  - Bad performance from Bad design.
+- Code Review is a method for transferring knowledge.
