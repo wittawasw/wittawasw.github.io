@@ -124,4 +124,4 @@ ref: [redis/redis#PR13030](https://github.com/redis/redis/pull/13030)
 - Code Review is a process in Quality Control, reducing risks from
   - Confused logic.
   - Bad performance from Bad design.
-- Code Review is a method for transferring knowledge.
+- Code Review is also a method for transferring knowledge.
