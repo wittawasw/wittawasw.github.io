@@ -22,6 +22,8 @@ GEM
       faraday-net_http (>= 2.0, < 3.2)
     faraday-net_http (3.1.0)
       net-http
+    faraday-retry (2.2.0)
+      faraday (~> 2.0)
     ffi (1.16.3)
     forwardable-extended (2.6.0)
     google-protobuf (3.25.2)
@@ -107,6 +109,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  faraday-retry (~> 2.2)
   jekyll (~> 4.2)
   jekyll-compose
   jekyll-feed (~> 0.12)
