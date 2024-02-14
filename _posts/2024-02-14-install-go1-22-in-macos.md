@@ -6,7 +6,10 @@ date: 2024-02-14 10:51 +0700
 ---
 > บทความนี้จะทำการติดตั้ง Go เวอร์ชั่น 1.22 โดยผ่าน [GVM](https://github.com/moovweb/gvm) เพื่อเผื่อทางเลือกสำหรับการติดตั้งเวอร์ชั่นอื่นด้วย
 
-อ้างอิง: [https://github.com/moovweb/gvm](https://github.com/moovweb/gvm)
+อ้างอิง: 
+- [https://github.com/moovweb/gvm](https://github.com/moovweb/gvm)
+- [homebrew](https://formulae.brew.sh/)
+- [Go](https://go.dev/)
 
 ## ติดตั้ง gvm 
 ```shell
