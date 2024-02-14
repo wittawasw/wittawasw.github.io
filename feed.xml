@@ -1,4 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-02-09T07:23:00+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">Convert PDF เป็นสีขาวดำบน Ubuntu ด้วย imagemagick</title><link href="https://wittawasw.com/2024/01/22/convert-pdf-grayscale-ubuntu.html" rel="alternate" type="text/html" title="Convert PDF เป็นสีขาวดำบน Ubuntu ด้วย imagemagick" /><published>2024-01-22T07:48:00+07:00</published><updated>2024-01-22T07:48:00+07:00</updated><id>https://wittawasw.com/2024/01/22/convert-pdf-grayscale-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/01/22/convert-pdf-grayscale-ubuntu.html"><![CDATA[<p>ใช้คำสั่ง</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-02-14T10:55:24+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">ติดตั้ง GVM กับ Go 1.22 บน MacOS ตั้งแต่ต้น</title><link href="https://wittawasw.com/2024/02/14/install-go1-22-in-macos.html" rel="alternate" type="text/html" title="ติดตั้ง GVM กับ Go 1.22 บน MacOS ตั้งแต่ต้น" /><published>2024-02-14T10:51:00+07:00</published><updated>2024-02-14T10:51:00+07:00</updated><id>https://wittawasw.com/2024/02/14/install-go1-22-in-macos</id><content type="html" xml:base="https://wittawasw.com/2024/02/14/install-go1-22-in-macos.html"><![CDATA[<blockquote>
+  <p>บทความนี้จะทำการติดตั้ง Go เวอร์ชั่น 1.22 โดยผ่าน <a href="https://github.com/moovweb/gvm">GVM</a> เพื่อเผื่อทางเลือกสำหรับการติดตั้งเวอร์ชั่นอื่นด้วย</p>
+</blockquote>
+
+<p>อ้างอิง: <a href="https://github.com/moovweb/gvm">https://github.com/moovweb/gvm</a></p>
+
+<h2 id="ติดตั้ง-gvm">ติดตั้ง gvm</h2>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ความต้องการของ script ติดตั้ง</span>
+xcode-select <span class="nt">--install</span>
+brew update
+brew <span class="nb">install </span>mercurial
+
+<span class="c"># ติดตั้ง gvm</span>
+bash &lt; &lt;<span class="o">(</span>curl <span class="nt">-s</span> <span class="nt">-S</span> <span class="nt">-L</span> https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer<span class="o">)</span>
+</code></pre></div></div>
+
+<h2 id="ติดตั้ง-go">ติดตั้ง Go</h2>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># เนื่องจาก Go 1.5+ ต้องใช้ Go ในการ compile จึงเลือกใช้การติดตั้งผ่าน Homebrew ก่อน เพื่อความสะดวก</span>
+brew <span class="nb">install </span>go
+
+<span class="c"># ติดตั้ง Go 1.22</span>
+gvm <span class="nb">install </span>go1.22
+
+<span class="c"># ลบ Go ที่ติดตั้งผ่าน homebrew ออก</span>
+brew uninstall go
+
+<span class="c"># ตั้งค่าให้ใช้ Go 1.22 เป็นค่าเริ่มต้น</span>
+gvm use go1.22 <span class="nt">--default</span>
+</code></pre></div></div>
+
+<h2 id="ตรวจสอบ-go-ที่ติดตั้ง">ตรวจสอบ Go ที่ติดตั้ง</h2>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>go version
+<span class="c"># =&gt; go version go1.22.0 darwin/arm64</span>
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="gvm," /><category term="golang," /><category term="install," /><category term="macos" /><summary type="html"><![CDATA[บทความนี้จะทำการติดตั้ง Go เวอร์ชั่น 1.22 โดยผ่าน GVM เพื่อเผื่อทางเลือกสำหรับการติดตั้งเวอร์ชั่นอื่นด้วย]]></summary></entry><entry><title type="html">Convert PDF เป็นสีขาวดำบน Ubuntu ด้วย imagemagick</title><link href="https://wittawasw.com/2024/01/22/convert-pdf-grayscale-ubuntu.html" rel="alternate" type="text/html" title="Convert PDF เป็นสีขาวดำบน Ubuntu ด้วย imagemagick" /><published>2024-01-22T07:48:00+07:00</published><updated>2024-01-22T07:48:00+07:00</updated><id>https://wittawasw.com/2024/01/22/convert-pdf-grayscale-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/01/22/convert-pdf-grayscale-ubuntu.html"><![CDATA[<p>ใช้คำสั่ง</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>convert <span class="nt">-monochrome</span> <span class="nt">-density</span> 600 input.pdf output.pdf
 </code></pre></div></div>

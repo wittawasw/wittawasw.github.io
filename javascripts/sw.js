@@ -41,6 +41,14 @@ const urlsToCache = [
   
   '/tag/imagemagick/index.html',
   
+  '/tag/gvm/index.html',
+  
+  '/tag/golang/index.html',
+  
+  '/tag/install/index.html',
+  
+  '/tag/macos/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -51,6 +59,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2024/02/14/install-go1-22-in-macos.html',
   
   '/2024/01/22/convert-pdf-grayscale-ubuntu.html',
   
