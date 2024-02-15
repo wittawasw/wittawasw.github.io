@@ -30,9 +30,6 @@ brew install go
 # ติดตั้ง Go 1.22
 gvm install go1.22
 
-# ลบ Go ที่ติดตั้งผ่าน homebrew ออก
-brew uninstall go
-
 # ตั้งค่าให้ใช้ Go 1.22 เป็นค่าเริ่มต้น
 gvm use go1.22 --default
 ```
