@@ -19,3 +19,5 @@ end
 # Code Hightlighting
 gem "kramdown", "~> 2.3"
 gem "rouge", "~> 3.27"
+
+gem "faraday-retry", "~> 2.2"
