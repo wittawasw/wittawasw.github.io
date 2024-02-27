@@ -3,7 +3,7 @@ layout: post
 title: Back to My Own Game, a Freelancer and Family Life.
 date: 2016-06-15T11:37:51+09:00
 comments: true
-categories: work freelance life
+tags: work freelance life
 cc: Back to My Own Game, a Freelancer and Family Life.
 keywords: "work, freelance, life, toptal"
 description: "I started my career as a startup and when it failed, I became freelancer that

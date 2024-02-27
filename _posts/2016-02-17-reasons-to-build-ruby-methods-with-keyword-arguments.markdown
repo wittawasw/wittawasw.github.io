@@ -2,7 +2,7 @@
 layout: post
 title: Reasons to Build Ruby Methods with Keyword Arguments
 date: 2016-02-17T02:08:05+07:00
-categories: ruby method argument
+tags: ruby method argument
 cc: Reasons to Build Ruby Methods with Keyword Arguments
 keywords: "ruby, method, argument"
 description: "Keyword Arguments make building and maintaining Ruby methods

@@ -3,7 +3,7 @@ layout: post
 title: FizzBuzz First Time.
 date: 2016-07-03T17:36:27+09:00
 comments: true
-categories: ruby programming
+tags: ruby programming
 cc: FizzBuzz First Time.
 keywords: "ruby, programming, fizzbuzz, unit test"
 description: "This is my  first time working on FizzBuzz. I've heard of it from

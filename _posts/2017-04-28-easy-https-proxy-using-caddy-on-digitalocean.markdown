@@ -3,7 +3,7 @@ layout: post
 title: Easy HTTPS Proxy Using Caddy on DigitalOcean.
 date: 2017-04-28T02:11:27+07:00
 comments: true
-categories: https proxy digitalocean caddy webserver docker
+tags: https proxy digitalocean caddy webserver docker
 cc: Easy HTTPS Proxy Using Caddy on DigitalOcean.
 keywords: "webserver, proxy, digitalocean, caddy, https, docker"
 description: "If you need a good HTTPS proxies that come with auto Let's Encrypt

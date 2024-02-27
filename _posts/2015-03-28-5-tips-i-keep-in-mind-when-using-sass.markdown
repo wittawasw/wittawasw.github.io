@@ -3,7 +3,7 @@ layout: post
 title: "5 tips I keep in mind when using Sass"
 date: 2015-03-28T02:10:53+07:00
 comments: true
-categories: sass stylesheet tips
+tags: sass stylesheet tips
 cc: 5 tips I keep in mind when using Sass
 keywords: "sass, stylesheet, tips"
 description: "It's been some time already since I've been introduced to Sass, Though I normally use just Scss syntax. Sass's really nice additional tool and these tips are what I found myself comfortable with and tend to convince people around me to use..."

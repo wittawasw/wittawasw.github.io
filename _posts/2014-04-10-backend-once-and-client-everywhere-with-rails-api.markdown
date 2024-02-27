@@ -3,7 +3,7 @@ layout: post
 title: "Backend once and Client everywhere with Rails-API"
 date: 2014-04-10 11:41:44 +0700
 comments: true
-categories: backend rails api angularjs
+tags: backend rails api angularjs
 cc: Backend once and Client everywhere with Rails-API
 keywords: "backend, rails, api, angularjs, client, frontend"
 description: "Normally when you build a web or mobile application, you will have to build seperate backend because most web framework originally means to generate data along with dynamic HTML templates. But if we think that web application is just a form of native applications and we treat it that way, generate only data and just use static HTML to handle the logic. This way, we can reuse our backend to almost every native applications we want...."
