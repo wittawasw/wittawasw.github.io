@@ -49,6 +49,8 @@ const urlsToCache = [
   
   '/tag/macos/index.html',
   
+  '/tag/ssh/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -59,6 +61,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2024/02/27/add-ssh-key-to-ssh-agent-in-macos.html',
   
   '/2024/02/14/install-go1-22-in-macos.html',
   
