@@ -21,11 +21,69 @@ const urlsToCache = [
   
   '/page2/index.html',
   
+  '/page3/index.html',
+  
+  '/tag/go/index.html',
+  
+  '/tag/website/index.html',
+  
+  '/tag/gae/index.html',
+  
+  '/tag/hosting/index.html',
+  
+  '/tag/backend/index.html',
+  
+  '/tag/rails/index.html',
+  
+  '/tag/api/index.html',
+  
+  '/tag/angularjs/index.html',
+  
+  '/tag/jekyll/index.html',
+  
+  '/tag/ruby/index.html',
+  
+  '/tag/octopress/index.html',
+  
+  '/tag/sass/index.html',
+  
+  '/tag/stylesheet/index.html',
+  
+  '/tag/tips/index.html',
+  
+  '/tag/vim/index.html',
+  
+  '/tag/environment/index.html',
+  
+  '/tag/editor/index.html',
+  
+  '/tag/method/index.html',
+  
+  '/tag/argument/index.html',
+  
+  '/tag/work/index.html',
+  
+  '/tag/freelance/index.html',
+  
+  '/tag/life/index.html',
+  
+  '/tag/programming/index.html',
+  
+  '/tag/https/index.html',
+  
+  '/tag/proxy/index.html',
+  
+  '/tag/digitalocean/index.html',
+  
+  '/tag/caddy/index.html',
+  
+  '/tag/webserver/index.html',
+  
+  '/tag/docker/index.html',
+  
   '/tag/startup/index.html',
   
   '/tag/gpt/index.html',
-  
-  '/tag/rails/index.html',
   
   '/tag/turbo/index.html',
   
@@ -55,6 +113,8 @@ const urlsToCache = [
   
   '/collection/posts/page2/index.html',
   
+  '/collection/posts/page3/index.html',
+  
   '/feed.xml',
   
   '/sitemap.xml',
@@ -81,6 +141,24 @@ const urlsToCache = [
   '/2022/01/31/%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B8%A1.html',
   
   '/2022/01/27/%E0%B8%99%E0%B8%B4%E0%B8%A2%E0%B8%B2%E0%B8%A1%E0%B8%82%E0%B8%AD%E0%B8%87-startup.html',
+  
+  '/2017/04/28/easy-https-proxy-using-caddy-on-digitalocean.html',
+  
+  '/2016/07/03/fizzbuzz-first-time.html',
+  
+  '/2016/06/15/back-to-my-own-game-a-freelancer-life.html',
+  
+  '/2016/02/17/reasons-to-build-ruby-methods-with-keyword-arguments.html',
+  
+  '/2016/01/21/switch-back-to-vim-again.html',
+  
+  '/2015/03/28/5-tips-i-keep-in-mind-when-using-sass.html',
+  
+  '/2015/03/24/upgraded-to-octopress-3-0rc.html',
+  
+  '/2014/04/10/backend-once-and-client-everywhere-with-rails-api.html',
+  
+  '/2014/04/09/free-and-easy-static-website-hosting-using-google-app-engine-and-golang.html',
   
 ];
 
