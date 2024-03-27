@@ -45,4 +45,3 @@ really thought it's too good to be true. An elite community with well-paid jobs
 with a lot of demand for developers, also nice blogging community as well. And
 since I have opportunity to join, now is the time to do it an begin my first
 step back to being full-time freelancer.
-

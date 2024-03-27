@@ -25,6 +25,7 @@ you can [install](https://caddyserver.com/tutorial) on Linux. But I decided to
 use docker with it because it's easier for me to control volume and settings.
 
 ### From beginning to deploy.
+
 - Setup domain to use DigitalOcean's nameserver.
 - Create droplet using pre-defined `docker` droplet.
 - Add `A` or `CNAME` that point domain to droplet's IP address.
