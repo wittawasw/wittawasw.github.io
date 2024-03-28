@@ -109,6 +109,10 @@ const urlsToCache = [
   
   '/tag/ssh/index.html',
   
+  '/tag/thought/index.html',
+  
+  '/tag/devin/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -121,6 +125,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2024/03/28/the-future-of-software-developer-jobs.html',
   
   '/2024/02/27/add-ssh-key-to-ssh-agent-in-macos.html',
   
