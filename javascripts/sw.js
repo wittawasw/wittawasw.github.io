@@ -113,6 +113,8 @@ const urlsToCache = [
   
   '/tag/devin/index.html',
   
+  '/tag/css/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -125,6 +127,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2024/03/29/text-indent-and-text-justify.html',
   
   '/2024/03/28/the-future-of-software-developer-jobs.html',
   
