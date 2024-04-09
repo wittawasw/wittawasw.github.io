@@ -23,6 +23,8 @@ const urlsToCache = [
   
   '/page3/index.html',
   
+  '/page4/index.html',
+  
   '/tag/go/index.html',
   
   '/tag/website/index.html',
@@ -115,11 +117,19 @@ const urlsToCache = [
   
   '/tag/css/index.html',
   
+  '/tag/tdd/index.html',
+  
+  '/tag/testing/index.html',
+  
+  '/tag/python/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
   
   '/collection/posts/page3/index.html',
+  
+  '/collection/posts/page4/index.html',
   
   '/feed.xml',
   
@@ -127,6 +137,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2024/04/09/unit-testings-without-test-runner.html',
   
   '/2024/03/29/text-indent-and-text-justify.html',
   

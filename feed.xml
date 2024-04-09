@@ -1,4 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-03-29T20:06:58+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">จัดรูปแบบของ paragraph ให้เหมือนหนังสือด้วย text-justify</title><link href="https://wittawasw.com/2024/03/29/text-indent-and-text-justify.html" rel="alternate" type="text/html" title="จัดรูปแบบของ paragraph ให้เหมือนหนังสือด้วย text-justify" /><published>2024-03-29T19:55:00+07:00</published><updated>2024-03-29T19:55:00+07:00</updated><id>https://wittawasw.com/2024/03/29/text-indent-and-text-justify</id><content type="html" xml:base="https://wittawasw.com/2024/03/29/text-indent-and-text-justify.html"><![CDATA[<p>เร็วๆนี้มีเหตุให้ต้องทำการ render HTML เพื่อแปลงเป็น PDF สำหรับใช้เป็นเอกสารทางการ
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-04-09T13:17:48+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">การเขียน Test ไม่ได้หมายความว่าเราต้องใช้ Test Runner เสมอไป</title><link href="https://wittawasw.com/2024/04/09/unit-testings-without-test-runner.html" rel="alternate" type="text/html" title="การเขียน Test ไม่ได้หมายความว่าเราต้องใช้ Test Runner เสมอไป" /><published>2024-04-09T13:16:00+07:00</published><updated>2024-04-09T13:16:00+07:00</updated><id>https://wittawasw.com/2024/04/09/unit-testings-without-test-runner</id><content type="html" xml:base="https://wittawasw.com/2024/04/09/unit-testings-without-test-runner.html"><![CDATA[<p>อาทิตย์ก่อนมีโอกาสได้ร่วม training ในหัวข้อ TDD แล้วก็รู้สึกว่าหลายคนมี mindset ประมาณว่า</p>
+
+<blockquote>
+  <p>ไม่ต้องเขียน test ถ้ายังไม่มี Test Runner</p>
+</blockquote>
+
+<p>ซึ่งผมมองว่า <u>ผิด</u> โดยความเห็นของผมคือ ต่อให้ใน project ไม่มี test runner
+อยู่ เราก็ควรเขียน Unit Test เป็นอย่างน้อยอยู่ดี</p>
+
+<p>หลังจากที่ได้ไป pair กับคนที่ทำ Javascript, Python ที่ไม่เคย setup Test Runner
+มาก่อนก็เลยได้ลองเขียน <code class="language-plaintext highlighter-rouge">assertion</code> แบบง่ายๆ ให้ดูว่าสุดท้ายแล้วการเขียน test ก็แค่
+การเขียนฟังก์ชันให้เรียกใช้ฟังก์ชันที่เราต้องการทดสอบและเปรียบเทียบผลลัพธ์เท่านั้นเอง</p>
+
+<p>Code ส่วนของ Javascript ทำที่เครื่องคนอื่นก็เลยไม่ได้เก็บไว้ มีแต่ Python
+ที่ทำในเครื่องตัวเองก็เลยยังอยู่ แต่จริงๆแล้วเลือกใช้ ภาษา Dart ตอน training
+เพราะเป็นภาษาที่ใช้ในงานปัจจุบัน แต่ยังไม่คล่อง ก็เลยถือโอกาสลองฝึกไปด้วย</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="n">months</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">"3"</span><span class="p">:</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">],</span>
+  <span class="s">"4"</span><span class="p">:</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">3000</span><span class="p">],</span>
+  <span class="s">"5"</span><span class="p">:</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">3100</span><span class="p">],</span>
+  <span class="s">"6"</span><span class="p">:</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">3000</span><span class="p">],</span>
+  <span class="s">"7"</span><span class="p">:</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">months_arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">3100</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">getBudgets</span><span class="p">(</span><span class="n">from_date</span><span class="p">,</span> <span class="n">to_date</span><span class="p">):</span>
+  <span class="n">from_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">from_date</span><span class="p">,</span> <span class="s">"%Y-%m-%d"</span><span class="p">)</span>
+  <span class="n">to_date</span>   <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">to_date</span><span class="p">,</span> <span class="s">"%Y-%m-%d"</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">to_date</span> <span class="o">-</span> <span class="n">from_date</span><span class="p">).</span><span class="n">days</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">"Error"</span>
+
+  <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">current_date</span> <span class="o">=</span> <span class="n">from_date</span>
+
+  <span class="k">while</span> <span class="n">current_date</span> <span class="o">&lt;=</span> <span class="n">to_date</span><span class="p">:</span>
+    <span class="n">values</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">months</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">current_date</span><span class="p">.</span><span class="n">month</span><span class="p">)][</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">months</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">current_date</span><span class="p">.</span><span class="n">month</span><span class="p">)][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">current_date</span> <span class="o">+=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">testGetBudgets</span><span class="p">(</span><span class="n">from_date</span><span class="p">,</span> <span class="n">to_date</span><span class="p">,</span> <span class="n">expect</span><span class="p">):</span>
+  <span class="n">test_case</span> <span class="o">=</span> <span class="s">"Test: "</span> <span class="o">+</span> <span class="n">from_date</span> <span class="o">+</span> <span class="s">" : "</span> <span class="o">+</span> <span class="n">to_date</span> <span class="o">+</span> <span class="s">" = "</span>
+
+  <span class="n">actual</span> <span class="o">=</span> <span class="n">getBudgets</span><span class="p">(</span><span class="n">from_date</span><span class="p">,</span> <span class="n">to_date</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">actual</span> <span class="o">==</span> <span class="n">expect</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">test_case</span> <span class="o">+</span> <span class="s">"Passed"</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">test_case</span> <span class="o">+</span> <span class="s">"Failed"</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span> <span class="o">+</span> <span class="sa">f</span><span class="s">"Expected: </span><span class="si">{</span><span class="n">expect</span><span class="si">}</span><span class="s">, got </span><span class="si">{</span><span class="n">actual</span><span class="si">}</span><span class="s">"</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">testGetBudgets</span><span class="p">(</span><span class="s">"2024-07-02"</span><span class="p">,</span> <span class="s">"2024-07-04"</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">testGetBudgets</span><span class="p">(</span><span class="s">"2024-07-04"</span><span class="p">,</span> <span class="s">"2024-07-02"</span><span class="p">,</span> <span class="s">"Error"</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">testGetBudgets</span><span class="p">(</span><span class="s">"2024-06-20"</span><span class="p">,</span> <span class="s">"2024-07-04"</span><span class="p">,</span> <span class="mi">1100</span> <span class="o">+</span> <span class="mi">4</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">testGetBudgets</span><span class="p">(</span><span class="s">"2024-03-10"</span><span class="p">,</span> <span class="s">"2024-07-02"</span><span class="p">,</span> <span class="mi">22</span> <span class="o">+</span> <span class="mi">9100</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">testGetBudgets</span><span class="p">(</span><span class="s">"2024-06-18"</span><span class="p">,</span> <span class="s">"2024-07-04"</span><span class="p">,</span> <span class="mi">1300</span> <span class="o">+</span> <span class="mi">4</span><span class="p">))</span>
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="tdd," /><category term="testing," /><category term="python" /><summary type="html"><![CDATA[อาทิตย์ก่อนมีโอกาสได้ร่วม training ในหัวข้อ TDD แล้วก็รู้สึกว่าหลายคนมี mindset ประมาณว่า]]></summary></entry><entry><title type="html">จัดรูปแบบของ paragraph ให้เหมือนหนังสือด้วย text-justify</title><link href="https://wittawasw.com/2024/03/29/text-indent-and-text-justify.html" rel="alternate" type="text/html" title="จัดรูปแบบของ paragraph ให้เหมือนหนังสือด้วย text-justify" /><published>2024-03-29T19:55:00+07:00</published><updated>2024-03-29T19:55:00+07:00</updated><id>https://wittawasw.com/2024/03/29/text-indent-and-text-justify</id><content type="html" xml:base="https://wittawasw.com/2024/03/29/text-indent-and-text-justify.html"><![CDATA[<p>เร็วๆนี้มีเหตุให้ต้องทำการ render HTML เพื่อแปลงเป็น PDF สำหรับใช้เป็นเอกสารทางการ
 ก็เลยได้วิธีจัดย่อหน้ามาใช้ด้วย ถ้าต้องทำรูปแบบเหมือนจดหมายทางการ</p>
 
 <blockquote>
@@ -628,87 +688,4 @@ MY_WEB_NETWORK_NAME=myweb
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>ที่มา: <a href="https://github.com/ankane/ahoy/blob/1cfff6ae3cd96af87574393bf63f5a294e33dd46/vendor/assets/javascripts/ahoy.js#L178">ankane/ahoy/vendor/assets/javascripts/ahoy.js#L178</a></p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><summary type="html"><![CDATA[การ comment คือ การทำให้ประโยคหรือตัวอักษรที่เราเขียนในโปรแกรมไม่ถูกประมวลผล โดยอาจมีไว้เพื่อให้บอท (bot) หรือโปรแกรมเมอร์คนอื่นอ่าน เป็นรูปแบบการการสื่อสารแบบหนึ่งที่โปรแกรมเมอร์สามารถสื่อสารได้ เพื่อให้การทำงานร่วมกันมีประสิทธิภาพมากขึ้น]]></summary></entry><entry><title type="html">Resume ที่จะได้งานคือ Resume ที่มีคุณภาพและตรงความต้องการผู้รับสมัคร</title><link href="https://wittawasw.com/2022/02/08/resume-%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99.html" rel="alternate" type="text/html" title="Resume ที่จะได้งานคือ Resume ที่มีคุณภาพและตรงความต้องการผู้รับสมัคร" /><published>2022-02-08T00:19:00+07:00</published><updated>2022-02-08T00:19:00+07:00</updated><id>https://wittawasw.com/2022/02/08/resume-%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99</id><content type="html" xml:base="https://wittawasw.com/2022/02/08/resume-%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99.html"><![CDATA[<p><strong>การสมัครงาน</strong> เป็นขั้นตอนหนึ่งที่โรงเรียนหรือสถาบันการศึกษามักไม่มีสอน
-ส่วนหนึ่งก็เพราะผู้สอนในระบบส่วนมาก ไม่เคยมีประสบการณ์สมัครงานด้วยตัวเองมาก่อน
-เนื่องจากอาชีพครูผู้สอนมักมาจากการสอบแข่งขัน จึงไม่มีประสบการร์ตรงและได้แต่
-ถ่ายทอดวิธีสมัครงานตามที่ฟังมาจากคนอื่น</p>
-
-<h3 id="การสมัครงานต่างจากการสอบแข่งขันยังไง">การสมัครงานต่างจากการสอบแข่งขันยังไง</h3>
-<p>การสอบแข่งขันจะมีการกำหนดคุณสมบัติที่ต้องการในเชิงปริมาณอย่างชัดเจน ต่างกับการ
-สมัครงานโดยตรงที่ผู้รับสมัครจำนวนมาก ยังไม่รู้ด้วยซ้ำว่าบริษัทของตนต้องการคน
-แบบไหน กระบวนการคัดเลือกจึงเป็นมากกว่าการวัดกันด้วยปริมาณคะแนนที่ทำได้</p>
-
-<h3 id="เริ่มต้นที่-resume">เริ่มต้นที่ Resume</h3>
-<p>resume (เรซูเม่) คือ ส่วนประกอบหลักที่ผู้รับสมัครใช้ตัดสินใจในการคัดเลือกเบื้อง
-ต้น โดยคนจำนวนมากมักเข้าใจผิดว่าผู้รับสมัครงานต้องการรู้จักตัวตนทุกด้านของตน
-ลักษณะของ resume จำนวนมากในตลาดรับสมัครงานจึงเต็มไปด้วยข้อมูลที่ผู้รับสมัคร
-ไม่ได้มองหา เช่น งานอดิเรก กิจกรรมนอกเวลาที่ชอบ ข้อมูลการอบรมที่ไม่เกี่ยวข้อง
-กับตำแหน่งงาน</p>
-
-<p>สิ่งที่ต้องคำนึงถึงก่อนเป็นลำดับแรกของการเขียน resume คือ ปลายทางที่อ่านเป็นคน
-ที่ต้องการคนแบบไหนมาทำงานด้วย โดยก่อนจะเริ่มเขียนควรจะอ่านรายละเอียดของงาน
-(Job Description) ให้ละเอียดและความเข้าใจก่อน จากนั้นจึงเขียนสิ่งที่รายละเอียด
-ของงานต้องการลงไปใน resume</p>
-
-<h3 id="ข้อผิดพลาดที่พบได้บ่อย-คือ-ใส่ประสบการณ์และความสามารถไม่ชัดเจน">ข้อผิดพลาดที่พบได้บ่อย คือ ใส่ประสบการณ์และความสามารถไม่ชัดเจน</h3>
-<blockquote>
-  <p>คุณสมบัติ: สามารถใช้โปรแกรม MS word ได้เป็นอย่างดี</p>
-</blockquote>
-
-<p>ยกตัวอย่าง เช่น หากในรายละเอียดของงานมีส่วนที่ขอให้ผู้สมัครมีประสบการณ์ใช้
-program MS word ผู้สมัครควรใส่รายละเอียดของประสบการณ์ที่เคยใช้ MS word มาก่อน แต่ส่วนมากแล้ว
-มักจะใส่เพียงแค่</p>
-
-<blockquote>
-  <p>ประสบการณ์: ใช้ MS word มา 3 ปี</p>
-</blockquote>
-
-<p>การใส่ข้อความเพียงเท่านี้ ทำให้ผู้รับสมัครรู้เพียงแค่ว่าผู้สมัครเคยใช้ครั้งแรก
-เมื่อ 3 ปีก่อน หรือเคยใช้มา 3 ปี โดยไม่รู้เลยว่าผู้สมัครเคยใช้ MS word ทำอะไร
-และจะตรงกับความต้องการหรือไม่ หรืออีกแบบที่เห็นได้บ่อยก็คือ</p>
-
-<blockquote>
-  <p>ประสบการณ์: ความสามารถในการใช้ MS word 4/5 คะแนน</p>
-</blockquote>
-
-<p>การใส่เพียงแค่ คะแนนที่ไม่ได้บอกว่า 3/5 ทำอะไรได้บ้าง 5/5 ทำอะไรได้บ้าง
-ก็ยากที่จะบอกได้ว่าความสามารถของผู้สมัครที่มีคะแนน 4/5 จะตรงกับความต้องการหรือไม่</p>
-
-<h3 id="ตัวอย่างการลงรายละเอียดของความสามารถ">ตัวอย่างการลงรายละเอียดของความสามารถ</h3>
-<blockquote>
-  <p>ประสบการณ์: ใช้ MS word 3 ปี</p>
-</blockquote>
-
-<blockquote>
-  <p>เป็นผู้จัดทำรูปแบบรายงานประจำปี ซึ่งต้องมีรูปแบบถูกต้องตามแบบของราชการ
-โดยความรับผิดชอบหลักของการใช้งาน MS word คือ การสรุปข้อมูลจากรายงานของ
-แผนกต่างๆเป็นรูปแบบของเล่มรายงานเพื่อนำเสนอผู้บังคับบัญชา และใช้ประกอบการ
-ประชุมของผู้บริหาร</p>
-</blockquote>
-
-<p>รายละเอียดที่ชัดเจนนอกจากจะบอกถึงความสามารถในด้านที่อธิบายแล้ว ยังบอกได้ถึง
-ความสามารถในการเขียนเรียบเรียง จับประเด็นของผู้สมัครเอง</p>
-
-<h3 id="แต่การใส่รายละเอียดจะเปลืองหน้ากระดาษ-">แต่การใส่รายละเอียดจะเปลืองหน้ากระดาษ ?</h3>
-<p>การใส่ข้อมูลรายละเอียดให้เพียงพอต่อการพิจารณามักจะไม่เกิน 1-2 หน้ากระดาษ แต่หาก
-มีความรู้สึกว่าควรจะใส่เพิ่มจริงๆ ควรเรียงลำดับความสำคัญของสิ่งที่คิดว่าผู้รับ
-สมัครต้องการที่สุดให้อยู่ด้านบนก่อน</p>
-
-<h3 id="ใส่รายละเอียดแล้วก็ยังไม่ได้รับการตอบรับอยู่ดี">ใส่รายละเอียดแล้วก็ยังไม่ได้รับการตอบรับอยู่ดี</h3>
-<p>เพราะการสมัครงาน ไม่ใช่การวัดคะแนนสูงต่ำ หากเราใส่รายละเอียดดีแล้ว ก็อาจจะเป็น
-ไปได้ว่าความต้องการของผู้รับสมัคร ไม่ตรงกับประสบการณ์ที่ผู้สมัครมี ในกรณีที่มี
-การตอบรับด้วยการปฏิเสธแล้ว ควรสอบถามเพิ่มเติมถึงสาเหตุของการปฏิเสธเพื่อนำมา
-เป็นบทเรียนในการพัฒนาตนเองต่อไป</p>
-
-<h3 id="เน้น-resume-ที่มีคุณภาพมากกว่าปริมาณ">เน้น resume ที่มีคุณภาพมากกว่าปริมาณ</h3>
-<p>เพราะการสมัครงานยุคนี้สามารถทำได้ง่ายเพียงแค่ใช้การคลิ้กหรือใช้มือถือส่งอีเมล
-เท่านั้น ผู้สมัครจำนวนมากจึงใช้วิธีส่ง resume ออกเป็นจำนวนมากและหวังที่จะได้รับ
-การตอบรับ เพียงแค่เล็กน้อยของที่ส่งออกไป เช่น 1 ใน 100</p>
-
-<p>แต่การสมัครงานไม่ใช่การเสี่ยงดวง และไม่ควรนำมาปนกัน เพราะ resume ที่ทำขึ้นเพื่อ
-ให้เข้ากับคุณสมบัติของหลายบริษัท มักจะขาดรายละเอียดและถูกมองข้ามโดยทันที และ
-การวัดคุณสมบัติของผู้สมัครจากคุณภาพของ resume เป็นสิ่งที่ทำได้ง่ายมาก</p>
-
-<p>คำแนะนำ คือ หากต้องการ focus กับคุณภาพของการสมัครงานโดยรวม การเลือกบริษัทที่
-ต้องการไม่เกิน 4-5 บริษัทแล้วตั้งใจเขียน resume ตามรายละเอียดที่แต่ล่ะบริษัท
-ประกาศเอาไว้ จะทำให้ผู้สมัครไม่เสียเวลามากเกินไปและยังคงคุณภาพของ resume ไว้ได้</p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><summary type="html"><![CDATA[การสมัครงาน เป็นขั้นตอนหนึ่งที่โรงเรียนหรือสถาบันการศึกษามักไม่มีสอน ส่วนหนึ่งก็เพราะผู้สอนในระบบส่วนมาก ไม่เคยมีประสบการณ์สมัครงานด้วยตัวเองมาก่อน เนื่องจากอาชีพครูผู้สอนมักมาจากการสอบแข่งขัน จึงไม่มีประสบการร์ตรงและได้แต่ ถ่ายทอดวิธีสมัครงานตามที่ฟังมาจากคนอื่น]]></summary></entry></feed>
+<p>ที่มา: <a href="https://github.com/ankane/ahoy/blob/1cfff6ae3cd96af87574393bf63f5a294e33dd46/vendor/assets/javascripts/ahoy.js#L178">ankane/ahoy/vendor/assets/javascripts/ahoy.js#L178</a></p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><summary type="html"><![CDATA[การ comment คือ การทำให้ประโยคหรือตัวอักษรที่เราเขียนในโปรแกรมไม่ถูกประมวลผล โดยอาจมีไว้เพื่อให้บอท (bot) หรือโปรแกรมเมอร์คนอื่นอ่าน เป็นรูปแบบการการสื่อสารแบบหนึ่งที่โปรแกรมเมอร์สามารถสื่อสารได้ เพื่อให้การทำงานร่วมกันมีประสิทธิภาพมากขึ้น]]></summary></entry></feed>
