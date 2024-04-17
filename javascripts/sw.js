@@ -123,6 +123,14 @@ const urlsToCache = [
   
   '/tag/python/index.html',
   
+  '/tag/pritunl/index.html',
+  
+  '/tag/vpn/index.html',
+  
+  '/tag/openvpn/index.html',
+  
+  '/tag/cli/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -137,6 +145,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2024/04/17/how-to-use-pritunl-ovpn-in-cli.html',
   
   '/2024/04/09/unit-testings-without-test-runner.html',
   
