@@ -3,17 +3,24 @@ marp: true
 theme: default
 class: invert
 ---
+
 <style>
+  :root {
+    --color-1: #34ba25;
+    --color-2: #6bd385;
+    --color-3: #c8fad4;
+  }
+
   h1, b, strong {
-    color: #34ba25 !important;
+    color: var(--color-1) !important;
   }
 
   a, p {
-    color: #6bd385 !important;
+    color: var(--color-2) !important;
   }
 
   p {
-    color: #c8fad4 !important;
+    color: var(--color-3) !important;
   }
 
   footer {
