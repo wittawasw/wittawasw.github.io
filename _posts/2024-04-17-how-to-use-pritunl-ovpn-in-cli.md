@@ -2,8 +2,7 @@
 layout: post
 title: วิธีใช้ ovpn profile ที่มี pin code ของ Pritunl ด้วย openvpn ผ่าน command-line
 tags: pritunl, vpn, openvpn, cli
-description: การใช้ VPN profile ของ Pritunl ด้วย CLI เพราะเบื่อการที่ Pritunl Client
-  มักจะหลุดและต้องมาคอยใส่ pin ใหม่อยู่เรื่อยๆ
+description: นั่งหาวิธีการใช้ VPN profile ของ Pritunl ด้วย CLI เพราะเบื่อการที่ Pritunl Client มักจะหลุดและต้องมาคอยใส่ pin ใหม่อยู่เรื่อยๆ
 date: 2024-04-17 16:47 +0700
 ---
 
