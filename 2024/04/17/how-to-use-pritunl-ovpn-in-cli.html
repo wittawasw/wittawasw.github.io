@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#181818"/><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>วิธีใช้ ovpn profile ที่ใช้ pin code ของ pritunl ด้วย openvpn ผ่าน command-line | wittawasw</title>
+<title>วิธีใช้ ovpn profile ที่มี pin code ของ Pritunl ด้วย openvpn ผ่าน command-line | wittawasw</title>
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="วิธีใช้ ovpn profile ที่ใช้ pin code ของ pritunl ด้วย openvpn ผ่าน command-line" />
+<meta property="og:title" content="วิธีใช้ ovpn profile ที่มี pin code ของ Pritunl ด้วย openvpn ผ่าน command-line" />
 <meta name="author" content="wittawasw" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="การใช้ VPN profile ของ pritunl ด้วย CLI เพราะเบื่อการที่ Pritunl Client มักจะหลุกและต้องมาคอยใส่ pin ใหม่อยู่เรื่อยๆ" />
@@ -17,9 +17,9 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2024-04-17T16:47:00+07:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="วิธีใช้ ovpn profile ที่ใช้ pin code ของ pritunl ด้วย openvpn ผ่าน command-line" />
+<meta property="twitter:title" content="วิธีใช้ ovpn profile ที่มี pin code ของ Pritunl ด้วย openvpn ผ่าน command-line" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"wittawasw"},"dateModified":"2024-04-17T16:47:00+07:00","datePublished":"2024-04-17T16:47:00+07:00","description":"การใช้ VPN profile ของ pritunl ด้วย CLI เพราะเบื่อการที่ Pritunl Client มักจะหลุกและต้องมาคอยใส่ pin ใหม่อยู่เรื่อยๆ","headline":"วิธีใช้ ovpn profile ที่ใช้ pin code ของ pritunl ด้วย openvpn ผ่าน command-line","mainEntityOfPage":{"@type":"WebPage","@id":"https://wittawasw.com/2024/04/17/how-to-use-pritunl-ovpn-in-cli.html"},"url":"https://wittawasw.com/2024/04/17/how-to-use-pritunl-ovpn-in-cli.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"wittawasw"},"dateModified":"2024-04-17T16:47:00+07:00","datePublished":"2024-04-17T16:47:00+07:00","description":"การใช้ VPN profile ของ pritunl ด้วย CLI เพราะเบื่อการที่ Pritunl Client มักจะหลุกและต้องมาคอยใส่ pin ใหม่อยู่เรื่อยๆ","headline":"วิธีใช้ ovpn profile ที่มี pin code ของ Pritunl ด้วย openvpn ผ่าน command-line","mainEntityOfPage":{"@type":"WebPage","@id":"https://wittawasw.com/2024/04/17/how-to-use-pritunl-ovpn-in-cli.html"},"url":"https://wittawasw.com/2024/04/17/how-to-use-pritunl-ovpn-in-cli.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://wittawasw.com/feed.xml" title="wittawasw" />
 <script type="module">
@@ -59,14 +59,14 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">วิธีใช้ ovpn profile ที่ใช้ pin code ของ pritunl ด้วย openvpn ผ่าน command-line</h1>
+    <h1 class="post-title p-name" itemprop="name headline">วิธีใช้ ovpn profile ที่มี pin code ของ Pritunl ด้วย openvpn ผ่าน command-line</h1>
     <p class="post-meta"><time class="dt-published" datetime="2024-04-17T16:47:00+07:00" itemprop="datePublished">
         Apr 17, 2024
       </time></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>การใช้ VPN profile ของ pritunl ด้วย CLI เพราะเบื่อการที่ Pritunl Client มักจะหลุกและต้องมาคอยใส่ pin ใหม่อยู่เรื่อยๆ</p>
+    <p>นั่งหาวิธีการใช้ VPN profile ของ Pritunl ด้วย CLI เพราะเบื่อการที่ Pritunl Client มักจะหลุดและต้องมาคอยใส่ pin ใหม่อยู่เรื่อยๆ</p>
 
 <h3 id="คำสั่งในการรัน-vpn">คำสั่งในการรัน VPN</h3>
 
