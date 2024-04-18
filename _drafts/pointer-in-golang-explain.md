@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pointer in Golang
+title: อธิบาย pointer ใน Go ผ่าน code
 ---
 
 ```go
