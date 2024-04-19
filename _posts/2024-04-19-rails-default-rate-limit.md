@@ -89,7 +89,7 @@ class SignupsController < ApplicationController
 end
 
 class APIController < ApplicationController
-  # จำกัด 10 requests ต่อ ต่อ 3 นาที
+  # จำกัด 10 requests ต่อ 3 นาที
   # โดยใช้ datastore เป็น redis ที่ REDIS_URL
   RATE_LIMIT_STORE = ActiveSupport::Cache::RedisCacheStore.new(url: ENV["REDIS_URL"])
   rate_limit to: 10, within: 3.minutes, store: RATE_LIMIT_STORE
