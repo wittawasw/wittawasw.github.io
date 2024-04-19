@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-04-19T07:50:46+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">Rate Limit ใน Ruby on Rails</title><link href="https://wittawasw.com/2024/04/19/rails-default-rate-limit.html" rel="alternate" type="text/html" title="Rate Limit ใน Ruby on Rails" /><published>2024-04-19T07:28:00+07:00</published><updated>2024-04-19T07:28:00+07:00</updated><id>https://wittawasw.com/2024/04/19/rails-default-rate-limit</id><content type="html" xml:base="https://wittawasw.com/2024/04/19/rails-default-rate-limit.html"><![CDATA[<p><img style="display: none;" src="/images/post/ratelimit-diagram.png" /></p>
-
-<p>Rate Limit เป็นหนึ่งในปัญหาที่ทุก tech stack มีวิธีการแก้ปัญหาที่คล้ายกัน ถึงแม้ว่ารายละเอียดการ
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-04-19T07:52:27+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">Rate Limit ใน Ruby on Rails</title><link href="https://wittawasw.com/2024/04/19/rails-default-rate-limit.html" rel="alternate" type="text/html" title="Rate Limit ใน Ruby on Rails" /><published>2024-04-19T07:28:00+07:00</published><updated>2024-04-19T07:28:00+07:00</updated><id>https://wittawasw.com/2024/04/19/rails-default-rate-limit</id><content type="html" xml:base="https://wittawasw.com/2024/04/19/rails-default-rate-limit.html"><![CDATA[<p>Rate Limit เป็นหนึ่งในปัญหาที่ทุก tech stack มีวิธีการแก้ปัญหาที่คล้ายกัน ถึงแม้ว่ารายละเอียดการ
 implement จะแตกต่างกันบ้าง แต่ลักษณะการทำงานเบื้องต้นจะคล้ายกันเสมอ คือ</p>
 
 <ul>
@@ -13,10 +11,12 @@ implement จะแตกต่างกันบ้าง แต่ลักษ
 </ul>
 
 <h3 id="resource">Resource</h3>
+
 <p>อาจหมายถึง database โดยตรงหรือ service อื่นที่เราต้องการลดความเสี่ยงที่จะ
 ทำงานเกินกำลังและทำให้ระบบเกิด downtime หรือ error อื่นๆ</p>
 
 <h3 id="datastore">Datastore</h3>
+
 <p>ส่วนที่ใช้เก็บค่าจำนวน request ซึ่งเป็นได้ทั้งการเก็บโดยตรงภายในหน่วยความจำหรือการเก็บภายใน
 ซอฟต์แวร์ฐานข้อมูล ขึ้นอยู่กับลักษณะการใช้งาน ที่หากเป็นการใช้ภายใน process เดียวกัน ก็อาจเก็บค่า
 ภายในหน่วยความจำโดยตรง แต่หากมีจำนวน server ที่รองรับหลายอัน แล้วต้องการจำกัดจำนวน limit
