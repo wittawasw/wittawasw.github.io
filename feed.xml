@@ -1,4 +1,99 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-04-18T09:36:03+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">วิธีใช้ ovpn profile ที่มี pin code ของ Pritunl ด้วย openvpn ผ่าน command-line</title><link href="https://wittawasw.com/2024/04/17/how-to-use-pritunl-ovpn-in-cli.html" rel="alternate" type="text/html" title="วิธีใช้ ovpn profile ที่มี pin code ของ Pritunl ด้วย openvpn ผ่าน command-line" /><published>2024-04-17T16:47:00+07:00</published><updated>2024-04-17T16:47:00+07:00</updated><id>https://wittawasw.com/2024/04/17/how-to-use-pritunl-ovpn-in-cli</id><content type="html" xml:base="https://wittawasw.com/2024/04/17/how-to-use-pritunl-ovpn-in-cli.html"><![CDATA[<p>นั่งหาวิธีการใช้ VPN profile ของ Pritunl ด้วย CLI เพราะเบื่อการที่ Pritunl Client มักจะหลุดและต้องมาคอยใส่ pin ใหม่อยู่เรื่อยๆ</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-04-19T07:30:04+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">Rate Limit ใน Ruby on Rails</title><link href="https://wittawasw.com/2024/04/19/rails-default-rate-limit.html" rel="alternate" type="text/html" title="Rate Limit ใน Ruby on Rails" /><published>2024-04-19T07:28:00+07:00</published><updated>2024-04-19T07:28:00+07:00</updated><id>https://wittawasw.com/2024/04/19/rails-default-rate-limit</id><content type="html" xml:base="https://wittawasw.com/2024/04/19/rails-default-rate-limit.html"><![CDATA[<p>Rate Limit เป็นหนึ่งในปัญหาที่ทุก tech stack มีวิธีการแก้ปัญหาที่คล้ายกัน ถึงแม้ว่ารายละเอียดการ
+implement จะแตกต่างกันบ้าง แต่ลักษณะการทำงานเบื้องต้นจะคล้ายกันเสมอ คือ</p>
+
+<ul>
+  <li>request จาก client ไปถึง server</li>
+  <li>server ทำการนับจำนวน request ที่เค้ามาแต่ล่ะครั้ง โดยเก็บจำนวนของ request ใน datastore</li>
+  <li>ตรวจสอบว่า request ที่เข้ามาถ้านับรวมกับจำนวนเดิมที่เก็บ จะเกิน limit ตามที่กำหนดไว้หรือยัง
+โดยอาจกำหนดเป็น limit ของจำนวนของ request ภายในช่วงเวลา เช่น
+100 requests ต่อ 10 นาที</li>
+  <li>ปฏิเสธ request ถ้า เกิน limit และยอมให้ผ่านไปถึง resource ได้ถ้าไม่เกิน</li>
+</ul>
+
+<h3 id="resource">Resource</h3>
+<p>อาจหมายถึง database โดยตรงหรือ service อื่นที่เราต้องการลดความเสี่ยงที่จะ
+ทำงานเกินกำลังและทำให้ระบบเกิด downtime หรือ error อื่นๆ</p>
+
+<h3 id="datastore">Datastore</h3>
+<p>ส่วนที่ใช้เก็บค่าจำนวน request ซึ่งเป็นได้ทั้งการเก็บโดยตรงภายในหน่วยความจำหรือการเก็บภายใน
+ซอฟต์แวร์ฐานข้อมูล ขึ้นอยู่กับลักษณะการใช้งาน ที่หากเป็นการใช้ภายใน process เดียวกัน ก็อาจเก็บค่า
+ภายในหน่วยความจำโดยตรง แต่หากมีจำนวน server ที่รองรับหลายอัน แล้วต้องการจำกัดจำนวน limit
+ร่วมกันก็ควรใช้ซอฟต์แวร์ฐานข้อมูลช่วย</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+--------+            +---------+            +---------+
+|        |-----------&gt;|         |-----------&gt;|         |
+| Client |            | Server  |            |Resources|
+|        |&lt;-----------|         |&lt;-----------|         |
++--------+            +---------+            +---------+
+                          |
+                          |
+                          v
+                    +-------------+
+                    |  Datastore  |
+                    +-------------+
+</code></pre></div></div>
+
+<p style="text-align: center;"><em>แบบง่ายที่เป็นการใช้ภายใน process เดียว</em></p>
+<p style="text-align: center;"><em>---------------------</em></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+--------+            +--------+
+|        |            |        |
+|        |     ------&gt;| Server |&lt;-
+|        |    /       |        |  \
+|        |   /        +--------+   \
+|        |  /         +--------+    \            +---------+
+|        |&lt;-          |        |     \           |         |
+| Client |&lt;----------&gt;| Server |&lt;---------------&gt;|Resources|
+|        |&lt;-          |        |&lt;-     \         |         |
+|        |  \         +--------+  \     \        +---------+
+|        |   \        +--------+   \     \       +-------------+
+|        |    \       |        |&lt;---------------&gt;|  Datastore  |
+|        |     ------&gt;| Server |                 +-------------+
+|        |            |        |
++--------+            +--------+
+</code></pre></div></div>
+<p style="text-align: center;"><em>แบบที่ใช้ datastore ร่วมกัน</em></p>
+
+<h2 id="ความซับซ้อนที่เกิดขึ้นเสมอ">ความซับซ้อนที่เกิดขึ้นเสมอ</h2>
+
+<p>หาก resource ที่เราต้องกันการเข้าถึง มีความต้องการในการจำกัดที่แตกต่างกัน รูปแบบการทำ
+rate limit ก็จะเพิ่มความซับซ้อนและความยุ่งยากในการดูแลมากขึ้น แนวคิดและรูปแบบการทำ
+rate limit ของ Rails จึงช่วยได้มาก หากไม่มีความเข้าใจ หรือไม่ต้องการ implement ด้วยตัวเอง</p>
+
+<h2 id="ตัวอย่างการ-rate-limit-แยกตาม-controller-ของ-rails">ตัวอย่างการ Rate Limit แยกตาม controller ของ Rails</h2>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">class</span> <span class="nc">SessionsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+  <span class="c1"># จำกัด 10 requests ต่อ 3 นาที</span>
+  <span class="c1"># ที่ method: :create เท่านั้น</span>
+  <span class="n">rate_limit</span> <span class="ss">to: </span><span class="mi">10</span><span class="p">,</span> <span class="ss">within: </span><span class="mi">3</span><span class="p">.</span><span class="nf">minutes</span><span class="p">,</span> <span class="ss">only: :create</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">SignupsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+  <span class="c1"># จำกัด 1000 requests ต่อ 10 วินาที</span>
+  <span class="c1"># แยกตาม domain name ที่ request</span>
+  <span class="c1"># โดยให้ redirect ไปที่ busy_controller_url พร้อมกับ alert</span>
+  <span class="c1"># ที่ method: :new เท่านั้น</span>
+  <span class="n">rate_limit</span> <span class="ss">to: </span><span class="mi">1000</span><span class="p">,</span> <span class="ss">within: </span><span class="mi">10</span><span class="p">.</span><span class="nf">seconds</span><span class="p">,</span>
+    <span class="ss">by: </span><span class="o">-&gt;</span> <span class="p">{</span> <span class="n">request</span><span class="p">.</span><span class="nf">domain</span> <span class="p">},</span>
+    <span class="ss">with: </span><span class="o">-&gt;</span> <span class="p">{</span> <span class="n">redirect_to</span> <span class="n">busy_controller_url</span><span class="p">,</span> <span class="ss">alert: </span><span class="s2">"Too many signups on domain!"</span> <span class="p">},</span>
+    <span class="ss">only: :new</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">APIController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+  <span class="c1"># จำกัด 10 requests ต่อ ต่อ 3 นาที</span>
+  <span class="c1"># โดยใช้ datastore เป็น redis ที่ REDIS_URL</span>
+  <span class="no">RATE_LIMIT_STORE</span> <span class="o">=</span> <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">Cache</span><span class="o">::</span><span class="no">RedisCacheStore</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">url: </span><span class="no">ENV</span><span class="p">[</span><span class="s2">"REDIS_URL"</span><span class="p">])</span>
+  <span class="n">rate_limit</span> <span class="ss">to: </span><span class="mi">10</span><span class="p">,</span> <span class="ss">within: </span><span class="mi">3</span><span class="p">.</span><span class="nf">minutes</span><span class="p">,</span> <span class="ss">store: </span><span class="no">RATE_LIMIT_STORE</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>ที่มา: <a href="https://github.com/rails/rails/blob/main/actionpack/lib/action_controller/metal/rate_limiting.rb">github.com/rails/rails</a></p>
+
+<blockquote>
+  <p>ปัจจุบัน ณ วันที่เขียน blog นี้
+feature ยังไม่ได้ถูก release เป็น version แต่ถูกรวมอยู่ใน <code class="language-plaintext highlighter-rouge">main</code> แล้ว</p>
+</blockquote>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="rails," /><category term="rate" /><category term="limit" /><summary type="html"><![CDATA[Rate Limit เป็นหนึ่งในปัญหาที่ทุก tech stack มีวิธีการแก้ปัญหาที่คล้ายกัน ถึงแม้ว่ารายละเอียดการ implement จะแตกต่างกันบ้าง แต่ลักษณะการทำงานเบื้องต้นจะคล้ายกันเสมอ คือ]]></summary></entry><entry><title type="html">วิธีใช้ ovpn profile ที่มี pin code ของ Pritunl ด้วย openvpn ผ่าน command-line</title><link href="https://wittawasw.com/2024/04/17/how-to-use-pritunl-ovpn-in-cli.html" rel="alternate" type="text/html" title="วิธีใช้ ovpn profile ที่มี pin code ของ Pritunl ด้วย openvpn ผ่าน command-line" /><published>2024-04-17T16:47:00+07:00</published><updated>2024-04-17T16:47:00+07:00</updated><id>https://wittawasw.com/2024/04/17/how-to-use-pritunl-ovpn-in-cli</id><content type="html" xml:base="https://wittawasw.com/2024/04/17/how-to-use-pritunl-ovpn-in-cli.html"><![CDATA[<p>นั่งหาวิธีการใช้ VPN profile ของ Pritunl ด้วย CLI เพราะเบื่อการที่ Pritunl Client มักจะหลุดและต้องมาคอยใส่ pin ใหม่อยู่เรื่อยๆ</p>
 
 <h3 id="คำสั่งในการรัน-vpn">คำสั่งในการรัน VPN</h3>
 
@@ -285,229 +380,4 @@ Hotwired ที่เริ่มใช้งานได้ง่ายที�
 
 <p>สรุปก็คือ ต้องมีทุนที่เยอะพอและเป็นทุนที่ความเสี่ยงสูงด้วย ลองช่วยกันกับคนที่มาปรึกษานั่งทำ budget plan 3 ปีด้วยกัน ตกออกมาได้เฉลี่ยอย่างน้อยปีล่ะ 10-20 ล้านบาท สำหรับงานจริงจัง หรือปีล่ะ 1-3 ล้าน สำหรับงานเล็กๆ ใกล้เคียงกับ hobbyist</p>
 
-<p>ถ้าเป็นเอกชนที่คิดจะพัฒนาเองเพื่อเอาไว้เป็น asset ของบริษัทก็ควรหาคนร่วมทุนหรือให้ทุนจะดีกว่า แต่มันก็ยากเพราะเราต้องบอกคนให้ทุนตั้งแต่ต้นว่าความเสี่ยงมันสูง ยกเว้นจะได้ระดับ SCB, Kbank ลงมาให้ทุนหรือทำเอง ก็คงไม่ต้องห่วงอะไร เพราะเงินจมไปร้อยล้านก็ไม่เดือดร้อน</p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="startup," /><category term="GPT" /><summary type="html"><![CDATA[มีโอกาสได้คุยเรื่องการนำ ChatGPT มาทำ use case เฉพาะใช้เองหลายครั้ง เป็นคุยจริงจังแบบโอกาสทำธุรกิจแค่ครั้งเดียว นอกนั้นเป็นคุยเล่นๆ แต่ทุกครั้ง ทุกกลุ่มที่ไปคุยให้ฟังก็ต้องอธิบายเรื่องนี้]]></summary></entry><entry><title type="html">การใช้ docker สำหรับเตรียมพื้นที่พัฒนาเว็บแอปพลิเคชัน</title><link href="https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development.html" rel="alternate" type="text/html" title="การใช้ docker สำหรับเตรียมพื้นที่พัฒนาเว็บแอปพลิเคชัน" /><published>2022-04-25T00:32:00+07:00</published><updated>2022-04-25T00:32:00+07:00</updated><id>https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development</id><content type="html" xml:base="https://wittawasw.com/2022/04/25/use-docker-in-local-web-application-development.html"><![CDATA[<p>การพัฒนาเว็บแอปพลิเคชันในปัจจุบัน มีความซับซ้อนและความต้องการทางเทคนิคที่เพิ่มขึ้นมาก
-การพัฒนาจึงกลายเป็นการทำงานที่ต้องทำร่วมกันกับคนจำนวนมากขึ้น ไม่ได้จำกัดแค่คนกลุ่มเล็กเท่านั้น
-แต่อาจหมายถึงการรวมกลุ่มทำงานในทีมที่อาจมีขนาดถึง 50-100 คน
-การเตรียมชุดซอฟต์แวร์เพื่อให้ทีมงานจำนวนมากสามารถใช้ร่วมกันได้ โดยที่มีความใกล้เคียงกับพื้นที่จริงบน
-production environment จึงกลายเป็นความจำเป็น ซึ่ง docker สามารถช่วยตอบโจทย์ความต้องการนี้ได้
-ทว่าการใช้งาน docker จำเป็นต้องเข้าใจพื้นฐานการเชื่อมต่อ network เพื่อให้สามารถตั้งค่าการใช้งานภายในโรแกรมได้เอง ตามที่กำลังจะอธิบายต่อไปด้านล่าง</p>
-
-<h2 id="การเชื่อมต่อผ่าน-docker-network">การเชื่อมต่อผ่าน docker network</h2>
-<ul>
-  <li>หากไม่มีการตั้งค่าเพิ่มเติม docker จะทำงานภายในเครือข่าย network ในรูปแบบของ <code class="language-plaintext highlighter-rouge">bridge mode</code>
-network ที่ใช้ชื่อว่า <code class="language-plaintext highlighter-rouge">bridge</code>
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># คำสั่ง cli ที่ใช้ในการดูรายละเอียดของ docker network</span>
-
-<span class="c"># ดูรายชื่อ docker network</span>
-docker network <span class="nb">ls</span>
-
-<span class="c"># ดูรายละเอียดของ docker network</span>
-docker network inspect &lt;ชื่อของ network&gt;
-
-<span class="c"># ดูรายละเอียดของ docker network ค่าเริ่มต้น</span>
-docker network inspect bridge
-</code></pre></div>    </div>
-  </li>
-  <li>การเชื่อมต่อผ่าน docker network ควรสร้าง network ชื่อเฉพาะของแต่ล่ะงานขึ้นมา
-เพื่อแยกระบบออกจากการกันให้ชัดเจน
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ตัวอย่างการสร้าง network</span>
-
-<span class="c"># สร้าง network ชื่อ myweb</span>
-➜  ~ docker network create myweb
-94e2714b100d6634299bbbc7dfb30bf7bc7d150e27f4f48764bec91d32d4686e
-
-<span class="c"># ทดลองสร้าง container ขื่อ redis-store สำหรับ redis ขึ้นมาบน network ชื่อ myweb</span>
-➜  ~ docker run <span class="nt">--name</span> redis-store <span class="nt">--network</span> myweb redis:6-alpine
-1:C <span class="c"># oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo</span>
-1:C <span class="c"># Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started</span>
-1:C <span class="c"># Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf</span>
-1:M <span class="k">*</span> monotonic clock: POSIX clock_gettime
-1:M <span class="k">*</span> Running <span class="nv">mode</span><span class="o">=</span>standalone, <span class="nv">port</span><span class="o">=</span>6379.
-1:M <span class="c"># Server initialized</span>
-1:M <span class="k">*</span> Ready to accept connections
-
-➜  ~ docker ps
-CONTAINER ID   IMAGE            COMMAND                  CREATED              STATUS              PORTS      NAMES
-cb67ff6bd900   redis:6-alpine   <span class="s2">"docker-entrypoint.s…"</span>   About a minute ago   Up About a minute   6379/tcp   redis-store
-
-<span class="c"># ดูรายละเอียดของ docker network ค่าเริ่มต้น</span>
-➜  ~ docker network inspect myweb
-<span class="o">[</span>
-    <span class="o">{</span>
-        <span class="s2">"Name"</span>: <span class="s2">"myweb"</span>,
-        <span class="nb">.</span>
-        <span class="c"># ของจริงมีรายละเอียดเยอะกว่านี้แต่ย่อมาให้เห็นเฉพาะส่วนของ containers</span>
-        <span class="nb">.</span>
-        <span class="s2">"Containers"</span>: <span class="o">{</span>
-            <span class="s2">"cb67ff6bd90061869639e950e908b169d830e54173d479c9ff2186597d2fd1b7"</span>: <span class="o">{</span>
-                <span class="s2">"Name"</span>: <span class="s2">"redis-store"</span>,
-                <span class="s2">"EndpointID"</span>: <span class="s2">"ed4aa0f9da01cbb7bfb7f6ae6a8eea8af8b58b5c66f16aef9b13831dc652fc22"</span>,
-                <span class="s2">"MacAddress"</span>: <span class="s2">"02:42:ac:1b:00:02"</span>,
-                <span class="s2">"IPv4Address"</span>: <span class="s2">"172.27.0.2/16"</span>,
-                <span class="s2">"IPv6Address"</span>: <span class="s2">""</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">]</span>
-
-</code></pre></div>    </div>
-  </li>
-  <li>จากตัวอย่างด้านบนจะเห็นได้ว่าเราสามารถเข้าถึง container ที่ชื่อว่า redis-store ได้ด้วย
-IP address <code class="language-plaintext highlighter-rouge">172.27.0.2</code> แต่ทว่า IP address นี้จะเปลี่ยนไปทุกครั้งที่มีการ restart container
-ดังนั้นการนำค่า IP Address ไปใช้งานโดยตรงจึงไม่ใช่เรื่องที่ดีนักเพราะเราต้องเสียเวลามาเปลี่ยน IP Address
-อยู่เรื่อยๆ</li>
-  <li>วิธีการที่ถูกต้องคือควรจะนำแอปพลิเคชันที่เรียกใช้ redis ใส่ไว้ใน network ที่ชื่อ myweb ด้วย
-และภายใน code ที่ทำการเชื่อมต่อก็ใช้ชื่อของ container แทน hostname, IP address ได้เลย
-ในตัวอย่างนี้ code ที่ทำการเชื่อต่อ redis จะสามารถเชื่อมต่อกับ redis ผ่านตัวอย่าง URL ต่อไปนี้ได้
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">redis://172.27.0.2:6379</code>  <em>(ใช้ IP Address โดยตรงก็ได้แต่เป็นวิธีที่ไม่แนะนำ)</em></li>
-      <li><code class="language-plaintext highlighter-rouge">redis://redis-store:6379</code>  <em>(ควรใช้ชื่อ container แทน hostname)</em></li>
-    </ul>
-  </li>
-  <li>หากในขั้นตอนด้านบน ไม่ได้ทำการสร้าง network และใช้ network ชื่อ <code class="language-plaintext highlighter-rouge">bridge</code> ตามค่าเริ่มต้น
-การใช้ชื่อ container แทน hostname แบบ <code class="language-plaintext highlighter-rouge">redis://redis-store:6379</code> จะไม่สามารถทำได้</li>
-</ul>
-
-<h2 id="การเข้าถึง-container-ด้วย-port-mapping">การเข้าถึง container ด้วย port mapping</h2>
-<ul>
-  <li>ในกรณีที่เราต้องการเข้าถึงผ่าน <code class="language-plaintext highlighter-rouge">localhost</code> หรือ <code class="language-plaintext highlighter-rouge">127.0.0.1</code> เราสามารใช้ใช้ option -p เพื่อทำการ
-port mapping ออกมาจาก docker network
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># แอปพลิเคชันที่อยู่ภายใน localhost จะสามารถเชื่อต่อได้ผ่าน redis://localhost:6379</span>
-docker run <span class="nt">--name</span> redis-store <span class="nt">--network</span> myweb <span class="nt">-p</span> 127.0.0.1:6379:6379/tcp redis:6-alpine
-
-<span class="c"># /tcp อนุโลมให้ไม่ใส่ได้เพราะค่าเริ่มต้นคือ tcp อยู่แล้ว และอีก protocol ที่ชื่อ udp ก็ไม่เป็นที่นิยมใช้</span>
-docker run <span class="nt">--name</span> redis-store <span class="nt">--network</span> myweb <span class="nt">-p</span> 127.0.0.1:6379:6379 redis:6-alpine
-</code></pre></div>    </div>
-  </li>
-  <li>จะสังเกตได้ว่าเราทำการ map ให้เข้ากับ host <code class="language-plaintext highlighter-rouge">127.0.0.1</code>
-ซึ่งข้อผิดพลาดหรือความไม่ระวังอย่างหนึ่งที่พบได้บ่อยคือการใช้ option -p โดยไม่ระบุ host
-ทำให้ container สามารถถูกเข้าถึงได้จาก host ภายนอกทั้งหมด
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># สังเกตตรง -p 6379:6379 ซึ่งเป็นลักษณะที่ไม่พึงประสงค์ ควรใช้ก็ต่อเมื่อเข้าใจความเสี่ยงเท่านั้น</span>
-docker run <span class="nt">--name</span> redis-store <span class="nt">--network</span> myweb <span class="nt">-p</span> 6379:6379 redis:6-alpine
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<h2 id="บันทึกและติดตามการเปลี่ยนแปลงการตั้งค่า-docker-ด้วย-docker-compose">บันทึกและติดตามการเปลี่ยนแปลงการตั้งค่า docker ด้วย docker-compose</h2>
-<ul>
-  <li>การทำเว็บแอปพลิเคชัน องค์ประกอบจะเพิ่มความซับซ้อนมากขึ้นเรื่อยๆ ตามความต้องการของแอปพลิเชัน
-ซึ่งทำให้การตั้งค่า docker ก็ต้องมีการบันทึกเก็บไว้ใน version control
-เพื่อให้สามารถติดตามการเปลี่ยนแปลงได้</li>
-  <li>
-    <p>docker-compose ไม่ได้เป็นเพียงรูปแบบที่ช่วยบันทึก แต่เรายังสามารถเรียกใช้งานทุกองค์ประกอบได้โดยที่ไม่ต้อง
-<code class="language-plaintext highlighter-rouge">docker run</code> ทีล่ะ container ลดความยุ่งยากในการจำตัวเลือกการตั้งค่าต่างๆเหลือเพียงให้จำเพียงชื่อ
-service ของ container เท่านั้น</p>
-
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># docker-compose.yml</span>
-<span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
-<span class="na">services</span><span class="pi">:</span>
-  <span class="na">web</span><span class="pi">:</span>
-    <span class="na">build</span><span class="pi">:</span>
-      <span class="na">context</span><span class="pi">:</span> <span class="s">.</span>
-      <span class="na">dockerfile</span><span class="pi">:</span> <span class="s">./Dockerfile</span>
-    <span class="na">ports</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">8080:8080</span> <span class="c1"># port mapping เพื่อให้สามารถใช้ localhost:8080 แทน internal IP ได้</span>
-    <span class="na">volumes</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">.:/var/www/html</span>
-    <span class="na">environment</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">REDIS_URL=redis://redis:6379</span>
-    <span class="na">networks</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">myweb</span>
-  <span class="na">redis</span><span class="pi">:</span>
-    <span class="na">image</span><span class="pi">:</span> <span class="s1">'</span><span class="s">redis:6-alpine'</span>
-    <span class="c1"># ใช้สัญลักษณ์ # ในการ comment เพื่อให้ docker-compose ไม่อ่านค่า</span>
-    <span class="c1"># comment port mapping ออก โดยสามารถนำเครื่องหมาย # ข้างหน้าออกเพื่อเปิดใช้งานได้ในกรณี</span>
-    <span class="c1"># ที่ต้องการ debug</span>
-    <span class="c1"># ports:</span>
-    <span class="c1">#  - 6379:6379</span>
-    <span class="na">environment</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">ALLOW_EMPTY_PASSWORD=yes</span>
-    <span class="na">networks</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">myweb</span>
-
-<span class="na">networks</span><span class="pi">:</span>
-  <span class="na">myweb</span><span class="pi">:</span>
-    <span class="na">driver</span><span class="pi">:</span> <span class="s">bridge</span>
-</code></pre></div>    </div>
-  </li>
-  <li>สามารถตั้งค่า docker network จากภายในไฟล์ <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> ได้เลย
-โดยไม่จำเป็นต้องสร้าง network ด้วยคำสั่ง <code class="language-plaintext highlighter-rouge">docker network create &lt;ชื่อ network&gt;</code> เอาไว้ก่อน</li>
-  <li>แต่หากต้องการใช้ network ที่ไม่ได้สร้างจากภายในไฟล์ <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> จำเป็นต้องระบุว่าเป็น
-external network ตามรูปแบบนี้
-    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># docker-compose.yml</span>
-
-<span class="na">networks</span><span class="pi">:</span>
-  <span class="na">external</span><span class="pi">:</span>
-    <span class="na">myweb</span><span class="pi">:</span>
-      <span class="na">driver</span><span class="pi">:</span> <span class="s">bridge</span>
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>การใช้งานผ่าน docker-compose จะทำให้การเชื่อมต่อ redis จากภายใน code ของ container web
-สามารถใช้ชื่อ service <code class="language-plaintext highlighter-rouge">redis</code> แทน hostname ได้เลย เช่น <code class="language-plaintext highlighter-rouge">redis://redis:6379</code> ทำให้ไม่มีความจำเป็นต้องจำชื่อ container  อีกต่อไป</p>
-  </li>
-  <li>การเรียกใช้งานเบื้องต้น
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># เรียกใช้งานในรูปแบบ active process สามารถ kill โดยการกด ctrl-C หรือ ปิด terminal ได้</span>
-docker-compose up
-
-<span class="c"># เรียกใช้งานในรูปแบบ daemon process</span>
-docker-compose up <span class="nt">-d</span>
-
-<span class="c"># ตัวอย่างการเรียกใช้งานเฉพาะบาง service</span>
-docker-compose up web
-docker-compose up redis
-
-<span class="c"># ตัวอย่างการเรียกใช้งานหลาย service แบบเจาะจง</span>
-docker-compose up web redis
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<h2 id="environment-variables-จากไฟล์-env">Environment Variables จากไฟล์ .env</h2>
-<ul>
-  <li>คำสั่ง docker-compose จะอ่านค่าจากไฟล์ <code class="language-plaintext highlighter-rouge">.env</code> โดยอัตโนมัติ
-ทำให้ไม่จำเป็นต้องใส่ค่าบางค่า ที่ผู้พัฒนาบางคนอาจใช้ไม่ตรงกันได้ เช่น port ของแอปพลิเคชัน
-หรือ ชื่อของ network ที่ใช้</li>
-  <li>การใช้ค่าจาก Environment variables ภายใน code เป็นแนวทางที่ถูกแนะนำภายใต้หลักการ
-<a href="https://12factor.net/">12-factor</a> เพื่อให้การ deploy เว็บแอปพลิเคชัน สามารถแยกตาม
-environment ได้</li>
-</ul>
-
-<pre><code class="language-.env"># .env
-EXPOSED_WEB_PORT=8080
-WEB_DIRECTORY=.
-REDIS_HOSTNAME=redis
-EXPOSED_REDIS_PORT=6379
-MY_WEB_NETWORK_NAME=myweb
-</code></pre>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># docker-compose.yml</span>
-
-  <span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
-  <span class="na">services</span><span class="pi">:</span>
-    <span class="na">web</span><span class="pi">:</span>
-      <span class="na">build</span><span class="pi">:</span>
-        <span class="na">context</span><span class="pi">:</span> <span class="s">.</span>
-        <span class="na">dockerfile</span><span class="pi">:</span> <span class="s">./Dockerfile</span>
-      <span class="na">ports</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">${EXPOSED_WEB_PORT}:8080</span>
-      <span class="na">volumes</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">${WEB_DIRECTORY}:/var/www/html</span>
-      <span class="na">environment</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">REDIS_URL=redis://${REDIS_HOSTNAME}:${EXPOSED_REDIS_PORT}</span>
-      <span class="na">networks</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">myweb</span>
-    <span class="na">redis</span><span class="pi">:</span>
-      <span class="na">image</span><span class="pi">:</span> <span class="s1">'</span><span class="s">redis:6-alpine'</span>
-      <span class="c1"># ports:</span>
-      <span class="c1">#  - ${EXPOSED_REDIS_PORT}:6379</span>
-      <span class="na">environment</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">ALLOW_EMPTY_PASSWORD=yes</span>
-      <span class="na">networks</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">myweb</span>
-
-  <span class="na">networks</span><span class="pi">:</span>
-    <span class="na">myweb</span><span class="pi">:</span>
-      <span class="na">name</span><span class="pi">:</span> <span class="s">${MY_WEB_NETWORK_NAME}</span>
-      <span class="na">driver</span><span class="pi">:</span> <span class="s">bridge</span>
-</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><summary type="html"><![CDATA[การพัฒนาเว็บแอปพลิเคชันในปัจจุบัน มีความซับซ้อนและความต้องการทางเทคนิคที่เพิ่มขึ้นมาก การพัฒนาจึงกลายเป็นการทำงานที่ต้องทำร่วมกันกับคนจำนวนมากขึ้น ไม่ได้จำกัดแค่คนกลุ่มเล็กเท่านั้น แต่อาจหมายถึงการรวมกลุ่มทำงานในทีมที่อาจมีขนาดถึง 50-100 คน การเตรียมชุดซอฟต์แวร์เพื่อให้ทีมงานจำนวนมากสามารถใช้ร่วมกันได้ โดยที่มีความใกล้เคียงกับพื้นที่จริงบน production environment จึงกลายเป็นความจำเป็น ซึ่ง docker สามารถช่วยตอบโจทย์ความต้องการนี้ได้ ทว่าการใช้งาน docker จำเป็นต้องเข้าใจพื้นฐานการเชื่อมต่อ network เพื่อให้สามารถตั้งค่าการใช้งานภายในโรแกรมได้เอง ตามที่กำลังจะอธิบายต่อไปด้านล่าง]]></summary></entry></feed>
+<p>ถ้าเป็นเอกชนที่คิดจะพัฒนาเองเพื่อเอาไว้เป็น asset ของบริษัทก็ควรหาคนร่วมทุนหรือให้ทุนจะดีกว่า แต่มันก็ยากเพราะเราต้องบอกคนให้ทุนตั้งแต่ต้นว่าความเสี่ยงมันสูง ยกเว้นจะได้ระดับ SCB, Kbank ลงมาให้ทุนหรือทำเอง ก็คงไม่ต้องห่วงอะไร เพราะเงินจมไปร้อยล้านก็ไม่เดือดร้อน</p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="startup," /><category term="GPT" /><summary type="html"><![CDATA[มีโอกาสได้คุยเรื่องการนำ ChatGPT มาทำ use case เฉพาะใช้เองหลายครั้ง เป็นคุยจริงจังแบบโอกาสทำธุรกิจแค่ครั้งเดียว นอกนั้นเป็นคุยเล่นๆ แต่ทุกครั้ง ทุกกลุ่มที่ไปคุยให้ฟังก็ต้องอธิบายเรื่องนี้]]></summary></entry></feed>
