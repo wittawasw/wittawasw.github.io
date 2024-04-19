@@ -4,7 +4,7 @@ title: Rate Limit ใน Ruby on Rails
 tags: rails, rate limit
 date: 2024-04-19 07:28 +0700
 description: Rate Limit เป็นหนึ่งในปัญหาที่ทุก tech stack มีวิธีการแก้ปัญหาที่คล้ายกัน ถึงแม้ว่ารายละเอียดการ implement จะแตกต่างกันบ้าง แต่ลักษณะการทำงานเบื้องต้นจะคล้ายกันเสมอ
-
+header-img: "/images/post/ratelimit-diagram.png"
 ---
 <img style="display: none;" src="/images/post/ratelimit-diagram.png"/>
 

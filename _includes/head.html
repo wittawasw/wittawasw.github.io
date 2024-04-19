@@ -11,6 +11,9 @@
   {%- endif -%}
 
   {%- include custom-head.html -%}
+  {% if page.header-img %}
+    <meta property="og:image" content="{{ site.url }}{{ page.header-img | relative_url }}">
+  {% endif %}
 
   <script type="module">
     import * as Turbo from 'https://cdn.skypack.dev/@hotwired/turbo@7.3.0';
