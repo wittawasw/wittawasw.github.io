@@ -149,7 +149,7 @@ rate limit ของ Rails จึงช่วยได้มาก หากไ�
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">APIController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
-  <span class="c1"># จำกัด 10 requests ต่อ ต่อ 3 นาที</span>
+  <span class="c1"># จำกัด 10 requests ต่อ 3 นาที</span>
   <span class="c1"># โดยใช้ datastore เป็น redis ที่ REDIS_URL</span>
   <span class="no">RATE_LIMIT_STORE</span> <span class="o">=</span> <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">Cache</span><span class="o">::</span><span class="no">RedisCacheStore</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">url: </span><span class="no">ENV</span><span class="p">[</span><span class="s2">"REDIS_URL"</span><span class="p">])</span>
   <span class="n">rate_limit</span> <span class="ss">to: </span><span class="mi">10</span><span class="p">,</span> <span class="ss">within: </span><span class="mi">3</span><span class="p">.</span><span class="nf">minutes</span><span class="p">,</span> <span class="ss">store: </span><span class="no">RATE_LIMIT_STORE</span>
