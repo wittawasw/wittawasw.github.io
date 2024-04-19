@@ -127,6 +127,10 @@ const urlsToCache = [
   
   '/tag/cli/index.html',
   
+  '/tag/rate/index.html',
+  
+  '/tag/limit/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -142,7 +146,7 @@ const urlsToCache = [
   '/robots.txt',
   
   
-  '/2024/04/19/2024-04-19-rails-default-rate-limit.html',
+  '/2024/04/19/rails-default-rate-limit.html',
   
   '/2024/04/17/how-to-use-pritunl-ovpn-in-cli.html',
   
