@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'jekyll', '~> 4.2'
 
 gem 'webrick'
-gem "jgd", "~> 1.12"
+gem "jgd", "~> 1.13"
 
 group :jekyll_plugins do
   gem 'jekyll-compose'
