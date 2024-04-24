@@ -6,16 +6,16 @@ class: invert
 
 <style>
   :root {
-    --color-1: #34ba25;
-    --color-2: #6bd385;
-    --color-3: #c8fad4;
+    --color-1: #C26767;
+    --color-2: #610808;
+    --color-3: #F55151;
   }
 
   h1, b, strong {
     color: var(--color-1) !important;
   }
 
-  a, p {
+  a{
     color: var(--color-2) !important;
   }
 
@@ -30,6 +30,8 @@ class: invert
 </style>
 
 # **Backend Authentication ด้วย Ruby on Rails**
+## subtopics
+text Lorem [link](google.com)
 
 ---
 #
