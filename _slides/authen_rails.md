@@ -30,9 +30,15 @@ class: invert
 </style>
 
 # **Backend Authentication ด้วย Ruby on Rails**
-## subtopics
-text Lorem [link](google.com)
 
 ---
 #
 ---
+
+# Fundamentals of Authentication and Authorization in Rails
+
+## Description
+
+Explain the core concepts of authentication and authorization in Ruby on Rails, gaining an understanding of their fundamental principles and implementation techniques. This talk will guide you through the process of building secure and efficient authentication and authorization systems in Rails applications.
+
+Explore key topics such as secure session management, password hashing, role-based access control, and integration with web/mobile clients. This will feature a code-walkthrough
