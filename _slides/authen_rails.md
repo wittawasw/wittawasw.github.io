@@ -60,10 +60,31 @@ class: invert
     position: relative;
     left: 15vw;
   }
+
+  .large {
+    position: relative;
+    left: 0vw !important;
+  }
 </style>
 
 # **Backend Authentication ด้วย Ruby on Rails**
 ## 26 เมษายน 2567
+
+---
+
+# Overview
+
+- Ruby on Rails
+- Authentication and Authorization
+- HTTP Basic Access Authenentication
+- Username with Secured Password
+  - has_secured_password
+  - Session
+  - Cookie
+- Token
+  - JWT Token
+  - One Time Password
+- Authorization with OAuth
 
 ---
 # Ruby on Rails
@@ -115,17 +136,18 @@ user_service.rb
   current_user.posts.count
   # => 23
   ```
-<!-- A Talk -->
+- การยืนยันสิทธิ์ความเป็นเจ้าของ
+  ```ruby
+  if post.user == current_user
+    post.update_attributes(post_params)
 
----
-
-# Overview
-
-- HTTP Basic Access Authenentication
-- Username with Secured Password
-- Token
-- Single Sign-on
-
+    # render status: 200 # ค่าเท่ากันกับคำสั่งข้างล่าง
+    render status: :ok
+  else
+    # render status: 403
+    render status: :forbidden
+  end
+  ```
 ---
 
 # HTTP Basic Access Authenentication
@@ -187,75 +209,171 @@ end
 ```
 
 ---
-# Current
-
-[https://api.rubyonrails.org/classes/ActiveSupport/CurrentAttributes.html](https://api.rubyonrails.org/classes/ActiveSupport/CurrentAttributes.html)
+# Username with Secured Password
 
 ```ruby
-# app/models/current.rb
-class Current < ActiveSupport::CurrentAttributes
-  attribute :account, :user
-  attribute :request_id, :user_agent, :ip_address
-
-  resets { Time.zone = nil }
-
-  def user=(user)
-    super
-    self.account = user.account
-    Time.zone    = user.time_zone
-  end
-end
-```
-
----
-# Username + Secured Password
-
----
-# Bcrypt
-
-```ruby
-require 'bcrypt'
-
+# Schema: User(name:string, password_digest:string, recovery_password_digest:string)
 class User < ActiveRecord::Base
-  # users.password_hash in the database is a :string
-  include BCrypt
-
-  def password
-    @password ||= Password.new(password_hash)
-  end
-
-  def password=(new_password)
-    @password = Password.create(new_password)
-    self.password_hash = @password
-  end
+  has_secure_password
+  has_secure_password :recovery_password, validations: false
 end
 ```
 
 ---
-# Cookie and Session
+# Username with Secured Password
 
-It's called a "cookie" because it's a term borrowed from HTTP cookies, which are small pieces of data stored on the client's browser. In Rails, the term "cookie" refers to the data stored in the client's browser, similar to HTTP cookies.
+[ActiveModel::SecurePassword](https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html)
 
-a magic cookie, or just cookie for short, is a token or short packet of data passed between communicating programs.
+```ruby
+user = User.new(name: "david", password: "", password_confirmation: "nomatch")
 
-The concept of sessions in web development was introduced around the mid-1990s. The exact date of invention might vary depending on the specific technology or framework being used.
+user.save                                                      # => false, password required
+user.password = "vr00m"
+user.save                                                      # => false, confirmation doesn't match
+user.password_confirmation = "vr00m"
+user.save                                                      # => true
+
+user.authenticate("notright")                                  # => false
+user.authenticate("vr00m")                                     # => user
+User.find_by(name: "david")&.authenticate("notright")          # => false
+User.find_by(name: "david")&.authenticate("vr00m")             # => user
+
+user.recovery_password = "42password"
+user.recovery_password_digest                                  # => "$2a$04$iOfhwahFymCs5weB3BNH/uXkTG65HR.qpW.bNhEjFP3ftli3o5DQC"
+user.save                                                      # => true
+
+user.authenticate_recovery_password("42password")              # => user
+
+user.update(password: "pwn3d", password_challenge: "")         # => false, challenge doesn't authenticate
+user.update(password: "nohack4u", password_challenge: "vr00m") # => true
+
+user.authenticate("vr00m")                                     # => false, old password
+user.authenticate("nohack4u")                                  # => user
+```
+---
+
+# Guest Account
+
+```ruby
+class Account
+  include ActiveModel::SecurePassword
+
+  attr_accessor :is_guest, :password_digest
+
+  has_secure_password
+
+  def errors
+    super.tap { |errors| errors.delete(:password, :blank) if is_guest }
+  end
+end
+
+account = Account.new
+account.valid? # => false, password required
+
+account.is_guest = true
+account.valid? # => true
+
+```
 
 ---
-# Cookie sv JWT Token
+# Session
 
-    JWT (JSON Web Token):
-        Token-based authentication mechanism.
-        Data is stored in a token, which is sent to the client.
-        Stateless: Server doesn't need to store session data.
-        Typically used in stateless APIs.
+<div class="mermaid">
+sequenceDiagram
+  participant Client
+  participant Server
+  Client->>Server: Authenticate with Server
+  Server->>Server: Generate session ID
+  Server->>Server: Keep information in session storage
+  Server-->>Client: Response with session ID
+  Client->>Server: Request with session ID
+  Server->>Server: Retrieve data in session storage
+  Server-->>Client: Response with requested data
+</div>
 
-    Cookie:
-        Data is stored on the client-side.
-        Sent with every HTTP request to the server.
-        Can be used for session management in web applications.
-        Stateful: Server may need to store session data.
+---
+# Session
 
-        JWT can be secure if used correctly. However, it's important to consider the type of data being stored and the security measures in place. For sensitive data, using server-side session management (e.g., cookies with server-side session storage) might be preferable because it gives more control over the data and reduces the risk of tampering.
+```ruby
+# app/controllers/sessions_controller.rb
+def create
+  # ...
+  session[:current_user_id] = @user.id
+  # ...
+end
+```
+
+```ruby
+# app/controllers/posts_controller.rb
+def index
+  current_user = User.find_by_id(session[:current_user_id])
+  posts = current_user.posts
+  # ...
+end
+
+```
+
+---
+# Cookie
+
+<div class="mermaid">
+sequenceDiagram
+  participant Client
+  participant Server
+  Client->>Server: Authenticate with Server
+  Server->>Server: Generate session ID
+  Server->>Server: Encrypt session data
+  Server->>Server: Set session ID as cookie
+  Server-->>Client: Response with cookie
+  Client->>Server: Request with cookie
+  Server->>Server: Decrypt session data in cookie
+  Server-->>Client: Response with requested data
+</div>
+
+---
+# Cookie
+
+```ruby
+# Sets a simple session cookie.
+# This cookie will be deleted when the user's browser is closed.
+cookies[:user_name] = "david"
+
+# Cookie values are String-based. Other data types need to be serialized.
+cookies[:lat_lon] = JSON.generate([47.68, -122.37])
+
+# Sets a cookie that expires in 1 hour.
+cookies[:login] = { value: "XJ-122", expires: 1.hour }
+
+# Sets a cookie that expires at a specific time.
+cookies[:login] = { value: "XJ-122", expires: Time.utc(2020, 10, 15, 5) }
+
+# Sets a signed cookie, which prevents users from tampering with its value.
+# It can be read using the signed method `cookies.signed[:name]`
+cookies.signed[:user_id] = current_user.id
+
+# Sets an encrypted cookie value before sending it to the client which
+# prevent users from reading and tampering with its value.
+# It can be read using the encrypted method `cookies.encrypted[:name]`
+cookies.encrypted[:discount] = 45
+
+# Sets a "permanent" cookie (which expires in 20 years from now).
+cookies.permanent[:login] = "XJ-122"
+
+# You can also chain these methods:
+cookies.signed.permanent[:login] = "XJ-122"
+
+```
+---
+# Cookie
+
+- You can only store about 4kb of data in a cookie.
+- Cookies are sent along with every request you make.
+- Rails sign cookie with `secret_key_base`. Keep it safe.
+  ```ruby
+  # Attacker can signed a cookie to be any user.
+  # If they have secret_key_base that Rails use to signed.
+  cookies.signed[:user_id] = current_user.id
+  ```
 
 ---
 # JWT
@@ -275,62 +393,152 @@ For RSA:
 The signature ensures the integrity of the JWT and prevents tampering.
 
 ---
-# JWT
+# JWT Token
 
-https://github.com/jwt/ruby-jwt
-
+<div class="mermaid">
+sequenceDiagram
+  participant Client
+  participant Server
+  Client->>Server: Request with JWT
+  Server->>Server: Decode JWT
+  Server->>Server: Verify JWT signature
+  Server->>Server: Extract payload
+  Server-->>Client: Response with requested data
+</div>
 
 ---
-# Session Token vs JWT Token
+# JWT Token
+
+```ruby
+# Gemfile
+gem 'jwt'
+```
+```ruby
+# config/initializers/jwt.rb
+JWT_SECRET = 'your_secret_key_here'
+```
+---
+
+# JWT Token
+
+```ruby
+# app/controllers/application_controller.rb
+class ApplicationController < ActionController::Base
+  before_action :authenticate_user!
+
+  def authenticate_user!
+    token = request.headers['Authorization']&.split(' ')&.last
+    begin
+      payload = JWT.decode(token, JWT_SECRET, true, algorithm: 'HS256')
+      @current_user_id = payload[0]['user_id']
+    rescue JWT::DecodeError
+      render json: { error: 'Invalid token' }, status: :unauthorized
+    end
+  end
+
+  def current_user
+    @current_user ||= User.find(@current_user_id)
+  end
+end
+```
 
 ---
-# Signed Token
+# JWT Token
 
+```ruby
+# app/controllers/users_controller.rb
+class UsersController < ApplicationController
+  def show
+    user = current_user
+    render json: { user: user }
+  end
+end
+```
+
+```ruby
+# app/controllers/posts_controller.rb
+class UsersController < ApplicationController
+  def index
+    posts = current_user.posts
+    render json: { posts: posts }
+  end
+end
+```
 ---
 # One Time Password
 
----
-# Log Filtering
-- https://guides.rubyonrails.org/action_controller_overview.html#log-filtering
-
-
----
-# OAuth 2.0
-- Flow
-
----
-# Fundamentals of Authentication and Authorization in Rails
-
-## Description
-
-Explain the core concepts of authentication and authorization in Ruby on Rails, gaining an understanding of their fundamental principles and implementation techniques. This talk will guide you through the process of building secure and efficient authentication and authorization systems in Rails applications.
-
-Explore key topics such as secure session management, password hashing, role-based access control, and integration with web/mobile clients. This will feature a code-walkthrough
-
----
-
 <div class="mermaid">
-  graph LR;
-  a --> b;
-  b --> c;
-  c --> a;
+sequenceDiagram
+  participant User
+  participant Server
+  User->>Server: Request OTP
+  Server->>Server: Generate OTP and store in database
+  Server-->>User: Send OTP
+  User->>Server: Provide OTP
+  Server->>Server: Verify OTP
+  Server-->>User: Response
 </div>
 
-Fruit | Colour | Amount | Cost
------|------|:-----:|------:
-Banana | Yellow | 4 | £1.00
-Apple | Red | 2 | £0.60
-Orange | Orange | 10 | £2.50
-Coconut | Brown | 1 | £1.50
-
 ---
 
-Render inline math such as $ax^2+bc+c$. :smile:
+# One Time Password
 
-$$ I_{xx}=\int\int_Ry^2f(x,y)\cdot{}dydx $$
+```ruby
+class User < ActiveRecord::Base
+  has_secure_password
 
-$$
-f(x) = \int_{-\infty}^\infty
-    \hat f(\xi)\,e^{2 \pi i \xi x}
-    \,d\xi
-$$
+  generates_token_for :password_reset, expires_in: 15.minutes do
+    # Last 10 characters of password salt, which changes when password is updated:
+    password_salt&.last(10)
+  end
+end
+
+user = User.first
+
+token = user.generate_token_for(:password_reset)
+User.find_by_token_for(:password_reset, token) # => user
+# 16 minutes later...
+User.find_by_token_for(:password_reset, token) # => nil
+
+token = user.generate_token_for(:password_reset)
+User.find_by_token_for(:password_reset, token) # => user
+user.update!(password: "new password")
+User.find_by_token_for(:password_reset, token) # => nil
+
+```
+
+---
+# Authorization with OAuth
+
+<div class="mermaid large">
+sequenceDiagram
+  participant User
+  participant Client
+  participant Authorization_Server
+  participant Resource_Server
+  User->>Client: Clicks "Login with OAuth"
+  Client->>Authorization_Server: Redirect to Authorization Endpoint
+  Authorization_Server->>User: Login Page
+  User->>Authorization_Server: Enters Credentials
+  Authorization_Server->>Client: Authorization Code
+  Client->>Authorization_Server: Requests Access Token
+  Authorization_Server->>Client: Sends Access Token
+  Client->>Resource_Server: Requests Protected Resource
+  Resource_Server->>Client: Sends Protected Resource
+
+</div>
+
+---
+# Refresh Token
+
+<div class="mermaid">
+sequenceDiagram
+  participant Client
+  participant Authorization_Server
+  Client->>Authorization_Server: Request Access Token with Refresh Token
+  Authorization_Server->>Client: Sends new Access Token
+</div>
+
+---
+# End
+---
