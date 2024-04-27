@@ -4,12 +4,17 @@ theme: default
 class: invert
 ---
 
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+</script>
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&display=swap');
 
   :root {
     --color-1: #D30001;
-    --color-2: #F0F0F4;
+    --color-2: #CE4D4D;
     --color-3: #F0F0F4;
   }
 
@@ -30,7 +35,7 @@ class: invert
   }
 
   h2, h3, h4 {
-    color: var(--color-1) !important;
+    color: var(--color-2) !important;
     font-weight: 500;
   }
 
@@ -50,24 +55,136 @@ class: invert
     font-size: 20px;
     text-align: right;
   }
+
+  .mermaid {
+    position: relative;
+    left: 15vw;
+  }
 </style>
 
 # **Backend Authentication ด้วย Ruby on Rails**
 ## 26 เมษายน 2567
 
 ---
-# ทำความเข้าใจกับ Backend Authentication ?
-
----
 # Ruby on Rails
 
-- MVC
+- MVC Web Framework
 - Convention over Configuration
 
+```javascript
+// models
+user.rb
+
+// views
+users/index.html
+users/show.html
+
+// controllers
+users_controller.rb
+
+// services
+user_service.rb
+```
+
+<!--
+  How Rails stands out of other web frameworks.
+  A progenitor of modern full-stack web.
+-->
+
+---
+# Backend Authentication
+
+- การยืนยันตัวตน
+  ```ruby
+  current_user = User.find(id)
+
+  current_user.email
+  # => "john@example.com"
+  ```
+
+<!-- A Talk -->
+---
+
+# Authorization
+
+- การยืนยันสิทธิ์ในการเข้าถึงข้อมูล
+  ```ruby
+  Post.all.count
+  # => 12032
+
+  current_user.posts.count
+  # => 23
+  ```
+<!-- A Talk -->
+
+---
+
+# Overview
+
+- HTTP Basic Access Authenentication
+- Username with Secured Password
+- Token
+- Single Sign-on
+
+---
+
+# HTTP Basic Access Authenentication
+
+[RFC-7235](https://datatracker.ietf.org/doc/html/rfc7235)
+
+>  A HTTP/1.1 authentication flow that use Message Syntax and Routing from `RFC-7230`, including the general framework previously described in `RFC-2617` and the related fields and status codes previously defined in `RFC-2616`.
 
 ---
 # HTTP Basic Access Authenentication
 
+<div class="mermaid">
+sequenceDiagram
+  participant Client as Browser
+  participant Server
+  Client->>Server: Request to restricted URL
+  Server-->>Client: 401 Unauthorized with header<br> WWW-Authenticate: Basic
+  Client->>Client: Pop-up login prompt
+  Client->>Server: Request with <br> Authorization: Basic BASE64_ENCODED_STRING
+  Server-->>Client: Response
+  Client->>Server: Subsequent requests with <br> Authorization: Basic BASE64_ENCODED_STRING
+</div>
+
+---
+# HTTP Basic Access Authenentication
+
+> Encode Username and Password in Base64 encoded string then include that in
+  every HTTP requests.
+
+---
+# HTTP Basic Access Authenentication
+
+<img src="/images/slides/basic_authen.png"/>
+
+---
+# HTTP Basic Access Authenentication
+
+[https://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html](https://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html)
+
+```ruby
+# app/controllers/posts_controller.rb
+class PostsController < ApplicationController
+  http_basic_authenticate_with name: "admin",
+                               password: "password",
+                               only: :edit
+
+  def index
+    render plain: "Everyone can see list of Posts"
+  end
+
+  def show
+    render plain: "Everyone can see Post's information"
+  end
+
+  def edit
+    render plain: "Only people who know the password can edit"
+  end
+end
+```
 
 ---
 # Current
@@ -179,6 +296,7 @@ https://github.com/jwt/ruby-jwt
 
 ---
 # OAuth 2.0
+- Flow
 
 ---
 # Fundamentals of Authentication and Authorization in Rails
@@ -188,3 +306,31 @@ https://github.com/jwt/ruby-jwt
 Explain the core concepts of authentication and authorization in Ruby on Rails, gaining an understanding of their fundamental principles and implementation techniques. This talk will guide you through the process of building secure and efficient authentication and authorization systems in Rails applications.
 
 Explore key topics such as secure session management, password hashing, role-based access control, and integration with web/mobile clients. This will feature a code-walkthrough
+
+---
+
+<div class="mermaid">
+  graph LR;
+  a --> b;
+  b --> c;
+  c --> a;
+</div>
+
+Fruit | Colour | Amount | Cost
+-----|------|:-----:|------:
+Banana | Yellow | 4 | £1.00
+Apple | Red | 2 | £0.60
+Orange | Orange | 10 | £2.50
+Coconut | Brown | 1 | £1.50
+
+---
+
+Render inline math such as $ax^2+bc+c$. :smile:
+
+$$ I_{xx}=\int\int_Ry^2f(x,y)\cdot{}dydx $$
+
+$$
+f(x) = \int_{-\infty}^\infty
+    \hat f(\xi)\,e^{2 \pi i \xi x}
+    \,d\xi
+$$
