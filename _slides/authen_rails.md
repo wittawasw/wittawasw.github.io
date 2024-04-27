@@ -525,7 +525,6 @@ sequenceDiagram
   Authorization_Server->>Client: Sends Access Token
   Client->>Resource_Server: Requests Protected Resource
   Resource_Server->>Client: Sends Protected Resource
-
 </div>
 
 ---
