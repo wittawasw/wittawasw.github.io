@@ -74,6 +74,13 @@ class: invert
 
 # Overview
 
+<!--
+  Overview of agenda.
+  Not much to cover and have to cut out many interesting things
+  to fit in the timebox.
+-->
+
+
 - Ruby on Rails
 - Authentication and Authorization
 - HTTP Basic Access Authenentication
@@ -88,6 +95,14 @@ class: invert
 
 ---
 # Ruby on Rails
+
+<!--
+  How Rails stands out of other web frameworks.
+  A progenitor of modern full-stack web.
+
+  Talk about the approach that we will see when showing
+  files from Rails.
+-->
 
 - MVC Web Framework
 - Convention over Configuration
@@ -107,13 +122,13 @@ users_controller.rb
 user_service.rb
 ```
 
-<!--
-  How Rails stands out of other web frameworks.
-  A progenitor of modern full-stack web.
--->
-
 ---
 # Backend Authentication
+
+<!--
+  What is Authentication ?
+  Examples of use cases.
+-->
 
 - การยืนยันตัวตน
   ```ruby
@@ -123,10 +138,14 @@ user_service.rb
   # => "john@example.com"
   ```
 
-<!-- A Talk -->
 ---
 
 # Authorization
+
+<!--
+What is Authorization ?
+Examples of use cases.
+-->
 
 - การยืนยันสิทธิ์ในการเข้าถึงข้อมูล
   ```ruby
@@ -148,16 +167,29 @@ user_service.rb
     render status: :forbidden
   end
   ```
----
 
-# HTTP Basic Access Authenentication
+---
+# HTTP Basic Access Authentication
+
+<!--
+A Basic authentication that oldies will know but
+probably doesn't know the definition.
+
+Kind of useless knowledge but might be handy when we want
+to have solid references.
+-->
 
 [RFC-7235](https://datatracker.ietf.org/doc/html/rfc7235)
 
 >  A HTTP/1.1 authentication flow that use Message Syntax and Routing from `RFC-7230`, including the general framework previously described in `RFC-2617` and the related fields and status codes previously defined in `RFC-2616`.
 
 ---
-# HTTP Basic Access Authenentication
+# HTTP Basic Access Authentication
+
+<!--
+Workflow:
+Looks at the Header.
+-->
 
 <div class="mermaid">
 sequenceDiagram
@@ -172,18 +204,34 @@ sequenceDiagram
 </div>
 
 ---
-# HTTP Basic Access Authenentication
+# HTTP Basic Access Authentication
+
+<!--
+A simplfied version of earlier difinition.
+-->
+
 
 > Encode Username and Password in Base64 encoded string then include that in
   every HTTP requests.
 
 ---
-# HTTP Basic Access Authenentication
+# HTTP Basic Access Authentication
+
+<!--
+Oldies will recognized this.
+-->
 
 <img src="/images/slides/basic_authen.png"/>
 
 ---
-# HTTP Basic Access Authenentication
+# HTTP Basic Access Authentication
+
+<!--
+After being lectured on definition and workflow.
+Revealing the implementation to be just One-line.
+
+Looks at how we can have fined-grain control over different methods.
+-->
 
 [https://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html](https://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Basic.html)
 
@@ -210,6 +258,13 @@ end
 
 ---
 # Username with Secured Password
+
+<!--
+After being lectured on definition and workflow.
+Revealing the implementation to be just One-line.
+
+Looks at how we can have fined-grain control over different methods.
+-->
 
 ```ruby
 # Schema: User(name:string, password_digest:string, recovery_password_digest:string)
