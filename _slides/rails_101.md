@@ -110,8 +110,7 @@ class: invert
 - HTTP
 - HTML, JS, CSS
 - API, json
-- test
-- database
+- Testing
 
 ---
 
