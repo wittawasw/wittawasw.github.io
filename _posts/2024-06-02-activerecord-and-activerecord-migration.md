@@ -69,9 +69,17 @@ Database Schema ได้ตลอด
 
 > คำว่า Database Schema ในที่นี้หมายถึง spec ของฐานข้อมูลนั้นๆ เช่น ชื่อ table รวมถึงชื่อ  column ภายใน, Primary Key, Foreign Key, Index ต่างๆ รวมถึง trigger หรือ store procedure ด้วย
 
-### โครงสร้างไฟล์
+### อธิบายตามโครงสร้างไฟล์
 
-
+```
+- config/
+  - database.yml
+- db/
+  - migrate
+    - ....
+  - schema.rb
+  - seeds.rb
+```
 
 
 ### ข้อดีและข้อเสียของการทำ Migration แบบนี้
