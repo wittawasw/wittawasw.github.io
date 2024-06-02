@@ -131,6 +131,8 @@ const urlsToCache = [
   
   '/tag/limit/index.html',
   
+  '/tag/database/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -145,6 +147,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2024/06/02/activerecord-and-activerecord-migration.html',
   
   '/2024/04/19/rails-default-rate-limit.html',
   
