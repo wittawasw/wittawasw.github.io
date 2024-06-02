@@ -1,6 +1,6 @@
 ---
 layout: post
-title: เรื่องที่รู้ไว้ก็ดีก่อนเริ่มใช้งาน Active Record และ Active Record Migration
+title: ลองพยายามอธิบาย Active Record และ Active Record Migration
 tags: rails database
 keywords: rails, database
 description: 'ลองพยายามเขียนอะไรซักอย่างขึ้นมาอุดช่องว่าง
