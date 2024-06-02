@@ -71,14 +71,22 @@ Database Schema ได้ตลอด
 
 ### อธิบายตามโครงสร้างไฟล์
 
-```
+```sh
 - config/
   - database.yml
+    # ใช้ประกาศค่าต่างๆที่ใช้ในการเชื่อมต่อกับฐานข้อมูล เช่น host, port หรือ
+    # connection string
 - db/
   - migrate
+    # directory ที่ใช้เก็บไฟล์ migration
+    # ใช้งานผ่านคำสั่ง rails db:migrate, rails db:rollback
     - ....
   - schema.rb
+    # ไฟล์ที่เก็บ schema ปัจจุบันของแอปพลิเคชัน
+    # ใช้งานผ่านคำสั่ง rails db:schema:load, rails db:schema:dump
   - seeds.rb
+    # ไฟล์ที่ใช้เก็บคำสั่งสำหรับสร้างข้อมูลเบื้องต้นที่จำเป็นในแอปพลิเคชัน
+    # ใช้งานผ่านคำสั่ง rails db:seed
 ```
 
 
