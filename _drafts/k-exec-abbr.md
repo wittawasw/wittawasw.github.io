@@ -7,6 +7,12 @@ description: ''
 header-img: "/images/post/ar-ar-migrate.png"
 ---
 
+```sh
+function ks() {
+  POD_NAME=$(kgpo | grep "$1" | awk '{print $1}')
+  echo "$POD_NAME"
+}
+```
 
 ```sh
 function ke() {
