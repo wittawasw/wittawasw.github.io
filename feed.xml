@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-09-04T21:35:26+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">Ruby 3.3.5 เตือนให้เอา standard lib ออก</title><link href="https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings.html" rel="alternate" type="text/html" title="Ruby 3.3.5 เตือนให้เอา standard lib ออก" /><published>2024-09-04T21:34:00+07:00</published><updated>2024-09-04T21:34:00+07:00</updated><id>https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings</id><content type="html" xml:base="https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings.html"><![CDATA[<p>ไม่รู้ว่าเตือนตั้งแต่ 3.3.อะไร เพราะจาก 3.3.0 ก็มา 3.3.5 เลย เจอตอนกำลังจะเขียน
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-09-04T21:54:41+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">Ruby 3.3.5 เตือนให้เอา standard lib ออก</title><link href="https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings.html" rel="alternate" type="text/html" title="Ruby 3.3.5 เตือนให้เอา standard lib ออก" /><published>2024-09-04T21:34:00+07:00</published><updated>2024-09-04T21:34:00+07:00</updated><id>https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings</id><content type="html" xml:base="https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings.html"><![CDATA[<p>ไม่รู้ว่าเตือนตั้งแต่ 3.3.อะไร เพราะจาก 3.3.0 ก็มา 3.3.5 เลย เจอตอนกำลังจะเขียน
 blog ก็เลยได้อีก blog ว่าตอนนี้ Ruby core กำลังเดินตาม Roadmap ที่อยากให้
 Runtime โดย default มี memory footprint ที่เล็กลง โดยเท่าที่รู้ก็ถอดออกไปตามนี้</p>
 
@@ -11,7 +11,174 @@ Runtime โดย default มี memory footprint ที่เล็กลง �
 
 <p>ก็ไม่ใช่เรื่องแย่ แต่ก็น่าเสียดายที่คำสั่งใน <code class="language-plaintext highlighter-rouge">base64</code> เป็น 1 ใน คำสั่งแสนสะดวก
 ที่ผมเอาไว้ใช้ได้ตลอดต้องมาโดนถอดออก แต่ <code class="language-plaintext highlighter-rouge">ostruct</code> ไม่น่าเสียดายเลยเพราะเอาจริงๆ
-มันถูกมองว่าไม่ควรใช้มานานแล้ว</p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="ruby" /><category term="deprecation" /><summary type="html"><![CDATA[ไม่รู้ว่าเตือนตั้งแต่ 3.3.อะไร เพราะจาก 3.3.0 ก็มา 3.3.5 เลย เจอตอนกำลังจะเขียน blog ก็เลยได้อีก blog ว่าตอนนี้ Ruby core กำลังเดินตาม Roadmap ที่อยากให้ Runtime โดย default มี memory footprint ที่เล็กลง]]></summary></entry><entry><title type="html">ลองพยายามอธิบาย Active Record และ Active Record Migration</title><link href="https://wittawasw.com/2024/06/02/activerecord-and-activerecord-migration.html" rel="alternate" type="text/html" title="ลองพยายามอธิบาย Active Record และ Active Record Migration" /><published>2024-06-02T14:28:00+07:00</published><updated>2024-06-02T14:28:00+07:00</updated><id>https://wittawasw.com/2024/06/02/activerecord-and-activerecord-migration</id><content type="html" xml:base="https://wittawasw.com/2024/06/02/activerecord-and-activerecord-migration.html"><![CDATA[<p>บทความนี้ได้แรงผลักดันมาจากการที่โดนถามมาเรื่องการทำ Database Migration ของ Rails
+มันถูกมองว่าไม่ควรใช้มานานแล้ว</p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="ruby" /><category term="deprecation" /><summary type="html"><![CDATA[ไม่รู้ว่าเตือนตั้งแต่ 3.3.อะไร เพราะจาก 3.3.0 ก็มา 3.3.5 เลย เจอตอนกำลังจะเขียน blog ก็เลยได้อีก blog ว่าตอนนี้ Ruby core กำลังเดินตาม Roadmap ที่อยากให้ Runtime โดย default มี memory footprint ที่เล็กลง]]></summary></entry><entry><title type="html">การใช้ kubectl แบบ “ตัวย่อ”</title><link href="https://wittawasw.com/2024/08/05/k-exec-abbr.html" rel="alternate" type="text/html" title="การใช้ kubectl แบบ “ตัวย่อ”" /><published>2024-08-05T21:52:00+07:00</published><updated>2024-08-05T21:52:00+07:00</updated><id>https://wittawasw.com/2024/08/05/k-exec-abbr</id><content type="html" xml:base="https://wittawasw.com/2024/08/05/k-exec-abbr.html"><![CDATA[<p>เนื้อหานี้เป็นส่วนหนึ่งของที่ผมใช้ทำงานจริง แล้วก็ได้เอาไปแจกเป็นโพยให้ที่ทำงานเดิมมาแล้ว
+เอา copy มาลง blog ส่วนตัวเพื่อเก็บไว้เป็นความทรงจำ</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+  <li>ความเข้าใจเบื้องต้นเกี่ยวกับ kubectl, k8s</li>
+  <li>install kubectl ไว้ในเครื่อง</li>
+  <li>install
+    <ul>
+      <li><a href="https://github.com/ahmetb/kubectl-aliases">kubectl-aliases</a></li>
+      <li><a href="https://github.com/ahmetb/kubectx">kubectx</a> (kubens จะถูก install มาด้วยกัน)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="ข้อดีของการใช้ตัวย่อแบบนี้">ข้อดีของการใช้ตัวย่อแบบนี้</h2>
+<p>ในการใช้งาน kubectl แบบปกติ คำสั่งจะค่อนข้างยาว เช่น</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-&gt; kubectl get pod <span class="nt">--context</span><span class="o">=</span>dev <span class="nt">--namespace</span><span class="o">=</span>authen
+</code></pre></div></div>
+
+<h1 id="หรือ">หรือ</h1>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-&gt; kubectl config use-context dev
+-&gt; kubectl get pod <span class="nt">--namespace</span><span class="o">=</span>authen
+</code></pre></div></div>
+
+<p>ซึ่งยาว… ยิ่งคิดว่าอันนี้เป็นคำสั่งที่สั้นที่สุดแล้วยังรู้สึกไม่อยากพิมพ์ ถ้าแบบที่ซับซ้อนกว่านี้ ยิ่งไม่อยากพิมพ์
+โดยจากข้างบน ถ้าเราลงเครื่องตามข้างบนจะเหลือแบบนี้</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ทำการ set context, namespace แค่ครั้งเดียว</span>
+-&gt; k ctx dev
+-&gt; k ns authen
+
+<span class="c"># จากนั้นใช้คำสั่งต่อเนื่องได้เลย ไม่ต้องพิมพ์ namespace อีก</span>
+-&gt; kgpo
+</code></pre></div></div>
+
+<p>สั้นกว่ากันเยอะ…  เวลาที่ใช้พิมพ์ลดลงได้หลายวินาที
+โดยรายละเอียดทั้งหมดสามารถดูคำสั่งได้จาก source ใน <a href="https://github.com/ahmetb/kubectl-aliases/blob/master/.kubectl_aliases">github</a></p>
+
+<h2 id="ข้อเสีย">ข้อเสีย</h2>
+<p>จำคำสั่งจริงไม่ได้</p>
+
+<h2 id="use-case-ใช้งานจริง-โดยเอาไปต่อยอดด้วย-shell-script">Use case ใช้งานจริง โดยเอาไปต่อยอดด้วย shell script</h2>
+
+<p>การค้นหา pod
+หลายๆครั้ง เราอยาก ดูสถานะหรือดูจำนวน pod หรืออาจจะแค่อยากดูชื่อเต็มของ pod เราสามารถ get pod ออกมาทั้งหมด แล้ว grep</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ดู pod ทั้งหมด</span>
+-&gt; kgpo
+<span class="c"># NAME                                         READY   STATUS    RESTARTS        AGE</span>
+<span class="c"># auth-service-api-657b4c4658-cs76p            1/1     Running   0               77m</span>
+<span class="c"># core-service-5498d9f57c-2tll1                1/1     Running   0               20d</span>
+<span class="c"># core-service-5498d9f57c-2tll2                1/1     Pending   0</span>
+<span class="c"># report-service-8745c86f5-w24dd               1/1     Running   0               13h</span>
+<span class="c"># shared-service-6f88d74cdc-thpfw              1/1     Running   3 (4h12m ago)   12h</span>
+
+<span class="c"># ดู pod ทั้งหมด ที่มีคำว่า core</span>
+-&gt; kgpo | <span class="nb">grep </span>core
+<span class="c"># core-service-5498d9f57c-2tll1                1/1     Running   0               20d</span>
+<span class="c"># core-service-5498d9f57c-2tll2                1/1     Pending   0</span>
+
+<span class="c"># ดู pod ทั้งหมด ที่มีคำว่า core และไม่มีคำว่า Running</span>
+<span class="c"># เอาไว้หา pod ที่ผิดปกติ</span>
+-&gt; kgpo | <span class="nb">grep </span>core | <span class="nb">grep</span> <span class="nt">-v</span> Running
+<span class="c"># core-service-5498d9f57c-2tll2                1/1     Pending   0</span>
+</code></pre></div></div>
+
+<p>ถ้าอยากได้แค่ชื่ออย่างเดียว ก็ต่อยอดด้วยคำสั่ง awk แล้วทำเป็นฟังก์ชันไปใส่ใน shell</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function </span>ks<span class="o">()</span> <span class="o">{</span>
+  kgpo | <span class="nb">awk</span> <span class="s1">'NR&gt;1 {print $1}'</span> | <span class="nb">grep</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> | <span class="k">while </span><span class="nb">read</span> <span class="nt">-r</span> POD_NAME<span class="p">;</span> <span class="k">do
+    </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$POD_NAME</span><span class="s2">"</span>
+  <span class="k">done</span>
+<span class="o">}</span>
+
+-&gt; ks core
+<span class="c"># core-service-5498d9f57c-2tll1</span>
+<span class="c"># core-service-5498d9f57c-2tll2</span>
+</code></pre></div></div>
+
+<p>ต่อยอดจากการค้นหา pod โดยสั่งให้ ลบ pod ที่เราหาชื่อเจอออก
+การสั่งลบ Pod ตามชื่อนั้นๆ เพื่อให้ Deployment ทำการสร้าง Pod ใหม่มาแทนที่ เพราะฉะนั้นก็เท่ากับเป็นการ restart application process แบบเร็วไปในตัว</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function </span>krrm<span class="o">()</span> <span class="o">{</span>
+  kgpo | <span class="nb">awk</span> <span class="s1">'NR&gt;1 {print $1}'</span> | <span class="nb">grep</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> | <span class="k">while </span><span class="nb">read</span> <span class="nt">-r</span> POD_NAME<span class="p">;</span> <span class="k">do</span>
+    <span class="c"># คำสั่ง krm ย่อมาจาก kubectl delete</span>
+    krm pod <span class="s2">"</span><span class="nv">$POD_NAME</span><span class="s2">"</span>
+    <span class="nb">echo</span> <span class="s2">"pod </span><span class="nv">$POD_NAME</span><span class="s2"> restarted."</span>
+  <span class="k">done</span>
+<span class="o">}</span>
+
+<span class="c"># ตัวอย่างการใช้</span>
+-&gt; krrm core
+<span class="c"># pod core-service-5498d9f57c-2tll1 deleted</span>
+<span class="c"># pod core-service-5498d9f57c-2tll1 restarted.</span>
+<span class="c"># pod core-service-5498d9f57c-2tll2 deleted</span>
+<span class="c"># pod core-service-5498d9f57c-2tll2 restarted.</span>
+</code></pre></div></div>
+
+<h2 id="การ-exec-จากข้างใน-pod">การ exec จากข้างใน pod</h2>
+<p>ในกรณีที่เราต้องการ exec เข้าไปรันคำสั่งบางอย่างข้างใน pod สามารถใช้ฟังก์ชั่น</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ke โดย default จะสั่ง /bin/sh เพื่อเข้าไปข้างใน แต่สามารถใส่คำสั่งอื่นต่อท้าย</span>
+<span class="c"># เพื่อ override ได้</span>
+<span class="k">function </span>ke<span class="o">()</span> <span class="o">{</span>
+  <span class="nv">POD_NAME</span><span class="o">=</span><span class="si">$(</span>kgpo | <span class="nb">awk</span> <span class="s1">'NR&gt;1 {print $1}'</span> | <span class="nb">grep</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> | <span class="nb">head</span> <span class="nt">-n</span> 1<span class="si">)</span>
+
+  <span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+    </span>k <span class="nb">exec</span> <span class="nt">-it</span> <span class="s2">"</span><span class="nv">$POD_NAME</span><span class="s2">"</span> <span class="nt">--</span> /bin/sh
+  <span class="k">else
+    </span><span class="nb">shift
+    </span>k <span class="nb">exec</span> <span class="nt">-it</span> <span class="s2">"</span><span class="nv">$POD_NAME</span><span class="s2">"</span> <span class="nt">--</span> <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+  <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="c"># ตัวอย่างการใช้เพื่อ exec เข้าไปใน pod</span>
+<span class="c"># ถ้าอยากเข้าให้ตรง pod แบบเจาะจงก็เอาชื่อเต็มๆมาใส่</span>
+-&gt; ke core-service-5498d9f57c-2tll1
+<span class="c"># /root/app/ |</span>
+
+<span class="c"># ถ้าแค่อยากเข้าอันไหนก็ได้เพราะมันควรจะเหมือนกันทุกอันก็พิมพ์ชื่อแค่ส่วนเดียวได้</span>
+-&gt; ke core
+<span class="c"># /root/app/ |</span>
+</code></pre></div></div>
+
+<p>ตัวอย่าง use case จริง ของการ exec จากข้างใน pod
+ถ้าเราต้องการตรวจสอบว่า Environment Variables ที่เรา deploy ที่ pod มีค่าถูกต้องหรือไม่ สามารถใช้คำสั่ง ke ข้างบนแบบนี้</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># เรียกดู env vars ทั้งหมดใน pod</span>
+-&gt; ke core <span class="nb">env</span>
+
+<span class="c"># เรียกดู env vars ใน pod ที่นำหน้าว่า DB_</span>
+-&gt; ke core <span class="nb">env</span> | <span class="nb">grep </span>DB_
+</code></pre></div></div>
+
+<p>ในการทำงานจริงมักจะใช้คู่กับการ restart pod ข้างบน โดย</p>
+
+<ul>
+  <li>ตรวจดูว่า env ใน pod แล้วพบว่าผิด หรือยังไม่มี env</li>
+  <li>deploy Env ใหม่ ผ่าน gitops</li>
+  <li>ลบ pod เพื่อ restart deployment</li>
+  <li>ตรวจดูว่า env ใหม่ ได้ถูก deploy ถูกต้องแล้วหรือไม่</li>
+</ul>
+
+<h2 id="การดู-log-ของ-pod">การดู log ของ pod</h2>
+<p>วิธีประยุกต์ใช้ script คล้ายกับการ exec แต่ลองเขียนใหม่สำหรับดู log</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function </span>kl<span class="o">()</span> <span class="o">{</span>
+  <span class="nv">POD_NAME</span><span class="o">=</span><span class="si">$(</span>kgpo | <span class="nb">awk</span> <span class="s1">'NR&gt;1 {print $1}'</span> | <span class="nb">grep</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> | <span class="nb">head</span> <span class="nt">-n</span> 1<span class="si">)</span>
+
+  <span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"-f"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+    </span>k logs <span class="nt">-f</span> <span class="s2">"</span><span class="nv">$POD_NAME</span><span class="s2">"</span>
+  <span class="k">else
+    </span>k logs <span class="s2">"</span><span class="nv">$POD_NAME</span><span class="s2">"</span>
+  <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="c"># ตัวอย่างการใช้</span>
+<span class="c"># เจาะจงชื่อ</span>
+-&gt; kl core-service-5498d9f57c-2tll1
+<span class="c"># เอาแค่อันแรก</span>
+-&gt; kl core
+
+<span class="c"># ใส่ -f เพื่อสั่งให้ process รอรับ log แบบ live</span>
+-&gt; kl core-service-5498d9f57c-2tll1 <span class="nt">-f</span>
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="kubernetes" /><category term="cli" /><summary type="html"><![CDATA[เนื้อหานี้เป็นส่วนหนึ่งของที่ผมใช้ทำงานจริง แล้วก็ได้เอาไปแจกเป็นโพยให้ที่ทำงานเดิมมาแล้ว เอา copy มาลง blog ส่วนตัวเพื่อเก็บไว้เป็นความทรงจำ]]></summary></entry><entry><title type="html">ลองพยายามอธิบาย Active Record และ Active Record Migration</title><link href="https://wittawasw.com/2024/06/02/activerecord-and-activerecord-migration.html" rel="alternate" type="text/html" title="ลองพยายามอธิบาย Active Record และ Active Record Migration" /><published>2024-06-02T14:28:00+07:00</published><updated>2024-06-02T14:28:00+07:00</updated><id>https://wittawasw.com/2024/06/02/activerecord-and-activerecord-migration</id><content type="html" xml:base="https://wittawasw.com/2024/06/02/activerecord-and-activerecord-migration.html"><![CDATA[<p>บทความนี้ได้แรงผลักดันมาจากการที่โดนถามมาเรื่องการทำ Database Migration ของ Rails
 ซึ่งส่วนตัวคิดว่าบทความในอินเตอร์เนตเท่าที่หาดู ไม่มีอันไหนช่วยให้เข้าใจได้ดีกว่า
 <a href="https://guides.rubyonrails.org/active_record_migrations.html">Official Doc</a> ของ Rails เลย
 แต่เราก็เชื่อว่าคนถามน่าจะลองอ่านแล้วล่ะ แต่แค่อาจจะยังไม่ตกผลึกออกมาเป็นแนวปฏิบัติไม่ได้
@@ -551,33 +718,4 @@ gvm use go1.22 <span class="nt">--default</span>
 <h2 id="ตรวจสอบ-go-ที่ติดตั้ง">ตรวจสอบ Go ที่ติดตั้ง</h2>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>go version
 <span class="c"># =&gt; go version go1.22.0 darwin/arm64</span>
-</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="gvm," /><category term="golang," /><category term="install," /><category term="macos" /><summary type="html"><![CDATA[บทความนี้จะทำการติดตั้ง Go เวอร์ชั่น 1.22 โดยผ่าน GVM เพื่อเผื่อทางเลือกสำหรับการติดตั้งเวอร์ชั่นอื่นด้วย]]></summary></entry><entry><title type="html">Convert PDF เป็นสีขาวดำบน Ubuntu ด้วย imagemagick</title><link href="https://wittawasw.com/2024/01/22/convert-pdf-grayscale-ubuntu.html" rel="alternate" type="text/html" title="Convert PDF เป็นสีขาวดำบน Ubuntu ด้วย imagemagick" /><published>2024-01-22T07:48:00+07:00</published><updated>2024-01-22T07:48:00+07:00</updated><id>https://wittawasw.com/2024/01/22/convert-pdf-grayscale-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/01/22/convert-pdf-grayscale-ubuntu.html"><![CDATA[<p>ใช้คำสั่ง</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>convert <span class="nt">-monochrome</span> <span class="nt">-density</span> 600 input.pdf output.pdf
-</code></pre></div></div>
-
-<p>ถ้าติดปัญหา <code class="language-plaintext highlighter-rouge">not authorize .....</code>  หรือ <code class="language-plaintext highlighter-rouge">not allowed by security policy</code> ให้เข้าไปแก้
-security policy ของ PDF ก่อน</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># หา path ของไฟล์ policy ด้วยคำสั่ง -list policy</span>
-identify <span class="nt">-list</span> policy | less
-
-<span class="c"># Output:</span>
-<span class="c"># Path: /etc/ImageMagick-6/policy.xml</span>
-<span class="c">#   Policy: Resource</span>
-<span class="c">#     name: disk</span>
-<span class="c">#     value: 1GiB</span>
-<span class="c">#   Policy: Resource</span>
-<span class="c">#     name: map</span>
-<span class="c">#     value: 512MiB</span>
-<span class="c">#   Policy: Resource</span>
-<span class="c">#     name: memory</span>
-<span class="c">#     value: 256MiB</span>
-<span class="c">#   Policy: Resource</span>
-<span class="c">#   ...</span>
-</code></pre></div></div>
-
-<p>เข้าไป comment หรือลบบรรทัดที่เป็น policy ของ PDF ออก</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- &lt;policy domain="coder" rights="none" pattern="PDF" /&gt; --&gt;</span>
-</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="pdf," /><category term="converter," /><category term="imagemagick" /><summary type="html"><![CDATA[ใช้คำสั่ง]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="gvm," /><category term="golang," /><category term="install," /><category term="macos" /><summary type="html"><![CDATA[บทความนี้จะทำการติดตั้ง Go เวอร์ชั่น 1.22 โดยผ่าน GVM เพื่อเผื่อทางเลือกสำหรับการติดตั้งเวอร์ชั่นอื่นด้วย]]></summary></entry></feed>

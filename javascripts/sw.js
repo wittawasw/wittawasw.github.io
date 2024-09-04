@@ -133,6 +133,8 @@ const urlsToCache = [
   
   '/tag/database/index.html',
   
+  '/tag/kubernetes/index.html',
+  
   '/tag/deprecation/index.html',
   
   '/collection/posts/index.html',
@@ -151,6 +153,8 @@ const urlsToCache = [
   
   
   '/2024/09/04/ruby-3-5-deprecation-warnings.html',
+  
+  '/2024/08/05/k-exec-abbr.html',
   
   '/2024/06/02/activerecord-and-activerecord-migration.html',
   

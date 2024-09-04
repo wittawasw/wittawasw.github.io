@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#181818"/><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>การใช้ kubectl แบบ “ตัวย่อ” | wittawasw</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="การใช้ kubectl แบบ “ตัวย่อ”" />
+<meta name="author" content="wittawasw" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="เนื้อหานี้เป็นส่วนหนึ่งของที่ผมใช้ทำงานจริง แล้วก็ได้เอาไปแจกเป็นโพยให้ที่ทำงานเดิมมาแล้ว เอา copy มาลง blog ส่วนตัวเพื่อเก็บไว้เป็นความทรงจำ" />
+<meta property="og:description" content="เนื้อหานี้เป็นส่วนหนึ่งของที่ผมใช้ทำงานจริง แล้วก็ได้เอาไปแจกเป็นโพยให้ที่ทำงานเดิมมาแล้ว เอา copy มาลง blog ส่วนตัวเพื่อเก็บไว้เป็นความทรงจำ" />
+<link rel="canonical" href="https://wittawasw.com/2024/08/05/k-exec-abbr.html" />
+<meta property="og:url" content="https://wittawasw.com/2024/08/05/k-exec-abbr.html" />
+<meta property="og:site_name" content="wittawasw" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-08-05T21:52:00+07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="การใช้ kubectl แบบ “ตัวย่อ”" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"wittawasw"},"dateModified":"2024-08-05T21:52:00+07:00","datePublished":"2024-08-05T21:52:00+07:00","description":"เนื้อหานี้เป็นส่วนหนึ่งของที่ผมใช้ทำงานจริง แล้วก็ได้เอาไปแจกเป็นโพยให้ที่ทำงานเดิมมาแล้ว เอา copy มาลง blog ส่วนตัวเพื่อเก็บไว้เป็นความทรงจำ","headline":"การใช้ kubectl แบบ “ตัวย่อ”","mainEntityOfPage":{"@type":"WebPage","@id":"https://wittawasw.com/2024/08/05/k-exec-abbr.html"},"url":"https://wittawasw.com/2024/08/05/k-exec-abbr.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://wittawasw.com/feed.xml" title="wittawasw" />
+
+
+  <script type="module">
+    import * as Turbo from 'https://cdn.skypack.dev/@hotwired/turbo@7.3.0';
+  </script>
+
+  <script src="/javascripts/sw.js"></script>
+  <style>
+    .turbo-progress-bar {
+      background: #79b8ff;
+    }
+
+    p {
+      text-justify: inter-word;
+    }
+  </style>
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">wittawasw</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+        </div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">การใช้ kubectl แบบ &quot;ตัวย่อ&quot;</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2024-08-05T21:52:00+07:00" itemprop="datePublished">
+        Aug 5, 2024
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>เนื้อหานี้เป็นส่วนหนึ่งของที่ผมใช้ทำงานจริง แล้วก็ได้เอาไปแจกเป็นโพยให้ที่ทำงานเดิมมาแล้ว
+เอา copy มาลง blog ส่วนตัวเพื่อเก็บไว้เป็นความทรงจำ</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+  <li>ความเข้าใจเบื้องต้นเกี่ยวกับ kubectl, k8s</li>
+  <li>install kubectl ไว้ในเครื่อง</li>
+  <li>install
+    <ul>
+      <li><a href="https://github.com/ahmetb/kubectl-aliases">kubectl-aliases</a></li>
+      <li><a href="https://github.com/ahmetb/kubectx">kubectx</a> (kubens จะถูก install มาด้วยกัน)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="ข้อดีของการใช้ตัวย่อแบบนี้">ข้อดีของการใช้ตัวย่อแบบนี้</h2>
+<p>ในการใช้งาน kubectl แบบปกติ คำสั่งจะค่อนข้างยาว เช่น</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-&gt; kubectl get pod <span class="nt">--context</span><span class="o">=</span>dev <span class="nt">--namespace</span><span class="o">=</span>authen
+</code></pre></div></div>
+
+<h1 id="หรือ">หรือ</h1>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-&gt; kubectl config use-context dev
+-&gt; kubectl get pod <span class="nt">--namespace</span><span class="o">=</span>authen
+</code></pre></div></div>
+
+<p>ซึ่งยาว… ยิ่งคิดว่าอันนี้เป็นคำสั่งที่สั้นที่สุดแล้วยังรู้สึกไม่อยากพิมพ์ ถ้าแบบที่ซับซ้อนกว่านี้ ยิ่งไม่อยากพิมพ์
+โดยจากข้างบน ถ้าเราลงเครื่องตามข้างบนจะเหลือแบบนี้</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ทำการ set context, namespace แค่ครั้งเดียว</span>
+-&gt; k ctx dev
+-&gt; k ns authen
+
+<span class="c"># จากนั้นใช้คำสั่งต่อเนื่องได้เลย ไม่ต้องพิมพ์ namespace อีก</span>
+-&gt; kgpo
+</code></pre></div></div>
+
+<p>สั้นกว่ากันเยอะ…  เวลาที่ใช้พิมพ์ลดลงได้หลายวินาที
+โดยรายละเอียดทั้งหมดสามารถดูคำสั่งได้จาก source ใน <a href="https://github.com/ahmetb/kubectl-aliases/blob/master/.kubectl_aliases">github</a></p>
+
+<h2 id="ข้อเสีย">ข้อเสีย</h2>
+<p>จำคำสั่งจริงไม่ได้</p>
+
+<h2 id="use-case-ใช้งานจริง-โดยเอาไปต่อยอดด้วย-shell-script">Use case ใช้งานจริง โดยเอาไปต่อยอดด้วย shell script</h2>
+
+<p>การค้นหา pod
+หลายๆครั้ง เราอยาก ดูสถานะหรือดูจำนวน pod หรืออาจจะแค่อยากดูชื่อเต็มของ pod เราสามารถ get pod ออกมาทั้งหมด แล้ว grep</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ดู pod ทั้งหมด</span>
+-&gt; kgpo
+<span class="c"># NAME                                         READY   STATUS    RESTARTS        AGE</span>
+<span class="c"># auth-service-api-657b4c4658-cs76p            1/1     Running   0               77m</span>
+<span class="c"># core-service-5498d9f57c-2tll1                1/1     Running   0               20d</span>
+<span class="c"># core-service-5498d9f57c-2tll2                1/1     Pending   0</span>
+<span class="c"># report-service-8745c86f5-w24dd               1/1     Running   0               13h</span>
+<span class="c"># shared-service-6f88d74cdc-thpfw              1/1     Running   3 (4h12m ago)   12h</span>
+
+<span class="c"># ดู pod ทั้งหมด ที่มีคำว่า core</span>
+-&gt; kgpo | <span class="nb">grep </span>core
+<span class="c"># core-service-5498d9f57c-2tll1                1/1     Running   0               20d</span>
+<span class="c"># core-service-5498d9f57c-2tll2                1/1     Pending   0</span>
+
+<span class="c"># ดู pod ทั้งหมด ที่มีคำว่า core และไม่มีคำว่า Running</span>
+<span class="c"># เอาไว้หา pod ที่ผิดปกติ</span>
+-&gt; kgpo | <span class="nb">grep </span>core | <span class="nb">grep</span> <span class="nt">-v</span> Running
+<span class="c"># core-service-5498d9f57c-2tll2                1/1     Pending   0</span>
+</code></pre></div></div>
+
+<p>ถ้าอยากได้แค่ชื่ออย่างเดียว ก็ต่อยอดด้วยคำสั่ง awk แล้วทำเป็นฟังก์ชันไปใส่ใน shell</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function </span>ks<span class="o">()</span> <span class="o">{</span>
+  kgpo | <span class="nb">awk</span> <span class="s1">'NR&gt;1 {print $1}'</span> | <span class="nb">grep</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> | <span class="k">while </span><span class="nb">read</span> <span class="nt">-r</span> POD_NAME<span class="p">;</span> <span class="k">do
+    </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$POD_NAME</span><span class="s2">"</span>
+  <span class="k">done</span>
+<span class="o">}</span>
+
+-&gt; ks core
+<span class="c"># core-service-5498d9f57c-2tll1</span>
+<span class="c"># core-service-5498d9f57c-2tll2</span>
+</code></pre></div></div>
+
+<p>ต่อยอดจากการค้นหา pod โดยสั่งให้ ลบ pod ที่เราหาชื่อเจอออก
+การสั่งลบ Pod ตามชื่อนั้นๆ เพื่อให้ Deployment ทำการสร้าง Pod ใหม่มาแทนที่ เพราะฉะนั้นก็เท่ากับเป็นการ restart application process แบบเร็วไปในตัว</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function </span>krrm<span class="o">()</span> <span class="o">{</span>
+  kgpo | <span class="nb">awk</span> <span class="s1">'NR&gt;1 {print $1}'</span> | <span class="nb">grep</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> | <span class="k">while </span><span class="nb">read</span> <span class="nt">-r</span> POD_NAME<span class="p">;</span> <span class="k">do</span>
+    <span class="c"># คำสั่ง krm ย่อมาจาก kubectl delete</span>
+    krm pod <span class="s2">"</span><span class="nv">$POD_NAME</span><span class="s2">"</span>
+    <span class="nb">echo</span> <span class="s2">"pod </span><span class="nv">$POD_NAME</span><span class="s2"> restarted."</span>
+  <span class="k">done</span>
+<span class="o">}</span>
+
+<span class="c"># ตัวอย่างการใช้</span>
+-&gt; krrm core
+<span class="c"># pod core-service-5498d9f57c-2tll1 deleted</span>
+<span class="c"># pod core-service-5498d9f57c-2tll1 restarted.</span>
+<span class="c"># pod core-service-5498d9f57c-2tll2 deleted</span>
+<span class="c"># pod core-service-5498d9f57c-2tll2 restarted.</span>
+</code></pre></div></div>
+
+<h2 id="การ-exec-จากข้างใน-pod">การ exec จากข้างใน pod</h2>
+<p>ในกรณีที่เราต้องการ exec เข้าไปรันคำสั่งบางอย่างข้างใน pod สามารถใช้ฟังก์ชั่น</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ke โดย default จะสั่ง /bin/sh เพื่อเข้าไปข้างใน แต่สามารถใส่คำสั่งอื่นต่อท้าย</span>
+<span class="c"># เพื่อ override ได้</span>
+<span class="k">function </span>ke<span class="o">()</span> <span class="o">{</span>
+  <span class="nv">POD_NAME</span><span class="o">=</span><span class="si">$(</span>kgpo | <span class="nb">awk</span> <span class="s1">'NR&gt;1 {print $1}'</span> | <span class="nb">grep</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> | <span class="nb">head</span> <span class="nt">-n</span> 1<span class="si">)</span>
+
+  <span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+    </span>k <span class="nb">exec</span> <span class="nt">-it</span> <span class="s2">"</span><span class="nv">$POD_NAME</span><span class="s2">"</span> <span class="nt">--</span> /bin/sh
+  <span class="k">else
+    </span><span class="nb">shift
+    </span>k <span class="nb">exec</span> <span class="nt">-it</span> <span class="s2">"</span><span class="nv">$POD_NAME</span><span class="s2">"</span> <span class="nt">--</span> <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+  <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="c"># ตัวอย่างการใช้เพื่อ exec เข้าไปใน pod</span>
+<span class="c"># ถ้าอยากเข้าให้ตรง pod แบบเจาะจงก็เอาชื่อเต็มๆมาใส่</span>
+-&gt; ke core-service-5498d9f57c-2tll1
+<span class="c"># /root/app/ |</span>
+
+<span class="c"># ถ้าแค่อยากเข้าอันไหนก็ได้เพราะมันควรจะเหมือนกันทุกอันก็พิมพ์ชื่อแค่ส่วนเดียวได้</span>
+-&gt; ke core
+<span class="c"># /root/app/ |</span>
+</code></pre></div></div>
+
+<p>ตัวอย่าง use case จริง ของการ exec จากข้างใน pod
+ถ้าเราต้องการตรวจสอบว่า Environment Variables ที่เรา deploy ที่ pod มีค่าถูกต้องหรือไม่ สามารถใช้คำสั่ง ke ข้างบนแบบนี้</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># เรียกดู env vars ทั้งหมดใน pod</span>
+-&gt; ke core <span class="nb">env</span>
+
+<span class="c"># เรียกดู env vars ใน pod ที่นำหน้าว่า DB_</span>
+-&gt; ke core <span class="nb">env</span> | <span class="nb">grep </span>DB_
+</code></pre></div></div>
+
+<p>ในการทำงานจริงมักจะใช้คู่กับการ restart pod ข้างบน โดย</p>
+
+<ul>
+  <li>ตรวจดูว่า env ใน pod แล้วพบว่าผิด หรือยังไม่มี env</li>
+  <li>deploy Env ใหม่ ผ่าน gitops</li>
+  <li>ลบ pod เพื่อ restart deployment</li>
+  <li>ตรวจดูว่า env ใหม่ ได้ถูก deploy ถูกต้องแล้วหรือไม่</li>
+</ul>
+
+<h2 id="การดู-log-ของ-pod">การดู log ของ pod</h2>
+<p>วิธีประยุกต์ใช้ script คล้ายกับการ exec แต่ลองเขียนใหม่สำหรับดู log</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function </span>kl<span class="o">()</span> <span class="o">{</span>
+  <span class="nv">POD_NAME</span><span class="o">=</span><span class="si">$(</span>kgpo | <span class="nb">awk</span> <span class="s1">'NR&gt;1 {print $1}'</span> | <span class="nb">grep</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> | <span class="nb">head</span> <span class="nt">-n</span> 1<span class="si">)</span>
+
+  <span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"-f"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+    </span>k logs <span class="nt">-f</span> <span class="s2">"</span><span class="nv">$POD_NAME</span><span class="s2">"</span>
+  <span class="k">else
+    </span>k logs <span class="s2">"</span><span class="nv">$POD_NAME</span><span class="s2">"</span>
+  <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="c"># ตัวอย่างการใช้</span>
+<span class="c"># เจาะจงชื่อ</span>
+-&gt; kl core-service-5498d9f57c-2tll1
+<span class="c"># เอาแค่อันแรก</span>
+-&gt; kl core
+
+<span class="c"># ใส่ -f เพื่อสั่งให้ process รอรับ log แบบ live</span>
+-&gt; kl core-service-5498d9f57c-2tll1 <span class="nt">-f</span>
+</code></pre></div></div>
+
+  </div><a class="u-url" href="/2024/08/05/k-exec-abbr.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      <!--
+        <ul class="contact-list">
+          <li class="p-name">wittawasw</li>
+          <li><a class="u-email" href="mailto:your-email@domain.com">your-email@domain.com</a></li>
+        </ul> -->
+      </div>
+      <div class="footer-col">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="social-links">
+      <!--<ul class="social-media-list"></ul>
+-->
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
