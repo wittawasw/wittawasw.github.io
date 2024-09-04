@@ -133,6 +133,8 @@ const urlsToCache = [
   
   '/tag/database/index.html',
   
+  '/tag/deprecation/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -147,6 +149,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2024/09/04/ruby-3-5-deprecation-warnings.html',
   
   '/2024/06/02/activerecord-and-activerecord-migration.html',
   

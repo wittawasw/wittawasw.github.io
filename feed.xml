@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-06-03T13:45:12+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">ลองพยายามอธิบาย Active Record และ Active Record Migration</title><link href="https://wittawasw.com/2024/06/02/activerecord-and-activerecord-migration.html" rel="alternate" type="text/html" title="ลองพยายามอธิบาย Active Record และ Active Record Migration" /><published>2024-06-02T14:28:00+07:00</published><updated>2024-06-02T14:28:00+07:00</updated><id>https://wittawasw.com/2024/06/02/activerecord-and-activerecord-migration</id><content type="html" xml:base="https://wittawasw.com/2024/06/02/activerecord-and-activerecord-migration.html"><![CDATA[<p>บทความนี้ได้แรงผลักดันมาจากการที่โดนถามมาเรื่องการทำ Database Migration ของ Rails
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-09-04T21:35:26+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">Ruby 3.3.5 เตือนให้เอา standard lib ออก</title><link href="https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings.html" rel="alternate" type="text/html" title="Ruby 3.3.5 เตือนให้เอา standard lib ออก" /><published>2024-09-04T21:34:00+07:00</published><updated>2024-09-04T21:34:00+07:00</updated><id>https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings</id><content type="html" xml:base="https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings.html"><![CDATA[<p>ไม่รู้ว่าเตือนตั้งแต่ 3.3.อะไร เพราะจาก 3.3.0 ก็มา 3.3.5 เลย เจอตอนกำลังจะเขียน
+blog ก็เลยได้อีก blog ว่าตอนนี้ Ruby core กำลังเดินตาม Roadmap ที่อยากให้
+Runtime โดย default มี memory footprint ที่เล็กลง โดยเท่าที่รู้ก็ถอดออกไปตามนี้</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Ruby 3.5 deprecation warnings</span>
+<span class="n">gem</span> <span class="s2">"logger"</span>
+<span class="n">gem</span> <span class="s2">"base64"</span>
+<span class="n">gem</span> <span class="s2">"csv"</span>
+<span class="n">gem</span> <span class="s2">"ostruct"</span>
+</code></pre></div></div>
+
+<p>ก็ไม่ใช่เรื่องแย่ แต่ก็น่าเสียดายที่คำสั่งใน <code class="language-plaintext highlighter-rouge">base64</code> เป็น 1 ใน คำสั่งแสนสะดวก
+ที่ผมเอาไว้ใช้ได้ตลอดต้องมาโดนถอดออก แต่ <code class="language-plaintext highlighter-rouge">ostruct</code> ไม่น่าเสียดายเลยเพราะเอาจริงๆ
+มันถูกมองว่าไม่ควรใช้มานานแล้ว</p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="ruby" /><category term="deprecation" /><summary type="html"><![CDATA[ไม่รู้ว่าเตือนตั้งแต่ 3.3.อะไร เพราะจาก 3.3.0 ก็มา 3.3.5 เลย เจอตอนกำลังจะเขียน blog ก็เลยได้อีก blog ว่าตอนนี้ Ruby core กำลังเดินตาม Roadmap ที่อยากให้ Runtime โดย default มี memory footprint ที่เล็กลง]]></summary></entry><entry><title type="html">ลองพยายามอธิบาย Active Record และ Active Record Migration</title><link href="https://wittawasw.com/2024/06/02/activerecord-and-activerecord-migration.html" rel="alternate" type="text/html" title="ลองพยายามอธิบาย Active Record และ Active Record Migration" /><published>2024-06-02T14:28:00+07:00</published><updated>2024-06-02T14:28:00+07:00</updated><id>https://wittawasw.com/2024/06/02/activerecord-and-activerecord-migration</id><content type="html" xml:base="https://wittawasw.com/2024/06/02/activerecord-and-activerecord-migration.html"><![CDATA[<p>บทความนี้ได้แรงผลักดันมาจากการที่โดนถามมาเรื่องการทำ Database Migration ของ Rails
 ซึ่งส่วนตัวคิดว่าบทความในอินเตอร์เนตเท่าที่หาดู ไม่มีอันไหนช่วยให้เข้าใจได้ดีกว่า
 <a href="https://guides.rubyonrails.org/active_record_migrations.html">Official Doc</a> ของ Rails เลย
 แต่เราก็เชื่อว่าคนถามน่าจะลองอ่านแล้วล่ะ แต่แค่อาจจะยังไม่ตกผลึกออกมาเป็นแนวปฏิบัติไม่ได้
@@ -567,101 +580,4 @@ identify <span class="nt">-list</span> policy | less
 <p>เข้าไป comment หรือลบบรรทัดที่เป็น policy ของ PDF ออก</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- &lt;policy domain="coder" rights="none" pattern="PDF" /&gt; --&gt;</span>
-</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="pdf," /><category term="converter," /><category term="imagemagick" /><summary type="html"><![CDATA[ใช้คำสั่ง]]></summary></entry><entry><title type="html">ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails</title><link href="https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html" rel="alternate" type="text/html" title="ลองใช้ Hotwired: Turbo Drive ในเว็บที่ไม่ใช่ Rails" /><published>2024-01-08T12:13:00+07:00</published><updated>2024-01-08T12:13:00+07:00</updated><id>https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails</id><content type="html" xml:base="https://wittawasw.com/2024/01/08/%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-hotwired-turbo-%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%8A%E0%B9%88-rails.html"><![CDATA[<p><img src="/images/post/hotwired.png" alt="hotwired" />
-<br />
-<br />
-<a href="https://hotwired.dev/">Hotwired</a> คือชุด Javascript library ที่เป็นค่าเริ่มต้นของ
-Ruby on Rails ตั้งแต่เวอร์ชั่นที่ 7 เป็นต้นมา แต่การที่ library ถูกเขียนด้วย Javascript ทั้งหมด
-การใช้งานจึงไม่ได้ถูกผูกอยู่กับ Ruby on Rails เท่านั้น โดย
-<a href="https://turbo.hotwired.dev/handbook/drive">Turbo Drive</a> เป็น feature แรกของ
-Hotwired ที่เริ่มใช้งานได้ง่ายที่สุด แต่ก็สามารถเห็นผลลัพธ์ได้ทันทีและมีผลกระทบน้อย
-หากเป็นเว็บไซต์ที่มีลักษณะการใช้งานเพียงเพื่อการแสดง content เท่านั้น เช่น เว็บไซต์สำนักข่าว หรือ บล็อกส่วนตัว</p>
-
-<h2 id="การติดตั้งในหน้าเว็บเพื่อเริ่มใช้งาน">การติดตั้งในหน้าเว็บเพื่อเริ่มใช้งาน</h2>
-
-<ul>
-  <li>วาง script tag นี้ที่หน้า HTML layout ของทุกหน้า
-    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
-  <span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">Turbo</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">https://cdn.skypack.dev/@hotwired/turbo@7.3.0</span><span class="dl">'</span><span class="p">;</span>
-<span class="nt">&lt;/script&gt;</span>
-</code></pre></div>    </div>
-  </li>
-  <li>ตัวอย่าง
-    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;title&gt;</span>...<span class="nt">&lt;/title&gt;</span>
-    .
-    .
-    .
-    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;</span>
-      <span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">Turbo</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">https://cdn.skypack.dev/@hotwired/turbo@7.3.0</span><span class="dl">'</span><span class="p">;</span>
-    <span class="nt">&lt;/script&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-    .
-    .
-    .
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div>    </div>
-  </li>
-  <li>เท่านี้ก็สามารถเริ่มใช้งาน Turbo Drive ได้เลย</li>
-</ul>
-
-<blockquote>
-  <p>ตั้งค่าเวอร์ชั่นของ turbo ที่ 7.3.0 ซึ่งเป็นรุ่น stable</p>
-</blockquote>
-
-<h2 id="วิธีใช้งาน">วิธีใช้งาน</h2>
-<ul>
-  <li>ไม่ต้องเพิ่มคำสั่งอะไรใน source code เพราะการ import turbo ด้วย script tag ก็ทำให้ Turbo Drive เริ่มทำงานแล้ว</li>
-</ul>
-
-<blockquote>
-  <p>แล้วต่างจากเดิมยังไง ในเมื่อยังไม่ได้ทำอะไรเพิ่ม ?</p>
-</blockquote>
-
-<h2 id="สิ่งที่เปลี่ยนไปหลังจากเพิ่ม-script">สิ่งที่เปลี่ยนไปหลังจากเพิ่ม script</h2>
-<ul>
-  <li>การ navigation ผ่าน tag <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> และ <code class="language-plaintext highlighter-rouge">&lt;form&gt;</code> ทุกอันจะถูกแทนที่ด้วย Turbo Drive</li>
-  <li>การ navigate ด้วย Turbo Drive จะทำงานคล้ายกับ SPA (Single Page Application)
-แต่แตกต่างตรงที่เราไม่ต้องเขียน logic เอง และ Turbo Drive จะทำการ replace HTML ภายใน
-<code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> ให้โดยอัตโนมัติ โดยไม่มีการ refresh page</li>
-  <li>หากทำการ inspect ที่ network tab จะเห็นความแตกต่าง ตามตัวอย่างข้างล่าง</li>
-</ul>
-
-<div style="display: flex; justify-content: space-between;margin-bottom:50px;">
-  <div>
-    <video width="98%" preload="auto" muted="" controls="">
-      <source src="/videos/normal-navigation.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <quote>
-      navigation แบบปกติก่อนใส่ script
-    </quote>
-  </div>
-  <div>
-    <video width="98%" preload="auto" muted="" controls="">
-      <source src="/videos/navigation-with-turbodrive.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <quote>
-      navigation ด้วย Turbo Drive หลังใส่ script
-    </quote>
-  </div>
-</div>
-
-<blockquote>
-  <p>สามารถทำการ inspect network และ script tag ของเว็บนี้เพื่อดูเป็นตัวอย่างได้</p>
-</blockquote>
-
-<h2 id="เปลี่ยนสีของ-progress-bar">เปลี่ยนสีของ Progress Bar</h2>
-<ul>
-  <li>Turbo Drive มีแถบ Progress Bar ให้เป็นค่าตั้งต้น โดยเราสารถกำหนดสีได้เองผ่าน CSS
-    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">//</span> <span class="nt">ตัวอย่างที่ใช้งานจริงบนเว็บไซต์นี้</span>
-<span class="nc">.turbo-progress-bar</span> <span class="p">{</span>
-<span class="nl">background</span><span class="p">:</span> <span class="m">#79b8ff</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-</ul>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="rails," /><category term="turbo," /><category term="hotwired," /><category term="html," /><category term="javascript" /><summary type="html"><![CDATA[Hotwired คือชุด Javascript library ที่เป็นค่าเริ่มต้นของ Ruby on Rails ตั้งแต่เวอร์ชั่นที่ 7 เป็นต้นมา แต่การที่ library ถูกเขียนด้วย Javascript ทั้งหมด การใช้งานจึงไม่ได้ถูกผูกอยู่กับ Ruby on Rails เท่านั้น โดย Turbo Drive เป็น feature แรกของ Hotwired ที่เริ่มใช้งานได้ง่ายที่สุด แต่ก็สามารถเห็นผลลัพธ์ได้ทันทีและมีผลกระทบน้อย หากเป็นเว็บไซต์ที่มีลักษณะการใช้งานเพียงเพื่อการแสดง content เท่านั้น เช่น เว็บไซต์สำนักข่าว หรือ บล็อกส่วนตัว]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="pdf," /><category term="converter," /><category term="imagemagick" /><summary type="html"><![CDATA[ใช้คำสั่ง]]></summary></entry></feed>
