@@ -17,6 +17,7 @@ plugins:
 
 exclude:
   - aboutme.md
+  - code
 
 markdown: kramdown
 highlighter: rouge
