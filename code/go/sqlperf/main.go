@@ -13,10 +13,10 @@ import (
 type Document struct {
 	Name        string
 	Link        string
-	EffectiveAt string
-	ExpireAt    string
-	CreatedAt   string
-	UpdatedAt   string
+	EffectiveAt time.Time
+	ExpireAt    time.Time
+	CreatedAt   time.Time
+	UpdatedAt   time.Time
 }
 
 // Randomly add number of days to time, can be minus to
@@ -51,15 +51,93 @@ func MockDocuments(db *sql.DB, n int) {
 		doc := Document{
 			Name:        fmt.Sprintf("Document %d", i),
 			Link:        fmt.Sprintf("https://example.com/doc%d", i),
-			EffectiveAt: time.Now().Format(time.RFC3339),
-			ExpireAt:    randomAdded(time.Now()).Format(time.RFC3339),
-			CreatedAt:   time.Now().Format(time.RFC3339),
-			UpdatedAt:   time.Now().Format(time.RFC3339),
+			EffectiveAt: time.Now(),
+			ExpireAt:    randomAdded(time.Now()),
+			CreatedAt:   time.Now(),
+			UpdatedAt:   time.Now(),
 		}
 		InsertDocument(db, doc)
 	}
 
 	fmt.Printf("%d documents inserted successfully!\n", n)
+}
+
+func BenchmarkQuery(db *sql.DB, n int) {
+	var totalElapsed1, totalElapsed2, maxElapsed1, maxElapsed2, minElapsed1, minElapsed2 time.Duration
+
+	minElapsed1 = time.Hour
+	minElapsed2 = time.Hour
+
+	for i := 0; i < n; i++ {
+		effectedDate := randomAdded(time.Now())
+
+		start := time.Now()
+		query1 := `
+			SELECT * FROM documents
+			WHERE ? BETWEEN effective_at AND COALESCE(expire_at, ?)`
+		rows1, err := db.Query(query1, effectedDate, effectedDate.AddDate(0, 0, 1))
+		if err != nil {
+			log.Fatalf("Failed to execute first query: %v", err)
+		}
+		_ = rows1.Close()
+		elapsed1 := time.Since(start)
+
+		totalElapsed1 += elapsed1
+		if elapsed1 > maxElapsed1 {
+			maxElapsed1 = elapsed1
+		}
+		if elapsed1 < minElapsed1 {
+			minElapsed1 = elapsed1
+		}
+
+		start = time.Now()
+		query2 := `
+			SELECT * FROM documents
+			WHERE effective_at <= ? AND (expire_at IS NULL OR expire_at > ?)`
+		rows2, err := db.Query(query2, effectedDate, effectedDate)
+		if err != nil {
+			log.Fatalf("Failed to execute second query: %v", err)
+		}
+		_ = rows2.Close()
+		elapsed2 := time.Since(start)
+
+		totalElapsed2 += elapsed2
+		if elapsed2 > maxElapsed2 {
+			maxElapsed2 = elapsed2
+		}
+		if elapsed2 < minElapsed2 {
+			minElapsed2 = elapsed2
+		}
+
+		fmt.Printf("Query %d - BETWEEN: %v, IS NULL/OR: %v\n", i+1, elapsed1, elapsed2)
+	}
+
+	avgElapsed1 := totalElapsed1 / time.Duration(n)
+	avgElapsed2 := totalElapsed2 / time.Duration(n)
+	fmt.Printf("\nBETWEEN Query - Avg: %v, Max: %v, Min: %v\n", avgElapsed1, maxElapsed1, minElapsed1)
+	fmt.Printf("IS NULL/OR Query - Avg: %v, Max: %v, Min: %v\n", avgElapsed2, maxElapsed2, minElapsed2)
+}
+
+func PrintSampleDocuments(db *sql.DB, n int) {
+	query := `SELECT id, name, link, effective_at, expire_at, created_at, updated_at FROM documents LIMIT ?`
+	rows, err := db.Query(query, n)
+	if err != nil {
+		log.Fatalf("Failed to fetch sample documents: %v", err)
+	}
+	defer rows.Close()
+
+	fmt.Printf("Sample of %d documents:\n", n)
+	for rows.Next() {
+		var id int
+		var name, link, effectiveAt, expireAt, createdAt, updatedAt string
+
+		err = rows.Scan(&id, &name, &link, &effectiveAt, &expireAt, &createdAt, &updatedAt)
+		if err != nil {
+			log.Fatalf("Failed to scan document: %v", err)
+		}
+		fmt.Printf("ID: %d, Name: %s, Link: %s, EffectiveAt: %s, ExpireAt: %s, CreatedAt: %s, UpdatedAt: %s\n",
+			id, name, link, effectiveAt, expireAt, createdAt, updatedAt)
+	}
 }
 
 func main() {
@@ -69,5 +147,7 @@ func main() {
 	}
 	defer db.Close()
 
-	MockDocuments(db, 1000)
+	// MockDocuments(db, 10000)
+	// PrintSampleDocuments(db, 100)
+	BenchmarkQuery(db, 100)
 }
