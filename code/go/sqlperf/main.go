@@ -43,7 +43,7 @@ func InsertDocument(db *sql.DB, doc Document) {
 	if err != nil {
 		log.Fatalf("Failed to insert document: %v", err)
 	}
-	fmt.Printf("Document: %s inserted successfully!\n", doc.Name)
+	// fmt.Printf("Document: %s inserted successfully!\n", doc.Name)
 }
 
 func MockDocuments(db *sql.DB, n int) {
@@ -147,7 +147,7 @@ func main() {
 	}
 	defer db.Close()
 
-	// MockDocuments(db, 10000)
+	MockDocuments(db, 10000)
 	// PrintSampleDocuments(db, 100)
 	BenchmarkQuery(db, 100)
 }
