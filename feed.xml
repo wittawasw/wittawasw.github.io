@@ -1,4 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-09-04T21:54:41+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">Ruby 3.3.5 เตือนให้เอา standard lib ออก</title><link href="https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings.html" rel="alternate" type="text/html" title="Ruby 3.3.5 เตือนให้เอา standard lib ออก" /><published>2024-09-04T21:34:00+07:00</published><updated>2024-09-04T21:34:00+07:00</updated><id>https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings</id><content type="html" xml:base="https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings.html"><![CDATA[<p>ไม่รู้ว่าเตือนตั้งแต่ 3.3.อะไร เพราะจาก 3.3.0 ก็มา 3.3.5 เลย เจอตอนกำลังจะเขียน
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-09-08T16:27:54+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">ลองเทียบ performance ของ SQL ด้วยการใช้ COALESCE กับ IS NULL</title><link href="https://wittawasw.com/2024/09/08/sql-between-performance.html" rel="alternate" type="text/html" title="ลองเทียบ performance ของ SQL ด้วยการใช้ COALESCE กับ IS NULL" /><published>2024-09-08T16:24:00+07:00</published><updated>2024-09-08T16:24:00+07:00</updated><id>https://wittawasw.com/2024/09/08/sql-between-performance</id><content type="html" xml:base="https://wittawasw.com/2024/09/08/sql-between-performance.html"><![CDATA[<p>วันก่อนเห็นน้องในทีมส่งข้อความหากันเองในกลุ่มที่ทำงานเป็น query ด้วย <code class="language-plaintext highlighter-rouge">Gorm</code> หน้าตาประมาณ</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">Where</span><span class="p">(</span><span class="s">"? BETWEEN c.effective_at AND COALESCE(c.expire_at,  ?)"</span><span class="p">,</span> <span class="n">effected_time</span><span class="p">,</span> <span class="n">effected_time</span><span class="o">.</span><span class="n">AddDate</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>พอเห็นแล้วอดไม่ได้ที่จะแนะนำว่าเช็คถ้า <code class="language-plaintext highlighter-rouge">IS NULL</code> ก่อนก็สามารถทำได้เหมือนกัน ถ้าอยากได้ query ที่รองรับ
+เผื่อกรณีที่ <code class="language-plaintext highlighter-rouge">expire_at</code> สามารถเป็น <code class="language-plaintext highlighter-rouge">NULL</code> ได้แบบนี้</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">Where</span><span class="p">(</span><span class="s">"c.effective_at &lt;= ? AND (c.expire_at IS NULL OR c.expire_at &gt; ?)"</span><span class="p">,</span> <span class="n">effected_time</span><span class="p">,</span> <span class="n">effected_time</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>เพราะในหัวตอนนั้น เข้าใจว่าการใช้ ฟังก์ชันแบบ <code class="language-plaintext highlighter-rouge">COALESCE</code> น่าจะได้ performance
+ที่แย่กว่าเพราะถือเป็นค่าใหม่ ที่ไม่ได้ถูกทำ index เอาไว้</p>
+
+<p>ก็เลยได้ลองเขียน script เก็บไว้ดูเลยว่ามันจะดีกว่าขนาดไหน แต่เท่าที่ดูจากผลลัพธ์ก็ได้ค่าเฉลี่ยที่ไม่ต่างกันเท่าไหร่ ซึ่งอาจจะเพราะ scale ยังเป็นแค่ db ขนาดเล็กด้วย โดยเทียบผลลัพธ์ทั้งแบบที่มี index และไม่มี index บน SQLite3</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># no index</span>
+Query 1 - BETWEEN: 68.308µs, IS NULL/OR: 36.579µs
+Query 2 - BETWEEN: 25.68µs, IS NULL/OR: 22.227µs
+Query 3 - BETWEEN: 26.301µs, IS NULL/OR: 23.961µs
+Query 4 - BETWEEN: 25.267µs, IS NULL/OR: 23.52µs
+
+-&gt; BETWEEN Query - Avg: 24.118µs, Max: 68.308µs, Min: 22.626µs
+-&gt; IS NULL/OR Query - Avg: 21.933µs, Max: 28.717µs, Min: 20.758µs
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#  index expire_at</span>
+Query 1 - BETWEEN: 35.829µs, IS NULL/OR: 34.539µs
+Query 2 - BETWEEN: 20.68µs, IS NULL/OR: 20.437µs
+Query 3 - BETWEEN: 16.351µs, IS NULL/OR: 17.691µs
+Query 4 - BETWEEN: 15.277µs, IS NULL/OR: 16.92µs
+<span class="nb">.</span>
+<span class="nb">.</span>
+Query 57 - BETWEEN: 14.785µs, IS NULL/OR: 16.027µs
+Query 58 - BETWEEN: 14.753µs, IS NULL/OR: 17.613µs
+Query 59 - BETWEEN: 14.972µs, IS NULL/OR: 16.867µs
+Query 60 - BETWEEN: 15.153µs, IS NULL/OR: 16.241µs
+Query 61 - BETWEEN: 14.869µs, IS NULL/OR: 16.411µs
+Query 62 - BETWEEN: 14.944µs, IS NULL/OR: 16.131µs
+Query 63 - BETWEEN: 14.735µs, IS NULL/OR: 16.196µs
+Query 64 - BETWEEN: 15.084µs, IS NULL/OR: 17.143µs
+Query 65 - BETWEEN: 15.457µs, IS NULL/OR: 16.688µs
+<span class="nb">.</span>
+<span class="nb">.</span>
+Query 80 - BETWEEN: 25.236µs, IS NULL/OR: 22.812µs
+Query 81 - BETWEEN: 24.781µs, IS NULL/OR: 22.533µs
+Query 82 - BETWEEN: 24.459µs, IS NULL/OR: 22.659µs
+Query 83 - BETWEEN: 24.48µs, IS NULL/OR: 24.181µs
+Query 84 - BETWEEN: 24.922µs, IS NULL/OR: 23.309µs
+Query 85 - BETWEEN: 24.829µs, IS NULL/OR: 22.028µs
+Query 86 - BETWEEN: 24.633µs, IS NULL/OR: 22.383µs
+
+-&gt; BETWEEN Query - Avg: 20.556µs, Max: 130.997µs, Min: 14.37µs
+-&gt; IS NULL/OR Query - Avg: 19.853µs, Max: 34.539µs, Min: 13.835µs
+
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#  index effective_at, expire_at</span>
+Query 1 - BETWEEN: 64.32µs, IS NULL/OR: 26.332µs
+Query 2 - BETWEEN: 31.684µs, IS NULL/OR: 21.047µs
+Query 3 - BETWEEN: 27.349µs, IS NULL/OR: 18.24µs
+<span class="nb">.</span>
+Query 90 - BETWEEN: 14.501µs, IS NULL/OR: 13.311µs
+Query 91 - BETWEEN: 14.412µs, IS NULL/OR: 14.461µs
+Query 92 - BETWEEN: 14.897µs, IS NULL/OR: 14.527µs
+Query 93 - BETWEEN: 14.834µs, IS NULL/OR: 13.487µs
+Query 94 - BETWEEN: 14.44µs, IS NULL/OR: 13.501µs
+Query 95 - BETWEEN: 14.643µs, IS NULL/OR: 13.488µs
+Query 96 - BETWEEN: 14.544µs, IS NULL/OR: 13.745µs
+Query 97 - BETWEEN: 14.559µs, IS NULL/OR: 13.499µs
+Query 98 - BETWEEN: 14.548µs, IS NULL/OR: 13.602µs
+Query 99 - BETWEEN: 14.576µs, IS NULL/OR: 13.42µs
+Query 100 - BETWEEN: 14.421µs, IS NULL/OR: 14.638µs
+
+-&gt; BETWEEN Query - Avg: 22.53µs, Max: 64.32µs, Min: 14.355µs
+-&gt; IS NULL/OR Query - Avg: 17.132µs, Max: 26.332µs, Min: 13.311µs
+</code></pre></div></div>
+
+<blockquote>
+  <p>scipt ถูกแชร์ไว้ที่ <a href="https://github.com/wittawasw/wittawasw.github.io/blob/main/code/go/sqlperf/main.go">github</a></p>
+</blockquote>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="sql" /><summary type="html"><![CDATA[วันก่อนเห็นน้องในทีมส่งข้อความหากันเองในกลุ่มที่ทำงานเป็น query ด้วย Gorm หน้าตาประมาณ]]></summary></entry><entry><title type="html">Ruby 3.3.5 เตือนให้เอา standard lib ออก</title><link href="https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings.html" rel="alternate" type="text/html" title="Ruby 3.3.5 เตือนให้เอา standard lib ออก" /><published>2024-09-04T21:34:00+07:00</published><updated>2024-09-04T21:34:00+07:00</updated><id>https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings</id><content type="html" xml:base="https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings.html"><![CDATA[<p>ไม่รู้ว่าเตือนตั้งแต่ 3.3.อะไร เพราะจาก 3.3.0 ก็มา 3.3.5 เลย เจอตอนกำลังจะเขียน
 blog ก็เลยได้อีก blog ว่าตอนนี้ Ruby core กำลังเดินตาม Roadmap ที่อยากให้
 Runtime โดย default มี memory footprint ที่เล็กลง โดยเท่าที่รู้ก็ถอดออกไปตามนี้</p>
 
@@ -683,39 +763,4 @@ feature ยังไม่ได้ถูก release เป็น version แต
 <p>นอกจากขั้นตอนปกติที่เราแก้ใน file <code class="language-plaintext highlighter-rouge">~/.ssh/config</code> แล้ว การเพิ่ม SSH key ที่สร้างใหม่ให้สามารถใช้งานได้ ใน MacOS ต้องทำการเพิ่มเข้า Apple Keychain ด้วยคำสั่ง</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add <span class="nt">--apple-use-keychain</span> ~/.ssh/wittawasw_rsa
-</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="macos," /><category term="ssh" /><summary type="html"><![CDATA[เพิ่งค้นพบว่า MacOS หลังกลับมาใช้ไม่นาน ว่าไม่เรียกใช้ SSH key ในชื่ออื่นที่ไม่ใช้การใช้ id_ นำหน้าแล้วตามด้วย algorithm ที่ใช้เข้ารหัส เช่น id_rsa, id_ed25519 ตั้งแต่ต้น]]></summary></entry><entry><title type="html">ติดตั้ง GVM กับ Go 1.22 บน MacOS ตั้งแต่ต้น</title><link href="https://wittawasw.com/2024/02/14/install-go1-22-in-macos.html" rel="alternate" type="text/html" title="ติดตั้ง GVM กับ Go 1.22 บน MacOS ตั้งแต่ต้น" /><published>2024-02-14T10:51:00+07:00</published><updated>2024-02-14T10:51:00+07:00</updated><id>https://wittawasw.com/2024/02/14/install-go1-22-in-macos</id><content type="html" xml:base="https://wittawasw.com/2024/02/14/install-go1-22-in-macos.html"><![CDATA[<blockquote>
-  <p>บทความนี้จะทำการติดตั้ง Go เวอร์ชั่น 1.22 โดยผ่าน <a href="https://github.com/moovweb/gvm">GVM</a> เพื่อเผื่อทางเลือกสำหรับการติดตั้งเวอร์ชั่นอื่นด้วย</p>
-</blockquote>
-
-<p>อ้างอิง:</p>
-<ul>
-  <li><a href="https://github.com/moovweb/gvm">https://github.com/moovweb/gvm</a></li>
-  <li><a href="https://formulae.brew.sh/">homebrew</a></li>
-  <li><a href="https://go.dev/">Go</a></li>
-</ul>
-
-<h2 id="ติดตั้ง-gvm">ติดตั้ง gvm</h2>
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ความต้องการของ script ติดตั้ง</span>
-xcode-select <span class="nt">--install</span>
-brew update
-brew <span class="nb">install </span>mercurial
-
-<span class="c"># ติดตั้ง gvm</span>
-bash &lt; &lt;<span class="o">(</span>curl <span class="nt">-s</span> <span class="nt">-S</span> <span class="nt">-L</span> https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer<span class="o">)</span>
-</code></pre></div></div>
-
-<h2 id="ติดตั้ง-go">ติดตั้ง Go</h2>
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># เนื่องจาก Go 1.5+ ต้องใช้ Go ในการ compile จึงเลือกใช้การติดตั้งผ่าน Homebrew ก่อน เพื่อความสะดวก</span>
-brew <span class="nb">install </span>go
-
-<span class="c"># ติดตั้ง Go 1.22</span>
-gvm <span class="nb">install </span>go1.22
-
-<span class="c"># ตั้งค่าให้ใช้ Go 1.22 เป็นค่าเริ่มต้น</span>
-gvm use go1.22 <span class="nt">--default</span>
-</code></pre></div></div>
-
-<h2 id="ตรวจสอบ-go-ที่ติดตั้ง">ตรวจสอบ Go ที่ติดตั้ง</h2>
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>go version
-<span class="c"># =&gt; go version go1.22.0 darwin/arm64</span>
-</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="gvm," /><category term="golang," /><category term="install," /><category term="macos" /><summary type="html"><![CDATA[บทความนี้จะทำการติดตั้ง Go เวอร์ชั่น 1.22 โดยผ่าน GVM เพื่อเผื่อทางเลือกสำหรับการติดตั้งเวอร์ชั่นอื่นด้วย]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="macos," /><category term="ssh" /><summary type="html"><![CDATA[เพิ่งค้นพบว่า MacOS หลังกลับมาใช้ไม่นาน ว่าไม่เรียกใช้ SSH key ในชื่ออื่นที่ไม่ใช้การใช้ id_ นำหน้าแล้วตามด้วย algorithm ที่ใช้เข้ารหัส เช่น id_rsa, id_ed25519 ตั้งแต่ต้น]]></summary></entry></feed>
