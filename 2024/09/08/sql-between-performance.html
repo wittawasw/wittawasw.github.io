@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#181818"/><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>ลองเทียบ performance ของ SQL ด้วยการใช้ COALESCE กับ IS NULL | wittawasw</title>
+<title>ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL | wittawasw</title>
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="ลองเทียบ performance ของ SQL ด้วยการใช้ COALESCE กับ IS NULL" />
+<meta property="og:title" content="ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL" />
 <meta name="author" content="wittawasw" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="วันก่อนเห็นน้องในทีมส่งข้อความหากันเองในกลุ่มที่ทำงานเป็น query ด้วย Gorm หน้าตาประมาณ" />
@@ -17,9 +17,9 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2024-09-08T16:24:00+07:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="ลองเทียบ performance ของ SQL ด้วยการใช้ COALESCE กับ IS NULL" />
+<meta property="twitter:title" content="ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"wittawasw"},"dateModified":"2024-09-08T16:24:00+07:00","datePublished":"2024-09-08T16:24:00+07:00","description":"วันก่อนเห็นน้องในทีมส่งข้อความหากันเองในกลุ่มที่ทำงานเป็น query ด้วย Gorm หน้าตาประมาณ","headline":"ลองเทียบ performance ของ SQL ด้วยการใช้ COALESCE กับ IS NULL","mainEntityOfPage":{"@type":"WebPage","@id":"https://wittawasw.com/2024/09/08/sql-between-performance.html"},"url":"https://wittawasw.com/2024/09/08/sql-between-performance.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"wittawasw"},"dateModified":"2024-09-08T16:24:00+07:00","datePublished":"2024-09-08T16:24:00+07:00","description":"วันก่อนเห็นน้องในทีมส่งข้อความหากันเองในกลุ่มที่ทำงานเป็น query ด้วย Gorm หน้าตาประมาณ","headline":"ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL","mainEntityOfPage":{"@type":"WebPage","@id":"https://wittawasw.com/2024/09/08/sql-between-performance.html"},"url":"https://wittawasw.com/2024/09/08/sql-between-performance.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://wittawasw.com/feed.xml" title="wittawasw" />
 
@@ -61,7 +61,7 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">ลองเทียบ performance ของ SQL ด้วยการใช้ COALESCE กับ IS NULL</h1>
+    <h1 class="post-title p-name" itemprop="name headline">ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL</h1>
     <p class="post-meta"><time class="dt-published" datetime="2024-09-08T16:24:00+07:00" itemprop="datePublished">
         Sep 8, 2024
       </time></p>
@@ -147,7 +147,7 @@ Query 100 - BETWEEN: 14.421µs, IS NULL/OR: 14.638µs
 </code></pre></div></div>
 
 <blockquote>
-  <p>scipt ถูกแชร์ไว้ที่ <a href="https://github.com/wittawasw/wittawasw.github.io/blob/main/code/go/sqlperf/main.go">github</a></p>
+  <p>script ถูกแชร์ไว้ที่ <a href="https://github.com/wittawasw/wittawasw.github.io/blob/main/code/go/sqlperf/main.go">github</a></p>
 </blockquote>
 
   </div><a class="u-url" href="/2024/09/08/sql-between-performance.html" hidden></a>
