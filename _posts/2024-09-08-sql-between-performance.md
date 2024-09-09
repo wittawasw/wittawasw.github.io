@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ลองเทียบ performance ของ SQL ด้วยการใช้ COALESCE กับ IS NULL
+title: ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL
 tags: sql
 date: 2024-09-08 16:24 +0700
 ---
@@ -88,4 +88,4 @@ Query 100 - BETWEEN: 14.421µs, IS NULL/OR: 14.638µs
 -> IS NULL/OR Query - Avg: 17.132µs, Max: 26.332µs, Min: 13.311µs
 ```
 
-> scipt ถูกแชร์ไว้ที่ [github](https://github.com/wittawasw/wittawasw.github.io/blob/main/code/go/sqlperf/main.go)
+> script ถูกแชร์ไว้ที่ [github](https://github.com/wittawasw/wittawasw.github.io/blob/main/code/go/sqlperf/main.go)
