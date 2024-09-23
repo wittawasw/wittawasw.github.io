@@ -1,6 +1,9 @@
 ---
 layout: post
 title: setup global gitignore
+tags: devtool git
+keywords: devtool, git
+description: ''
 ---
 
 git config --global core.excludesFile '~/.gitignore'
