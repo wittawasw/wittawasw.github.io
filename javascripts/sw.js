@@ -21,6 +21,8 @@ const urlsToCache = [
   
   '/page4/index.html',
   
+  '/page5/index.html',
+  
   '/tag/go/index.html',
   
   '/tag/website/index.html',
@@ -139,6 +141,16 @@ const urlsToCache = [
   
   '/tag/sql/index.html',
   
+  '/tag/unix/index.html',
+  
+  '/tag/ubuntu/index.html',
+  
+  '/tag/timedatectl/index.html',
+  
+  '/tag/devtool/index.html',
+  
+  '/tag/git/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -147,12 +159,18 @@ const urlsToCache = [
   
   '/collection/posts/page4/index.html',
   
+  '/collection/posts/page5/index.html',
+  
   '/feed.xml',
   
   '/sitemap.xml',
   
   '/robots.txt',
   
+  
+  '/2024/09/27/setup-global-gitignore.html',
+  
+  '/2024/09/27/set-datetime-in-ubuntu.html',
   
   '/2024/09/08/sql-between-performance.html',
   

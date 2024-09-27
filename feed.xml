@@ -1,4 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-09-09T07:46:40+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL</title><link href="https://wittawasw.com/2024/09/08/sql-between-performance.html" rel="alternate" type="text/html" title="ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL" /><published>2024-09-08T16:24:00+07:00</published><updated>2024-09-08T16:24:00+07:00</updated><id>https://wittawasw.com/2024/09/08/sql-between-performance</id><content type="html" xml:base="https://wittawasw.com/2024/09/08/sql-between-performance.html"><![CDATA[<p>วันก่อนเห็นน้องในทีมส่งข้อความหากันเองในกลุ่มที่ทำงานเป็น query ด้วย <code class="language-plaintext highlighter-rouge">Gorm</code> หน้าตาประมาณ</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-09-27T12:58:59+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu</title><link href="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html" rel="alternate" type="text/html" title="ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu" /><published>2024-09-27T12:57:00+07:00</published><updated>2024-09-27T12:57:00+07:00</updated><id>https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html"><![CDATA[<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ดูเวลาปัจจุบันที่ตั้งไว้</span>
+timedatectl
+<span class="c">#                Local time: Fri 2024-09-27 12:13:31 +07</span>
+<span class="c">#            Universal time: Fri 2024-09-27 05:13:31 UTC</span>
+<span class="c">#                  RTC time: Fri 2024-09-27 05:13:31</span>
+<span class="c">#                 Time zone: Asia/Bangkok (+07, +0700)</span>
+<span class="c"># System clock synchronized: yes</span>
+<span class="c">#               NTP service: active</span>
+<span class="c">#           RTC in local TZ: no</span>
+
+<span class="c"># ตั้งให้ sync อัตโนมัติผ่าน internet</span>
+timedatectl set-ntp <span class="nb">yes
+</span>timedatectl set-ntp no
+
+<span class="c"># date - YYYY-MM-DD</span>
+timedatectl set-time 2024-03-31
+<span class="c"># time - HH:MM:SS</span>
+timedatectl set-time 12:11:12
+
+<span class="c"># การตั้ง timezone</span>
+timedatectl list-timezones
+timedatectl set-timezone <span class="s2">"&lt;ชื่อ timezone ที่ได้มา&gt;"</span>
+timedatectl set-timezone UTC
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="unix" /><category term="cli" /><category term="ubuntu" /><category term="timedatectl" /><summary type="html"><![CDATA[```sh ดูเวลาปัจจุบันที่ตั้งไว้ timedatectl Local time: Fri 2024-09-27 12:13:31 +07 Universal time: Fri 2024-09-27 05:13:31 UTC RTC time: Fri 2024-09-27 05:13:31 Time zone: Asia/Bangkok (+07, +0700) System clock synchronized: yes NTP service: active RTC in local TZ: no]]></summary></entry><entry><title type="html">การตั้งค่า .gitignore สำหรับทุก git directory ในเครื่อง</title><link href="https://wittawasw.com/2024/09/27/setup-global-gitignore.html" rel="alternate" type="text/html" title="การตั้งค่า .gitignore สำหรับทุก git directory ในเครื่อง" /><published>2024-09-27T12:57:00+07:00</published><updated>2024-09-27T12:57:00+07:00</updated><id>https://wittawasw.com/2024/09/27/setup-global-gitignore</id><content type="html" xml:base="https://wittawasw.com/2024/09/27/setup-global-gitignore.html"><![CDATA[<p>บันทึกไว้ว่าในเครื่องมี <code class="language-plaintext highlighter-rouge">gitignore</code> อะไรบ้าง</p>
+
+<h2 id="คำสั่งที่ใช้">คำสั่งที่ใช้</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># สั่งให้ใช้ไฟล์ ~/.gitignore เป็น reference</span>
+git config <span class="nt">--global</span> core.excludesFile <span class="s1">'~/.gitignore'</span>
+</code></pre></div></div>
+
+<h2 id="ไฟล์-gitignore">ไฟล์ <code class="language-plaintext highlighter-rouge">.gitignore</code></h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Environment Variables</span>
+.env
+.rbenv-vars
+
+<span class="c"># Python</span>
+__pycache__
+
+<span class="c"># Node</span>
+node_modules
+npm-debug.log
+
+<span class="c"># Dart, FLutter</span>
+<span class="k">**</span>/doc/api/
+<span class="k">**</span>/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+
+<span class="c"># Editor</span>
+<span class="k">*</span>.iml
+<span class="k">*</span>.ipr
+<span class="k">*</span>.iws
+.idea/
+
+<span class="c"># scratchpad เอาไว้ note สิ่งที่ต้องทำ, สิ่งที่กำลังทำ , ฯลฯ</span>
+todo
+todo.txt
+
+<span class="c"># Mac</span>
+.DS_Store
+
+<span class="c"># Windows</span>
+Thumbs.db
+
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="devtool" /><category term="git" /><summary type="html"><![CDATA[บันทึกไว้ว่าในเครื่องมี gitignore อะไรบ้าง]]></summary></entry><entry><title type="html">ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL</title><link href="https://wittawasw.com/2024/09/08/sql-between-performance.html" rel="alternate" type="text/html" title="ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL" /><published>2024-09-08T16:24:00+07:00</published><updated>2024-09-08T16:24:00+07:00</updated><id>https://wittawasw.com/2024/09/08/sql-between-performance</id><content type="html" xml:base="https://wittawasw.com/2024/09/08/sql-between-performance.html"><![CDATA[<p>วันก่อนเห็นน้องในทีมส่งข้อความหากันเองในกลุ่มที่ทำงานเป็น query ด้วย <code class="language-plaintext highlighter-rouge">Gorm</code> หน้าตาประมาณ</p>
 
 <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">Where</span><span class="p">(</span><span class="s">"? BETWEEN c.effective_at AND COALESCE(c.expire_at,  ?)"</span><span class="p">,</span> <span class="n">effected_time</span><span class="p">,</span> <span class="n">effected_time</span><span class="o">.</span><span class="n">AddDate</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
 </code></pre></div></div>
@@ -742,25 +812,4 @@ feature ยังไม่ได้ถูก release เป็น version แต
 </code></pre></div></div>
 
 <p>ลองเอามาใส่ใน blog นี้ด้วยเลย แต่รู้สึกไม่ชอบการ indent บรรทัดแรกบนหน้าเว็บ ก็เลยใส่แค่
-<code class="language-plaintext highlighter-rouge">text-aligm: justtify;</code> ก็พอ</p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="css," /><category term="html" /><summary type="html"><![CDATA[เร็วๆนี้มีเหตุให้ต้องทำการ render HTML เพื่อแปลงเป็น PDF สำหรับใช้เป็นเอกสารทางการ ก็เลยได้วิธีจัดย่อหน้ามาใช้ด้วย ถ้าต้องทำรูปแบบเหมือนจดหมายทางการ]]></summary></entry><entry><title type="html">อนาคตของนักพัฒนาซอฟต์แวร์ในยุคถัดไปที่ AI รุ่งเรือง</title><link href="https://wittawasw.com/2024/03/28/the-future-of-software-developer-jobs.html" rel="alternate" type="text/html" title="อนาคตของนักพัฒนาซอฟต์แวร์ในยุคถัดไปที่ AI รุ่งเรือง" /><published>2024-03-28T22:42:00+07:00</published><updated>2024-03-28T22:42:00+07:00</updated><id>https://wittawasw.com/2024/03/28/the-future-of-software-developer-jobs</id><content type="html" xml:base="https://wittawasw.com/2024/03/28/the-future-of-software-developer-jobs.html"><![CDATA[<p>ได้มีโอกาสเห็นการกลับมา trending ของหัวข้อที่ว่า AI อย่าง devin จะทำให้นักพัฒนาซอฟต์แวร์สูญพันธ์ได้ แต่ถ้าถามผม ผมก็คงตอบว่า ผมไม่ได้กังวลเท่าไหร่ เพราะในทรรศนะส่วนตัวแล้ว เชื่อว่าตัวเองน่าจะรอดหรืออย่างน้อยก็ไม่ใช่กลุ่มแรกๆที่โดนแทนที่ได้</p>
-
-<blockquote>
-  <p>ในอีก 20 ปี นักพัฒนาซอฟต์แวร์จะเป็นอาชีพที่หายไปหรือไม่ ?</p>
-</blockquote>
-
-<p>เชื่อว่า “ไม่” แต่ไม่หายไปในที่นี้ เพียงแค่ไม่เหลือ 0 เท่านั้น เชื่อว่าเราจะยังต้องการผู้เชี่ยวชาญจำนวนหนึ่งในการทำงานร่วมกับ AI เปรียบเทียบได้กับการปฏิวัติเกษตรกรรมกับอุตสาหกรรมที่ผ่านมา ก็ไม่ได้ทำให้อาชีพทั้งสองหายไปจนเป็น 0 แต่ก็ทำให้จำนวนตำแหน่งงานเหลือน้อยลงมาก</p>
-
-<blockquote>
-  <p>คิดว่าควรจะเรียน หรือศึกษาด้านไหนเพื่อไม่ให้ถูกแทนที่ได้ ?</p>
-</blockquote>
-
-<p>เชื่อว่าไม่มีอาชีพไหนรอดเลย แม้แต่อาชีพเดียว ยกตัวอย่างจากที่ผู้ก่อตั้ง Nvidia ให้สัมภาษณ์ว่าควรเรียนด้านเคมี กับชีววิทยามากกว่า ก็ค่อนข้างย้อนแย้งในความก้าวหน้าของ AI ที่สามารถทำงานปัจจุบันของกลุ่มอาชีพด้านการวิทยาศาสตร์ได้ดีมากแล้ว การวิเคราะห์ข้อมูลจากผลการทดลองก็ใช้ AI วิเคราะห์ได้ หรือการเก็บข้อมูลทางวิทยาศาสตร์ต่างๆก็ใช้หุ่นยนต์แทนที่ได้เหมือนกัน</p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="thought," /><category term="devin" /><summary type="html"><![CDATA[ได้มีโอกาสเห็นการกลับมา trending ของหัวข้อที่ว่า AI อย่าง devin จะทำให้นักพัฒนาซอฟต์แวร์สูญพันธ์ได้ แต่ถ้าถามผม ผมก็คงตอบว่า ผมไม่ได้กังวลเท่าไหร่ เพราะในทรรศนะส่วนตัวแล้ว เชื่อว่าตัวเองน่าจะรอดหรืออย่างน้อยก็ไม่ใช่กลุ่มแรกๆที่โดนแทนที่ได้]]></summary></entry><entry><title type="html">เพิ่ม SSH key ให้ ssh-agent ใน MacOS</title><link href="https://wittawasw.com/2024/02/27/add-ssh-key-to-ssh-agent-in-macos.html" rel="alternate" type="text/html" title="เพิ่ม SSH key ให้ ssh-agent ใน MacOS" /><published>2024-02-27T09:59:00+07:00</published><updated>2024-02-27T09:59:00+07:00</updated><id>https://wittawasw.com/2024/02/27/add-ssh-key-to-ssh-agent-in-macos</id><content type="html" xml:base="https://wittawasw.com/2024/02/27/add-ssh-key-to-ssh-agent-in-macos.html"><![CDATA[<p>เพิ่งค้นพบว่า MacOS หลังกลับมาใช้ไม่นาน ว่าไม่เรียกใช้ SSH key ในชื่ออื่นที่ไม่ใช้การใช้ <code class="language-plaintext highlighter-rouge">id_</code> นำหน้าแล้วตามด้วย algorithm ที่ใช้เข้ารหัส เช่น <code class="language-plaintext highlighter-rouge">id_rsa</code>, <code class="language-plaintext highlighter-rouge">id_ed25519</code> ตั้งแต่ต้น</p>
-
-<p>แต่เนื่องจากติดนิสัยในการสร้าง key ตามงานที่ใช้มาตลอดตั้งแต่ที่ใช้ Ubuntu ว่าจะไม่ใช้ key ซ้ำกันในแต่ล่ะงาน ก็เลยมีปัญหาเล็กน้อยก่อนเริ่มงานล่าสุด เช่น ถ้าชื่องาน <code class="language-plaintext highlighter-rouge">wittawasw</code> ก็จะตั้งชื่อ key เป็น <code class="language-plaintext highlighter-rouge">wittawasw_rsa</code> หรือ <code class="language-plaintext highlighter-rouge">wittawasw_ed25519</code></p>
-
-<h3 id="ทางแก้-ใช้คำสั่งเพิ่ม-ssh-key-ให้-ssh-agent-โดยตรง">ทางแก้: ใช้คำสั่งเพิ่ม SSH key ให้ ssh-agent โดยตรง</h3>
-
-<p>นอกจากขั้นตอนปกติที่เราแก้ใน file <code class="language-plaintext highlighter-rouge">~/.ssh/config</code> แล้ว การเพิ่ม SSH key ที่สร้างใหม่ให้สามารถใช้งานได้ ใน MacOS ต้องทำการเพิ่มเข้า Apple Keychain ด้วยคำสั่ง</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add <span class="nt">--apple-use-keychain</span> ~/.ssh/wittawasw_rsa
-</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="macos," /><category term="ssh" /><summary type="html"><![CDATA[เพิ่งค้นพบว่า MacOS หลังกลับมาใช้ไม่นาน ว่าไม่เรียกใช้ SSH key ในชื่ออื่นที่ไม่ใช้การใช้ id_ นำหน้าแล้วตามด้วย algorithm ที่ใช้เข้ารหัส เช่น id_rsa, id_ed25519 ตั้งแต่ต้น]]></summary></entry></feed>
+<code class="language-plaintext highlighter-rouge">text-aligm: justtify;</code> ก็พอ</p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="css," /><category term="html" /><summary type="html"><![CDATA[เร็วๆนี้มีเหตุให้ต้องทำการ render HTML เพื่อแปลงเป็น PDF สำหรับใช้เป็นเอกสารทางการ ก็เลยได้วิธีจัดย่อหน้ามาใช้ด้วย ถ้าต้องทำรูปแบบเหมือนจดหมายทางการ]]></summary></entry></feed>
