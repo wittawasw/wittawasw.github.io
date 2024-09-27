@@ -4,8 +4,8 @@ title: การตั้งค่า .gitignore สำหรับทุก git
 tags: devtool git
 keywords: devtool, git
 description: ''
+date: 2024-09-27 12:57 +0700
 ---
-
 บันทึกไว้ว่าในเครื่องมี `gitignore` อะไรบ้าง
 
 ## คำสั่งที่ใช้

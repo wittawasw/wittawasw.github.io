@@ -4,8 +4,8 @@ title: ใช้ timedatectl ตั้งค่า datetime ในเครื�
 tags: unix cli ubuntu timedatectl
 keywords: unix, cli, ubuntu, timedatectl
 description: ''
+date: 2024-09-27 12:57 +0700
 ---
-
 ```sh
 # ดูเวลาปัจจุบันที่ตั้งไว้
 timedatectl
