@@ -1,65 +1,27 @@
 ---
 marp: true
-theme: default
+theme: gaia
 paginate: true
-footer: 'Native Web Components'
+footer: '#JSBangkok #JSBKK'
 ---
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&display=swap');
-
-  :root {
-    --color-1: #D30001;
-    --color-2: #CE4D4D;
-    --color-3: #F0F0F4;
-  }
-
-  section {
-    background: #1E1C1C;
-  }
+  @import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
   h1, b, strong,
   h2, h3, h4,
-  a,
+  a, li,
   p {
-    font-family: "Anuphan", sans-serif;
+    font-family: "K2D", sans-serif;
   }
 
-  h1, b, strong {
-    color: var(--color-1) !important;
-    font-weight: bold;
-  }
-
-  h2, h3, h4 {
-    color: var(--color-2) !important;
-    font-weight: 500;
-  }
-
-  a {
-    color: var(--color-2) !important;
-    font-weight: 500;
-    font-style: italic;
-    text-decoration: underline;
-  }
-
-  p {
-    color: var(--color-3) !important;
-    font-weight: 300;
+  h1, a, b, strong {
+    color: rgb(255 102 51) !important;
   }
 
   footer {
     font-size: 20px;
     text-align: right;
-  }
-
-  .mermaid {
-    position: relative;
-    left: 15vw;
-  }
-
-  .large {
-    position: relative;
-    left: 0vw !important;
   }
 </style>
 
