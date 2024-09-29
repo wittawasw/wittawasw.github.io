@@ -2,7 +2,7 @@
 marp: true
 theme: gaia
 paginate: true
-footer: '#JSBangkok #JSBKK'
+# footer: '#JSBangkok #JSBKK'
 ---
 
 <style>
@@ -21,7 +21,7 @@ footer: '#JSBangkok #JSBKK'
 
   footer {
     font-size: 20px;
-    text-align: right;
+    text-align: left;
   }
 </style>
 
