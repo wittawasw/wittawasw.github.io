@@ -168,6 +168,8 @@ const urlsToCache = [
   '/robots.txt',
   
   
+  '/2024/10/06/git-diff-3.html',
+  
   '/2024/09/27/setup-global-gitignore.html',
   
   '/2024/09/27/set-datetime-in-ubuntu.html',

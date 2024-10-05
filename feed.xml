@@ -1,4 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-09-27T12:58:59+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu</title><link href="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html" rel="alternate" type="text/html" title="ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu" /><published>2024-09-27T12:57:00+07:00</published><updated>2024-09-27T12:57:00+07:00</updated><id>https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html"><![CDATA[<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ดูเวลาปัจจุบันที่ตั้งไว้</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-10-06T03:57:59+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">เปลี่ยน git merge ไปใช้ diff3</title><link href="https://wittawasw.com/2024/10/06/git-diff-3.html" rel="alternate" type="text/html" title="เปลี่ยน git merge ไปใช้ diff3" /><published>2024-10-06T03:48:00+07:00</published><updated>2024-10-06T03:48:00+07:00</updated><id>https://wittawasw.com/2024/10/06/git-diff-3</id><content type="html" xml:base="https://wittawasw.com/2024/10/06/git-diff-3.html"><![CDATA[<p>ตั้งใจจะเปิดหาบทความที่สอนการดู <code class="language-plaintext highlighter-rouge">diff</code> ของ <code class="language-plaintext highlighter-rouge">git merge</code> เพราะปกติไม่เคยอธิบาย
+เป็นคำพูดให้คนอื่นฟังเข้าใจได้เลย มีแต่ต้องทำให้ดู แล้วก็เพิ่งรู้ว่ามีแบบที่เข้าใจง่ายกว่า เรียกว่า <code class="language-plaintext highlighter-rouge">diff3</code> ให้ใช้มาตั้งหลายปีแล้ว</p>
+
+<h2 id="คำสั่งในการใช้เปลี่ยนรูปแบบ">คำสั่งในการใช้เปลี่ยนรูปแบบ</h2>
+
+<p>ลองทำตามได้เลย ยังไม่ต้องรู้เรื่องก็ได้ เพราะมั่นใจว่าไม่เสียใจแน่นอน</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> merge.conflictstyle diff3
+
+<span class="c"># หรือถ้าไม่แน่ใจก็ลองแค่ directory เดียวก่อน</span>
+git config merge.conflictstyle diff3
+</code></pre></div></div>
+
+<h2 id="ตัวอย่างของ-diff-จากการแก้-code">ตัวอย่างของ <code class="language-plaintext highlighter-rouge">diff</code> จากการแก้ code</h2>
+
+<h3 id="ของเดิม">ของเดิม</h3>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">CalculateTotal</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="อันที่เราแก้-head-current-change">อันที่เราแก้ (HEAD, Current Change)</h3>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">CalculateTotal</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="m">10</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="อันที่คนอื่นแก้มาแล้วเรากำลังจะ-merge-เข้า-incoming-change">อันที่คนอื่นแก้มาแล้วเรากำลังจะ merge เข้า (Incoming Change)</h3>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">CalculateTotal</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">-</span> <span class="m">5</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="ได้ออกมาแบบนี้ตอน-conflict">ได้ออกมาแบบนี้ตอน conflict</h3>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">CalculateTotal</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+<span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="m">10</span>
+<span class="o">=======</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">-</span> <span class="m">5</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="n">branch</span><span class="o">-</span><span class="n">name</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>หลายๆครั้งเวลาเจอแบบนี้ในลักษณะที่ conflict กันหลายบรรทัด จะค่อนข้างสับสนพอสมควรว่าควรจะเลือกอันไหนดี</p>
+</blockquote>
+
+<h3 id="ถ้าใช้-diff3-จะได้-conflict-แบบนี้แทน">ถ้าใช้ <code class="language-plaintext highlighter-rouge">diff3</code> จะได้ conflict แบบนี้แทน:</h3>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">CalculateTotal</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+<span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="m">10</span>
+<span class="o">|||||||</span> <span class="n">base</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="o">=======</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">-</span> <span class="m">5</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="n">branch</span><span class="o">-</span><span class="n">name</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>สังเกตได้ว่าแทนที่จะมีแค่สองสถานะให้เรางงว่าจะเลือกอันไหนดี <code class="language-plaintext highlighter-rouge">diff3</code> จะเพิ่มสถานะ
+<code class="language-plaintext highlighter-rouge">base</code> เข้ามาด้วยเพื่อให้เห็นว่าจุดตั้งต้นก่อนที่จะ conflict มันคืออะไรมาก่อน
+เพื่อช่วยเพิ่มข้อมูลตัดสินใจว่าควรจะเลือกอันไหนดี</p>
+</blockquote>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="devtool" /><category term="git" /><summary type="html"><![CDATA[ตั้งใจจะเปิดหาบทความที่สอนการดู diff ของ git merge เพราะปกติไม่เคยอธิบายเป็นคำพูดให้คนอื่นฟังเข้าใจได้เลย มีแต่ต้องทำให้ดู แล้วก็เพิ่งรู้ว่ามีแบบที่เข้าใจง่ายกว่า เรียกว่า diff3 ให้ใช้มาตั้งหลายปีแล้ว]]></summary></entry><entry><title type="html">ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu</title><link href="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html" rel="alternate" type="text/html" title="ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu" /><published>2024-09-27T12:57:00+07:00</published><updated>2024-09-27T12:57:00+07:00</updated><id>https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html"><![CDATA[<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ดูเวลาปัจจุบันที่ตั้งไว้</span>
 timedatectl
 <span class="c">#                Local time: Fri 2024-09-27 12:13:31 +07</span>
 <span class="c">#            Universal time: Fri 2024-09-27 05:13:31 UTC</span>
@@ -796,20 +864,4 @@ feature ยังไม่ได้ถูก release เป็น version แต
 <span class="k">print</span><span class="p">(</span><span class="n">testGetBudgets</span><span class="p">(</span><span class="s">"2024-06-20"</span><span class="p">,</span> <span class="s">"2024-07-04"</span><span class="p">,</span> <span class="mi">1100</span> <span class="o">+</span> <span class="mi">4</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">testGetBudgets</span><span class="p">(</span><span class="s">"2024-03-10"</span><span class="p">,</span> <span class="s">"2024-07-02"</span><span class="p">,</span> <span class="mi">22</span> <span class="o">+</span> <span class="mi">9100</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="n">testGetBudgets</span><span class="p">(</span><span class="s">"2024-06-18"</span><span class="p">,</span> <span class="s">"2024-07-04"</span><span class="p">,</span> <span class="mi">1300</span> <span class="o">+</span> <span class="mi">4</span><span class="p">))</span>
-</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="tdd," /><category term="testing," /><category term="python" /><summary type="html"><![CDATA[อาทิตย์ก่อนมีโอกาสได้ร่วม training ในหัวข้อ TDD แล้วก็รู้สึกว่าหลายคนมี mindset ประมาณว่า]]></summary></entry><entry><title type="html">จัดรูปแบบของ paragraph ให้เหมือนหนังสือด้วย text-justify</title><link href="https://wittawasw.com/2024/03/29/text-indent-and-text-justify.html" rel="alternate" type="text/html" title="จัดรูปแบบของ paragraph ให้เหมือนหนังสือด้วย text-justify" /><published>2024-03-29T19:55:00+07:00</published><updated>2024-03-29T19:55:00+07:00</updated><id>https://wittawasw.com/2024/03/29/text-indent-and-text-justify</id><content type="html" xml:base="https://wittawasw.com/2024/03/29/text-indent-and-text-justify.html"><![CDATA[<p>เร็วๆนี้มีเหตุให้ต้องทำการ render HTML เพื่อแปลงเป็น PDF สำหรับใช้เป็นเอกสารทางการ
-ก็เลยได้วิธีจัดย่อหน้ามาใช้ด้วย ถ้าต้องทำรูปแบบเหมือนจดหมายทางการ</p>
-
-<blockquote>
-  <p>วิธีการก็คือใช้ CSS แบบนี้</p>
-</blockquote>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span><span class="nc">.indented-full</span> <span class="p">{</span>
-  <span class="c">/* เว้นช่องว่างในบรรทัดแรกของ paragraph */</span>
-  <span class="nl">text-indent</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
-  <span class="c">/* ขยายช่องว่างระหว่างคำให้เต็มบรรทัด */</span>
-  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">justify</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>ลองเอามาใส่ใน blog นี้ด้วยเลย แต่รู้สึกไม่ชอบการ indent บรรทัดแรกบนหน้าเว็บ ก็เลยใส่แค่
-<code class="language-plaintext highlighter-rouge">text-aligm: justtify;</code> ก็พอ</p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="css," /><category term="html" /><summary type="html"><![CDATA[เร็วๆนี้มีเหตุให้ต้องทำการ render HTML เพื่อแปลงเป็น PDF สำหรับใช้เป็นเอกสารทางการ ก็เลยได้วิธีจัดย่อหน้ามาใช้ด้วย ถ้าต้องทำรูปแบบเหมือนจดหมายทางการ]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="tdd," /><category term="testing," /><category term="python" /><summary type="html"><![CDATA[อาทิตย์ก่อนมีโอกาสได้ร่วม training ในหัวข้อ TDD แล้วก็รู้สึกว่าหลายคนมี mindset ประมาณว่า]]></summary></entry></feed>
