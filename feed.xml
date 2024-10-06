@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-10-06T03:57:59+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">เปลี่ยน git merge ไปใช้ diff3</title><link href="https://wittawasw.com/2024/10/06/git-diff-3.html" rel="alternate" type="text/html" title="เปลี่ยน git merge ไปใช้ diff3" /><published>2024-10-06T03:48:00+07:00</published><updated>2024-10-06T03:48:00+07:00</updated><id>https://wittawasw.com/2024/10/06/git-diff-3</id><content type="html" xml:base="https://wittawasw.com/2024/10/06/git-diff-3.html"><![CDATA[<p>ตั้งใจจะเปิดหาบทความที่สอนการดู <code class="language-plaintext highlighter-rouge">diff</code> ของ <code class="language-plaintext highlighter-rouge">git merge</code> เพราะปกติไม่เคยอธิบาย
-เป็นคำพูดให้คนอื่นฟังเข้าใจได้เลย มีแต่ต้องทำให้ดู แล้วก็เพิ่งรู้ว่ามีแบบที่เข้าใจง่ายกว่า เรียกว่า <code class="language-plaintext highlighter-rouge">diff3</code> ให้ใช้มาตั้งหลายปีแล้ว</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-10-06T11:15:53+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">เปลี่ยน git merge ไปใช้ diff3</title><link href="https://wittawasw.com/2024/10/06/git-diff-3.html" rel="alternate" type="text/html" title="เปลี่ยน git merge ไปใช้ diff3" /><published>2024-10-06T03:48:00+07:00</published><updated>2024-10-06T03:48:00+07:00</updated><id>https://wittawasw.com/2024/10/06/git-diff-3</id><content type="html" xml:base="https://wittawasw.com/2024/10/06/git-diff-3.html"><![CDATA[<p>ตั้งใจจะเปิดหาบทความที่สอนการดู <code class="language-plaintext highlighter-rouge">diff</code> ของ <code class="language-plaintext highlighter-rouge">git merge</code> เพราะปกติไม่เคยอธิบาย
+เป็นคำพูดให้คนอื่นฟังเข้าใจได้เลย มีแต่ต้องทำให้ดู แล้วก็เพิ่งรู้ว่ามีแบบที่เข้าใจได้ง่ายกว่า เรียกว่า <code class="language-plaintext highlighter-rouge">diff3</code> ให้ใช้มาตั้งหลายปีแล้ว</p>
 
 <h2 id="คำสั่งในการใช้เปลี่ยนรูปแบบ">คำสั่งในการใช้เปลี่ยนรูปแบบ</h2>
 
@@ -10,6 +10,8 @@
 <span class="c"># หรือถ้าไม่แน่ใจก็ลองแค่ directory เดียวก่อน</span>
 git config merge.conflictstyle diff3
 </code></pre></div></div>
+
+<p>ที่มา: <a href="https://stackoverflow.com/questions/27417656/should-diff3-be-default-conflictstyle-on-git">stackoverflow.com/questions/27417656</a></p>
 
 <h2 id="ตัวอย่างของ-diff-จากการแก้-code">ตัวอย่างของ <code class="language-plaintext highlighter-rouge">diff</code> จากการแก้ code</h2>
 
