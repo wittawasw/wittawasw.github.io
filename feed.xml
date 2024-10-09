@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-10-06T11:15:53+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">เปลี่ยน git merge ไปใช้ diff3</title><link href="https://wittawasw.com/2024/10/06/git-diff-3.html" rel="alternate" type="text/html" title="เปลี่ยน git merge ไปใช้ diff3" /><published>2024-10-06T03:48:00+07:00</published><updated>2024-10-06T03:48:00+07:00</updated><id>https://wittawasw.com/2024/10/06/git-diff-3</id><content type="html" xml:base="https://wittawasw.com/2024/10/06/git-diff-3.html"><![CDATA[<p>ตั้งใจจะเปิดหาบทความที่สอนการดู <code class="language-plaintext highlighter-rouge">diff</code> ของ <code class="language-plaintext highlighter-rouge">git merge</code> เพราะปกติไม่เคยอธิบาย
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-10-09T11:41:12+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">Install torch-rb บน Ubuntu</title><link href="https://wittawasw.com/2024/10/08/install-torch-rb-in-ubuntu.html" rel="alternate" type="text/html" title="Install torch-rb บน Ubuntu" /><published>2024-10-08T12:18:00+07:00</published><updated>2024-10-08T12:18:00+07:00</updated><id>https://wittawasw.com/2024/10/08/install-torch-rb-in-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/10/08/install-torch-rb-in-ubuntu.html"><![CDATA[<p>แก้ไขเพิ่มเติมจาก <a href="https://github.com/ankane/torch.rb">readme ของ torch-rb</a></p>
+
+<h2 id="ดาวน์โหลดไฟล์-libtorch">ดาวน์โหลดไฟล์ libtorch</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># หา version ล่าสุดจากในนี้</span>
+<span class="c"># https://download.pytorch.org/libtorch/cpu/</span>
+curl <span class="nt">-L</span> https://download.pytorch.org/libtorch/cpu/libtorch-cxx11-abi-shared-with-deps-2.4.1%2Bcpu.zip <span class="o">&gt;</span> libtorch.zip
+
+unzip <span class="nt">-q</span> libtorch.zip
+<span class="c"># rm libtorch.zip # Optional</span>
+</code></pre></div></div>
+
+<h2 id="install-ผ่าน-gemfile">Install ผ่าน Gemfile</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle config build.torch-rb <span class="nt">--with-torch-dir</span><span class="o">=</span>/path/to/libtorch
+bundle add torch-rb
+
+<span class="c"># สามารถใช้ $(pwd)/relative_path/to/libtorch กับ --with-torch-dir ได้</span>
+<span class="c"># เช่น bundle config build.torch-rb --with-torch-dir=$(pwd)/libtorch</span>
+<span class="c"># หรือตั้งค่าเป็น global ด้วย</span>
+<span class="c"># bundle config --global build.torch-rb --with-torch-dir=$(pwd)/libtorch</span>
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="ruby" /><category term="ml" /><summary type="html"><![CDATA[แก้ไขเพิ่มเติมจาก readme ของ torch-rb]]></summary></entry><entry><title type="html">เปลี่ยน git merge ไปใช้ diff3</title><link href="https://wittawasw.com/2024/10/06/git-diff-3.html" rel="alternate" type="text/html" title="เปลี่ยน git merge ไปใช้ diff3" /><published>2024-10-06T03:48:00+07:00</published><updated>2024-10-06T03:48:00+07:00</updated><id>https://wittawasw.com/2024/10/06/git-diff-3</id><content type="html" xml:base="https://wittawasw.com/2024/10/06/git-diff-3.html"><![CDATA[<p>ตั้งใจจะเปิดหาบทความที่สอนการดู <code class="language-plaintext highlighter-rouge">diff</code> ของ <code class="language-plaintext highlighter-rouge">git merge</code> เพราะปกติไม่เคยอธิบาย
 เป็นคำพูดให้คนอื่นฟังเข้าใจได้เลย มีแต่ต้องทำให้ดู แล้วก็เพิ่งรู้ว่ามีแบบที่เข้าใจได้ง่ายกว่า เรียกว่า <code class="language-plaintext highlighter-rouge">diff3</code> ให้ใช้มาตั้งหลายปีแล้ว</p>
 
 <h2 id="คำสั่งในการใช้เปลี่ยนรูปแบบ">คำสั่งในการใช้เปลี่ยนรูปแบบ</h2>
@@ -806,64 +827,4 @@ feature ยังไม่ได้ถูก release เป็น version แต
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>username@example.com
 123456
-</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="pritunl," /><category term="vpn," /><category term="openvpn," /><category term="cli" /><summary type="html"><![CDATA[นั่งหาวิธีการใช้ VPN profile ของ Pritunl ด้วย CLI เพราะเบื่อการที่ Pritunl Client มักจะหลุดและต้องมาคอยใส่ pin ใหม่อยู่เรื่อยๆ]]></summary></entry><entry><title type="html">การเขียน Test ไม่ได้หมายความว่าเราต้องใช้ Test Runner เสมอไป</title><link href="https://wittawasw.com/2024/04/09/unit-testings-without-test-runner.html" rel="alternate" type="text/html" title="การเขียน Test ไม่ได้หมายความว่าเราต้องใช้ Test Runner เสมอไป" /><published>2024-04-09T13:16:00+07:00</published><updated>2024-04-09T13:16:00+07:00</updated><id>https://wittawasw.com/2024/04/09/unit-testings-without-test-runner</id><content type="html" xml:base="https://wittawasw.com/2024/04/09/unit-testings-without-test-runner.html"><![CDATA[<p>อาทิตย์ก่อนมีโอกาสได้ร่วม training ในหัวข้อ TDD แล้วก็รู้สึกว่าหลายคนมี mindset ประมาณว่า</p>
-
-<blockquote>
-  <p>ไม่ต้องเขียน test ถ้ายังไม่มี Test Runner</p>
-</blockquote>
-
-<p>ซึ่งผมมองว่า <u>ผิด</u> โดยความเห็นของผมคือ ต่อให้ใน project ไม่มี test runner
-อยู่ เราก็ควรเขียน Unit Test เป็นอย่างน้อยอยู่ดี</p>
-
-<p>หลังจากที่ได้ไป pair กับคนที่ทำ Javascript, Python ที่ไม่เคย setup Test Runner
-มาก่อนก็เลยได้ลองเขียน <code class="language-plaintext highlighter-rouge">assertion</code> แบบง่ายๆ ให้ดูว่าสุดท้ายแล้วการเขียน test ก็แค่
-การเขียนฟังก์ชันให้เรียกใช้ฟังก์ชันที่เราต้องการทดสอบและเปรียบเทียบผลลัพธ์เท่านั้นเอง</p>
-
-<p>Code ส่วนของ Javascript ทำที่เครื่องคนอื่นก็เลยไม่ได้เก็บไว้ มีแต่ Python
-ที่ทำในเครื่องตัวเองก็เลยยังอยู่ แต่จริงๆแล้วเลือกใช้ ภาษา Dart ตอน training
-เพราะเป็นภาษาที่ใช้ในงานปัจจุบัน แต่ยังไม่คล่อง ก็เลยถือโอกาสลองฝึกไปด้วย</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
-
-<span class="n">months</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s">"3"</span><span class="p">:</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">],</span>
-  <span class="s">"4"</span><span class="p">:</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">3000</span><span class="p">],</span>
-  <span class="s">"5"</span><span class="p">:</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">3100</span><span class="p">],</span>
-  <span class="s">"6"</span><span class="p">:</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">3000</span><span class="p">],</span>
-  <span class="s">"7"</span><span class="p">:</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">],</span>
-<span class="p">}</span>
-
-<span class="n">months_arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">3100</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span>
-
-<span class="k">def</span> <span class="nf">getBudgets</span><span class="p">(</span><span class="n">from_date</span><span class="p">,</span> <span class="n">to_date</span><span class="p">):</span>
-  <span class="n">from_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">from_date</span><span class="p">,</span> <span class="s">"%Y-%m-%d"</span><span class="p">)</span>
-  <span class="n">to_date</span>   <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">to_date</span><span class="p">,</span> <span class="s">"%Y-%m-%d"</span><span class="p">)</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="n">to_date</span> <span class="o">-</span> <span class="n">from_date</span><span class="p">).</span><span class="n">days</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="k">return</span> <span class="s">"Error"</span>
-
-  <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
-  <span class="n">current_date</span> <span class="o">=</span> <span class="n">from_date</span>
-
-  <span class="k">while</span> <span class="n">current_date</span> <span class="o">&lt;=</span> <span class="n">to_date</span><span class="p">:</span>
-    <span class="n">values</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">months</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">current_date</span><span class="p">.</span><span class="n">month</span><span class="p">)][</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">months</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">current_date</span><span class="p">.</span><span class="n">month</span><span class="p">)][</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">current_date</span> <span class="o">+=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-  <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">testGetBudgets</span><span class="p">(</span><span class="n">from_date</span><span class="p">,</span> <span class="n">to_date</span><span class="p">,</span> <span class="n">expect</span><span class="p">):</span>
-  <span class="n">test_case</span> <span class="o">=</span> <span class="s">"Test: "</span> <span class="o">+</span> <span class="n">from_date</span> <span class="o">+</span> <span class="s">" : "</span> <span class="o">+</span> <span class="n">to_date</span> <span class="o">+</span> <span class="s">" = "</span>
-
-  <span class="n">actual</span> <span class="o">=</span> <span class="n">getBudgets</span><span class="p">(</span><span class="n">from_date</span><span class="p">,</span> <span class="n">to_date</span><span class="p">)</span>
-  <span class="k">if</span> <span class="n">actual</span> <span class="o">==</span> <span class="n">expect</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">test_case</span> <span class="o">+</span> <span class="s">"Passed"</span>
-  <span class="k">else</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">test_case</span> <span class="o">+</span> <span class="s">"Failed"</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span> <span class="o">+</span> <span class="sa">f</span><span class="s">"Expected: </span><span class="si">{</span><span class="n">expect</span><span class="si">}</span><span class="s">, got </span><span class="si">{</span><span class="n">actual</span><span class="si">}</span><span class="s">"</span>
-
-
-<span class="k">print</span><span class="p">(</span><span class="n">testGetBudgets</span><span class="p">(</span><span class="s">"2024-07-02"</span><span class="p">,</span> <span class="s">"2024-07-04"</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">testGetBudgets</span><span class="p">(</span><span class="s">"2024-07-04"</span><span class="p">,</span> <span class="s">"2024-07-02"</span><span class="p">,</span> <span class="s">"Error"</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">testGetBudgets</span><span class="p">(</span><span class="s">"2024-06-20"</span><span class="p">,</span> <span class="s">"2024-07-04"</span><span class="p">,</span> <span class="mi">1100</span> <span class="o">+</span> <span class="mi">4</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">testGetBudgets</span><span class="p">(</span><span class="s">"2024-03-10"</span><span class="p">,</span> <span class="s">"2024-07-02"</span><span class="p">,</span> <span class="mi">22</span> <span class="o">+</span> <span class="mi">9100</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">testGetBudgets</span><span class="p">(</span><span class="s">"2024-06-18"</span><span class="p">,</span> <span class="s">"2024-07-04"</span><span class="p">,</span> <span class="mi">1300</span> <span class="o">+</span> <span class="mi">4</span><span class="p">))</span>
-</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="tdd," /><category term="testing," /><category term="python" /><summary type="html"><![CDATA[อาทิตย์ก่อนมีโอกาสได้ร่วม training ในหัวข้อ TDD แล้วก็รู้สึกว่าหลายคนมี mindset ประมาณว่า]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="pritunl," /><category term="vpn," /><category term="openvpn," /><category term="cli" /><summary type="html"><![CDATA[นั่งหาวิธีการใช้ VPN profile ของ Pritunl ด้วย CLI เพราะเบื่อการที่ Pritunl Client มักจะหลุดและต้องมาคอยใส่ pin ใหม่อยู่เรื่อยๆ]]></summary></entry></feed>

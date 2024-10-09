@@ -151,6 +151,8 @@ const urlsToCache = [
   
   '/tag/git/index.html',
   
+  '/tag/ml/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -167,6 +169,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2024/10/08/install-torch-rb-in-ubuntu.html',
   
   '/2024/10/06/git-diff-3.html',
   
