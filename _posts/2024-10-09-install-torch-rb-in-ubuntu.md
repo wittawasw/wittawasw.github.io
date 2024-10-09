@@ -13,6 +13,8 @@ date: 2024-10-08 12:18 +0700
 ```sh
 # หา version ล่าสุดจากในนี้
 # https://download.pytorch.org/libtorch/cpu/
+# ใช้ cxxx-11 สำหรับ CPU
+# กับเวอร์ชั่นล่าสุดตอนที่เขียนคือ 2.4.1
 curl -L https://download.pytorch.org/libtorch/cpu/libtorch-cxx11-abi-shared-with-deps-2.4.1%2Bcpu.zip > libtorch.zip
 
 unzip -q libtorch.zip
