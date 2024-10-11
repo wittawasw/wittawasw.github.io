@@ -19,6 +19,10 @@ paginate: true
     color: rgb(255 102 51) !important;
   }
 
+  section {
+    background: white;
+  }
+
   footer {
     font-size: 20px;
     text-align: left;
