@@ -55,7 +55,7 @@ Speaker Notes:
 
 # Creating a Simple Web Component
 
-### Steps:
+<!-- ### Steps: -->
 1. Define a class that extends `HTMLElement`.
 2. Use `attachShadow()` to encapsulate DOM.
 3. Register the element with `customElements.define()`.
@@ -117,7 +117,7 @@ Speaker Notes:
 
 ---
 
-# Plugin Architecture in Web Components
+# Plugin Architecture
 
 - **Pattern Example**:
   ```js
@@ -149,11 +149,6 @@ Speaker Notes:
     ref.current.setAttribute('prop-name', 'value');
   }, []);
   ```
-- **Handling Events**: Use `ref` to attach custom event listeners:
-  ```jsx
-  ref.current.addEventListener('custom-event', handler);
-  ```
-
 <!--
 Speaker Notes:
 - Web Components can easily integrate with React by treating them like any other HTML element.
@@ -162,7 +157,15 @@ Speaker Notes:
 
 ---
 
-# Best Practices for Web Components
+# Using Web Components in React
+
+- **Handling Events**: Use `ref` to attach custom event listeners:
+  ```jsx
+  ref.current.addEventListener('custom-event', handler);
+  ```
+---
+
+# Practices for Web Components
 
 - **Encapsulation**: Use Shadow DOM for style and script encapsulation.
 - **Composition**: Build small, reusable components.
