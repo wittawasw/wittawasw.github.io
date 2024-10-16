@@ -214,3 +214,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_
 https://github.com/mdn/web-components-examples
 
 https://custom-elements-everywhere.com/
+
+https://eisenbergeffect.medium.com/using-global-styles-in-shadow-dom-5b80e802e89d
+
+https://eisenbergeffect.medium.com/html-attributes-properties-and-values-752b6eed8c21
+https://eisenbergeffect.medium.com/sharing-styles-in-declarative-shadow-dom-c5bf84ffd311
