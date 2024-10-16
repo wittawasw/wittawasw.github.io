@@ -190,3 +190,25 @@ Speaker Notes:
 - Summarize key takeaways from the talk.
 - Encourage questions on implementation, architecture, and potential use cases.
 -->
+
+---
+
+# References
+
+https://eisenbergeffect.medium.com/web-components-2024-winter-update-445f27e7613a
+https://web.dev/articles/declarative-shadow-dom
+https://utilitybend.com/blog/getting-into-web-components-an-intro/
+https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot
+
+https://stackoverflow.com/questions/34119639/what-is-shadow-root
+https://web.dev/articles/shadowdom
+https://web.dev/articles/shadowdom-v1
+
+https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM
+
+https://developer.mozilla.org/en-US/docs/Web/API/Web_components#guides
+https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements
+https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM
+https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots
+
+https://github.com/mdn/web-components-examples
