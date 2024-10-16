@@ -212,3 +212,5 @@ https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM
 https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots
 
 https://github.com/mdn/web-components-examples
+
+https://custom-elements-everywhere.com/
