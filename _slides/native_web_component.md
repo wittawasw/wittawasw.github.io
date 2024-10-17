@@ -31,12 +31,18 @@ paginate: true
 
 
 # Developing Modern JavaScript with Web Components
+### A 25 Minutes Introduction
 
-### Presentation Overview
+<!--
+introduce speaker
+-->
+---
+
+### Overview
 - Introduction to Web Components
-- Core Technologies: Custom Elements, Shadow DOM, Templates, Slots
-- Advantages and Best Practices
-- Demo and Future of Web Components
+- Custom Elements, Shadow DOM, Templates, Slots
+- Advantages and Practices
+- Sample and Future of Web Components
 
 <!--
 introduce the topics we’ll cover in the next 30 minutes, focusing on how Web Components are revolutionizing modern JavaScript development.
@@ -63,6 +69,13 @@ Introduce Web Components as a way to create encapsulated, reusable elements nati
   - `connectedCallback`
   - `disconnectedCallback`
 
+<!--
+Explain how Custom Elements work and the key lifecycle callbacks. Show the simple code example to demonstrate defining and using custom elements.
+-->
+
+---
+# Core Technologies: Custom Elements
+
 Example:
 ```js
 class MyElement extends HTMLElement {
@@ -72,11 +85,6 @@ class MyElement extends HTMLElement {
 }
 customElements.define('my-element', MyElement);
 ```
-
-<!--
-Explain how Custom Elements work and the key lifecycle callbacks. Show the simple code example to demonstrate defining and using custom elements.
--->
-
 ---
 
 # Core Technologies: Shadow DOM
@@ -165,7 +173,7 @@ Show a simple demo of creating a custom button component with Shadow DOM and gui
 
 ---
 
-# Conclusion and Future of Web Components
+# Closing
 
 - Recap of advantages and future potential
 - Resources for learning and contributing to the ecosystem
