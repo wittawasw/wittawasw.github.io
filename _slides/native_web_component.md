@@ -29,166 +29,149 @@ paginate: true
   }
 </style>
 
-# Exploring Native Web Components
 
-### A 25-minute Guide
+# Developing Modern JavaScript with Web Components
 
----
-
-# What Are Native Web Components?
-
-- Reusable, encapsulated HTML elements
-- Works natively in the browser without frameworks
-- **Core Features**:
-  - Shadow DOM
-  - Custom Elements
-  - HTML Templates
+### Presentation Overview
+- Introduction to Web Components
+- Core Technologies: Custom Elements, Shadow DOM, Templates, Slots
+- Advantages and Best Practices
+- Demo and Future of Web Components
 
 <!--
-Speaker Notes:
-- Native Web Components allow developers to create custom HTML tags.
-- They are framework-agnostic and work in any browser that supports them.
-- Shadow DOM provides encapsulation for style and structure, while Custom Elements enable defining custom HTML tags.
+introduce the topics we’ll cover in the next 30 minutes, focusing on how Web Components are revolutionizing modern JavaScript development.
 -->
 
 ---
 
-# Creating a Simple Web Component
+# Introduction to Web Components
 
-<!-- ### Steps: -->
-1. Define a class that extends `HTMLElement`.
-2. Use `attachShadow()` to encapsulate DOM.
-3. Register the element with `customElements.define()`.
+- Native browser support
+- Core technologies: Custom Elements, Shadow DOM, Templates, Slots
+- Evolving adoption in 2024
 
-```javascript
+<!--
+Introduce Web Components as a way to create encapsulated, reusable elements natively in the browser without frameworks. Mention key technologies and their growing importance in 2024.
+-->
+
+---
+
+# Core Technologies: Custom Elements
+
+- Define custom HTML elements
+- Lifecycle methods:
+  - `connectedCallback`
+  - `disconnectedCallback`
+
+Example:
+```js
 class MyElement extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.innerHTML = `<p>Hello World!</p>`;
+  connectedCallback() {
+    this.innerHTML = "<p>Hello, World!</p>";
   }
 }
-
 customElements.define('my-element', MyElement);
 ```
 
 <!--
-Speaker Notes:
-- This is a basic Web Component implementation.
-- Shadow DOM encapsulates the component's DOM and CSS, ensuring it doesn’t affect the rest of the page.
-- \`customElements.define\` is how the browser recognizes your new HTML element.
+Explain how Custom Elements work and the key lifecycle callbacks. Show the simple code example to demonstrate defining and using custom elements.
 -->
 
 ---
 
-# Class vs Module Pattern
+# Core Technologies: Shadow DOM
 
-### Class-Based Web Components
+- DOM encapsulation and style isolation
+- Light DOM vs. Shadow DOM
+- Declarative Shadow DOM
 
-```js
-class MyComponent extends HTMLElement {
-  // Web component logic...
-}
+Example:
+```html
+<template id="shadow">
+  <style> p { color: red; } </style>
+  <p>Shadow DOM content</p>
+</template>
 ```
 
-- **Advantages**: Clear structure, lifecycle methods (\`connectedCallback\`, etc.).
-- **Disadvantages**: Can lead to complex inheritance and harder testing.
+<!--
+Introduce the concept of Shadow DOM for encapsulating DOM and styles. Mention declarative Shadow DOM and its benefits. Briefly show an example of how it works.
+-->
 
 ---
 
-# Class vs Module Pattern
+# Core Technologies: Templates & Slots
 
-### Module Pattern
+- Reusable HTML structures
+- Slots for flexible content insertion
 
-```js
-function pushRequest() {
-  // Function logic...
-}
+Example:
+```html
+<my-element>
+  <span slot="header">Header Content</span>
+</my-element>
 ```
 
-- **Advantages**: Functional composition, no inheritance.
-- **Disadvantages**: Scattered state, less lifecycle management.
-
 <!--
-Speaker Notes:
-- Class-based Web Components are the standard as they offer lifecycle methods like \`connectedCallback\`.
-- Modules allow for a more functional approach, but state management becomes more difficult, especially without clear lifecycle callbacks.
+Explain the importance of templates and slots in allowing content to be injected and reused. Demonstrate with a simple slot example.
 -->
 
 ---
 
-# Plugin Architecture
+# Advantages of Using Web Components
 
-- **Pattern Example**:
-  ```js
-  Chartkick.use(Chart);
-  ```
-- **Advantages**:
-  - Decouples core functionality from external plugins.
-  - Provides flexibility and modularity.
-- **Web Component Use Case**:
-  - You can allow plugins to extend or modify Web Component functionality.
+- Encapsulation of styles and behavior
+- Reusability across frameworks (React, Vue, Angular)
+- Performance benefits
 
 <!--
-Speaker Notes:
-- Plugins allow developers to inject or extend functionality in a Web Component.
-- This keeps the core small and extensible.
+Discuss the key advantages of using Web Components such as style encapsulation, cross-framework usage, and performance improvements.
 -->
 
 ---
 
-# Using Web Components in React
+# Working with Shadow DOM
 
-- Import Web Components directly into React JSX:
-  ```jsx
-  <my-element></my-element>
-  ```
-- **Passing Props**: Use `ref` and `useEffect` to interact with the Web Component’s attributes.
-  ```jsx
-  useEffect(() => {
-    ref.current.setAttribute('prop-name', 'value');
-  }, []);
-  ```
+- ShadowRoot, shadow trees, and light DOM
+- Styling within Shadow DOM
+  - Scoping and sharing styles
+  - Handling CSS isolation
+
 <!--
-Speaker Notes:
-- Web Components can easily integrate with React by treating them like any other HTML element.
-- You’ll need to use \`ref\`s in React to pass data or listen for events.
+Dive deeper into the Shadow DOM, explain how styles work, and give examples of scoped styling. Discuss challenges with style sharing.
 -->
 
 ---
 
-# Using Web Components in React
+# Best Practices and Design Patterns
 
-- **Handling Events**: Use `ref` to attach custom event listeners:
-  ```jsx
-  ref.current.addEventListener('custom-event', handler);
-  ```
----
-
-# Practices for Web Components
-
-- **Encapsulation**: Use Shadow DOM for style and script encapsulation.
-- **Composition**: Build small, reusable components.
-- **Interoperability**: Ensure compatibility across frameworks.
+- Managing attributes, properties, and events
+- Sharing and inheriting styles in Shadow DOM
+- Integration with frameworks
 
 <!--
-Speaker Notes:
-- Encapsulation helps avoid style bleeding into or out of components.
-- Compose small components rather than building large, complex ones.
-- Always keep interoperability in mind so the components are reusable in different frameworks.
+Cover best practices such as managing component state and properties. Mention design patterns for effective use of Web Components.
 -->
 
 ---
 
-# Conclusion and Q&A
+# Hands-on Demo: Custom Button Component
 
-- Recap: Flexibility and reusability of Web Components
-- Open for questions.
+- Demo: Create a custom button using Shadow DOM
+- Walkthrough of GitHub examples
 
 <!--
-Speaker Notes:
-- Summarize key takeaways from the talk.
-- Encourage questions on implementation, architecture, and potential use cases.
+Show a simple demo of creating a custom button component with Shadow DOM and guide the audience through some real-world GitHub examples.
+-->
+
+---
+
+# Conclusion and Future of Web Components
+
+- Recap of advantages and future potential
+- Resources for learning and contributing to the ecosystem
+
+<!--
+Summarize the key points. Mention the future trends for Web Components.
 -->
 
 ---
@@ -269,5 +252,3 @@ https://eisenbergeffect.medium.com/sharing-styles-in-declarative-shadow-dom-c5bf
 - Resources for learning and contributing to the Web Components ecosystem.
 
 ---
-
-**Q&A (3 min)**
