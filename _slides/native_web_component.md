@@ -219,3 +219,55 @@ https://eisenbergeffect.medium.com/using-global-styles-in-shadow-dom-5b80e802e89
 
 https://eisenbergeffect.medium.com/html-attributes-properties-and-values-752b6eed8c21
 https://eisenbergeffect.medium.com/sharing-styles-in-declarative-shadow-dom-c5bf84ffd311
+
+
+# New Outline
+
+# Presentation Outline: Developing Modern JavaScript with Web Components (30 minutes)
+
+---
+
+## 1. Introduction to Web Components (3 min)
+- Definition and importance of Web Components in modern web development.
+- Overview of core technologies: Custom Elements, Shadow DOM, Templates, and Slots.
+- Evolution of Web Components and their growing adoption in 2024.
+
+## 2. Core Technologies of Web Components (8 min)
+- **Custom Elements**
+  - Definition and lifecycle (connectedCallback, disconnectedCallback).
+  - Creating and registering custom elements.
+- **Shadow DOM**
+  - Encapsulation and DOM isolation using Shadow DOM.
+  - Declarative Shadow DOM: benefits and usage.
+- **Templates and Slots**
+  - Defining reusable HTML structures.
+  - Using slots for flexible content insertion.
+
+## 3. Advantages of Using Web Components (4 min)
+- Encapsulation of styles and behavior.
+- Reusability across frameworks (React, Vue, Angular).
+- Performance benefits: lightweight, native browser support.
+
+## 4. Working with Shadow DOM (7 min)
+- ShadowRoot, shadow trees, and light DOM.
+- **Styling within Shadow DOM:**
+  - Scoping and sharing styles using global styles.
+  - Handling CSS isolation and external stylesheets.
+- Real-world examples of Shadow DOM usage.
+
+## 5. Best Practices and Design Patterns (5 min)
+- Managing attributes, properties, and events in Web Components.
+- Sharing and inheriting styles in declarative Shadow DOM.
+- Integration with frameworks and libraries.
+
+## 6. Hands-on Demo and Code Walkthrough (3 min)
+- Simple demo: creating a custom button component with Shadow DOM.
+- Exploring live examples from GitHub.
+
+## 7. Conclusion and Future of Web Components (2 min)
+- Recap of the key advantages and future potential.
+- Resources for learning and contributing to the Web Components ecosystem.
+
+---
+
+**Q&A (3 min)**
