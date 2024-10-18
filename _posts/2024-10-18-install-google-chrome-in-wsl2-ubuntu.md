@@ -4,8 +4,8 @@ title: Install Google Chrome ใน wsl2 Ubuntu
 tags: chrome cli ubuntu wsl2
 keywords: chrome, cli, ubuntu, wsl2
 description: ''
+date: 2024-10-18 10:34 +0700
 ---
-
 เจอ error นี้ระหว่างที่กำลังจะใช้ CLI ในการรันคำสั่งที่ต้องเรียก Chrome ออกมาใช้
 แล้วก็ได้รู้ว่า wsl2 มันยังไม่ฉลาดพอที่จะเรียกใช้ Chrome จาก Windows ให้เอง
 ซึ่งก็ไม่แปลกอะไร ก็เลยได้ลอง install Chrome ให้ใช้ได้ด้วยโปรแกรมที่เป็น CLI ดู
