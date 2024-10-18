@@ -6,13 +6,14 @@ keywords: chrome, cli, ubuntu, wsl2
 description: ''
 date: 2024-10-18 10:34 +0700
 ---
+
 เจอ error นี้ระหว่างที่กำลังจะใช้ CLI ในการรันคำสั่งที่ต้องเรียก Chrome ออกมาใช้
 แล้วก็ได้รู้ว่า wsl2 มันยังไม่ฉลาดพอที่จะเรียกใช้ Chrome จาก Windows ให้เอง
 ซึ่งก็ไม่แปลกอะไร ก็เลยได้ลอง install Chrome ให้ใช้ได้ด้วยโปรแกรมที่เป็น CLI ดู
 
 ```
 [  WARN ] The CHROME_PATH environment variable must be set to a Chrome/Chromium executable no older than Chrome stable.
-[ ERROR ] You have to install Google Chrome, Chromium, or Microsoft Edge to convert slide deck with current options.
+[ ERROR ] You have to install Google Chrome, Chromium, or Microsoft Edge.
 ```
 
 ลองพยายามแบบสั้นๆ เร็วๆดู
@@ -50,4 +51,4 @@ google-chrome --version
 glx: failed to create drisw screen
 ```
 
-ถ้าพยายามไปต่อจากนี้ติดปัญหาหลายอย่างที่คิดว่า ยังไม่คุ้มที่จะทำ บวกกับยังไม่ต้องการดูผลลัพธ์ของ Chrome แต่แค่ต้องการเอามารัน playwright ก็เลยปล่อยไปแค่นี้
+ถ้าพยายามไปต่อจากนี้ติดปัญหาหลายอย่างที่คิดว่า ยังไม่คุ้มที่จะทำ บวกกับยังไม่ต้องการดูผลลัพธ์ของ Chrome แต่แค่ต้องการเอามารัน CLI ก็เลยปล่อยไปแค่นี้
