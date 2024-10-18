@@ -64,19 +64,15 @@ Introduce Web Components as a way to create encapsulated, reusable elements nati
 
 # Core Technologies: Custom Elements
 
-- Define custom HTML elements
-- Lifecycle methods:
-  - `connectedCallback`
-  - `disconnectedCallback`
+## What are Custom Elements?
+- Custom HTML tags created by developers.
+- Extend existing elements or create entirely new ones.
+- Lifecycles:
+  - `connectedCallback()`: When the element is inserted into the DOM.
+  - `disconnectedCallback()`: When the element is removed from the DOM.
+  - `attributeChangedCallback()`: When attributes change.
 
-<!--
-Explain how Custom Elements work and the key lifecycle callbacks. Show the simple code example to demonstrate defining and using custom elements.
--->
-
----
-# Core Technologies: Custom Elements
-
-Example:
+## Example 1: Basic Custom Element
 ```js
 class MyElement extends HTMLElement {
   connectedCallback() {
@@ -85,32 +81,253 @@ class MyElement extends HTMLElement {
 }
 customElements.define('my-element', MyElement);
 ```
----
-
-# Core Technologies: Shadow DOM
-
-- DOM encapsulation and style isolation
-- Light DOM vs. Shadow DOM
-- Declarative Shadow DOM
-
-Example:
+Usage:
 ```html
-<template id="shadow">
-  <style> p { color: red; } </style>
-  <p>Shadow DOM content</p>
-</template>
+<my-element></my-element>
+```
+- Simple example of a custom element that adds "Hello, World!" to the DOM.
+
+## Example 2: Custom Button with Attributes
+```js
+class MyButton extends HTMLElement {
+  constructor() {
+    super();
+    this.addEventListener('click', () => alert('Button clicked!'));
+  }
+
+  connectedCallback() {
+    this.innerHTML = `<button>${this.getAttribute('label')}</button>`;
+  }
+}
+customElements.define('my-button', MyButton);
+```
+Usage:
+```html
+<my-button label="Click me"></my-button>
 ```
 
 <!--
-Introduce the concept of Shadow DOM for encapsulating DOM and styles. Mention declarative Shadow DOM and its benefits. Briefly show an example of how it works.
+Explain how Custom Elements can encapsulate behavior and DOM content. In this example, we extend the concept to build an interactive custom button element.
 -->
 
 ---
 
-# Core Technologies: Templates & Slots
+# Custom Elements: Pros and Cons
 
-- Reusable HTML structures
-- Slots for flexible content insertion
+## Pros:
+- **Encapsulation:** Custom elements bundle HTML, CSS, and JS behavior.
+- **Reusability:** Can be reused across different parts of the application.
+- **Framework-agnostic:** Works in any environment (React, Vue, Angular).
+- **Native browser support:** Supported without external libraries.
+
+## Cons:
+- **Browser compatibility:** Some features might require polyfills in older browsers.
+- **Learning curve:** Developers need to learn about lifecycle callbacks and custom element APIs.
+- **Styling challenges:** Managing scoped styles and integration with external stylesheets can be tricky.
+
+<!--
+Discuss the pros and cons of using Custom Elements. While they offer encapsulation and reusability, they also come with compatibility and learning challenges.
+-->
+
+---
+
+# Practical Use Case: Custom Modal Element
+
+## Example: Modal for a Real Website
+```js
+class CustomModal extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = `
+      <style>
+        .modal {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+          background-color: white;
+          margin: 15% auto;
+          padding: 20px;
+          width: 80%;
+        }
+      </style>
+      <div class="modal">
+        <div class="modal-content">
+          <slot></slot>
+        </div>
+      </div>
+    `;
+  }
+
+  connectedCallback() {
+    this.modal = this.shadowRoot.querySelector('.modal');
+    this.modal.addEventListener('click', () => this.close());
+  }
+
+  open() {
+    this.modal.style.display = 'block';
+  }
+
+  close() {
+    this.modal.style.display = 'none';
+  }
+}
+
+customElements.define('custom-modal', CustomModal);
+```
+Usage in a real website:
+```html
+<custom-modal id="myModal">
+  <p>Modal Content Here</p>
+</custom-modal>
+<button onclick="document.getElementById('myModal').open()">Open Modal</button>
+```
+
+<!--
+This is a practical example of how a custom modal could be implemented in a real-world website. It demonstrates the power of Custom Elements to create reusable components like a modal dialog.
+-->
+
+---
+# Core Technologies: Shadow DOM
+
+## What is Shadow DOM?
+- Encapsulated DOM subtree.
+- Isolates styles and markup from the main document.
+- Helps avoid CSS and JavaScript conflicts in complex web applications.
+
+## Example: Basic Shadow DOM
+```js
+class MyShadowElement extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = `
+      <style> p { color: blue; } </style>
+      <p>Hello from Shadow DOM</p>
+    `;
+  }
+}
+customElements.define('my-shadow-element', MyShadowElement);
+```
+Usage:
+```html
+<my-shadow-element></my-shadow-element>
+```
+
+## Declarative Shadow DOM
+- Introduced to make Shadow DOM more declarative in HTML.
+- Useful for server-side rendering (SSR).
+- Allows attaching shadow roots directly in HTML.
+
+Example:
+```html
+<template shadowroot="open">
+  <p>Declarative Shadow DOM Content</p>
+</template>
+```
+
+<!--
+Explain Shadow DOM’s importance in encapsulation. Discuss both programmatic and declarative approaches, with an example showing how Declarative Shadow DOM enhances server-side rendering.
+-->
+
+---
+
+# Shadow DOM: Pros and Cons
+
+## Pros:
+- **Encapsulation:** Isolates component styles and DOM structure from the rest of the page.
+- **Reusability:** Enables encapsulated, reusable components.
+- **Scoped Styles:** Styles defined within a shadow root are isolated from the global scope.
+
+## Cons:
+- **Learning curve:** Developers must learn how to manage scoped styles and lifecycle events.
+- **SEO Impact:** Declarative Shadow DOM is a step towards addressing SEO challenges but needs server-side support.
+- **Limited cross-shadow communication:** Components in different shadow trees cannot easily communicate.
+
+---
+
+# Practical Use Case: Shadow DOM in Real Websites
+
+## Example: Custom Card Component with Shadow DOM
+```js
+class CustomCard extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = `
+      <style>
+        .card {
+          border: 1px solid #ddd;
+          padding: 20px;
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+      </style>
+      <div class="card">
+        <slot name="title"></slot>
+        <slot name="content"></slot>
+      </div>
+    `;
+  }
+}
+customElements.define('custom-card', CustomCard);
+```
+Usage in HTML:
+```html
+<custom-card>
+  <h2 slot="title">Card Title</h2>
+  <p slot="content">Card content goes here.</p>
+</custom-card>
+```
+
+<!--
+Showcase how Shadow DOM can be used for creating a custom card component in real-world websites. The use of scoped styles ensures the card’s design doesn’t interfere with the page’s global styles.
+-->
+
+---
+
+# Core Technologies: Templates
+
+## What are Templates?
+- A way to define HTML chunks for later reuse.
+- Templates are not rendered when the page loads, only when explicitly instantiated.
+
+Example:
+```html
+<template id="myTemplate">
+  <p>This is template content.</p>
+</template>
+```
+JavaScript:
+```js
+const template = document.getElementById('myTemplate');
+document.body.appendChild(template.content.cloneNode(true));
+```
+
+---
+
+# Templates: Pros and Cons
+
+## Pros:
+- **Efficiency:** HTML structures defined once and reused multiple times.
+- **Deferred Rendering:** Templates are not displayed until needed, improving performance.
+
+## Cons:
+- **No styling or functionality on initial render:** Must be activated via JavaScript.
+- **Complexity in dynamic content:** Templates are static by nature.
+
+---
+
+# Core Technologies: Slots
+
+## What are Slots?
+- Mechanism for distributing content inside custom elements.
+- Named and default slots for content distribution.
 
 Example:
 ```html
@@ -118,12 +335,69 @@ Example:
   <span slot="header">Header Content</span>
 </my-element>
 ```
-
-<!--
-Explain the importance of templates and slots in allowing content to be injected and reused. Demonstrate with a simple slot example.
--->
+JavaScript:
+```js
+class MyElement extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = `
+      <slot name="header"></slot>
+      <p>Default content goes here.</p>
+    `;
+  }
+}
+customElements.define('my-element', MyElement);
+```
 
 ---
+
+# Slots: Pros and Cons
+
+## Pros:
+- **Flexibility:** Allows the user to insert custom content.
+- **Modularity:** Encapsulates layout while letting users control the content.
+
+## Cons:
+- **Initial complexity:** Developers need to understand how slots work.
+- **Content management:** More challenging when working with dynamic content.
+
+---
+
+# Practical Example: Card with Template and Slots
+
+## Customizable Card with Shadow DOM, Template, and Slots
+```js
+class CustomCard extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = `
+      <style>
+        .card {
+          padding: 10px;
+          border: 1px solid #000;
+        }
+      </style>
+      <div class="card">
+        <slot name="header"></slot>
+        <slot></slot>
+      </div>
+    `;
+  }
+}
+customElements.define('custom-card', CustomCard);
+```
+Usage:
+```html
+<custom-card>
+  <h1 slot="header">Title</h1>
+  <p>Card content goes here.</p>
+</custom-card>
+```
+
+---
+
 
 # Advantages of Using Web Components
 
@@ -150,26 +424,9 @@ Dive deeper into the Shadow DOM, explain how styles work, and give examples of s
 
 ---
 
-# Best Practices and Design Patterns
+# custom-elements-everywhere
 
-- Managing attributes, properties, and events
-- Sharing and inheriting styles in Shadow DOM
-- Integration with frameworks
-
-<!--
-Cover best practices such as managing component state and properties. Mention design patterns for effective use of Web Components.
--->
-
----
-
-# Hands-on Demo: Custom Button Component
-
-- Demo: Create a custom button using Shadow DOM
-- Walkthrough of GitHub examples
-
-<!--
-Show a simple demo of creating a custom button component with Shadow DOM and guide the audience through some real-world GitHub examples.
--->
+https://custom-elements-everywhere.com/
 
 ---
 
@@ -194,6 +451,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot
 https://stackoverflow.com/questions/34119639/what-is-shadow-root
 https://web.dev/articles/shadowdom
 https://web.dev/articles/shadowdom-v1
+https://web.dev/articles/declarative-shadow-dom
 
 https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM
 
@@ -211,52 +469,5 @@ https://eisenbergeffect.medium.com/using-global-styles-in-shadow-dom-5b80e802e89
 https://eisenbergeffect.medium.com/html-attributes-properties-and-values-752b6eed8c21
 https://eisenbergeffect.medium.com/sharing-styles-in-declarative-shadow-dom-c5bf84ffd311
 
-
-# New Outline
-
-# Presentation Outline: Developing Modern JavaScript with Web Components (30 minutes)
-
----
-
-## 1. Introduction to Web Components (3 min)
-- Definition and importance of Web Components in modern web development.
-- Overview of core technologies: Custom Elements, Shadow DOM, Templates, and Slots.
-- Evolution of Web Components and their growing adoption in 2024.
-
-## 2. Core Technologies of Web Components (8 min)
-- **Custom Elements**
-  - Definition and lifecycle (connectedCallback, disconnectedCallback).
-  - Creating and registering custom elements.
-- **Shadow DOM**
-  - Encapsulation and DOM isolation using Shadow DOM.
-  - Declarative Shadow DOM: benefits and usage.
-- **Templates and Slots**
-  - Defining reusable HTML structures.
-  - Using slots for flexible content insertion.
-
-## 3. Advantages of Using Web Components (4 min)
-- Encapsulation of styles and behavior.
-- Reusability across frameworks (React, Vue, Angular).
-- Performance benefits: lightweight, native browser support.
-
-## 4. Working with Shadow DOM (7 min)
-- ShadowRoot, shadow trees, and light DOM.
-- **Styling within Shadow DOM:**
-  - Scoping and sharing styles using global styles.
-  - Handling CSS isolation and external stylesheets.
-- Real-world examples of Shadow DOM usage.
-
-## 5. Best Practices and Design Patterns (5 min)
-- Managing attributes, properties, and events in Web Components.
-- Sharing and inheriting styles in declarative Shadow DOM.
-- Integration with frameworks and libraries.
-
-## 6. Hands-on Demo and Code Walkthrough (3 min)
-- Simple demo: creating a custom button component with Shadow DOM.
-- Exploring live examples from GitHub.
-
-## 7. Conclusion and Future of Web Components (2 min)
-- Recap of the key advantages and future potential.
-- Resources for learning and contributing to the Web Components ecosystem.
-
----
+https://stackoverflow.com/questions/11871065/monads-in-javascript
+https://en.wikipedia.org/wiki/Function_composition
