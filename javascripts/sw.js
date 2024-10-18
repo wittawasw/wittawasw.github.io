@@ -153,6 +153,10 @@ const urlsToCache = [
   
   '/tag/ml/index.html',
   
+  '/tag/chrome/index.html',
+  
+  '/tag/wsl2/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -169,6 +173,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2024/10/18/install-google-chrome-in-wsl2-ubuntu.html',
   
   '/2024/10/08/install-torch-rb-in-ubuntu.html',
   
