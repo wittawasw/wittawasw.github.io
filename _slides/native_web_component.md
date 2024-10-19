@@ -403,7 +403,8 @@ contentArea.appendChild(template.content.cloneNode(true));
 
 https://custom-elements-everywhere.com/
 
-(google "github custom elements everywhere")
+google "github custom elements everywhere"
+see supported frameworks and code they use for testing.
 
 <!--
 Looking at the React full support in 19
