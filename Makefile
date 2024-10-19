@@ -7,3 +7,6 @@ build_about:
 
 build_slides:
 	npx @marp-team/marp-cli -I _slides -o slides --html
+
+build_slides_pdf:
+	npx @marp-team/marp-cli -I _slides -o slides --pdf
