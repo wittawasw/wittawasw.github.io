@@ -10,3 +10,7 @@ build_slides:
 
 build_slides_pdf:
 	npx @marp-team/marp-cli -I _slides -o slides --pdf
+
+# Clear scratchpad
+clscr:
+	> scratchpad.md
