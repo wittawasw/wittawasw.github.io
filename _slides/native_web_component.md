@@ -129,7 +129,7 @@ class ClickableParagraph extends HTMLParagraphElement {
     this.style.color = 'blue'; // Add some style.
   }
 }
-customElements.define('clickable-p', MyParagraph, { extends: 'p' });
+customElements.define('clickable-p', ClickableParagraph, { extends: 'p' });
 ```
 
 ```html
