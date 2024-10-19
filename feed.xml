@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-10-19T13:26:06+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">Install Google Chrome ใน wsl2 Ubuntu</title><link href="https://wittawasw.com/2024/10/18/install-google-chrome-in-wsl2-ubuntu.html" rel="alternate" type="text/html" title="Install Google Chrome ใน wsl2 Ubuntu" /><published>2024-10-18T10:34:00+07:00</published><updated>2024-10-18T10:34:00+07:00</updated><id>https://wittawasw.com/2024/10/18/install-google-chrome-in-wsl2-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/10/18/install-google-chrome-in-wsl2-ubuntu.html"><![CDATA[<p>เจอ error นี้ระหว่างที่กำลังจะใช้ CLI ในการรันคำสั่งที่ต้องเรียก Chrome ออกมาใช้
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-10-19T13:33:39+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">Install Google Chrome ใน wsl2 Ubuntu</title><link href="https://wittawasw.com/2024/10/18/install-google-chrome-in-wsl2-ubuntu.html" rel="alternate" type="text/html" title="Install Google Chrome ใน wsl2 Ubuntu" /><published>2024-10-18T10:34:00+07:00</published><updated>2024-10-18T10:34:00+07:00</updated><id>https://wittawasw.com/2024/10/18/install-google-chrome-in-wsl2-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/10/18/install-google-chrome-in-wsl2-ubuntu.html"><![CDATA[<p>เจอ error นี้ระหว่างที่กำลังจะใช้ CLI ในการรันคำสั่งที่ต้องเรียก Chrome ออกมาใช้
 แล้วก็ได้รู้ว่า wsl2 มันยังไม่ฉลาดพอที่จะเรียกใช้ Chrome จาก Windows ให้เอง
 ซึ่งก็ไม่แปลกอะไร ก็เลยได้ลอง install Chrome ให้ใช้ได้ด้วยโปรแกรมที่เป็น CLI ดู</p>
 
@@ -130,30 +130,7 @@ git config merge.conflictstyle diff3
   <p>สังเกตได้ว่าแทนที่จะมีแค่สองสถานะให้เรางงว่าจะเลือกอันไหนดี <code class="language-plaintext highlighter-rouge">diff3</code> จะเพิ่มสถานะ
 <code class="language-plaintext highlighter-rouge">base</code> เข้ามาด้วยเพื่อให้เห็นว่าจุดตั้งต้นก่อนที่จะ conflict มันคืออะไรมาก่อน
 เพื่อช่วยเพิ่มข้อมูลตัดสินใจว่าควรจะเลือกอันไหนดี</p>
-</blockquote>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="devtool" /><category term="git" /><summary type="html"><![CDATA[ตั้งใจจะเปิดหาบทความที่สอนการดู diff ของ git merge เพราะปกติไม่เคยอธิบายเป็นคำพูดให้คนอื่นฟังเข้าใจได้เลย มีแต่ต้องทำให้ดู แล้วก็เพิ่งรู้ว่ามีแบบที่เข้าใจง่ายกว่า เรียกว่า diff3 ให้ใช้มาตั้งหลายปีแล้ว]]></summary></entry><entry><title type="html">ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu</title><link href="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html" rel="alternate" type="text/html" title="ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu" /><published>2024-09-27T12:57:00+07:00</published><updated>2024-09-27T12:57:00+07:00</updated><id>https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html"><![CDATA[<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ดูเวลาปัจจุบันที่ตั้งไว้</span>
-timedatectl
-<span class="c">#                Local time: Fri 2024-09-27 12:13:31 +07</span>
-<span class="c">#            Universal time: Fri 2024-09-27 05:13:31 UTC</span>
-<span class="c">#                  RTC time: Fri 2024-09-27 05:13:31</span>
-<span class="c">#                 Time zone: Asia/Bangkok (+07, +0700)</span>
-<span class="c"># System clock synchronized: yes</span>
-<span class="c">#               NTP service: active</span>
-<span class="c">#           RTC in local TZ: no</span>
-
-<span class="c"># ตั้งให้ sync อัตโนมัติผ่าน internet</span>
-timedatectl set-ntp <span class="nb">yes
-</span>timedatectl set-ntp no
-
-<span class="c"># date - YYYY-MM-DD</span>
-timedatectl set-time 2024-03-31
-<span class="c"># time - HH:MM:SS</span>
-timedatectl set-time 12:11:12
-
-<span class="c"># การตั้ง timezone</span>
-timedatectl list-timezones
-timedatectl set-timezone <span class="s2">"&lt;ชื่อ timezone ที่ได้มา&gt;"</span>
-timedatectl set-timezone UTC
-</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="unix" /><category term="cli" /><category term="ubuntu" /><category term="timedatectl" /><summary type="html"><![CDATA[```sh ดูเวลาปัจจุบันที่ตั้งไว้ timedatectl Local time: Fri 2024-09-27 12:13:31 +07 Universal time: Fri 2024-09-27 05:13:31 UTC RTC time: Fri 2024-09-27 05:13:31 Time zone: Asia/Bangkok (+07, +0700) System clock synchronized: yes NTP service: active RTC in local TZ: no]]></summary></entry><entry><title type="html">การตั้งค่า .gitignore สำหรับทุก git directory ในเครื่อง</title><link href="https://wittawasw.com/2024/09/27/setup-global-gitignore.html" rel="alternate" type="text/html" title="การตั้งค่า .gitignore สำหรับทุก git directory ในเครื่อง" /><published>2024-09-27T12:57:00+07:00</published><updated>2024-09-27T12:57:00+07:00</updated><id>https://wittawasw.com/2024/09/27/setup-global-gitignore</id><content type="html" xml:base="https://wittawasw.com/2024/09/27/setup-global-gitignore.html"><![CDATA[<p>บันทึกไว้ว่าในเครื่องมี <code class="language-plaintext highlighter-rouge">gitignore</code> อะไรบ้าง</p>
+</blockquote>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="devtool" /><category term="git" /><summary type="html"><![CDATA[ตั้งใจจะเปิดหาบทความที่สอนการดู diff ของ git merge เพราะปกติไม่เคยอธิบายเป็นคำพูดให้คนอื่นฟังเข้าใจได้เลย มีแต่ต้องทำให้ดู แล้วก็เพิ่งรู้ว่ามีแบบที่เข้าใจง่ายกว่า เรียกว่า diff3 ให้ใช้มาตั้งหลายปีแล้ว]]></summary></entry><entry><title type="html">การตั้งค่า .gitignore สำหรับทุก git directory ในเครื่อง</title><link href="https://wittawasw.com/2024/09/27/setup-global-gitignore.html" rel="alternate" type="text/html" title="การตั้งค่า .gitignore สำหรับทุก git directory ในเครื่อง" /><published>2024-09-27T12:57:00+07:00</published><updated>2024-09-27T12:57:00+07:00</updated><id>https://wittawasw.com/2024/09/27/setup-global-gitignore</id><content type="html" xml:base="https://wittawasw.com/2024/09/27/setup-global-gitignore.html"><![CDATA[<p>บันทึกไว้ว่าในเครื่องมี <code class="language-plaintext highlighter-rouge">gitignore</code> อะไรบ้าง</p>
 
 <h2 id="คำสั่งที่ใช้">คำสั่งที่ใช้</h2>
 
@@ -200,7 +177,30 @@ todo.txt
 <span class="c"># Windows</span>
 Thumbs.db
 
-</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="devtool" /><category term="git" /><summary type="html"><![CDATA[บันทึกไว้ว่าในเครื่องมี gitignore อะไรบ้าง]]></summary></entry><entry><title type="html">ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL</title><link href="https://wittawasw.com/2024/09/08/sql-between-performance.html" rel="alternate" type="text/html" title="ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL" /><published>2024-09-08T16:24:00+07:00</published><updated>2024-09-08T16:24:00+07:00</updated><id>https://wittawasw.com/2024/09/08/sql-between-performance</id><content type="html" xml:base="https://wittawasw.com/2024/09/08/sql-between-performance.html"><![CDATA[<p>วันก่อนเห็นน้องในทีมส่งข้อความหากันเองในกลุ่มที่ทำงานเป็น query ด้วย <code class="language-plaintext highlighter-rouge">Gorm</code> หน้าตาประมาณ</p>
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="devtool" /><category term="git" /><summary type="html"><![CDATA[บันทึกไว้ว่าในเครื่องมี gitignore อะไรบ้าง]]></summary></entry><entry><title type="html">ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu</title><link href="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html" rel="alternate" type="text/html" title="ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu" /><published>2024-09-27T12:57:00+07:00</published><updated>2024-09-27T12:57:00+07:00</updated><id>https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html"><![CDATA[<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ดูเวลาปัจจุบันที่ตั้งไว้</span>
+timedatectl
+<span class="c">#                Local time: Fri 2024-09-27 12:13:31 +07</span>
+<span class="c">#            Universal time: Fri 2024-09-27 05:13:31 UTC</span>
+<span class="c">#                  RTC time: Fri 2024-09-27 05:13:31</span>
+<span class="c">#                 Time zone: Asia/Bangkok (+07, +0700)</span>
+<span class="c"># System clock synchronized: yes</span>
+<span class="c">#               NTP service: active</span>
+<span class="c">#           RTC in local TZ: no</span>
+
+<span class="c"># ตั้งให้ sync อัตโนมัติผ่าน internet</span>
+timedatectl set-ntp <span class="nb">yes
+</span>timedatectl set-ntp no
+
+<span class="c"># date - YYYY-MM-DD</span>
+timedatectl set-time 2024-03-31
+<span class="c"># time - HH:MM:SS</span>
+timedatectl set-time 12:11:12
+
+<span class="c"># การตั้ง timezone</span>
+timedatectl list-timezones
+timedatectl set-timezone <span class="s2">"&lt;ชื่อ timezone ที่ได้มา&gt;"</span>
+timedatectl set-timezone UTC
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="unix" /><category term="cli" /><category term="ubuntu" /><category term="timedatectl" /><summary type="html"><![CDATA[```sh ดูเวลาปัจจุบันที่ตั้งไว้ timedatectl Local time: Fri 2024-09-27 12:13:31 +07 Universal time: Fri 2024-09-27 05:13:31 UTC RTC time: Fri 2024-09-27 05:13:31 Time zone: Asia/Bangkok (+07, +0700) System clock synchronized: yes NTP service: active RTC in local TZ: no]]></summary></entry><entry><title type="html">ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL</title><link href="https://wittawasw.com/2024/09/08/sql-between-performance.html" rel="alternate" type="text/html" title="ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL" /><published>2024-09-08T16:24:00+07:00</published><updated>2024-09-08T16:24:00+07:00</updated><id>https://wittawasw.com/2024/09/08/sql-between-performance</id><content type="html" xml:base="https://wittawasw.com/2024/09/08/sql-between-performance.html"><![CDATA[<p>วันก่อนเห็นน้องในทีมส่งข้อความหากันเองในกลุ่มที่ทำงานเป็น query ด้วย <code class="language-plaintext highlighter-rouge">Gorm</code> หน้าตาประมาณ</p>
 
 <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">Where</span><span class="p">(</span><span class="s">"? BETWEEN c.effective_at AND COALESCE(c.expire_at,  ?)"</span><span class="p">,</span> <span class="n">effected_time</span><span class="p">,</span> <span class="n">effected_time</span><span class="o">.</span><span class="n">AddDate</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
 </code></pre></div></div>
