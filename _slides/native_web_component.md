@@ -430,6 +430,10 @@ Dive deeper into the Shadow DOM, explain how styles work, and give examples of s
 
 https://custom-elements-everywhere.com/
 
+<!--
+Survey Repo: testing in each framework.
+-->
+
 ---
 
 # Closing
@@ -473,3 +477,18 @@ https://eisenbergeffect.medium.com/sharing-styles-in-declarative-shadow-dom-c5bf
 
 https://stackoverflow.com/questions/11871065/monads-in-javascript
 https://en.wikipedia.org/wiki/Function_composition
+
+## Reference Talk
+
+https://www.youtube.com/watch?v=2I7uX8m0Ta0&
+https://www.youtube.com/watch?v=qV7jh7ctALg&list=PLY6oTPmKnKbaNVkXHOHWxgdKEZLGKuFP9&ab_channel=WebDevelopmentwithAlexMerced
+https://www.youtube.com/watch?v=uIuf5LlA6KQ&ab_channel=Eleventy
+
+### Shadow DOM
+https://www.youtube.com/watch?v=T-MAwZBZi9s&ab_channel=Ashotofcode
+### Chrome Dev 2021 : Declarative Shadow DOM
+https://www.youtube.com/watch?v=h3MONldIoNM
+Starting in Chrome 90, same update as default HTTPS in Chrome
+
+### Using Web Components to Scale Your UX - Stir Trek 2024
+https://www.youtube.com/watch?v=0ny9nr22ujY
