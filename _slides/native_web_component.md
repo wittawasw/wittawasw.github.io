@@ -115,7 +115,7 @@ customElements.define('my-button', MyButton);
 
 ---
 
-# Ex 3: Customize Built-in Element
+## Ex 3: Customize Built-in Element
 
 ```js
 class ClickableParagraph extends HTMLParagraphElement {
@@ -155,8 +155,8 @@ customElements.define('clickable-p', MyParagraph, { extends: 'p' });
 - **Styling challenges:** Managing scoped styles and integration with external stylesheets can be tricky. -->
 
 ---
-
-# Ex 5: Custom Modal Element
+<!-- Intentional -->
+## Ex 5: Custom Modal Element
 
 ```html
 <!-- Usage: -->
