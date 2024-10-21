@@ -157,6 +157,10 @@ const urlsToCache = [
   
   '/tag/wsl2/index.html',
   
+  '/tag/documentation/index.html',
+  
+  '/tag/msword/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -173,6 +177,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2024/10/21/pdf-outline-ms-words.html',
   
   '/2024/10/18/install-google-chrome-in-wsl2-ubuntu.html',
   

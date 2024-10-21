@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-10-19T18:00:17+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">Install Google Chrome ใน wsl2 Ubuntu</title><link href="https://wittawasw.com/2024/10/18/install-google-chrome-in-wsl2-ubuntu.html" rel="alternate" type="text/html" title="Install Google Chrome ใน wsl2 Ubuntu" /><published>2024-10-18T10:34:00+07:00</published><updated>2024-10-18T10:34:00+07:00</updated><id>https://wittawasw.com/2024/10/18/install-google-chrome-in-wsl2-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/10/18/install-google-chrome-in-wsl2-ubuntu.html"><![CDATA[<p>เจอ error นี้ระหว่างที่กำลังจะใช้ CLI ในการรันคำสั่งที่ต้องเรียก Chrome ออกมาใช้
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-10-21T16:59:46+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">การสร้าง outline ให้ PDF เวลา export เอกสารจาก MS Words</title><link href="https://wittawasw.com/2024/10/21/pdf-outline-ms-words.html" rel="alternate" type="text/html" title="การสร้าง outline ให้ PDF เวลา export เอกสารจาก MS Words" /><published>2024-10-21T16:54:00+07:00</published><updated>2024-10-21T16:54:00+07:00</updated><id>https://wittawasw.com/2024/10/21/pdf-outline-ms-words</id><content type="html" xml:base="https://wittawasw.com/2024/10/21/pdf-outline-ms-words.html"><![CDATA[<p>ช่วงนี้ได้กลับมาทำงานเอกสารบ้าง แล้วก็ได้เห็นว่าหลายคนที่ทำงานด้วย ยังใช้ MS
+Words แบบที่ไม่ format หัวข้อกับไม่ได้คิดเผื่อให้สามารถทำ outline ในไฟล์ PDF
+เพื่อให้สะดวกกับเลื่อนไปอ่านหัวข้อตามที่ต้องการแบบเร็วๆ</p>
+
+<h2 id="outline-ของ-pdf">Outline ของ PDF</h2>
+
+<p>ก็เหมือนกับสารบัญที่โปรแกรมอ่าน PDF ส่วนใหญ่จะขึ้นไว้ที่แถบทางซ้าย มักจะอยู่คนล่ะ
+panel กับเนื้อหาเอกสารทำให้สะดวกกว่า สารบัญที่สร้างขึ้นโดย MS Words
+ที่จะอยู่แค่หน้าแรกๆแล้วก็รวมอยู่ในเอกสารเลย</p>
+
+<p><img src="/images/post/pdf-outline.png" alt="pdf-outline" /></p>
+
+<h2 id="การ-export-ไฟล์-pdf-จาก-ms-words">การ export ไฟล์ PDF จาก MS Words</h2>
+
+<p>เลือก <code class="language-plaintext highlighter-rouge">Create Bookmarks using: Heading</code> ก่อน (ถ้าเคยเลือกแล้ว ครั้งต่อไปก็ไม่ต้องกดอีก)</p>
+
+<blockquote>
+  <p>Google Doc ยังทำไม่ได้</p>
+</blockquote>
+
+<p><img src="/images/post/pdf-outline-mswords-option.png" alt="pdf-outline-ms-words" /></p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="documentation" /><category term="msword" /><category term="pdf" /><summary type="html"><![CDATA[ช่วงนี้ได้กลับมาทำงานเอกสารบ้าง แล้วก็ได้เห็นว่าหลายคนที่ทำงานด้วย ยังใช้ MS Words แบบที่ไม่ format หัวข้อกับไม่ได้คิดเผื่อให้สามารถทำ outline ในไฟล์ PDF เพื่อให้สะดวกกับเลื่อนไปอ่านหัวข้อตามที่ต้องการแบบเร็วๆ]]></summary></entry><entry><title type="html">Install Google Chrome ใน wsl2 Ubuntu</title><link href="https://wittawasw.com/2024/10/18/install-google-chrome-in-wsl2-ubuntu.html" rel="alternate" type="text/html" title="Install Google Chrome ใน wsl2 Ubuntu" /><published>2024-10-18T10:34:00+07:00</published><updated>2024-10-18T10:34:00+07:00</updated><id>https://wittawasw.com/2024/10/18/install-google-chrome-in-wsl2-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/10/18/install-google-chrome-in-wsl2-ubuntu.html"><![CDATA[<p>เจอ error นี้ระหว่างที่กำลังจะใช้ CLI ในการรันคำสั่งที่ต้องเรียก Chrome ออกมาใช้
 แล้วก็ได้รู้ว่า wsl2 มันยังไม่ฉลาดพอที่จะเรียกใช้ Chrome จาก Windows ให้เอง
 ซึ่งก็ไม่แปลกอะไร ก็เลยได้ลอง install Chrome ให้ใช้ได้ด้วยโปรแกรมที่เป็น CLI ดู</p>
 
@@ -130,7 +150,30 @@ git config merge.conflictstyle diff3
   <p>สังเกตได้ว่าแทนที่จะมีแค่สองสถานะให้เรางงว่าจะเลือกอันไหนดี <code class="language-plaintext highlighter-rouge">diff3</code> จะเพิ่มสถานะ
 <code class="language-plaintext highlighter-rouge">base</code> เข้ามาด้วยเพื่อให้เห็นว่าจุดตั้งต้นก่อนที่จะ conflict มันคืออะไรมาก่อน
 เพื่อช่วยเพิ่มข้อมูลตัดสินใจว่าควรจะเลือกอันไหนดี</p>
-</blockquote>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="devtool" /><category term="git" /><summary type="html"><![CDATA[ตั้งใจจะเปิดหาบทความที่สอนการดู diff ของ git merge เพราะปกติไม่เคยอธิบายเป็นคำพูดให้คนอื่นฟังเข้าใจได้เลย มีแต่ต้องทำให้ดู แล้วก็เพิ่งรู้ว่ามีแบบที่เข้าใจง่ายกว่า เรียกว่า diff3 ให้ใช้มาตั้งหลายปีแล้ว]]></summary></entry><entry><title type="html">การตั้งค่า .gitignore สำหรับทุก git directory ในเครื่อง</title><link href="https://wittawasw.com/2024/09/27/setup-global-gitignore.html" rel="alternate" type="text/html" title="การตั้งค่า .gitignore สำหรับทุก git directory ในเครื่อง" /><published>2024-09-27T12:57:00+07:00</published><updated>2024-09-27T12:57:00+07:00</updated><id>https://wittawasw.com/2024/09/27/setup-global-gitignore</id><content type="html" xml:base="https://wittawasw.com/2024/09/27/setup-global-gitignore.html"><![CDATA[<p>บันทึกไว้ว่าในเครื่องมี <code class="language-plaintext highlighter-rouge">gitignore</code> อะไรบ้าง</p>
+</blockquote>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="devtool" /><category term="git" /><summary type="html"><![CDATA[ตั้งใจจะเปิดหาบทความที่สอนการดู diff ของ git merge เพราะปกติไม่เคยอธิบายเป็นคำพูดให้คนอื่นฟังเข้าใจได้เลย มีแต่ต้องทำให้ดู แล้วก็เพิ่งรู้ว่ามีแบบที่เข้าใจง่ายกว่า เรียกว่า diff3 ให้ใช้มาตั้งหลายปีแล้ว]]></summary></entry><entry><title type="html">ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu</title><link href="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html" rel="alternate" type="text/html" title="ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu" /><published>2024-09-27T12:57:00+07:00</published><updated>2024-09-27T12:57:00+07:00</updated><id>https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html"><![CDATA[<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ดูเวลาปัจจุบันที่ตั้งไว้</span>
+timedatectl
+<span class="c">#                Local time: Fri 2024-09-27 12:13:31 +07</span>
+<span class="c">#            Universal time: Fri 2024-09-27 05:13:31 UTC</span>
+<span class="c">#                  RTC time: Fri 2024-09-27 05:13:31</span>
+<span class="c">#                 Time zone: Asia/Bangkok (+07, +0700)</span>
+<span class="c"># System clock synchronized: yes</span>
+<span class="c">#               NTP service: active</span>
+<span class="c">#           RTC in local TZ: no</span>
+
+<span class="c"># ตั้งให้ sync อัตโนมัติผ่าน internet</span>
+timedatectl set-ntp <span class="nb">yes
+</span>timedatectl set-ntp no
+
+<span class="c"># date - YYYY-MM-DD</span>
+timedatectl set-time 2024-03-31
+<span class="c"># time - HH:MM:SS</span>
+timedatectl set-time 12:11:12
+
+<span class="c"># การตั้ง timezone</span>
+timedatectl list-timezones
+timedatectl set-timezone <span class="s2">"&lt;ชื่อ timezone ที่ได้มา&gt;"</span>
+timedatectl set-timezone UTC
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="unix" /><category term="cli" /><category term="ubuntu" /><category term="timedatectl" /><summary type="html"><![CDATA[```sh ดูเวลาปัจจุบันที่ตั้งไว้ timedatectl Local time: Fri 2024-09-27 12:13:31 +07 Universal time: Fri 2024-09-27 05:13:31 UTC RTC time: Fri 2024-09-27 05:13:31 Time zone: Asia/Bangkok (+07, +0700) System clock synchronized: yes NTP service: active RTC in local TZ: no]]></summary></entry><entry><title type="html">การตั้งค่า .gitignore สำหรับทุก git directory ในเครื่อง</title><link href="https://wittawasw.com/2024/09/27/setup-global-gitignore.html" rel="alternate" type="text/html" title="การตั้งค่า .gitignore สำหรับทุก git directory ในเครื่อง" /><published>2024-09-27T12:57:00+07:00</published><updated>2024-09-27T12:57:00+07:00</updated><id>https://wittawasw.com/2024/09/27/setup-global-gitignore</id><content type="html" xml:base="https://wittawasw.com/2024/09/27/setup-global-gitignore.html"><![CDATA[<p>บันทึกไว้ว่าในเครื่องมี <code class="language-plaintext highlighter-rouge">gitignore</code> อะไรบ้าง</p>
 
 <h2 id="คำสั่งที่ใช้">คำสั่งที่ใช้</h2>
 
@@ -177,30 +220,7 @@ todo.txt
 <span class="c"># Windows</span>
 Thumbs.db
 
-</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="devtool" /><category term="git" /><summary type="html"><![CDATA[บันทึกไว้ว่าในเครื่องมี gitignore อะไรบ้าง]]></summary></entry><entry><title type="html">ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu</title><link href="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html" rel="alternate" type="text/html" title="ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu" /><published>2024-09-27T12:57:00+07:00</published><updated>2024-09-27T12:57:00+07:00</updated><id>https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html"><![CDATA[<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ดูเวลาปัจจุบันที่ตั้งไว้</span>
-timedatectl
-<span class="c">#                Local time: Fri 2024-09-27 12:13:31 +07</span>
-<span class="c">#            Universal time: Fri 2024-09-27 05:13:31 UTC</span>
-<span class="c">#                  RTC time: Fri 2024-09-27 05:13:31</span>
-<span class="c">#                 Time zone: Asia/Bangkok (+07, +0700)</span>
-<span class="c"># System clock synchronized: yes</span>
-<span class="c">#               NTP service: active</span>
-<span class="c">#           RTC in local TZ: no</span>
-
-<span class="c"># ตั้งให้ sync อัตโนมัติผ่าน internet</span>
-timedatectl set-ntp <span class="nb">yes
-</span>timedatectl set-ntp no
-
-<span class="c"># date - YYYY-MM-DD</span>
-timedatectl set-time 2024-03-31
-<span class="c"># time - HH:MM:SS</span>
-timedatectl set-time 12:11:12
-
-<span class="c"># การตั้ง timezone</span>
-timedatectl list-timezones
-timedatectl set-timezone <span class="s2">"&lt;ชื่อ timezone ที่ได้มา&gt;"</span>
-timedatectl set-timezone UTC
-</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="unix" /><category term="cli" /><category term="ubuntu" /><category term="timedatectl" /><summary type="html"><![CDATA[```sh ดูเวลาปัจจุบันที่ตั้งไว้ timedatectl Local time: Fri 2024-09-27 12:13:31 +07 Universal time: Fri 2024-09-27 05:13:31 UTC RTC time: Fri 2024-09-27 05:13:31 Time zone: Asia/Bangkok (+07, +0700) System clock synchronized: yes NTP service: active RTC in local TZ: no]]></summary></entry><entry><title type="html">ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL</title><link href="https://wittawasw.com/2024/09/08/sql-between-performance.html" rel="alternate" type="text/html" title="ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL" /><published>2024-09-08T16:24:00+07:00</published><updated>2024-09-08T16:24:00+07:00</updated><id>https://wittawasw.com/2024/09/08/sql-between-performance</id><content type="html" xml:base="https://wittawasw.com/2024/09/08/sql-between-performance.html"><![CDATA[<p>วันก่อนเห็นน้องในทีมส่งข้อความหากันเองในกลุ่มที่ทำงานเป็น query ด้วย <code class="language-plaintext highlighter-rouge">Gorm</code> หน้าตาประมาณ</p>
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="devtool" /><category term="git" /><summary type="html"><![CDATA[บันทึกไว้ว่าในเครื่องมี gitignore อะไรบ้าง]]></summary></entry><entry><title type="html">ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL</title><link href="https://wittawasw.com/2024/09/08/sql-between-performance.html" rel="alternate" type="text/html" title="ลองเทียบ performance ของการใช้ฟังก์ชัน COALESCE กับ IS NULL ใน SQL" /><published>2024-09-08T16:24:00+07:00</published><updated>2024-09-08T16:24:00+07:00</updated><id>https://wittawasw.com/2024/09/08/sql-between-performance</id><content type="html" xml:base="https://wittawasw.com/2024/09/08/sql-between-performance.html"><![CDATA[<p>วันก่อนเห็นน้องในทีมส่งข้อความหากันเองในกลุ่มที่ทำงานเป็น query ด้วย <code class="language-plaintext highlighter-rouge">Gorm</code> หน้าตาประมาณ</p>
 
 <div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">Where</span><span class="p">(</span><span class="s">"? BETWEEN c.effective_at AND COALESCE(c.expire_at,  ?)"</span><span class="p">,</span> <span class="n">effected_time</span><span class="p">,</span> <span class="n">effected_time</span><span class="o">.</span><span class="n">AddDate</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
 </code></pre></div></div>
@@ -750,101 +770,4 @@ Git Version Control</p>
   <li>Gorm</li>
   <li>Prisma</li>
   <li>etc.</li>
-</ul>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="rails" /><category term="database" /><summary type="html"><![CDATA[ลองพยายามเขียนอะไรซักอย่างขึ้นมาอุดช่องว่าง สำหรับคนที่พอเข้าใจการทำงานของฐานข้อมูลอยู่แล้ว แต่แค่ไม่ได้ทำงานด้วย Ruby on Rails มาก่อน ให้สามารถเห็นภาพการทำงานที่ชัดขึ้น]]></summary></entry><entry><title type="html">Rate Limit ใน Ruby on Rails</title><link href="https://wittawasw.com/2024/04/19/rails-default-rate-limit.html" rel="alternate" type="text/html" title="Rate Limit ใน Ruby on Rails" /><published>2024-04-19T07:28:00+07:00</published><updated>2024-04-19T07:28:00+07:00</updated><id>https://wittawasw.com/2024/04/19/rails-default-rate-limit</id><content type="html" xml:base="https://wittawasw.com/2024/04/19/rails-default-rate-limit.html"><![CDATA[<p>Rate Limit เป็นหนึ่งในปัญหาที่ทุก tech stack มีวิธีการแก้ปัญหาที่คล้ายกัน ถึงแม้ว่ารายละเอียดการ
-implement จะแตกต่างกันบ้าง แต่ลักษณะการทำงานเบื้องต้นจะคล้ายกันเสมอ คือ</p>
-
-<ul>
-  <li>request จาก client ไปถึง server</li>
-  <li>server ทำการนับจำนวน request ที่เข้ามาแต่ล่ะครั้ง โดยเก็บจำนวนของ request ใน datastore</li>
-  <li>ตรวจสอบว่า request ที่เข้ามาถ้านับรวมกับจำนวนเดิมที่เก็บ จะเกิน limit ตามที่กำหนดไว้หรือยัง
-โดยอาจกำหนดเป็น limit ของจำนวนของ request ภายในช่วงเวลา เช่น
-100 requests ต่อ 10 นาที</li>
-  <li>ปฏิเสธ request ถ้า เกิน limit และยอมให้ผ่านไปถึง resource ได้ถ้าไม่เกิน</li>
-</ul>
-
-<h3 id="resource">Resource</h3>
-
-<p>อาจหมายถึง database โดยตรงหรือ service อื่นที่เราต้องการลดความเสี่ยงที่จะ
-ทำงานเกินกำลังและทำให้ระบบเกิด downtime หรือ error อื่นๆ</p>
-
-<h3 id="datastore">Datastore</h3>
-
-<p>ส่วนที่ใช้เก็บค่าจำนวน request ซึ่งเป็นได้ทั้งการเก็บโดยตรงภายในหน่วยความจำหรือการเก็บภายใน
-ซอฟต์แวร์ฐานข้อมูล ขึ้นอยู่กับลักษณะการใช้งาน ที่หากเป็นการใช้ภายใน process เดียวกัน ก็อาจเก็บค่า
-ภายในหน่วยความจำโดยตรง แต่หากมีจำนวน server ที่รองรับหลายอัน แล้วต้องการจำกัดจำนวน limit
-ร่วมกันก็ควรใช้ซอฟต์แวร์ฐานข้อมูลช่วย</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+--------+            +---------+            +-----------+
-|        |-----------&gt;|         |-----------&gt;|           |
-| Client |            | Server  |            | Resources |
-|        |&lt;-----------|         |&lt;-----------|           |
-+--------+            +---------+            +-----------+
-                          |
-                          |
-                          v
-                    +-------------+
-                    |  Datastore  |
-                    +-------------+
-</code></pre></div></div>
-
-<p style="text-align: center;"><em>แบบง่ายที่เป็นการใช้ภายใน process เดียว</em></p>
-<p style="text-align: center;"><em>---------------------</em></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+--------+            +--------+
-|        |            |        |
-|        |     ------&gt;| Server |&lt;-
-|        |    /       |        |  \
-|        |   /        +--------+   \
-|        |  /         +--------+    \            +-----------+
-|        |&lt;-          |        |     \           |           |
-| Client |&lt;----------&gt;| Server |&lt;---------------&gt;| Resources |
-|        |&lt;-          |        |&lt;-     \         |           |
-|        |  \         +--------+  \     \        +-----------+
-|        |   \        +--------+   \     \       +-------------+
-|        |    \       |        |&lt;---------------&gt;|  Datastore  |
-|        |     ------&gt;| Server |                 +-------------+
-|        |            |        |
-+--------+            +--------+
-</code></pre></div></div>
-<p style="text-align: center;"><em>แบบที่ใช้ datastore ร่วมกัน</em></p>
-
-<h2 id="ความซับซ้อนที่เกิดขึ้นเสมอ">ความซับซ้อนที่เกิดขึ้นเสมอ</h2>
-
-<p>หาก resource ที่เราต้องกันการเข้าถึง มีความต้องการในการจำกัดที่แตกต่างกัน รูปแบบการทำ
-rate limit ก็จะเพิ่มความซับซ้อนและความยุ่งยากในการดูแลมากขึ้น แนวคิดและรูปแบบการทำ
-rate limit ของ Rails จึงช่วยได้มาก หากไม่มีความเข้าใจ หรือไม่ต้องการ implement ด้วยตัวเอง</p>
-
-<h2 id="ตัวอย่างการ-rate-limit-แยกตาม-controller-ของ-rails">ตัวอย่างการ Rate Limit แยกตาม controller ของ Rails</h2>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">class</span> <span class="nc">SessionsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
-  <span class="c1"># จำกัด 10 requests ต่อ 3 นาที</span>
-  <span class="c1"># ที่ method: :create เท่านั้น</span>
-  <span class="n">rate_limit</span> <span class="ss">to: </span><span class="mi">10</span><span class="p">,</span> <span class="ss">within: </span><span class="mi">3</span><span class="p">.</span><span class="nf">minutes</span><span class="p">,</span> <span class="ss">only: :create</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">SignupsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
-  <span class="c1"># จำกัด 1000 requests ต่อ 10 วินาที</span>
-  <span class="c1"># แยกตาม domain name ที่ request</span>
-  <span class="c1"># โดยให้ redirect ไปที่ busy_controller_url พร้อมกับ alert</span>
-  <span class="c1"># ที่ method: :new เท่านั้น</span>
-  <span class="n">rate_limit</span> <span class="ss">to: </span><span class="mi">1000</span><span class="p">,</span> <span class="ss">within: </span><span class="mi">10</span><span class="p">.</span><span class="nf">seconds</span><span class="p">,</span>
-    <span class="ss">by: </span><span class="o">-&gt;</span> <span class="p">{</span> <span class="n">request</span><span class="p">.</span><span class="nf">domain</span> <span class="p">},</span>
-    <span class="ss">with: </span><span class="o">-&gt;</span> <span class="p">{</span> <span class="n">redirect_to</span> <span class="n">busy_controller_url</span><span class="p">,</span> <span class="ss">alert: </span><span class="s2">"Too many signups on domain!"</span> <span class="p">},</span>
-    <span class="ss">only: :new</span>
-<span class="k">end</span>
-
-<span class="k">class</span> <span class="nc">APIController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
-  <span class="c1"># จำกัด 10 requests ต่อ 3 นาที</span>
-  <span class="c1"># โดยใช้ datastore เป็น redis ที่ REDIS_URL</span>
-  <span class="no">RATE_LIMIT_STORE</span> <span class="o">=</span> <span class="no">ActiveSupport</span><span class="o">::</span><span class="no">Cache</span><span class="o">::</span><span class="no">RedisCacheStore</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">url: </span><span class="no">ENV</span><span class="p">[</span><span class="s2">"REDIS_URL"</span><span class="p">])</span>
-  <span class="n">rate_limit</span> <span class="ss">to: </span><span class="mi">10</span><span class="p">,</span> <span class="ss">within: </span><span class="mi">3</span><span class="p">.</span><span class="nf">minutes</span><span class="p">,</span> <span class="ss">store: </span><span class="no">RATE_LIMIT_STORE</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<p>ที่มา: <a href="https://github.com/rails/rails/blob/main/actionpack/lib/action_controller/metal/rate_limiting.rb">github.com/rails/rails</a></p>
-
-<blockquote>
-  <p>ปัจจุบัน ณ วันที่เขียน blog นี้
-feature ยังไม่ได้ถูก release เป็น version แต่ถูกรวมอยู่ใน <code class="language-plaintext highlighter-rouge">main</code> แล้ว</p>
-</blockquote>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="rails," /><category term="rate" /><category term="limit" /><summary type="html"><![CDATA[Rate Limit เป็นหนึ่งในปัญหาที่ทุก tech stack มีวิธีการแก้ปัญหาที่คล้ายกัน ถึงแม้ว่ารายละเอียดการ implement จะแตกต่างกันบ้าง แต่ลักษณะการทำงานเบื้องต้นจะคล้ายกันเสมอ]]></summary></entry></feed>
+</ul>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="rails" /><category term="database" /><summary type="html"><![CDATA[ลองพยายามเขียนอะไรซักอย่างขึ้นมาอุดช่องว่าง สำหรับคนที่พอเข้าใจการทำงานของฐานข้อมูลอยู่แล้ว แต่แค่ไม่ได้ทำงานด้วย Ruby on Rails มาก่อน ให้สามารถเห็นภาพการทำงานที่ชัดขึ้น]]></summary></entry></feed>
