@@ -1,0 +1,43 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ffi (1.17.0-aarch64-linux-gnu)
+    ffi (1.17.0-aarch64-linux-musl)
+    ffi (1.17.0-arm64-darwin)
+    ffi (1.17.0-x86_64-darwin)
+    ffi (1.17.0-x86_64-linux-gnu)
+    ffi (1.17.0-x86_64-linux-musl)
+    informers (1.1.1)
+      onnxruntime (>= 0.9)
+      tokenizers (>= 0.5.3)
+    onnxruntime (0.9.2-aarch64-linux)
+      ffi
+    onnxruntime (0.9.2-arm64-darwin)
+      ffi
+    onnxruntime (0.9.2-x86_64-darwin)
+      ffi
+    onnxruntime (0.9.2-x86_64-linux)
+      ffi
+    ostruct (0.6.0)
+    tokenizers (0.5.3-aarch64-linux)
+    tokenizers (0.5.3-aarch64-linux-musl)
+    tokenizers (0.5.3-arm64-darwin)
+    tokenizers (0.5.3-x86_64-darwin)
+    tokenizers (0.5.3-x86_64-linux)
+    tokenizers (0.5.3-x86_64-linux-musl)
+
+PLATFORMS
+  aarch64-linux
+  aarch64-linux-gnu
+  aarch64-linux-musl
+  arm64-darwin
+  x86_64-darwin
+  x86_64-linux-gnu
+  x86_64-linux-musl
+
+DEPENDENCIES
+  informers (~> 1.1)
+  ostruct (~> 0.6.0)
+
+BUNDLED WITH
+   2.5.21
