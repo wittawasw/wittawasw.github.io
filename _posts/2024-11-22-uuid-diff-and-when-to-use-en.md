@@ -29,7 +29,7 @@ e5c01d00-0cc6-41a9-86ef-91dab8b92219
 
 ## The Different Versions
 
-The UUID specification defines 7 well-defined versions, with version 4 and 7 as
+The UUID specification has 7 well-defined versions, with version 4 and 7 as
 the most commonly used in recent software development.
 
 ```sh
