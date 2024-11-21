@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-11-22T04:02:53+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">การเลือกใช้งาน UUID</title><link href="https://wittawasw.com/2024/11/22/uuid-diff-and-when-to-use.html" rel="alternate" type="text/html" title="การเลือกใช้งาน UUID" /><published>2024-11-22T04:01:00+07:00</published><updated>2024-11-22T04:01:00+07:00</updated><id>https://wittawasw.com/2024/11/22/uuid-diff-and-when-to-use</id><content type="html" xml:base="https://wittawasw.com/2024/11/22/uuid-diff-and-when-to-use.html"><![CDATA[<h2 id="uuid-คืออะไร">UUID คืออะไร</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-11-22T04:07:09+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">การเลือกใช้งาน UUID</title><link href="https://wittawasw.com/2024/11/22/uuid-diff-and-when-to-use.html" rel="alternate" type="text/html" title="การเลือกใช้งาน UUID" /><published>2024-11-22T04:01:00+07:00</published><updated>2024-11-22T04:01:00+07:00</updated><id>https://wittawasw.com/2024/11/22/uuid-diff-and-when-to-use</id><content type="html" xml:base="https://wittawasw.com/2024/11/22/uuid-diff-and-when-to-use.html"><![CDATA[<h2 id="uuid-คืออะไร">UUID คืออะไร</h2>
 
 <p>ค่าที่ใช้เป็นรหัสอ้างอิงแทน resource ในระบบ โดยหลักในการออกแบบ UUID คือ
 การสร้างรหัสจะต้องไม่มีตัวกลางในการสร้าง (centralized) เพื่อลดต้นทุนการบริหารจัดการ
@@ -62,7 +62,6 @@ UUID อื่นได้</p>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ระบบฐานข้อมูลนิยมใส่ค่านี้ให้ หากเราเลือกประเภทข้อมูลเป็น UUID แต่ปล่อยว่าง</span>
 00000000-0000-0000-0000-000000000000
 </code></pre></div></div>
-
 <p>และหากต้องการมี placeholder เพื่อระบุว่าข้อมูลในส่วนนี้ต้องเป็น UUID ก็อาจะเลือกใช้
 ค่าสูงสุดที่อยู่ตรงข้ามกับค่าว่างแทน</p>
 
