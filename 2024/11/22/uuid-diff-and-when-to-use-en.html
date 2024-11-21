@@ -85,7 +85,7 @@ e5c01d00-0cc6-41a9-86ef-91dab8b92219
 
 <h2 id="the-different-versions">The Different Versions</h2>
 
-<p>The UUID specification defines 7 well-defined versions, with versions 4 and 7 as
+<p>The UUID specification has 7 well-defined versions, with version 4 and 7 as
 the most commonly used in recent software development.</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Example: UUID 4</span>
@@ -99,11 +99,17 @@ e07d07cb-afe4-4402-be35-dc431fc02764
 
 <h2 id="choosing-between-v4-and-v7">Choosing Between V4 and V7</h2>
 
-<p>Version 4 UUIDs were not originally designed with databases in mind.
-This led to issues with sorting and indexing, as V4 lacks natural ordering.</p>
+<p>UUID 4 was not originally designed with databases in mind,
+which resulted in difficulties with sorting and indexing. Because
+UUID 4 doesn’t have a natural ordering, making them unsuitable for use with
+tree-based data structures like B-trees or binary search trees,
+which are used in most opensource databases. Since all UUID 4 are randomly
+generated, their insertion into such trees can result in inefficient storage
+and slower query performance.</p>
 
-<p>To address these issues, V6 was introduced, and later V7, which relies on Unix
-Epoch Time for sequential ordering. This makes V7 ideal for databases.</p>
+<p>To address these issues, UUID 6 was introduced, and later UUID 7,
+which relies on Unix Epoch Time for sequential ordering.
+This makes UUID 7 ideal for databases.</p>
 
 <blockquote>
   <p>Use UUID 7 as the default. If you’re starting a new system.</p>
