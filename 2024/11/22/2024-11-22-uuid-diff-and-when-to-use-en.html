@@ -1,0 +1,71 @@
+<h2 id="what-is-a-uuid">What is a UUID?</h2>
+
+<p>A UUID serves as a reference code for resources in a system. Its design principle
+emphasizes decentralization in code generation to reduce management overhead while
+ensuring unique, reusable identifiers.
+Over time, UUIDs have become a popular choice as primary keys (PK) in databases,
+supporting the shift towards distributed systems.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Example:</span>
+e5c01d00-0cc6-41a9-86ef-91dab8b92219
+
+<span class="c"># Format: 8-4-4-4-12 characters</span>
+<span class="c"># Total: 32 characters = 128 bits</span>
+</code></pre></div></div>
+
+<h2 id="the-different-versions">The Different Versions</h2>
+
+<p>The UUID specification has 7 well-defined versions, with version 4 and 7 as
+the most commonly used in recent software development.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Example: UUID 4</span>
+e07d07cb-afe4-4402-be35-dc431fc02764
+
+<span class="c"># Example: UUID 7</span>
+0193503d-d8d0-7ae0-beca-c005478f5650
+
+<span class="c"># The 13th digit indicates the version.</span>
+</code></pre></div></div>
+
+<h2 id="choosing-between-v4-and-v7">Choosing Between V4 and V7</h2>
+
+<p>UUID 4 was not originally designed with databases in mind,
+which resulted in difficulties with sorting and indexing. Because
+UUID 4 doesn’t have a natural ordering, making them unsuitable for use with
+tree-based data structures like B-trees or binary search trees,
+which are used in most opensource databases. Since all UUID 4 are randomly
+generated, their insertion into such trees can result in inefficient storage
+and slower query performance.</p>
+
+<p>To address these issues, UUID 6 was introduced, and later UUID 7,
+which relies on Unix Epoch Time for sequential ordering.
+This makes UUID 7 ideal for databases.</p>
+
+<blockquote>
+  <p>Use UUID 7 as the default. If you’re starting a new system.</p>
+</blockquote>
+
+<h2 id="v8">V8</h2>
+
+<p>UUID 8 is an open-ended version designed for customization and flexibility
+while remaining compatible with other UUIDs.</p>
+
+<p>For example, the  <a href="https://pkg.go.dev/github.com/samborkent/uuidv8#section-readme">Go library</a>
+introduces UUID 8 with more time granularity compared to UUID 7. While UUID 7
+use 1 millisecond precision, UUID 8 from this lib increases it to 20 microseconds,
+enabling more IDs to be generated in the same timeframe.</p>
+
+<h2 id="null-and-the-opposite">Null and The Opposite</h2>
+
+<p>If you need to represent an empty UUID in your system, use all zeros.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Commonly used by databases for empty UUIDs:</span>
+00000000-0000-0000-0000-000000000000
+</code></pre></div></div>
+
+<p>Conversely, you can use the maximum value as a placeholder for fields
+requiring a UUID.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Opposite or maximum value:</span>
+FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF
+</code></pre></div></div>

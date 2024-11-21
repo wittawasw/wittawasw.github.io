@@ -186,9 +186,9 @@ const urlsToCache = [
   '/robots.txt',
   
   
-  '/2024/11/22/uuid-diff-and-when-to-use.html',
+  '/2024/11/22/2024-11-22-uuid-diff-and-when-to-use-en.html',
   
-  '/2024/11/22/uuid-diff-and-when-to-use-en.html',
+  '/2024/11/22/uuid-diff-and-when-to-use.html',
   
   '/2024/10/21/pdf-outline-ms-words.html',
   
