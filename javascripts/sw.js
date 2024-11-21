@@ -23,6 +23,8 @@ const urlsToCache = [
   
   '/page5/index.html',
   
+  '/page6/index.html',
+  
   '/tag/go/index.html',
   
   '/tag/website/index.html',
@@ -161,6 +163,10 @@ const urlsToCache = [
   
   '/tag/msword/index.html',
   
+  '/tag/uuid/index.html',
+  
+  '/tag/rfc/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -171,12 +177,18 @@ const urlsToCache = [
   
   '/collection/posts/page5/index.html',
   
+  '/collection/posts/page6/index.html',
+  
   '/feed.xml',
   
   '/sitemap.xml',
   
   '/robots.txt',
   
+  
+  '/2024/11/22/uuid-diff-and-when-to-use.html',
+  
+  '/2024/11/22/uuid-diff-and-when-to-use-en.html',
   
   '/2024/10/21/pdf-outline-ms-words.html',
   
