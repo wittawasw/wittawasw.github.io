@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-11-22T04:35:23+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html"></title><link href="https://wittawasw.com/2024/11/22/2024-11-22-uuid-diff-and-when-to-use-en.html" rel="alternate" type="text/html" title="" /><published>2024-11-22T04:35:23+07:00</published><updated>2024-11-22T04:35:23+07:00</updated><id>https://wittawasw.com/2024/11/22/2024-11-22-uuid-diff-and-when-to-use-en</id><content type="html" xml:base="https://wittawasw.com/2024/11/22/2024-11-22-uuid-diff-and-when-to-use-en.html"><![CDATA[<h2 id="what-is-a-uuid">What is a UUID?</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-11-22T04:36:34+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html"></title><link href="https://wittawasw.com/2024/11/22/2024-11-22-uuid-diff-and-when-to-use-en.html" rel="alternate" type="text/html" title="" /><published>2024-11-22T04:36:34+07:00</published><updated>2024-11-22T04:36:34+07:00</updated><id>https://wittawasw.com/2024/11/22/2024-11-22-uuid-diff-and-when-to-use-en</id><content type="html" xml:base="https://wittawasw.com/2024/11/22/2024-11-22-uuid-diff-and-when-to-use-en.html"><![CDATA[<h2 id="what-is-a-uuid">What is a UUID?</h2>
 
 <p>A UUID serves as a reference code for resources in a system. Its design principle
 emphasizes decentralization in code generation to reduce management overhead while
@@ -127,7 +127,7 @@ UUID อื่นได้</p>
 
 <h2 id="ค่าว่างและคู่ตรงข้าม">ค่าว่างและคู่ตรงข้าม</h2>
 
-<p>หากอยากใส่ในระบบว่าข้อมูลนี้เป็น UUID ที่เป็น ค่าว่างให้ใส่เลข 0 แทนเลขทุกตำแหน่ง</p>
+<p>หากอยากใส่ในระบบว่าข้อมูลนี้เป็น UUID ที่เป็นค่าว่าง ให้ใส่เลข 0 แทนเลขทุกตำแหน่ง</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ระบบฐานข้อมูลนิยมใส่ค่านี้ให้ หากเราเลือกประเภทข้อมูลเป็น UUID แต่ปล่อยว่าง</span>
 00000000-0000-0000-0000-000000000000
