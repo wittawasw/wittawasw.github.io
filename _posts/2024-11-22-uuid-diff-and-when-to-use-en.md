@@ -10,6 +10,7 @@ description: UUIDs are reference codes used to represent resources in a system. 
   need for distributed systems.
 date: 2024-11-22 04:01 +0700
 ---
+
 ## What is a UUID?
 
 A UUID serves as a reference code for resources in a system. Its design principle
@@ -30,7 +31,6 @@ e5c01d00-0cc6-41a9-86ef-91dab8b92219
 
 The UUID specification defines 7 well-defined versions, with versions 4 and 7 as
 the most commonly used in recent software development.
-
 
 ```sh
 # Example: UUID 4
@@ -61,7 +61,6 @@ For example, the  [Go library](https://pkg.go.dev/github.com/samborkent/uuidv8#s
 introduces UUID 8 with more time granularity compared to UUID 7. While UUID 7
 use 1 millisecond precision, UUID 8 from this lib increases it to 20 microseconds,
 enabling more IDs to be generated in the same timeframe.
-
 
 ## Null and The Opposite
 
