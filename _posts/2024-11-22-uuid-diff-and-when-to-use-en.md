@@ -3,12 +3,8 @@ layout: post
 title: Choosing UUIDs for Use
 tags: uuid rfc
 keywords: uuid, rfc
-description: A UUID serves as a reference code for resources in a system. Its design principle
-emphasizes decentralization in code generation to reduce management overhead while
-ensuring unique, reusable identifiers.
-Over time, UUIDs have become a popular choice as primary keys (PK) in databases,
-supporting the shift towards distributed systems.
-date: 2024-11-22 04:01 +0700
+description: A UUID serves as a reference code for resources in a system. Its design principle emphasizes decentralization in code generation to reduce management overhead while ensuring unique, reusable identifiers. Over time, UUIDs have become a popular choice as primary keys (PK) in databases, supporting the shift towards distributed systems.
+date: 2024-11-22 04:00 +0700
 ---
 
 ## What is a UUID?
