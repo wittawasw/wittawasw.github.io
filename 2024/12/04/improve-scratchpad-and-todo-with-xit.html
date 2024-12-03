@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#181818"/><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>สร้างไฟล์ todo ไว้ใน project ด้วย .xit | wittawasw</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="สร้างไฟล์ todo ไว้ใน project ด้วย .xit" />
+<meta name="author" content="wittawasw" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="คนที่เคยทำงานกับผมจะเคยเห็นนิสัยอย่างหนึ่งที่ผมมักทำประจำในโปรเจคคือมีไฟล์ todo, todo.txt หรือไม่ก็ todo.md ติดเอาไว้เสมอ เพื่อเอาไว้ทั้งจดโน้ต และเอาไว้คอยโฟกัสและเรียงลำดับเรื่องที่ควรทำ เพราะในการทำงานจริง มักจะจำเป็นต้องเปิดสลับไปหลาย workspace ทำให้เวลากลับมาที่ workspace บางอัน เราก็ลืมไปว่าควรต้องโฟกัสกับการทำอะไรต่อ ซึ่งโดย default จะทำ gitignore เอาไว้เลยเพราะเอาไว้ดูคนเดียว" />
+<meta property="og:description" content="คนที่เคยทำงานกับผมจะเคยเห็นนิสัยอย่างหนึ่งที่ผมมักทำประจำในโปรเจคคือมีไฟล์ todo, todo.txt หรือไม่ก็ todo.md ติดเอาไว้เสมอ เพื่อเอาไว้ทั้งจดโน้ต และเอาไว้คอยโฟกัสและเรียงลำดับเรื่องที่ควรทำ เพราะในการทำงานจริง มักจะจำเป็นต้องเปิดสลับไปหลาย workspace ทำให้เวลากลับมาที่ workspace บางอัน เราก็ลืมไปว่าควรต้องโฟกัสกับการทำอะไรต่อ ซึ่งโดย default จะทำ gitignore เอาไว้เลยเพราะเอาไว้ดูคนเดียว" />
+<link rel="canonical" href="https://wittawasw.com/2024/12/04/improve-scratchpad-and-todo-with-xit.html" />
+<meta property="og:url" content="https://wittawasw.com/2024/12/04/improve-scratchpad-and-todo-with-xit.html" />
+<meta property="og:site_name" content="wittawasw" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-12-04T01:30:00+07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="สร้างไฟล์ todo ไว้ใน project ด้วย .xit" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"wittawasw"},"dateModified":"2024-12-04T01:30:00+07:00","datePublished":"2024-12-04T01:30:00+07:00","description":"คนที่เคยทำงานกับผมจะเคยเห็นนิสัยอย่างหนึ่งที่ผมมักทำประจำในโปรเจคคือมีไฟล์ todo, todo.txt หรือไม่ก็ todo.md ติดเอาไว้เสมอ เพื่อเอาไว้ทั้งจดโน้ต และเอาไว้คอยโฟกัสและเรียงลำดับเรื่องที่ควรทำ เพราะในการทำงานจริง มักจะจำเป็นต้องเปิดสลับไปหลาย workspace ทำให้เวลากลับมาที่ workspace บางอัน เราก็ลืมไปว่าควรต้องโฟกัสกับการทำอะไรต่อ ซึ่งโดย default จะทำ gitignore เอาไว้เลยเพราะเอาไว้ดูคนเดียว","headline":"สร้างไฟล์ todo ไว้ใน project ด้วย .xit","mainEntityOfPage":{"@type":"WebPage","@id":"https://wittawasw.com/2024/12/04/improve-scratchpad-and-todo-with-xit.html"},"url":"https://wittawasw.com/2024/12/04/improve-scratchpad-and-todo-with-xit.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://wittawasw.com/feed.xml" title="wittawasw" />
+
+
+  <script type="module">
+    import * as Turbo from 'https://cdn.skypack.dev/@hotwired/turbo@7.3.0';
+  </script>
+
+  <script src="/javascripts/sw.js"></script>
+  <style>
+    .turbo-progress-bar {
+      background: #79b8ff;
+    }
+
+    p {
+      text-justify: inter-word;
+    }
+  </style>
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">wittawasw</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+        </div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">สร้างไฟล์ todo ไว้ใน project ด้วย .xit</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2024-12-04T01:30:00+07:00" itemprop="datePublished">
+        Dec 4, 2024
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>คนที่เคยทำงานกับผมจะเคยเห็นนิสัยอย่างหนึ่งที่ผมมักทำประจำในโปรเจคคือมีไฟล์
+<code class="language-plaintext highlighter-rouge">todo</code>, <code class="language-plaintext highlighter-rouge">todo.txt</code> หรือไม่ก็ <code class="language-plaintext highlighter-rouge">todo.md</code> ติดเอาไว้เสมอ เพื่อเอาไว้ทั้งจดโน้ต
+และเอาไว้คอยโฟกัสและเรียงลำดับเรื่องที่ควรทำ เพราะในการทำงานจริง
+มักจะจำเป็นต้องเปิดสลับไปหลาย workspace ทำให้เวลากลับมาที่ workspace บางอัน
+เราก็ลืมไปว่าควรต้องโฟกัสกับการทำอะไรต่อ ซึ่งโดย default จะทำ gitignore เอาไว้เลยเพราะเอาไว้ดูคนเดียว</p>
+
+<blockquote>
+  <p>เช่น อาจจะมี ticket ที่ต้องสร้าง feature ให้ user สามารถ upload รูปภาพได้
+แต่เมื่อต้องสลับไปตั้งค่าบางอย่างใน devops พอกลับมาที่ workspace
+ก็ลืมไปแล้วว่ากำลังทำ class หรือ function ไหนอยู่</p>
+</blockquote>
+
+<p>แล้ววันนี้ก็มาถึง วันที่เราค้นพบว่ามีคนอยู่อีกมากที่นิสัยคล้ายกันแต่ขยันกว่ามาก
+ตรงที่มีสร้าง format ขึ้นมาเพื่อเป็น todo โดยเฉพาะเลย เรียกว่าไฟล์ <code class="language-plaintext highlighter-rouge">XIT</code> (ไม่รู้ว่ามีที่มาจากอะไรเหมือนกัน)</p>
+
+<blockquote>
+  <p>https://xit.jotaen.net/</p>
+</blockquote>
+
+<h2 id="วิธีการใช้งานใน-vs-code">วิธีการใช้งานใน VS code</h2>
+
+<p>ลง Plugin <code class="language-plaintext highlighter-rouge">xit! extended</code> แล้วตั้งชื่อไฟล์ที่เราต้องการลงท้ายด้วย extension
+<code class="language-plaintext highlighter-rouge">.xit</code> เช่น <code class="language-plaintext highlighter-rouge">todo.xit</code> แล้วลองคัดลอกตัวอย่างนี้ไปเล่นดู</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ตัวอย่างสถานะของ todo
+<span class="o">[</span> <span class="o">]</span> ต้องทำ
+<span class="o">[</span> <span class="o">]</span> ต้องทำแบบยาว
+    เลยเว้นบรรทัดได้
+<span class="o">[</span> <span class="o">]</span> ต้องทำแบบมี tag <span class="c">#newyear2025 #activity="party"</span>
+<span class="o">[</span> <span class="o">]</span> ต้องทำแบบมี deadline -&gt; 2024-12-13
+<span class="o">[</span> <span class="o">]</span> ต้องทำแบบมี deadline ที่ดันเลยมาแล้ว -&gt; 2024-11-13
+<span class="o">[</span> <span class="o">]</span>  -&gt; 2024-11-13 ใส่วันที่ข้างหน้าก็ได้
+<span class="o">[</span> <span class="o">]</span> <span class="o">!</span> ต้องทำแบบให้ความสำคัญ
+<span class="o">[</span> <span class="o">]</span> <span class="o">!!</span> ต้องทำแบบให้ความสำคัญมากกว่าข้างบน
+<span class="o">[</span>@] กำลังทำ
+<span class="o">[</span>x] ทำเสร็จแล้ว  -&gt; 2024-12-20
+<span class="o">[</span>~] ไม่ต้องทำแล้ว
+<span class="o">[</span>?] ต้องทำหรือเปล่านะ ?
+</code></pre></div></div>
+
+<p><img src="/images/post/xit-example.png" alt="example" />
+<em>ได้ออกมาหน้าตาแบบนี้</em></p>
+
+<p>คำเตือน: ดูดีก็จริง แต่การใช้งานจริงเป็น text-based ทั้งหมด
+ไม่เหมาะกับคนชอบ click</p>
+
+<h2 id="การเอาไปใช้งานร่วมกับคนอื่น">การเอาไปใช้งานร่วมกับคนอื่น</h2>
+
+<p>พอเห็นออกมาดูดีแบบนี้ก็เริ่มคิดว่า เอาไปใช้สื่อสารภายใน workspace ก็น่าจะดี
+แต่คงต้องไปคิดก่อนว่าจะออกมาหน้าตาแบบไหนให้คนอื่นยอมใช้ด้วย
+ระหว่างนี้ก็ใช้เองไปคนเดียวก่อน</p>
+
+  </div><a class="u-url" href="/2024/12/04/improve-scratchpad-and-todo-with-xit.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      <!--
+        <ul class="contact-list">
+          <li class="p-name">wittawasw</li>
+          <li><a class="u-email" href="mailto:your-email@domain.com">your-email@domain.com</a></li>
+        </ul> -->
+      </div>
+      <div class="footer-col">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="social-links">
+      <!--<ul class="social-media-list"></ul>
+-->
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

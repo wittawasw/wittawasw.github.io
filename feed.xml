@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-11-23T15:42:21+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">การเลือกใช้งาน UUID</title><link href="https://wittawasw.com/2024/11/22/uuid-diff-and-when-to-use.html" rel="alternate" type="text/html" title="การเลือกใช้งาน UUID" /><published>2024-11-22T04:01:00+07:00</published><updated>2024-11-22T04:01:00+07:00</updated><id>https://wittawasw.com/2024/11/22/uuid-diff-and-when-to-use</id><content type="html" xml:base="https://wittawasw.com/2024/11/22/uuid-diff-and-when-to-use.html"><![CDATA[<h2 id="uuid-คืออะไร">UUID คืออะไร</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-12-04T01:34:32+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">สร้างไฟล์ todo ไว้ใน project ด้วย .xit</title><link href="https://wittawasw.com/2024/12/04/improve-scratchpad-and-todo-with-xit.html" rel="alternate" type="text/html" title="สร้างไฟล์ todo ไว้ใน project ด้วย .xit" /><published>2024-12-04T01:30:00+07:00</published><updated>2024-12-04T01:30:00+07:00</updated><id>https://wittawasw.com/2024/12/04/improve-scratchpad-and-todo-with-xit</id><content type="html" xml:base="https://wittawasw.com/2024/12/04/improve-scratchpad-and-todo-with-xit.html"><![CDATA[<p>คนที่เคยทำงานกับผมจะเคยเห็นนิสัยอย่างหนึ่งที่ผมมักทำประจำในโปรเจคคือมีไฟล์
+<code class="language-plaintext highlighter-rouge">todo</code>, <code class="language-plaintext highlighter-rouge">todo.txt</code> หรือไม่ก็ <code class="language-plaintext highlighter-rouge">todo.md</code> ติดเอาไว้เสมอ เพื่อเอาไว้ทั้งจดโน้ต
+และเอาไว้คอยโฟกัสและเรียงลำดับเรื่องที่ควรทำ เพราะในการทำงานจริง
+มักจะจำเป็นต้องเปิดสลับไปหลาย workspace ทำให้เวลากลับมาที่ workspace บางอัน
+เราก็ลืมไปว่าควรต้องโฟกัสกับการทำอะไรต่อ ซึ่งโดย default จะทำ gitignore เอาไว้เลยเพราะเอาไว้ดูคนเดียว</p>
+
+<blockquote>
+  <p>เช่น อาจจะมี ticket ที่ต้องสร้าง feature ให้ user สามารถ upload รูปภาพได้
+แต่เมื่อต้องสลับไปตั้งค่าบางอย่างใน devops พอกลับมาที่ workspace
+ก็ลืมไปแล้วว่ากำลังทำ class หรือ function ไหนอยู่</p>
+</blockquote>
+
+<p>แล้ววันนี้ก็มาถึง วันที่เราค้นพบว่ามีคนอยู่อีกมากที่นิสัยคล้ายกันแต่ขยันกว่ามาก
+ตรงที่มีสร้าง format ขึ้นมาเพื่อเป็น todo โดยเฉพาะเลย เรียกว่าไฟล์ <code class="language-plaintext highlighter-rouge">XIT</code> (ไม่รู้ว่ามีที่มาจากอะไรเหมือนกัน)</p>
+
+<blockquote>
+  <p>https://xit.jotaen.net/</p>
+</blockquote>
+
+<h2 id="วิธีการใช้งานใน-vs-code">วิธีการใช้งานใน VS code</h2>
+
+<p>ลง Plugin <code class="language-plaintext highlighter-rouge">xit! extended</code> แล้วตั้งชื่อไฟล์ที่เราต้องการลงท้ายด้วย extension
+<code class="language-plaintext highlighter-rouge">.xit</code> เช่น <code class="language-plaintext highlighter-rouge">todo.xit</code> แล้วลองคัดลอกตัวอย่างนี้ไปเล่นดู</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ตัวอย่างสถานะของ todo
+<span class="o">[</span> <span class="o">]</span> ต้องทำ
+<span class="o">[</span> <span class="o">]</span> ต้องทำแบบยาว
+    เลยเว้นบรรทัดได้
+<span class="o">[</span> <span class="o">]</span> ต้องทำแบบมี tag <span class="c">#newyear2025 #activity="party"</span>
+<span class="o">[</span> <span class="o">]</span> ต้องทำแบบมี deadline -&gt; 2024-12-13
+<span class="o">[</span> <span class="o">]</span> ต้องทำแบบมี deadline ที่ดันเลยมาแล้ว -&gt; 2024-11-13
+<span class="o">[</span> <span class="o">]</span>  -&gt; 2024-11-13 ใส่วันที่ข้างหน้าก็ได้
+<span class="o">[</span> <span class="o">]</span> <span class="o">!</span> ต้องทำแบบให้ความสำคัญ
+<span class="o">[</span> <span class="o">]</span> <span class="o">!!</span> ต้องทำแบบให้ความสำคัญมากกว่าข้างบน
+<span class="o">[</span>@] กำลังทำ
+<span class="o">[</span>x] ทำเสร็จแล้ว  -&gt; 2024-12-20
+<span class="o">[</span>~] ไม่ต้องทำแล้ว
+<span class="o">[</span>?] ต้องทำหรือเปล่านะ ?
+</code></pre></div></div>
+
+<p><img src="/images/post/xit-example.png" alt="example" />
+<em>ได้ออกมาหน้าตาแบบนี้</em></p>
+
+<p>คำเตือน: ดูดีก็จริง แต่การใช้งานจริงเป็น text-based ทั้งหมด
+ไม่เหมาะกับคนชอบ click</p>
+
+<h2 id="การเอาไปใช้งานร่วมกับคนอื่น">การเอาไปใช้งานร่วมกับคนอื่น</h2>
+
+<p>พอเห็นออกมาดูดีแบบนี้ก็เริ่มคิดว่า เอาไปใช้สื่อสารภายใน workspace ก็น่าจะดี
+แต่คงต้องไปคิดก่อนว่าจะออกมาหน้าตาแบบไหนให้คนอื่นยอมใช้ด้วย
+ระหว่างนี้ก็ใช้เองไปคนเดียวก่อน</p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="texteditor" /><category term="productivity" /><summary type="html"><![CDATA[คนที่เคยทำงานกับผมจะเคยเห็นนิสัยอย่างหนึ่งที่ผมมักทำประจำในโปรเจคคือมีไฟล์ todo, todo.txt หรือไม่ก็ todo.md ติดเอาไว้เสมอ เพื่อเอาไว้ทั้งจดโน้ต และเอาไว้คอยโฟกัสและเรียงลำดับเรื่องที่ควรทำ เพราะในการทำงานจริง มักจะจำเป็นต้องเปิดสลับไปหลาย workspace ทำให้เวลากลับมาที่ workspace บางอัน เราก็ลืมไปว่าควรต้องโฟกัสกับการทำอะไรต่อ ซึ่งโดย default จะทำ gitignore เอาไว้เลยเพราะเอาไว้ดูคนเดียว]]></summary></entry><entry><title type="html">การเลือกใช้งาน UUID</title><link href="https://wittawasw.com/2024/11/22/uuid-diff-and-when-to-use.html" rel="alternate" type="text/html" title="การเลือกใช้งาน UUID" /><published>2024-11-22T04:01:00+07:00</published><updated>2024-11-22T04:01:00+07:00</updated><id>https://wittawasw.com/2024/11/22/uuid-diff-and-when-to-use</id><content type="html" xml:base="https://wittawasw.com/2024/11/22/uuid-diff-and-when-to-use.html"><![CDATA[<h2 id="uuid-คืออะไร">UUID คืออะไร</h2>
 
 <p>ค่าที่ใช้เป็นรหัสอ้างอิงแทน resource ในระบบ โดยหลักในการออกแบบ UUID คือ
 การสร้างรหัสจะต้องไม่มีตัวกลางในการสร้าง (centralized) เพื่อลดต้นทุนการบริหารจัดการ
@@ -439,17 +489,4 @@ Query 100 - BETWEEN: 14.421µs, IS NULL/OR: 14.638µs
 
 <blockquote>
   <p>script ถูกแชร์ไว้ที่ <a href="https://github.com/wittawasw/wittawasw.github.io/blob/main/code/go/sqlperf/main.go">github</a></p>
-</blockquote>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="sql" /><summary type="html"><![CDATA[วันก่อนเห็นน้องในทีมส่งข้อความหากันเองในกลุ่มที่ทำงานเป็น query ด้วย Gorm หน้าตาประมาณ]]></summary></entry><entry><title type="html">Ruby 3.3.5 เตือนให้เอา standard lib ออก</title><link href="https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings.html" rel="alternate" type="text/html" title="Ruby 3.3.5 เตือนให้เอา standard lib ออก" /><published>2024-09-04T21:34:00+07:00</published><updated>2024-09-04T21:34:00+07:00</updated><id>https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings</id><content type="html" xml:base="https://wittawasw.com/2024/09/04/ruby-3-5-deprecation-warnings.html"><![CDATA[<p>ไม่รู้ว่าเตือนตั้งแต่ 3.3.อะไร เพราะจาก 3.3.0 ก็มา 3.3.5 เลย เจอตอนกำลังจะเขียน
-blog ก็เลยได้อีก blog ว่าตอนนี้ Ruby core กำลังเดินตาม Roadmap ที่อยากให้
-Runtime โดย default มี memory footprint ที่เล็กลง โดยเท่าที่รู้ก็ถอดออกไปตามนี้</p>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Ruby 3.5 deprecation warnings</span>
-<span class="n">gem</span> <span class="s2">"logger"</span>
-<span class="n">gem</span> <span class="s2">"base64"</span>
-<span class="n">gem</span> <span class="s2">"csv"</span>
-<span class="n">gem</span> <span class="s2">"ostruct"</span>
-</code></pre></div></div>
-
-<p>ก็ไม่ใช่เรื่องแย่ แต่ก็น่าเสียดายที่คำสั่งใน <code class="language-plaintext highlighter-rouge">base64</code> เป็น 1 ใน คำสั่งแสนสะดวก
-ที่ผมเอาไว้ใช้ได้ตลอดต้องมาโดนถอดออก แต่ <code class="language-plaintext highlighter-rouge">ostruct</code> ไม่น่าเสียดายเลยเพราะเอาจริงๆ
-มันถูกมองว่าไม่ควรใช้มานานแล้ว</p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="ruby" /><category term="deprecation" /><summary type="html"><![CDATA[ไม่รู้ว่าเตือนตั้งแต่ 3.3.อะไร เพราะจาก 3.3.0 ก็มา 3.3.5 เลย เจอตอนกำลังจะเขียน blog ก็เลยได้อีก blog ว่าตอนนี้ Ruby core กำลังเดินตาม Roadmap ที่อยากให้ Runtime โดย default มี memory footprint ที่เล็กลง]]></summary></entry></feed>
+</blockquote>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="sql" /><summary type="html"><![CDATA[วันก่อนเห็นน้องในทีมส่งข้อความหากันเองในกลุ่มที่ทำงานเป็น query ด้วย Gorm หน้าตาประมาณ]]></summary></entry></feed>

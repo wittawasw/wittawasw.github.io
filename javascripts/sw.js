@@ -167,6 +167,10 @@ const urlsToCache = [
   
   '/tag/rfc/index.html',
   
+  '/tag/texteditor/index.html',
+  
+  '/tag/productivity/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -185,6 +189,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2024/12/04/improve-scratchpad-and-todo-with-xit.html',
   
   '/2024/11/22/uuid-diff-and-when-to-use.html',
   
