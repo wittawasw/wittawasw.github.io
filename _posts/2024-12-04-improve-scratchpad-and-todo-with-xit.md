@@ -5,6 +5,7 @@ tags: texteditor productivity
 keywords: texteditor, productivity
 description:
 date: 2024-12-04 01:30 +0700
+header-img: "/images/post/xit-example.png"
 ---
 คนที่เคยทำงานกับผมจะเคยเห็นนิสัยอย่างหนึ่งที่ผมมักทำประจำในโปรเจคคือมีไฟล์
 `todo`, `todo.txt` หรือไม่ก็ `todo.md` ติดเอาไว้เสมอ เพื่อเอาไว้ทั้งจดโน้ต
@@ -43,7 +44,7 @@ date: 2024-12-04 01:30 +0700
 [?] ต้องทำหรือเปล่านะ ?
 ```
 
-![example](/images/post/xit-example.png)
+![result](/images/post/xit-example.png)
 *ได้ออกมาหน้าตาแบบนี้*
 
 คำเตือน: ดูดีก็จริง แต่การใช้งานจริงเป็น text-based ทั้งหมด
