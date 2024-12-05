@@ -171,6 +171,10 @@ const urlsToCache = [
   
   '/tag/productivity/index.html',
   
+  '/tag/rust/index.html',
+  
+  '/tag/yjit/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -189,6 +193,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2024/12/05/ruby-enable-yjit-if-rustc-detected.html',
   
   '/2024/12/04/improve-scratchpad-and-todo-with-xit.html',
   
