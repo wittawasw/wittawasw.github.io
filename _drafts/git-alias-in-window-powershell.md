@@ -4,11 +4,11 @@ title: git alias in window powershell
 ---
 
 ```sh
+. $profile
 g config --global push.autoSetupRemote true
 ```
 
 ```sh
-# Functions for Git commands
 # Functions for Git commands
 Function gitCommand { git $args }
 Function gitCommit { git commit --verbose }
@@ -18,6 +18,7 @@ Function gitRemote { git remote -v }
 Function gitRemoteRemove { git remote remove $args }
 Function gitRemoteAdd { git remote add $args }
 Function gitPull { git pull origin $args }
+
 Function gitPush {
     param (
         [string[]]$args
@@ -33,7 +34,7 @@ Function gitPush {
     }
 }
 
-function gitPushForce {
+Function gitPushForce {
     param (
         [string]$arg
     )
@@ -47,8 +48,8 @@ function gitPushForce {
 Function gitFetch { git fetch --all --tags --prune --jobs=10 }
 Function gitStatus { git status }
 Function gitSwitch { git switch $args }
-Function gitReset { git reset $args }
-Function gitResetHard { git reset --hard HEAD }
+Function gitResetHard { git reset --hard $args }
+Function gitResetHardHead { git reset --hard HEAD }
 Function gitBranch { git branch $args }
 Function gitBranchDelete { git branch -d $args }
 Function gitLogGraph { git log --oneline --graph --decorate }
@@ -69,8 +70,8 @@ Set-Alias -Name ggp -Value gitPush
 Set-Alias -Name ggf -Value gitPushForce
 Set-Alias -Name gst -Value gitStatus
 Set-Alias -Name gsw -Value gitSwitch
-Set-Alias -Name grh -Value gitReset
-Set-Alias -Name grhh -Value gitResetHard
+Set-Alias -Name grh -Value gitResetHard
+Set-Alias -Name grhh -Value gitResetHardHead
 Set-Alias -Name gb -Value gitBranch
 Set-Alias -Name gbd -Value gitBranchDelete
 Set-Alias -Name glgg -Value gitLogGraph
