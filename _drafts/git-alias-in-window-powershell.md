@@ -1,15 +1,38 @@
 ---
 layout: post
-title: git alias in window powershell
+title: ตั้งค่าตัวย่อของ Git CLI บน Windows Powershell
+tags: git cli windows, powershell
+keywords: git, cli, windows, powershell
+description:
 ---
 
-```sh
-. $profile
-g config --global push.autoSetupRemote true
-```
+หลังจากที่มีเหตุให้ต้องใช้ Windows เป็นเครื่องสำรองอยู่เกือบเดือน
+หลายๆอย่างที่ใช้งานใน Ubuntu ก็ย้ายมาอยู่บน WSL 2 ได้เยอะแล้ว
+ช่วงนี้มีความคิดอยากทำ Flutter app ก็เลยอยากลงบนเครื่อง Windows ด้วย
+แต่ก็ติดที่มันใช้ผ่าน WSL ไม่สะดวก ถ้าไม่ผ่าน WSL ก็ติดเรื่องเดียว คือ
+ไม่รู้ว่าจะหาทางเอา Git CLI แบบตัวย่อที่ปกติใช้งานบน Ubuntu มาทำบน Windows
+ยังไง รู้แต่ว่ายังไงก็ไม่ยอมใช้ GUI
+
+ก็เลยได้ลองเล่น Powershell ไปมาก็รู้สึกลงตัวกับแบบนี้
+ยังไม่รู้สึกดีเท่าที่ทำงานบน MacOS, Ubuntu แต่ก็พอใช้ได้แล้ว
+
+- ใช้งาน terminal ใน vscode โดยการเรียกผ่าน `Ctrl + ~`
+- ตั้งค่า Alias กับ Run Flutter command ผ่าน terminal เลย
+
+
+## ไฟล์ที่ใช้ตั้งค่าให้ powershell
 
 ```sh
-# Functions for Git commands
+# เปิดไฟล์ที่ $profile ด้วย VS Code
+code $profile
+```
+
+## Alias ที่ใช้
+
+> ลอกมาจาก `Oh-my-zsh`
+
+```sh
+# ประกาศด้วยคำสั่ง Function
 Function gitCommand { git $args }
 Function gitCommit { git commit --verbose }
 Function gitCheckout { git checkout $args }
@@ -57,8 +80,10 @@ Function gitLogAllGraph { git log --oneline --all --graph --decorate }
 Function gitAdd { git add $args }
 Function gitAddAll { git add . }
 
-# Set aliases pointing to functions
+# ตั้งค่า alias ให้ชี้ไปที่ Function
 Set-Alias -Name g -Value gitCommand
+
+# ใช้ gc ไม่ได้เพราะทับกับคำสั่งเดิมของ windows เลยต้องใช้เป็น gcc แทน
 Set-Alias -Name gcc -Value gitCommit
 Set-Alias -Name gco -Value gitCheckout
 Set-Alias -Name gcb -Value gitCheckoutBranch
@@ -80,4 +105,14 @@ Set-Alias -Name gf -Value gitFetch
 Set-Alias -Name ga -Value gitAdd
 Set-Alias -Name gaa -Value gitAddAll
 
+```
+
+## การLoad ใส่ powershell
+
+```sh
+# กดบันทึกแล้วเปิดใหม่หรือใช้คำสั่งนี้ เป็นเหมือนการสั่ง source ใน Unix
+. $profile
+
+# ตั้งค่าให้ ggp, ggf สามารถทำงานได้โดยไม่ต้อง set upstream
+g config --global push.autoSetupRemote true
 ```
