@@ -3,9 +3,9 @@ layout: post
 title: ตั้งค่าตัวย่อของ Git CLI บน Windows Powershell
 tags: git cli windows, powershell
 keywords: git, cli, windows, powershell
-description:
+description: 
+date: 2024-12-09 00:52 +0700
 ---
-
 หลังจากที่มีเหตุให้ต้องใช้ Windows เป็นเครื่องสำรองอยู่เกือบเดือน
 หลายๆอย่างที่ใช้งานใน Ubuntu ก็ย้ายมาอยู่บน WSL 2 ได้เยอะแล้ว
 ช่วงนี้มีความคิดอยากทำ Flutter app ก็เลยอยากลงบนเครื่อง Windows ด้วย
