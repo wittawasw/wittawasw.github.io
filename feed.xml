@@ -1,4 +1,113 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-12-05T18:25:18+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">ค่าตั้งต้นของ Ruby จะใส่ YJIT มาให้ถ้าในเครื่องมี Rust</title><link href="https://wittawasw.com/2024/12/05/ruby-enable-yjit-if-rustc-detected.html" rel="alternate" type="text/html" title="ค่าตั้งต้นของ Ruby จะใส่ YJIT มาให้ถ้าในเครื่องมี Rust" /><published>2024-12-05T18:22:00+07:00</published><updated>2024-12-05T18:22:00+07:00</updated><id>https://wittawasw.com/2024/12/05/ruby-enable-yjit-if-rustc-detected</id><content type="html" xml:base="https://wittawasw.com/2024/12/05/ruby-enable-yjit-if-rustc-detected.html"><![CDATA[<p>เร็วๆนี้มีกระแสความสนใจในภาษา Rust ในกลุ่มคนไทยมากขึ้น
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-12-09T00:53:31+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">ตั้งค่าตัวย่อของ Git CLI บน Windows Powershell</title><link href="https://wittawasw.com/2024/12/09/git-alias-in-window-powershell.html" rel="alternate" type="text/html" title="ตั้งค่าตัวย่อของ Git CLI บน Windows Powershell" /><published>2024-12-09T00:52:00+07:00</published><updated>2024-12-09T00:52:00+07:00</updated><id>https://wittawasw.com/2024/12/09/git-alias-in-window-powershell</id><content type="html" xml:base="https://wittawasw.com/2024/12/09/git-alias-in-window-powershell.html"><![CDATA[<p>หลังจากที่มีเหตุให้ต้องใช้ Windows เป็นเครื่องสำรองอยู่เกือบเดือน
+หลายๆอย่างที่ใช้งานใน Ubuntu ก็ย้ายมาอยู่บน WSL 2 ได้เยอะแล้ว
+ช่วงนี้มีความคิดอยากทำ Flutter app ก็เลยอยากลงบนเครื่อง Windows ด้วย
+แต่ก็ติดที่มันใช้ผ่าน WSL ไม่สะดวก ถ้าไม่ผ่าน WSL ก็ติดเรื่องเดียว คือ
+ไม่รู้ว่าจะหาทางเอา Git CLI แบบตัวย่อที่ปกติใช้งานบน Ubuntu มาทำบน Windows
+ยังไง รู้แต่ว่ายังไงก็ไม่ยอมใช้ GUI</p>
+
+<p>ก็เลยได้ลองเล่น Powershell ไปมาก็รู้สึกลงตัวกับแบบนี้
+ยังไม่รู้สึกดีเท่าที่ทำงานบน MacOS, Ubuntu แต่ก็พอใช้ได้แล้ว</p>
+
+<ul>
+  <li>ใช้งาน terminal ใน vscode โดยการเรียกผ่าน <code class="language-plaintext highlighter-rouge">Ctrl + ~</code></li>
+  <li>ตั้งค่า Alias กับ Run Flutter command ผ่าน terminal เลย</li>
+</ul>
+
+<h2 id="ไฟล์ที่ใช้ตั้งค่าให้-powershell">ไฟล์ที่ใช้ตั้งค่าให้ powershell</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># เปิดไฟล์ที่ $profile ด้วย VS Code</span>
+code <span class="nv">$profile</span>
+</code></pre></div></div>
+
+<h2 id="alias-ที่ใช้">Alias ที่ใช้</h2>
+
+<blockquote>
+  <p>ลอกมาจาก <code class="language-plaintext highlighter-rouge">Oh-my-zsh</code></p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ประกาศด้วยคำสั่ง Function</span>
+Function gitCommand <span class="o">{</span> git <span class="nv">$args</span> <span class="o">}</span>
+Function gitCommit <span class="o">{</span> git commit <span class="nt">--verbose</span> <span class="o">}</span>
+Function gitCheckout <span class="o">{</span> git checkout <span class="nv">$args</span> <span class="o">}</span>
+Function gitCheckoutBranch <span class="o">{</span> git checkout <span class="nt">-b</span> <span class="nv">$args</span> <span class="o">}</span>
+Function gitRemote <span class="o">{</span> git remote <span class="nt">-v</span> <span class="o">}</span>
+Function gitRemoteRemove <span class="o">{</span> git remote remove <span class="nv">$args</span> <span class="o">}</span>
+Function gitRemoteAdd <span class="o">{</span> git remote add <span class="nv">$args</span> <span class="o">}</span>
+Function gitPull <span class="o">{</span> git pull origin <span class="nv">$args</span> <span class="o">}</span>
+
+Function gitPush <span class="o">{</span>
+    param <span class="o">(</span>
+        <span class="o">[</span>string[]]<span class="nv">$args</span>
+    <span class="o">)</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="nv">$args</span>.Count <span class="nt">-ne</span> 0 <span class="nt">-and</span> <span class="nv">$args</span>.Count <span class="nt">-ne</span> 1<span class="o">)</span> <span class="o">{</span>
+        git push origin <span class="nv">$args</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="nv">$args</span>.Count <span class="nt">-eq</span> 0<span class="o">)</span> <span class="o">{</span>
+            <span class="nv">$b</span> <span class="o">=</span> <span class="o">(</span>git rev-parse <span class="nt">--abbrev-ref</span> HEAD<span class="o">)</span>
+        <span class="o">}</span>
+        git push origin <span class="si">$(</span><span class="nv">$b</span> <span class="o">=</span> <span class="k">if</span> <span class="o">(</span><span class="nv">$args</span>.Count <span class="nt">-eq</span> 0<span class="o">)</span> <span class="o">{</span> <span class="nv">$b</span> <span class="o">}</span> <span class="k">else</span> <span class="o">{</span> <span class="nv">$args</span><span class="o">[</span>0] <span class="o">}</span><span class="si">)</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+Function gitPushForce <span class="o">{</span>
+    param <span class="o">(</span>
+        <span class="o">[</span>string]<span class="nv">$arg</span>
+    <span class="o">)</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="nv">$args</span>.Count <span class="nt">-ne</span> 1<span class="o">)</span> <span class="o">{</span>
+        <span class="nv">$b</span> <span class="o">=</span> <span class="o">(</span>git rev-parse <span class="nt">--abbrev-ref</span> HEAD<span class="o">)</span>
+    <span class="o">}</span>
+    git push <span class="nt">--force</span> origin <span class="nv">$b</span>
+<span class="o">}</span>
+
+Function gitFetch <span class="o">{</span> git fetch <span class="nt">--all</span> <span class="nt">--tags</span> <span class="nt">--prune</span> <span class="nt">--jobs</span><span class="o">=</span>10 <span class="o">}</span>
+Function gitStatus <span class="o">{</span> git status <span class="o">}</span>
+Function gitSwitch <span class="o">{</span> git switch <span class="nv">$args</span> <span class="o">}</span>
+Function gitResetHard <span class="o">{</span> git reset <span class="nt">--hard</span> <span class="nv">$args</span> <span class="o">}</span>
+Function gitResetHardHead <span class="o">{</span> git reset <span class="nt">--hard</span> HEAD <span class="o">}</span>
+Function gitBranch <span class="o">{</span> git branch <span class="nv">$args</span> <span class="o">}</span>
+Function gitBranchDelete <span class="o">{</span> git branch <span class="nt">-d</span> <span class="nv">$args</span> <span class="o">}</span>
+Function gitLogGraph <span class="o">{</span> git log <span class="nt">--oneline</span> <span class="nt">--graph</span> <span class="nt">--decorate</span> <span class="o">}</span>
+Function gitLogAllGraph <span class="o">{</span> git log <span class="nt">--oneline</span> <span class="nt">--all</span> <span class="nt">--graph</span> <span class="nt">--decorate</span> <span class="o">}</span>
+Function gitAdd <span class="o">{</span> git add <span class="nv">$args</span> <span class="o">}</span>
+Function gitAddAll <span class="o">{</span> git add <span class="nb">.</span> <span class="o">}</span>
+
+<span class="c"># ตั้งค่า alias ให้ชี้ไปที่ Function</span>
+Set-Alias <span class="nt">-Name</span> g <span class="nt">-Value</span> gitCommand
+
+<span class="c"># ใช้ gc ไม่ได้เพราะทับกับคำสั่งเดิมของ windows เลยต้องใช้เป็น gcc แทน</span>
+Set-Alias <span class="nt">-Name</span> gcc <span class="nt">-Value</span> gitCommit
+Set-Alias <span class="nt">-Name</span> gco <span class="nt">-Value</span> gitCheckout
+Set-Alias <span class="nt">-Name</span> gcb <span class="nt">-Value</span> gitCheckoutBranch
+Set-Alias <span class="nt">-Name</span> grv <span class="nt">-Value</span> gitRemote
+Set-Alias <span class="nt">-Name</span> grrm <span class="nt">-Value</span> gitRemoteRemove
+Set-Alias <span class="nt">-Name</span> gra <span class="nt">-Value</span> gitRemoteAdd
+Set-Alias <span class="nt">-Name</span> ggl <span class="nt">-Value</span> gitPull
+Set-Alias <span class="nt">-Name</span> ggp <span class="nt">-Value</span> gitPush
+Set-Alias <span class="nt">-Name</span> ggf <span class="nt">-Value</span> gitPushForce
+Set-Alias <span class="nt">-Name</span> gst <span class="nt">-Value</span> gitStatus
+Set-Alias <span class="nt">-Name</span> gsw <span class="nt">-Value</span> gitSwitch
+Set-Alias <span class="nt">-Name</span> grh <span class="nt">-Value</span> gitResetHard
+Set-Alias <span class="nt">-Name</span> grhh <span class="nt">-Value</span> gitResetHardHead
+Set-Alias <span class="nt">-Name</span> gb <span class="nt">-Value</span> gitBranch
+Set-Alias <span class="nt">-Name</span> gbd <span class="nt">-Value</span> gitBranchDelete
+Set-Alias <span class="nt">-Name</span> glgg <span class="nt">-Value</span> gitLogGraph
+Set-Alias <span class="nt">-Name</span> glola <span class="nt">-Value</span> gitLogAllGraph
+Set-Alias <span class="nt">-Name</span> gf <span class="nt">-Value</span> gitFetch
+Set-Alias <span class="nt">-Name</span> ga <span class="nt">-Value</span> gitAdd
+Set-Alias <span class="nt">-Name</span> gaa <span class="nt">-Value</span> gitAddAll
+
+</code></pre></div></div>
+
+<h2 id="การload-ใส่-powershell">การLoad ใส่ powershell</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># กดบันทึกแล้วเปิดใหม่หรือใช้คำสั่งนี้ เป็นเหมือนการสั่ง source ใน Unix</span>
+<span class="nb">.</span> <span class="nv">$profile</span>
+
+<span class="c"># ตั้งค่าให้ ggp, ggf สามารถทำงานได้โดยไม่ต้อง set upstream</span>
+g config <span class="nt">--global</span> push.autoSetupRemote <span class="nb">true</span>
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="git" /><category term="cli" /><category term="windows," /><category term="powershell" /><summary type="html"><![CDATA[หลังจากที่มีเหตุให้ต้องใช้ Windows เป็นเครื่องสำรองอยู่เกือบเดือน หลายๆอย่างที่ใช้งานใน Ubuntu ก็ย้ายมาอยู่บน WSL 2 ได้เยอะแล้ว ช่วงนี้มีความคิดอยากทำ Flutter app ก็เลยอยากลงบนเครื่อง Windows ด้วย แต่ก็ติดที่มันใช้ผ่าน WSL ไม่สะดวก ถ้าไม่ผ่าน WSL ก็ติดเรื่องเดียว คือ ไม่รู้ว่าจะหาทางเอา Git CLI แบบตัวย่อที่ปกติใช้งานบน Ubuntu มาทำบน Windows ยังไง รู้แต่ว่ายังไงก็ไม่ยอมใช้ GUI]]></summary></entry><entry><title type="html">ค่าตั้งต้นของ Ruby จะใส่ YJIT มาให้ถ้าในเครื่องมี Rust</title><link href="https://wittawasw.com/2024/12/05/ruby-enable-yjit-if-rustc-detected.html" rel="alternate" type="text/html" title="ค่าตั้งต้นของ Ruby จะใส่ YJIT มาให้ถ้าในเครื่องมี Rust" /><published>2024-12-05T18:22:00+07:00</published><updated>2024-12-05T18:22:00+07:00</updated><id>https://wittawasw.com/2024/12/05/ruby-enable-yjit-if-rustc-detected</id><content type="html" xml:base="https://wittawasw.com/2024/12/05/ruby-enable-yjit-if-rustc-detected.html"><![CDATA[<p>เร็วๆนี้มีกระแสความสนใจในภาษา Rust ในกลุ่มคนไทยมากขึ้น
 หลังจากที่มีโอกาสได้แลกเปลี่ยนกับหลายคนก็รู้สึกว่าเราไม่ค่อยรู้ตัวกันเท่าไหร่
 ว่าทุกวันนี้ Rust มันแทรกซึมเข้าไปใน tech stack ทุกที่แล้ว อย่างเช่นใน
 Ruby ปัจจุบันก็จะ compile <code class="language-plaintext highlighter-rouge">YJIT</code> ให้ทันทีถ้าตอน install ตรวจพบว่าในเครื่องมี
@@ -363,54 +472,7 @@ git config merge.conflictstyle diff3
   <p>สังเกตได้ว่าแทนที่จะมีแค่สองสถานะให้เรางงว่าจะเลือกอันไหนดี <code class="language-plaintext highlighter-rouge">diff3</code> จะเพิ่มสถานะ
 <code class="language-plaintext highlighter-rouge">base</code> เข้ามาด้วยเพื่อให้เห็นว่าจุดตั้งต้นก่อนที่จะ conflict มันคืออะไรมาก่อน
 เพื่อช่วยเพิ่มข้อมูลตัดสินใจว่าควรจะเลือกอันไหนดี</p>
-</blockquote>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="devtool" /><category term="git" /><summary type="html"><![CDATA[ตั้งใจจะเปิดหาบทความที่สอนการดู diff ของ git merge เพราะปกติไม่เคยอธิบายเป็นคำพูดให้คนอื่นฟังเข้าใจได้เลย มีแต่ต้องทำให้ดู แล้วก็เพิ่งรู้ว่ามีแบบที่เข้าใจง่ายกว่า เรียกว่า diff3 ให้ใช้มาตั้งหลายปีแล้ว]]></summary></entry><entry><title type="html">การตั้งค่า .gitignore สำหรับทุก git directory ในเครื่อง</title><link href="https://wittawasw.com/2024/09/27/setup-global-gitignore.html" rel="alternate" type="text/html" title="การตั้งค่า .gitignore สำหรับทุก git directory ในเครื่อง" /><published>2024-09-27T12:57:00+07:00</published><updated>2024-09-27T12:57:00+07:00</updated><id>https://wittawasw.com/2024/09/27/setup-global-gitignore</id><content type="html" xml:base="https://wittawasw.com/2024/09/27/setup-global-gitignore.html"><![CDATA[<p>บันทึกไว้ว่าในเครื่องมี <code class="language-plaintext highlighter-rouge">gitignore</code> อะไรบ้าง</p>
-
-<h2 id="คำสั่งที่ใช้">คำสั่งที่ใช้</h2>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># สั่งให้ใช้ไฟล์ ~/.gitignore เป็น reference</span>
-git config <span class="nt">--global</span> core.excludesFile <span class="s1">'~/.gitignore'</span>
-</code></pre></div></div>
-
-<h2 id="ไฟล์-gitignore">ไฟล์ <code class="language-plaintext highlighter-rouge">.gitignore</code></h2>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Environment Variables</span>
-.env
-.rbenv-vars
-
-<span class="c"># Python</span>
-__pycache__
-
-<span class="c"># Node</span>
-node_modules
-npm-debug.log
-
-<span class="c"># Dart, FLutter</span>
-<span class="k">**</span>/doc/api/
-<span class="k">**</span>/ios/Flutter/.last_build_id
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-.pub-cache/
-.pub/
-/build/
-
-<span class="c"># Editor</span>
-<span class="k">*</span>.iml
-<span class="k">*</span>.ipr
-<span class="k">*</span>.iws
-.idea/
-
-<span class="c"># scratchpad เอาไว้ note สิ่งที่ต้องทำ, สิ่งที่กำลังทำ , ฯลฯ</span>
-todo
-todo.txt
-
-<span class="c"># Mac</span>
-.DS_Store
-
-<span class="c"># Windows</span>
-Thumbs.db
-
-</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="devtool" /><category term="git" /><summary type="html"><![CDATA[บันทึกไว้ว่าในเครื่องมี gitignore อะไรบ้าง]]></summary></entry><entry><title type="html">ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu</title><link href="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html" rel="alternate" type="text/html" title="ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu" /><published>2024-09-27T12:57:00+07:00</published><updated>2024-09-27T12:57:00+07:00</updated><id>https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html"><![CDATA[<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ดูเวลาปัจจุบันที่ตั้งไว้</span>
+</blockquote>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="devtool" /><category term="git" /><summary type="html"><![CDATA[ตั้งใจจะเปิดหาบทความที่สอนการดู diff ของ git merge เพราะปกติไม่เคยอธิบายเป็นคำพูดให้คนอื่นฟังเข้าใจได้เลย มีแต่ต้องทำให้ดู แล้วก็เพิ่งรู้ว่ามีแบบที่เข้าใจง่ายกว่า เรียกว่า diff3 ให้ใช้มาตั้งหลายปีแล้ว]]></summary></entry><entry><title type="html">ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu</title><link href="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html" rel="alternate" type="text/html" title="ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu" /><published>2024-09-27T12:57:00+07:00</published><updated>2024-09-27T12:57:00+07:00</updated><id>https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html"><![CDATA[<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ดูเวลาปัจจุบันที่ตั้งไว้</span>
 timedatectl
 <span class="c">#                Local time: Fri 2024-09-27 12:13:31 +07</span>
 <span class="c">#            Universal time: Fri 2024-09-27 05:13:31 UTC</span>

@@ -175,6 +175,10 @@ const urlsToCache = [
   
   '/tag/yjit/index.html',
   
+  '/tag/windows/index.html',
+  
+  '/tag/powershell/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -193,6 +197,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2024/12/09/git-alias-in-window-powershell.html',
   
   '/2024/12/05/ruby-enable-yjit-if-rustc-detected.html',
   
