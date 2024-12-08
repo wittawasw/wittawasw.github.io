@@ -3,7 +3,7 @@ layout: post
 title: ตั้งค่าตัวย่อของ Git CLI บน Windows Powershell
 tags: git cli windows, powershell
 keywords: git, cli, windows, powershell
-description: 
+description:
 date: 2024-12-09 00:52 +0700
 ---
 หลังจากที่มีเหตุให้ต้องใช้ Windows เป็นเครื่องสำรองอยู่เกือบเดือน
@@ -107,7 +107,7 @@ Set-Alias -Name gaa -Value gitAddAll
 
 ```
 
-## การLoad ใส่ powershell
+## การ Load ใส่ powershell
 
 ```sh
 # กดบันทึกแล้วเปิดใหม่หรือใช้คำสั่งนี้ เป็นเหมือนการสั่ง source ใน Unix
