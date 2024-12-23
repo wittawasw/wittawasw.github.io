@@ -179,6 +179,8 @@ const urlsToCache = [
   
   '/tag/powershell/index.html',
   
+  '/tag/font/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -197,6 +199,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2024/12/23/install-font-wsl2-for-non-latin-in-chrome.html',
   
   '/2024/12/09/git-alias-in-window-powershell.html',
   

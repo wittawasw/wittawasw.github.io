@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-12-09T01:02:59+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">ตั้งค่าตัวย่อของ Git CLI บน Windows Powershell</title><link href="https://wittawasw.com/2024/12/09/git-alias-in-window-powershell.html" rel="alternate" type="text/html" title="ตั้งค่าตัวย่อของ Git CLI บน Windows Powershell" /><published>2024-12-09T00:52:00+07:00</published><updated>2024-12-09T00:52:00+07:00</updated><id>https://wittawasw.com/2024/12/09/git-alias-in-window-powershell</id><content type="html" xml:base="https://wittawasw.com/2024/12/09/git-alias-in-window-powershell.html"><![CDATA[<p>หลังจากที่มีเหตุให้ต้องใช้ Windows เป็นเครื่องสำรองอยู่เกือบเดือน
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-12-23T11:56:56+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">Install font ใน wsl2 เพื่อให้ Chrome สามารถแสดง Non-latin ได้</title><link href="https://wittawasw.com/2024/12/23/install-font-wsl2-for-non-latin-in-chrome.html" rel="alternate" type="text/html" title="Install font ใน wsl2 เพื่อให้ Chrome สามารถแสดง Non-latin ได้" /><published>2024-12-23T11:55:00+07:00</published><updated>2024-12-23T11:55:00+07:00</updated><id>https://wittawasw.com/2024/12/23/install-font-wsl2-for-non-latin-in-chrome</id><content type="html" xml:base="https://wittawasw.com/2024/12/23/install-font-wsl2-for-non-latin-in-chrome.html"><![CDATA[<p>ไม่เจอปัญหานี้ใน MacOS แต่เจอใน WSL2 ที่เป็น Ubuntu 24.04 เลยลอง install
+package Noto ดูเพื่อทดสอบว่าจะทำให้แสดงได้หรือไม่ ซึ่งก็ทำงานได้ดี</p>
+
+<h2 id="วิธี-install">วิธี install</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> fonts-noto-core fonts-noto-cjk fonts-noto-color-emoji
+
+<span class="c"># fonts-noto-core - ฟอนต์หลัก</span>
+<span class="c"># fonts-noto-cjk - สำหรับจีน เกาหลี ญี่ปุ่น</span>
+<span class="c"># fonts-noto-color-emoji - สำหรับ emoji</span>
+</code></pre></div></div>
+
+<h2 id="วิธีทดสอบ">วิธีทดสอบ</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># กรณีใช้ google-chrome command</span>
+google-chrome <span class="nt">--headless</span> <span class="nt">--disable-gpu</span> <span class="nt">--screenshot</span> <span class="nt">--virtual-time-budget</span><span class="o">=</span>10000 <span class="nt">--no-sandbox</span> https://wittawasw.com
+
+<span class="c"># ใช้ ronin-web</span>
+ronin-web screenshot <span class="nt">--browser</span> google-chrome https://www.wittawasw.com
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="wsl2" /><category term="chrome" /><category term="font" /><summary type="html"><![CDATA[ไม่เจอปัญหานี้ใน MacOS แต่เจอใน WSL2 ที่เป็น Ubuntu 24.04 เลยลอง install package Noto ดูเพื่อทดสอบว่าจะทำให้แสดงได้หรือไม่ ซึ่งก็ทำงานได้ดี]]></summary></entry><entry><title type="html">ตั้งค่าตัวย่อของ Git CLI บน Windows Powershell</title><link href="https://wittawasw.com/2024/12/09/git-alias-in-window-powershell.html" rel="alternate" type="text/html" title="ตั้งค่าตัวย่อของ Git CLI บน Windows Powershell" /><published>2024-12-09T00:52:00+07:00</published><updated>2024-12-09T00:52:00+07:00</updated><id>https://wittawasw.com/2024/12/09/git-alias-in-window-powershell</id><content type="html" xml:base="https://wittawasw.com/2024/12/09/git-alias-in-window-powershell.html"><![CDATA[<p>หลังจากที่มีเหตุให้ต้องใช้ Windows เป็นเครื่องสำรองอยู่เกือบเดือน
 หลายๆอย่างที่ใช้งานใน Ubuntu ก็ย้ายมาอยู่บน WSL 2 ได้เยอะแล้ว
 ช่วงนี้มีความคิดอยากทำ Flutter app ก็เลยอยากลงบนเครื่อง Windows ด้วย
 แต่ก็ติดที่มันใช้ผ่าน WSL ไม่สะดวก ถ้าไม่ผ่าน WSL ก็ติดเรื่องเดียว คือ
@@ -472,27 +491,4 @@ git config merge.conflictstyle diff3
   <p>สังเกตได้ว่าแทนที่จะมีแค่สองสถานะให้เรางงว่าจะเลือกอันไหนดี <code class="language-plaintext highlighter-rouge">diff3</code> จะเพิ่มสถานะ
 <code class="language-plaintext highlighter-rouge">base</code> เข้ามาด้วยเพื่อให้เห็นว่าจุดตั้งต้นก่อนที่จะ conflict มันคืออะไรมาก่อน
 เพื่อช่วยเพิ่มข้อมูลตัดสินใจว่าควรจะเลือกอันไหนดี</p>
-</blockquote>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="devtool" /><category term="git" /><summary type="html"><![CDATA[ตั้งใจจะเปิดหาบทความที่สอนการดู diff ของ git merge เพราะปกติไม่เคยอธิบายเป็นคำพูดให้คนอื่นฟังเข้าใจได้เลย มีแต่ต้องทำให้ดู แล้วก็เพิ่งรู้ว่ามีแบบที่เข้าใจง่ายกว่า เรียกว่า diff3 ให้ใช้มาตั้งหลายปีแล้ว]]></summary></entry><entry><title type="html">ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu</title><link href="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html" rel="alternate" type="text/html" title="ใช้ timedatectl ตั้งค่า datetime ในเครื่อง Ubuntu" /><published>2024-09-27T12:57:00+07:00</published><updated>2024-09-27T12:57:00+07:00</updated><id>https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu</id><content type="html" xml:base="https://wittawasw.com/2024/09/27/set-datetime-in-ubuntu.html"><![CDATA[<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ดูเวลาปัจจุบันที่ตั้งไว้</span>
-timedatectl
-<span class="c">#                Local time: Fri 2024-09-27 12:13:31 +07</span>
-<span class="c">#            Universal time: Fri 2024-09-27 05:13:31 UTC</span>
-<span class="c">#                  RTC time: Fri 2024-09-27 05:13:31</span>
-<span class="c">#                 Time zone: Asia/Bangkok (+07, +0700)</span>
-<span class="c"># System clock synchronized: yes</span>
-<span class="c">#               NTP service: active</span>
-<span class="c">#           RTC in local TZ: no</span>
-
-<span class="c"># ตั้งให้ sync อัตโนมัติผ่าน internet</span>
-timedatectl set-ntp <span class="nb">yes
-</span>timedatectl set-ntp no
-
-<span class="c"># date - YYYY-MM-DD</span>
-timedatectl set-time 2024-03-31
-<span class="c"># time - HH:MM:SS</span>
-timedatectl set-time 12:11:12
-
-<span class="c"># การตั้ง timezone</span>
-timedatectl list-timezones
-timedatectl set-timezone <span class="s2">"&lt;ชื่อ timezone ที่ได้มา&gt;"</span>
-timedatectl set-timezone UTC
-</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="unix" /><category term="cli" /><category term="ubuntu" /><category term="timedatectl" /><summary type="html"><![CDATA[```sh ดูเวลาปัจจุบันที่ตั้งไว้ timedatectl Local time: Fri 2024-09-27 12:13:31 +07 Universal time: Fri 2024-09-27 05:13:31 UTC RTC time: Fri 2024-09-27 05:13:31 Time zone: Asia/Bangkok (+07, +0700) System clock synchronized: yes NTP service: active RTC in local TZ: no]]></summary></entry></feed>
+</blockquote>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="devtool" /><category term="git" /><summary type="html"><![CDATA[ตั้งใจจะเปิดหาบทความที่สอนการดู diff ของ git merge เพราะปกติไม่เคยอธิบายเป็นคำพูดให้คนอื่นฟังเข้าใจได้เลย มีแต่ต้องทำให้ดู แล้วก็เพิ่งรู้ว่ามีแบบที่เข้าใจง่ายกว่า เรียกว่า diff3 ให้ใช้มาตั้งหลายปีแล้ว]]></summary></entry></feed>
