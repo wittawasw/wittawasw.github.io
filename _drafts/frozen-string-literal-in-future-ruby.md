@@ -14,3 +14,5 @@ asdasdasd
 test.rb:2: warning: literal string will be frozen in the future
 test.rb:1: info: the string was created here
 asdasdasd
+
+ref: https://bugs.ruby-lang.org/issues/20205
