@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2024-12-23T11:56:56+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">Install font ใน wsl2 เพื่อให้ Chrome สามารถแสดง Non-latin ได้</title><link href="https://wittawasw.com/2024/12/23/install-font-wsl2-for-non-latin-in-chrome.html" rel="alternate" type="text/html" title="Install font ใน wsl2 เพื่อให้ Chrome สามารถแสดง Non-latin ได้" /><published>2024-12-23T11:55:00+07:00</published><updated>2024-12-23T11:55:00+07:00</updated><id>https://wittawasw.com/2024/12/23/install-font-wsl2-for-non-latin-in-chrome</id><content type="html" xml:base="https://wittawasw.com/2024/12/23/install-font-wsl2-for-non-latin-in-chrome.html"><![CDATA[<p>ไม่เจอปัญหานี้ใน MacOS แต่เจอใน WSL2 ที่เป็น Ubuntu 24.04 เลยลอง install
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2025-01-28T17:30:55+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name><email>your-email@domain.com</email></author><entry><title type="html">DeepSeek-R1 ประตูบานใหม่ของวงการ AI</title><link href="https://wittawasw.com/2025/01/28/deepseek-r1-announcement.html" rel="alternate" type="text/html" title="DeepSeek-R1 ประตูบานใหม่ของวงการ AI" /><published>2025-01-28T00:00:00+07:00</published><updated>2025-01-28T00:00:00+07:00</updated><id>https://wittawasw.com/2025/01/28/deepseek-r1-announcement</id><content type="html" xml:base="https://wittawasw.com/2025/01/28/deepseek-r1-announcement.html"><![CDATA[<p>DeepSeek-R1 ทำให้อินเตอร์เนตแตกตื่น ตลาดหุ้นด้าน AI ร่วง ไม่ใช่แค่เรื่องต้นทุนถูกกว่า
+แต่มันคือการทลายการปิดกั้นวิธีการสร้าง AI แบบเดียวกับ OpenAI และสารพัดเจ้าตลาด</p>
+
+<p>ทุกเจ้าเท่าที่มีอยู่ตอนนี้ที่ทั้งลงทุนเองและรับเงินลงทุนไปมหาศาล ลงทุนไปเยอะกับการหาวิธี train model
+ที่ดีพอมาสู้กันในแต่ล่ะรอบที่เปิดตัวของใหม่ จนนักวิเคราะห์หลายคนก็ลงเสียงเป็นเอกฉันท์ว่า สนามนี้มีไว้ให้ยักษ์ชนยักษ์เท่านั้น ต่างฝ่ายต่างเก็บความลับวิธีการ train ของตัวเองเป็นชั้นโคตรความลับ แล้วก็เปิดเผยเฉพาะโมเดลขั้นต้นออกมาสู่สาธารณะเท่านั้น</p>
+
+<p>การออกเอกสารเปิดเผยรายละเอียดการวิธีการสร้างโมเดลของ DeepSeek-R1 เรียกได้ว่าเหยียบหน้านักลงทุน
+ที่เชื่อว่าลงทุนไปเถอะ ยังไงก็ได้ทุนคืนเพราะยากมากที่จะมีคนลงทุนในระดับเดียวตั้งแต่ต้น
+ให้ขึ้นมาสู้ในระดับเดียวกันได้ เพราะการเป็นว่านอกจากจะสามารถทำซ้ำให้ได้ผลลัพธ์ใกล้เคียงกันได้แล้ว
+ยังใช้ต้นทุนน้อยกว่าในการ train หลายเท่าตัวอีก ตลาดหุ้นก็เลยตอบรับด้วยการเทขายเพราะกลัวว่า
+มูลค่าหุ้นในมือจะลดลงอย่างมีนัยสำคัญ</p>
+
+<p>โดยส่วนตัวแล้วเชื่อว่า DeepSeek ยังสู้ OpenAI หรือ Google ไม่ได้ แต่อย่างน้อยก็ได้เปิดประตูความหวัง
+จากที่ทุกคนเชื่อว่านี่คือสนามของยักษ์ชนยักษ์ มีผู้เล่นได้แค่ไม่กี่บริษัทระดับโลกเท่านั้น
+ที่รายใหม่จะไม่มีโอกาสตามทันได้เลย กลายเป็นความไม่แน่นอนอีกครั้งว่า
+อาจจะมีรายใหม่ที่เกิดขึ้นมาแล้วเกิดการล้มยักษ์ทางเทคโนโลยีให้ได้เห็นอีก</p>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="AI" /><category term="openAI" /><category term="deepseek" /><summary type="html"><![CDATA[DeepSeek-R1 ทำให้อินเตอร์เนตแตกตื่น ตลาดหุ้นด้าน AI ร่วง ไม่ใช่แค่เรื่องต้นทุนถูกกว่า แต่มันคือการทลายการปิดกั้นวิธีการสร้าง AI แบบเดียวกับ OpenAI และสารพัดเจ้าตลาด]]></summary></entry><entry><title type="html">Install font ใน wsl2 เพื่อให้ Chrome สามารถแสดง Non-latin ได้</title><link href="https://wittawasw.com/2024/12/23/install-font-wsl2-for-non-latin-in-chrome.html" rel="alternate" type="text/html" title="Install font ใน wsl2 เพื่อให้ Chrome สามารถแสดง Non-latin ได้" /><published>2024-12-23T11:55:00+07:00</published><updated>2024-12-23T11:55:00+07:00</updated><id>https://wittawasw.com/2024/12/23/install-font-wsl2-for-non-latin-in-chrome</id><content type="html" xml:base="https://wittawasw.com/2024/12/23/install-font-wsl2-for-non-latin-in-chrome.html"><![CDATA[<p>ไม่เจอปัญหานี้ใน MacOS แต่เจอใน WSL2 ที่เป็น Ubuntu 24.04 เลยลอง install
 package Noto ดูเพื่อทดสอบว่าจะทำให้แสดงได้หรือไม่ ซึ่งก็ทำงานได้ดี</p>
 
 <h2 id="วิธี-install">วิธี install</h2>
@@ -421,74 +436,4 @@ bundle add torch-rb
 <span class="c"># เช่น bundle config build.torch-rb --with-torch-dir=$(pwd)/libtorch</span>
 <span class="c"># หรือตั้งค่าเป็น global ด้วย</span>
 <span class="c"># bundle config --global build.torch-rb --with-torch-dir=$(pwd)/libtorch</span>
-</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="ruby" /><category term="ml" /><summary type="html"><![CDATA[แก้ไขเพิ่มเติมจาก readme ของ torch-rb]]></summary></entry><entry><title type="html">เปลี่ยน git merge ไปใช้ diff3</title><link href="https://wittawasw.com/2024/10/06/git-diff-3.html" rel="alternate" type="text/html" title="เปลี่ยน git merge ไปใช้ diff3" /><published>2024-10-06T03:48:00+07:00</published><updated>2024-10-06T03:48:00+07:00</updated><id>https://wittawasw.com/2024/10/06/git-diff-3</id><content type="html" xml:base="https://wittawasw.com/2024/10/06/git-diff-3.html"><![CDATA[<p>ตั้งใจจะเปิดหาบทความที่สอนการดู <code class="language-plaintext highlighter-rouge">diff</code> ของ <code class="language-plaintext highlighter-rouge">git merge</code> เพราะปกติไม่เคยอธิบาย
-เป็นคำพูดให้คนอื่นฟังเข้าใจได้เลย มีแต่ต้องทำให้ดู แล้วก็เพิ่งรู้ว่ามีแบบที่เข้าใจได้ง่ายกว่า เรียกว่า <code class="language-plaintext highlighter-rouge">diff3</code> ให้ใช้มาตั้งหลายปีแล้ว</p>
-
-<h2 id="คำสั่งในการใช้เปลี่ยนรูปแบบ">คำสั่งในการใช้เปลี่ยนรูปแบบ</h2>
-
-<p>ลองทำตามได้เลย ยังไม่ต้องรู้เรื่องก็ได้ เพราะมั่นใจว่าไม่เสียใจแน่นอน</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> merge.conflictstyle diff3
-
-<span class="c"># หรือถ้าไม่แน่ใจก็ลองแค่ directory เดียวก่อน</span>
-git config merge.conflictstyle diff3
-</code></pre></div></div>
-
-<p>ที่มา: <a href="https://stackoverflow.com/questions/27417656/should-diff3-be-default-conflictstyle-on-git">stackoverflow.com/questions/27417656</a></p>
-
-<h2 id="ตัวอย่างของ-diff-จากการแก้-code">ตัวอย่างของ <code class="language-plaintext highlighter-rouge">diff</code> จากการแก้ code</h2>
-
-<h3 id="ของเดิม">ของเดิม</h3>
-
-<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">CalculateTotal</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="อันที่เราแก้-head-current-change">อันที่เราแก้ (HEAD, Current Change)</h3>
-
-<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">CalculateTotal</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="m">10</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="อันที่คนอื่นแก้มาแล้วเรากำลังจะ-merge-เข้า-incoming-change">อันที่คนอื่นแก้มาแล้วเรากำลังจะ merge เข้า (Incoming Change)</h3>
-
-<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">CalculateTotal</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">-</span> <span class="m">5</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="ได้ออกมาแบบนี้ตอน-conflict">ได้ออกมาแบบนี้ตอน conflict</h3>
-
-<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">CalculateTotal</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-<span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="m">10</span>
-<span class="o">=======</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">-</span> <span class="m">5</span>
-<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="n">branch</span><span class="o">-</span><span class="n">name</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<blockquote>
-  <p>หลายๆครั้งเวลาเจอแบบนี้ในลักษณะที่ conflict กันหลายบรรทัด จะค่อนข้างสับสนพอสมควรว่าควรจะเลือกอันไหนดี</p>
-</blockquote>
-
-<h3 id="ถ้าใช้-diff3-จะได้-conflict-แบบนี้แทน">ถ้าใช้ <code class="language-plaintext highlighter-rouge">diff3</code> จะได้ conflict แบบนี้แทน:</h3>
-
-<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">CalculateTotal</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-<span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="m">10</span>
-<span class="o">|||||||</span> <span class="n">base</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="o">=======</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">-</span> <span class="m">5</span>
-<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="n">branch</span><span class="o">-</span><span class="n">name</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<blockquote>
-  <p>สังเกตได้ว่าแทนที่จะมีแค่สองสถานะให้เรางงว่าจะเลือกอันไหนดี <code class="language-plaintext highlighter-rouge">diff3</code> จะเพิ่มสถานะ
-<code class="language-plaintext highlighter-rouge">base</code> เข้ามาด้วยเพื่อให้เห็นว่าจุดตั้งต้นก่อนที่จะ conflict มันคืออะไรมาก่อน
-เพื่อช่วยเพิ่มข้อมูลตัดสินใจว่าควรจะเลือกอันไหนดี</p>
-</blockquote>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="devtool" /><category term="git" /><summary type="html"><![CDATA[ตั้งใจจะเปิดหาบทความที่สอนการดู diff ของ git merge เพราะปกติไม่เคยอธิบายเป็นคำพูดให้คนอื่นฟังเข้าใจได้เลย มีแต่ต้องทำให้ดู แล้วก็เพิ่งรู้ว่ามีแบบที่เข้าใจง่ายกว่า เรียกว่า diff3 ให้ใช้มาตั้งหลายปีแล้ว]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>wittawasw</name><email>your-email@domain.com</email></author><category term="ruby" /><category term="ml" /><summary type="html"><![CDATA[แก้ไขเพิ่มเติมจาก readme ของ torch-rb]]></summary></entry></feed>

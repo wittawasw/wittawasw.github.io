@@ -181,6 +181,12 @@ const urlsToCache = [
   
   '/tag/font/index.html',
   
+  '/tag/ai/index.html',
+  
+  '/tag/openai/index.html',
+  
+  '/tag/deepseek/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -199,6 +205,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2025/01/28/deepseek-r1-announcement.html',
   
   '/2024/12/23/install-font-wsl2-for-non-latin-in-chrome.html',
   
