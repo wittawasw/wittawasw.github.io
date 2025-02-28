@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Uyghur Uyghur Uyghur
+title: อุยกูร์ อุยกูร์ อุยกูร์
 tags: social
 ---
 
