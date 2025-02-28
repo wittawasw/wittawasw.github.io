@@ -187,6 +187,8 @@ const urlsToCache = [
   
   '/tag/deepseek/index.html',
   
+  '/tag/social/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -205,6 +207,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2025/02/28/uyghur-uyghur-uyghur.html',
   
   '/2025/01/28/deepseek-r1-announcement.html',
   
