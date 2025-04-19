@@ -11,8 +11,6 @@ const urlsToCache = [
   
   '/assets/css/style.css',
   
-  '/assets/minima-social-icons.svg',
-  
   '/index.html',
   
   '/page2/index.html',
@@ -24,6 +22,8 @@ const urlsToCache = [
   '/page5/index.html',
   
   '/page6/index.html',
+  
+  '/page7/index.html',
   
   '/tag/go/index.html',
   
@@ -189,6 +189,8 @@ const urlsToCache = [
   
   '/tag/social/index.html',
   
+  '/tag/snomed/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -201,12 +203,18 @@ const urlsToCache = [
   
   '/collection/posts/page6/index.html',
   
+  '/collection/posts/page7/index.html',
+  
   '/feed.xml',
   
   '/sitemap.xml',
   
   '/robots.txt',
   
+  
+  '/2025/04/19/snomed-embedding-tokens.html',
+  
+  '/2025/04/12/ffi-rubygems-fix-install.html',
   
   '/2025/02/28/uyghur-uyghur-uyghur.html',
   
