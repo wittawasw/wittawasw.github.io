@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2025-04-19T08:23:05+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name></author><entry><title type="html">ทดลองทำ embedding token ของ SNOMED</title><link href="https://wittawasw.com/2025/04/19/snomed-embedding-tokens.html" rel="alternate" type="text/html" title="ทดลองทำ embedding token ของ SNOMED" /><published>2025-04-19T08:22:00+07:00</published><updated>2025-04-19T08:22:00+07:00</updated><id>https://wittawasw.com/2025/04/19/snomed-embedding-tokens</id><content type="html" xml:base="https://wittawasw.com/2025/04/19/snomed-embedding-tokens.html"><![CDATA[<p>ใช้ GTE Large EN v1.5 ได้จำนวน token ทั้งหมด 784,297,436 token ใช้เวลา run ทั้งหมด 18 ชั่วโมง</p>]]></content><author><name>wittawasw</name></author><category term="snomed" /><summary type="html"><![CDATA[ใช้ GTE Large EN v1.5 ได้จำนวน token ทั้งหมด 784,297,436 token ใช้เวลา run ทั้งหมด 18 ชั่วโมง]]></summary></entry><entry><title type="html">แก้ปัญหา install ffi gem ไม่ได้ใน MacOS</title><link href="https://wittawasw.com/2025/04/12/ffi-rubygems-fix-install.html" rel="alternate" type="text/html" title="แก้ปัญหา install ffi gem ไม่ได้ใน MacOS" /><published>2025-04-12T01:53:00+07:00</published><updated>2025-04-12T01:53:00+07:00</updated><id>https://wittawasw.com/2025/04/12/ffi-rubygems-fix-install</id><content type="html" xml:base="https://wittawasw.com/2025/04/12/ffi-rubygems-fix-install.html"><![CDATA[<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>libffi
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2025-05-19T13:48:37+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name></author><entry><title type="html">AI ไม่ได้ถูกสร้างขึ้นมาแทนที่ Junior Software Developer</title><link href="https://wittawasw.com/2025/05/19/ai-will-not-replace-junior.html" rel="alternate" type="text/html" title="AI ไม่ได้ถูกสร้างขึ้นมาแทนที่ Junior Software Developer" /><published>2025-05-19T13:20:00+07:00</published><updated>2025-05-19T13:20:00+07:00</updated><id>https://wittawasw.com/2025/05/19/ai-will-not-replace-junior</id><content type="html" xml:base="https://wittawasw.com/2025/05/19/ai-will-not-replace-junior.html"><![CDATA[<p>ช่วงหลังมานี้เราได้ยินข่าวกันบ่อยมากว่า AI จะมาแย่งงาน โดยเฉพาะงานที่อยู่ล่างสุดของสายงาน
+Junior Developer ที่มักจะตกเป็นเป้าหมายแรกของความกลัวเหล่านี้
+ก็เข้าใจได้ - AI เขียนโค้ดได้แล้ว แถมไม่เหนื่อย ไม่ต้องขอขึ้นเงินเดือน แล้วจะจ้างคนไปทำไม?</p>
+
+<p>แต่ถ้าหยุดคิดดีๆ จะรู้ว่าตำแหน่ง Junior มีอยู่เพื่อ “สร้างคนให้เติบโต” มาตั้งแต่ต้นอยู่แล้ว</p>
+
+<p>มันไม่เคยเป็นตำแหน่งที่มีไว้เพื่อแค่เขียนโค้ดให้เสร็จๆ ไป
+แต่เป็นที่ที่ให้โอกาสคนใหม่เข้ามาเรียนรู้ ทำผิด แล้วเติบโตเป็น Senior
+เป็นท่อส่งคนที่ทำให้บริษัทมีคนพร้อมขึ้นมาแบกของหนักในวันข้างหน้า</p>
+
+<p>เพราะฉะนั้นตราบใดที่เรายังต้องการ Senior เราก็จะยังต้องมี Junior อยู่ดี</p>
+
+<p>แต่สิ่งที่จะเปลี่ยนแน่นอนคือ “จำนวน”</p>
+
+<p>สัดส่วนจำนวนคนต่อจำนวนงานในแต่ละองค์กรจะน้อยลงทั้งหมด ไม่ว่าจะ Junior หรือ Senior
+เพราะ AI จะช่วยจัดการงานพื้นฐานได้เกือบหมด ไม่ใช่แค่เขียนโค้ด
+แต่รวมถึง generate test, deploy, จัด config หรือแม้แต่สื่อสารบางอย่างแทนคนได้เลย
+จากที่เคยใช้ทีม 5 คน อาจเหลือแค่ 1-2 คน โดยถึงแม้จะมีเครื่องมือที่ดีขึ้น
+ก็ไม่ได้หมายความว่าทุกคนจะสามารถเข้ามาแย่งงานนี้ได้ เพราะเมื่อความคาดหวังจะสูงขึ้น
+สุดท้ายก็จะเหลือแต่คนที่ตอบสนองต่อความต้องการของตลาดได้ที่อยู่รอด</p>
+
+<p>เชื่อว่าความคาดหวังใหม่ของตำแหน่ง Junior/Mid จะต้องมีความสามารถครอบคลุมแทบทุกมุมของระบบ
+ตั้งแต่ infra, backend, frontend, ไปจนถึง business logic และการ deploy
+พูดง่ายๆ คือสิ่งที่เคยเรียกว่า “ทักษะระดับ Senior” กำลังกลายเป็นสิ่งที่ Junior/Mid รุ่นใหม่ต้องมีเป็นพื้นฐาน</p>
+
+<h2 id="แล้ว-senior-จะไปอยู่ตรงไหน">แล้ว Senior จะไปอยู่ตรงไหน?</h2>
+
+<p>ผมก็ยังตอบไม่ได้
+แต่คาดว่า Senior จะเหลืออยู่ในบริษัทใหญ่หรือองค์กรที่ทำ infrastructure/software สำหรับให้คนอื่นใช้งาน
+กลายเป็นคนที่ออกแบบระบบเชิงลึก ทำ tools ให้บริษัทอื่นนำไปใช้หรือขับเคลื่อนมาตรฐานของอุตสาหกรรม</p>
+
+<p>ในองค์กรเล็กหรือทีม startup อาจไม่ต้องมี Senior แบบเดิมอีกต่อไปเลยด้วยซ้ำ
+หรือเราอาจจะเลิกใช้คำว่า “Junior/Mid/Senior” แบบเดิม
+เมื่อมันไม่สอดคล้องกับหน้าที่และความคาดหวังจริงๆ อีกต่อไป</p>
+
+<p>สุดท้ายนี้ AI ไม่ได้มาแย่งเก้าอี้ของเรา
+แต่มันมาเปลี่ยนเก้าอี้ที่เคยนั่งกันมาตลอดให้กลายเป็นเก้าอี้ที่ “ใหญ่ขึ้น หนักขึ้น และมีความคาดหวังสูงขึ้น”</p>
+
+<p>และคนที่ยังอยากนั่งอยู่บนนั้น ต้องเติบโตให้ทัน</p>]]></content><author><name>wittawasw</name></author><category term="AI" /><category term="employment" /><summary type="html"><![CDATA[ช่วงหลังมานี้เราได้ยินข่าวกันบ่อยมากว่า AI จะมาแย่งงาน โดยเฉพาะงานที่อยู่ล่างสุดของสายงาน Junior Developer ที่มักจะตกเป็นเป้าหมายแรกของความกลัวเหล่านี้ ก็เข้าใจได้ - AI เขียนโค้ดได้แล้ว แถมไม่เหนื่อย ไม่ต้องขอขึ้นเงินเดือน แล้วจะจ้างคนไปทำไม?]]></summary></entry><entry><title type="html">ทดลองทำ embedding token ของ SNOMED</title><link href="https://wittawasw.com/2025/04/19/snomed-embedding-tokens.html" rel="alternate" type="text/html" title="ทดลองทำ embedding token ของ SNOMED" /><published>2025-04-19T08:22:00+07:00</published><updated>2025-04-19T08:22:00+07:00</updated><id>https://wittawasw.com/2025/04/19/snomed-embedding-tokens</id><content type="html" xml:base="https://wittawasw.com/2025/04/19/snomed-embedding-tokens.html"><![CDATA[<p>ใช้ GTE Large EN v1.5 ได้จำนวน token ทั้งหมด 784,297,436 token ใช้เวลา run ทั้งหมด 18 ชั่วโมง</p>]]></content><author><name>wittawasw</name></author><category term="snomed" /><summary type="html"><![CDATA[ใช้ GTE Large EN v1.5 ได้จำนวน token ทั้งหมด 784,297,436 token ใช้เวลา run ทั้งหมด 18 ชั่วโมง]]></summary></entry><entry><title type="html">แก้ปัญหา install ffi gem ไม่ได้ใน MacOS</title><link href="https://wittawasw.com/2025/04/12/ffi-rubygems-fix-install.html" rel="alternate" type="text/html" title="แก้ปัญหา install ffi gem ไม่ได้ใน MacOS" /><published>2025-04-12T01:53:00+07:00</published><updated>2025-04-12T01:53:00+07:00</updated><id>https://wittawasw.com/2025/04/12/ffi-rubygems-fix-install</id><content type="html" xml:base="https://wittawasw.com/2025/04/12/ffi-rubygems-fix-install.html"><![CDATA[<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>libffi
 
 <span class="nb">export </span><span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">"-L</span><span class="si">$(</span>brew <span class="nt">--prefix</span> libffi<span class="si">)</span><span class="s2">/lib"</span>
 <span class="nb">export </span><span class="nv">CPPFLAGS</span><span class="o">=</span><span class="s2">"-I</span><span class="si">$(</span>brew <span class="nt">--prefix</span> libffi<span class="si">)</span><span class="s2">/include"</span>
@@ -465,74 +503,4 @@ UUID อื่นได้</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># คู่ตรงข้ามหรือค่าสูงสุด ก็คือ F ที่เป็นค่าสูงสุดของเลขฐาน 16</span>
 FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF
-</code></pre></div></div>]]></content><author><name>wittawasw</name></author><category term="uuid" /><category term="rfc" /><summary type="html"><![CDATA[ค่าที่ใช้เป็นรหัสอ้างอิงแทน resource ในระบบ โดยหลักในการออกแบบ UUID คือ การสร้างรหัสจะต้องไม่มีตัวกลางในการสร้าง (centralized) เพื่อลดต้นทุนการบริหารจัดการ โดยที่ยังคงไว้ด้วยความสามารถในการสร้างรหัสที่ไม่ซ้ำกันและเก็บไว้ใช้อ้างอิงต่อได้ ซึ่งในเวลาต่อมาก็ได้รับความนิยมนำไปใช้เป็น คียหลัก(PK)ของระบบฐานข้อมูล ตามความต้องการของฐานข้อมูลในปัจจุบันที่เน้นการกระจายศูนย์มากขึ้น]]></summary></entry><entry><title type="html">Choosing UUIDs for Use</title><link href="https://wittawasw.com/2024/11/22/uuid-diff-and-when-to-use-en.html" rel="alternate" type="text/html" title="Choosing UUIDs for Use" /><published>2024-11-22T04:00:00+07:00</published><updated>2024-11-22T04:00:00+07:00</updated><id>https://wittawasw.com/2024/11/22/uuid-diff-and-when-to-use-en</id><content type="html" xml:base="https://wittawasw.com/2024/11/22/uuid-diff-and-when-to-use-en.html"><![CDATA[<h2 id="what-is-a-uuid">What is a UUID?</h2>
-
-<p>A UUID serves as a reference code for resources in a system. Its design principle
-emphasizes decentralization in code generation to reduce management overhead while
-ensuring unique, reusable identifiers.
-Over time, UUIDs have become a popular choice as primary keys (PK) in databases,
-supporting the shift towards distributed systems.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Example:</span>
-e5c01d00-0cc6-41a9-86ef-91dab8b92219
-
-<span class="c"># Format: 8-4-4-4-12 characters</span>
-<span class="c"># Total: 32 characters = 128 bits</span>
-</code></pre></div></div>
-
-<h2 id="the-different-versions">The Different Versions</h2>
-
-<p>The UUID specification has 7 well-defined versions, with version 4 and 7 as
-the most commonly used in recent software development.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Example: UUID 4</span>
-e07d07cb-afe4-4402-be35-dc431fc02764
-
-<span class="c"># Example: UUID 7</span>
-0193503d-d8d0-7ae0-beca-c005478f5650
-
-<span class="c"># The 13th digit indicates the version.</span>
-</code></pre></div></div>
-
-<h2 id="choosing-between-v4-and-v7">Choosing Between V4 and V7</h2>
-
-<p>UUID 4 was not originally designed with databases in mind,
-which resulted in difficulties with sorting and indexing. Because
-UUID 4 doesn’t have a natural ordering, making them unsuitable for use with
-tree-based data structures like B-trees or binary search trees,
-which are used in most opensource databases. Since all UUID 4 are randomly
-generated, their insertion into such trees can result in inefficient storage
-and slower query performance.</p>
-
-<p>To address these issues, UUID 6 was introduced, and later UUID 7,
-which relies on Unix Epoch Time for sequential ordering.
-This makes UUID 7 ideal for databases.</p>
-
-<blockquote>
-  <p>Use UUID 7 as the default. If you’re starting a new system.</p>
-</blockquote>
-
-<h2 id="v8">V8</h2>
-
-<p>UUID 8 is an open-ended version designed for customization and flexibility
-while remaining compatible with other UUIDs.</p>
-
-<p>For example, the  <a href="https://pkg.go.dev/github.com/samborkent/uuidv8#section-readme">Go library</a>
-introduces UUID 8 with more time granularity compared to UUID 7. While UUID 7
-use 1 millisecond precision, UUID 8 from this lib increases it to 20 microseconds,
-enabling more IDs to be generated in the same timeframe.</p>
-
-<h2 id="null-and-the-opposite">Null and The Opposite</h2>
-
-<p>If you need to represent an empty UUID in your system, use all zeros.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Commonly used by databases for empty UUIDs:</span>
-00000000-0000-0000-0000-000000000000
-</code></pre></div></div>
-
-<p>Conversely, you can use the maximum value as a placeholder for fields
-requiring a UUID.</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Opposite or maximum value:</span>
-FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF
-</code></pre></div></div>]]></content><author><name>wittawasw</name></author><category term="uuid" /><category term="rfc" /><summary type="html"><![CDATA[A UUID serves as a reference code for resources in a system. Its design principle emphasizes decentralization in code generation to reduce management overhead while ensuring unique, reusable identifiers. Over time, UUIDs have become a popular choice as primary keys (PK) in databases, supporting the shift towards distributed systems.]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>wittawasw</name></author><category term="uuid" /><category term="rfc" /><summary type="html"><![CDATA[ค่าที่ใช้เป็นรหัสอ้างอิงแทน resource ในระบบ โดยหลักในการออกแบบ UUID คือ การสร้างรหัสจะต้องไม่มีตัวกลางในการสร้าง (centralized) เพื่อลดต้นทุนการบริหารจัดการ โดยที่ยังคงไว้ด้วยความสามารถในการสร้างรหัสที่ไม่ซ้ำกันและเก็บไว้ใช้อ้างอิงต่อได้ ซึ่งในเวลาต่อมาก็ได้รับความนิยมนำไปใช้เป็น คียหลัก(PK)ของระบบฐานข้อมูล ตามความต้องการของฐานข้อมูลในปัจจุบันที่เน้นการกระจายศูนย์มากขึ้น]]></summary></entry></feed>

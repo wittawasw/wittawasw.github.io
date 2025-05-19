@@ -191,6 +191,8 @@ const urlsToCache = [
   
   '/tag/snomed/index.html',
   
+  '/tag/employment/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -211,6 +213,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2025/05/19/ai-will-not-replace-junior.html',
   
   '/2025/04/19/snomed-embedding-tokens.html',
   
