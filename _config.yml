@@ -14,6 +14,7 @@ plugins:
   - jekyll-feed
   - jekyll-paginate-v2
   - jekyll-compose
+  - jektex
 
 exclude:
   - aboutme.md

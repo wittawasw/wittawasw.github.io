@@ -14,6 +14,8 @@ group :jekyll_plugins do
   gem "jekyll-sitemap", "~> 1.4"
   gem "jekyll-seo-tag", "~> 2.7"
   gem "minima", github: "jekyll/minima"
+
+  gem "jektex"
 end
 
 # Code Hightlighting
