@@ -193,6 +193,12 @@ const urlsToCache = [
   
   '/tag/employment/index.html',
   
+  '/tag/thailand/index.html',
+  
+  '/tag/politics/index.html',
+  
+  '/tag/112/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -213,6 +219,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2025/07/10/why-not-pardon-112-is-political.html',
   
   '/2025/05/19/ai-will-not-replace-junior.html',
   
