@@ -199,6 +199,20 @@ const urlsToCache = [
   
   '/tag/112/index.html',
   
+  '/tag/china/index.html',
+  
+  '/tag/kok/index.html',
+  
+  '/tag/river/index.html',
+  
+  '/tag/myanmar/index.html',
+  
+  '/tag/uswa/index.html',
+  
+  '/tag/rare/index.html',
+  
+  '/tag/earth/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -219,6 +233,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2025/07/15/dont-look-up-kok-river.html',
   
   '/2025/07/10/why-not-pardon-112-is-political.html',
   
