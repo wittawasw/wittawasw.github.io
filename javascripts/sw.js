@@ -213,6 +213,8 @@ const urlsToCache = [
   
   '/tag/earth/index.html',
   
+  '/tag/browser/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -233,6 +235,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2025/07/16/keep-browser-tab-active.html',
   
   '/2025/07/15/dont-look-up-kok-river.html',
   
