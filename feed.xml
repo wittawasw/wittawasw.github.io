@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2026-01-27T12:03:40+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name></author><entry><title type="html">ระบบประกันสังคมล่มยาว สะท้อนถึงปัญหาที่มากกว่าด้านเทคนิค</title><link href="https://wittawasw.com/2026/01/27/sso-system-is-down.html" rel="alternate" type="text/html" title="ระบบประกันสังคมล่มยาว สะท้อนถึงปัญหาที่มากกว่าด้านเทคนิค" /><published>2026-01-27T11:55:00+07:00</published><updated>2026-01-27T11:55:00+07:00</updated><id>https://wittawasw.com/2026/01/27/sso-system-is-down</id><content type="html" xml:base="https://wittawasw.com/2026/01/27/sso-system-is-down.html"><![CDATA[<p>ระบบไอทีล่มได้ ไม่มีใครเถียง
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2026-01-27T12:04:55+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name></author><entry><title type="html">ระบบประกันสังคมล่มยาว สะท้อนถึงปัญหาที่มากกว่าด้านเทคนิค</title><link href="https://wittawasw.com/2026/01/27/sso-system-is-down.html" rel="alternate" type="text/html" title="ระบบประกันสังคมล่มยาว สะท้อนถึงปัญหาที่มากกว่าด้านเทคนิค" /><published>2026-01-27T11:55:00+07:00</published><updated>2026-01-27T11:55:00+07:00</updated><id>https://wittawasw.com/2026/01/27/sso-system-is-down</id><content type="html" xml:base="https://wittawasw.com/2026/01/27/sso-system-is-down.html"><![CDATA[<p>ระบบไอทีล่มได้ ไม่มีใครเถียง
 แต่ล่มต่อเนื่องเป็นเดือน สำหรับระบบระดับประเทศที่ประชาชนต้องพึ่งพา
 อันนี้ไม่ใช่เรื่องที่ยอมรับได้ ต่อให้เป็น production ของ software house ขนาดเล็กก็ตาม</p>
 
@@ -60,11 +60,8 @@
 <p>เพราะการยอมรับว่ามีความผิดพลาดตั้งแต่การออกแบบ
 อาจมีผลทางสัญญา งบประมาณ และความรับผิดที่ใหญ่เกินไป
 จึงเลือกเลี่ยงการพูดถึงต้นเหตุ และซื้อเวลาไปเรื่อยๆ
-โดยให้ประชาชนเป็นคนรับผลกระทบแทน</p>
-
-<hr />
-
-<h2 id="สรุป">สรุป</h2>
+โดยให้ประชาชนเป็นคนรับผลกระทบแทน
+—</p>
 
 <p>ระบบไอทีพัง ไม่ใช่เรื่องน่าอาย
 แต่การไม่ยอมรับว่ามันพัง
