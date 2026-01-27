@@ -1,4 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2025-07-17T16:03:46+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name></author><entry><title type="html">บังคับให้ browser tab อยู่ในสภาพ active</title><link href="https://wittawasw.com/2025/07/16/keep-browser-tab-active.html" rel="alternate" type="text/html" title="บังคับให้ browser tab อยู่ในสภาพ active" /><published>2025-07-16T10:16:00+07:00</published><updated>2025-07-16T10:16:00+07:00</updated><id>https://wittawasw.com/2025/07/16/keep-browser-tab-active</id><content type="html" xml:base="https://wittawasw.com/2025/07/16/keep-browser-tab-active.html"><![CDATA[<h3 id="แก้ที่-api-พื้นฐาน-browser-console">แก้ที่ API พื้นฐาน browser console</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2026-01-27T11:56:25+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name></author><entry><title type="html">ระบบประกันสังคมล่มยาว สะท้อนถึงปัญหาที่มากกว่าด้านเทคนิค</title><link href="https://wittawasw.com/2026/01/27/sso-system-is-down.html" rel="alternate" type="text/html" title="ระบบประกันสังคมล่มยาว สะท้อนถึงปัญหาที่มากกว่าด้านเทคนิค" /><published>2026-01-27T11:55:00+07:00</published><updated>2026-01-27T11:55:00+07:00</updated><id>https://wittawasw.com/2026/01/27/sso-system-is-down</id><content type="html" xml:base="https://wittawasw.com/2026/01/27/sso-system-is-down.html"><![CDATA[<h1 id="ระบบประกันสังคมล่มยาว-สะท้อนถึงปัญหาที่มากกว่าด้านเทคนิค">ระบบประกันสังคมล่มยาว สะท้อนถึงปัญหาที่มากกว่าด้านเทคนิค</h1>
+
+<p>ระบบไอทีล่มได้ ไม่มีใครเถียง
+แต่ล่มต่อเนื่องเป็นเดือน สำหรับระบบระดับประเทศที่ประชาชนต้องพึ่งพา
+อันนี้ไม่ใช่เรื่องที่ยอมรับได้ ต่อให้เป็น production ของ software house ขนาดเล็กก็ตาม</p>
+
+<p>จากข้อมูลที่ปรากฏ ปัญหาไม่ได้เกิดแค่จุดเดียว
+แต่เกิดหลายชั้น ตั้งแต่สถาปัตยกรรม ระบบ core ส่วนกลาง ไปจนถึงฐานข้อมูล
+สะท้อนชัดว่าระบบอาจ “ผ่าน test” แค่บนเอกสาร
+แต่ไม่เคยถูกทดสอบภายใต้โหลดและสภาพการใช้งานจริง</p>
+
+<p>ประเด็นนี้ในเชิงเทคนิค แก้ได้
+ซอฟต์แวร์พัง ซ่อมได้
+ออกแบบพลาด ก็แก้ใหม่ได้
+สิ่งเหล่านี้ไม่ใช่เรื่องใหม่ในโลกไอที และไม่ใช่เรื่องที่ไม่มีทางออก</p>
+
+<p>แต่สิ่งที่ผิดจริง คือวิธีจัดการหลังระบบพัง</p>
+
+<p>ปัญหาใหญ่ไม่ใช่แค่ระบบล่ม
+แต่คือการจัดการวิกฤตที่ผิดทิศผิดทาง
+แทนที่จะโฟกัสที่ต้นตอของปัญหา
+กลับพูดถึงการใช้งบเพิ่มหลักสิบถึงหลักร้อยล้าน
+หรือแม้แต่การถอยกลับไปใช้ระบบเก่า</p>
+
+<p>ทั้งที่หากระบบไม่เป็นไปตามสัญญา
+ความรับผิดชอบควรอยู่ที่ vendor
+ไม่ใช่เรื่องที่สำนักงานประกันสังคมต้องออกมาปกป้อง หรือผลักภาระต่อให้ผู้ประกันตน</p>
+
+<p>ยิ่งไปกว่านั้น ทั้งที่ระบบหลักมีปัญหา
+ก็ไม่ได้แปลว่าต้องปิดทุกอย่างพร้อมกัน
+ในเชิงปฏิบัติการ มีทางเลือกให้ใช้จำนวนมาก เช่น</p>
+
+<ul>
+  <li>เปิดให้บางสาขาที่พร้อมดำเนินการก่อน</li>
+  <li>แบ่งโหลดตามช่วงเวลา หรือทำระบบคิว</li>
+  <li>จำกัดประเภทงานที่เข้าระบบในแต่ละช่วง</li>
+  <li>ใช้ manual หรือ semi-manual flow ชั่วคราวในงานจำเป็น</li>
+  <li>แยกงานเร่งด่วนออกจากงานทั่วไป</li>
+</ul>
+
+<p>แนวทางเหล่านี้อาจไม่สวย
+อาจไม่สมบูรณ์
+แต่ช่วยลดผลกระทบกับประชาชนได้จริง</p>
+
+<p>การเลือก “ปิดทั้งประเทศ”
+คือทางเลือกที่ง่ายสำหรับระบบ
+แต่เป็นทางเลือกที่มักง่ายเกินไป</p>
+
+<p>อีกสัญญาณอันตรายคือ การปิดกั้นผู้เชี่ยวชาญ
+เมื่อมีข้อเสนอให้ผู้เชี่ยวชาญภายนอกเข้าไปช่วยแก้ปัญหา
+กลับถูกปฏิเสธด้วยเหตุผลเรื่องความลับหรือความปลอดภัย</p>
+
+<p>ในโลกของระบบวิกฤต
+การให้คนนอกเข้า audit เป็นเรื่องปกติ
+การไม่ยอมให้ใครเข้าไปดูต่างหาก ที่ควรตั้งคำถาม</p>
+
+<p>ทั้งหมดนี้ทำให้เริ่มหลีกเลี่ยงไม่ได้ว่า
+หรือปัญหามันหนักเกินกว่าจะยอมรับ
+อาจไม่ใช่แค่ “แก้ช้า”
+แต่เป็น “แก้ยาก” หรือ “ยังไม่รู้จะแก้ยังไง”</p>
+
+<p>เพราะการยอมรับว่ามีความผิดพลาดตั้งแต่การออกแบบ
+อาจมีผลทางสัญญา งบประมาณ และความรับผิดที่ใหญ่เกินไป
+จึงเลือกเลี่ยงการพูดถึงต้นเหตุ และซื้อเวลาไปเรื่อยๆ
+โดยให้ประชาชนเป็นคนรับผลกระทบแทน</p>
+
+<hr />
+
+<h2 id="สรุป">สรุป</h2>
+
+<p>ระบบไอทีพัง ไม่ใช่เรื่องน่าอาย
+แต่การไม่ยอมรับว่ามันพัง
+ไม่ยอมแก้ที่ต้นเหตุ
+และไม่ยอมใช้มาตรการบรรเทาผลกระทบที่มีอยู่</p>
+
+<p>อันนี้ไม่ใช่ปัญหาทางเทคนิค
+แต่มันคือปัญหาการบริหารและการตัดสินใจ</p>]]></content><author><name>wittawasw</name></author><category term="ประกันสังคม," /><category term="crisis" /><category term="management" /><summary type="html"><![CDATA[ระบบประกันสังคมล่มยาว สะท้อนถึงปัญหาที่มากกว่าด้านเทคนิค]]></summary></entry><entry><title type="html">บังคับให้ browser tab อยู่ในสภาพ active</title><link href="https://wittawasw.com/2025/07/16/keep-browser-tab-active.html" rel="alternate" type="text/html" title="บังคับให้ browser tab อยู่ในสภาพ active" /><published>2025-07-16T10:16:00+07:00</published><updated>2025-07-16T10:16:00+07:00</updated><id>https://wittawasw.com/2025/07/16/keep-browser-tab-active</id><content type="html" xml:base="https://wittawasw.com/2025/07/16/keep-browser-tab-active.html"><![CDATA[<h3 id="แก้ที่-api-พื้นฐาน-browser-console">แก้ที่ API พื้นฐาน browser console</h3>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// พิมพ์ลงไปได้เลย  browser console</span>
 <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="dl">'</span><span class="s1">hidden</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">get</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kc">false</span> <span class="p">});</span>
@@ -424,113 +500,4 @@ google-chrome <span class="nt">--headless</span> <span class="nt">--disable-gpu<
 
 <span class="c"># ใช้ ronin-web</span>
 ronin-web screenshot <span class="nt">--browser</span> google-chrome https://www.wittawasw.com
-</code></pre></div></div>]]></content><author><name>wittawasw</name></author><category term="wsl2" /><category term="chrome" /><category term="font" /><summary type="html"><![CDATA[ไม่เจอปัญหานี้ใน MacOS แต่เจอใน WSL2 ที่เป็น Ubuntu 24.04 เลยลอง install package Noto ดูเพื่อทดสอบว่าจะทำให้แสดงได้หรือไม่ ซึ่งก็ทำงานได้ดี]]></summary></entry><entry><title type="html">ตั้งค่าตัวย่อของ Git CLI บน Windows Powershell</title><link href="https://wittawasw.com/2024/12/09/git-alias-in-window-powershell.html" rel="alternate" type="text/html" title="ตั้งค่าตัวย่อของ Git CLI บน Windows Powershell" /><published>2024-12-09T00:52:00+07:00</published><updated>2024-12-09T00:52:00+07:00</updated><id>https://wittawasw.com/2024/12/09/git-alias-in-window-powershell</id><content type="html" xml:base="https://wittawasw.com/2024/12/09/git-alias-in-window-powershell.html"><![CDATA[<p>หลังจากที่มีเหตุให้ต้องใช้ Windows เป็นเครื่องสำรองอยู่เกือบเดือน
-หลายๆอย่างที่ใช้งานใน Ubuntu ก็ย้ายมาอยู่บน WSL 2 ได้เยอะแล้ว
-ช่วงนี้มีความคิดอยากทำ Flutter app ก็เลยอยากลงบนเครื่อง Windows ด้วย
-แต่ก็ติดที่มันใช้ผ่าน WSL ไม่สะดวก ถ้าไม่ผ่าน WSL ก็ติดเรื่องเดียว คือ
-ไม่รู้ว่าจะหาทางเอา Git CLI แบบตัวย่อที่ปกติใช้งานบน Ubuntu มาทำบน Windows
-ยังไง รู้แต่ว่ายังไงก็ไม่ยอมใช้ GUI</p>
-
-<p>ก็เลยได้ลองเล่น Powershell ไปมาก็รู้สึกลงตัวกับแบบนี้
-ยังไม่รู้สึกดีเท่าที่ทำงานบน MacOS, Ubuntu แต่ก็พอใช้ได้แล้ว</p>
-
-<ul>
-  <li>ใช้งาน terminal ใน vscode โดยการเรียกผ่าน <code class="language-plaintext highlighter-rouge">Ctrl + ~</code></li>
-  <li>ตั้งค่า Alias กับ Run Flutter command ผ่าน terminal เลย</li>
-</ul>
-
-<h2 id="ไฟล์ที่ใช้ตั้งค่าให้-powershell">ไฟล์ที่ใช้ตั้งค่าให้ powershell</h2>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># เปิดไฟล์ที่ $profile ด้วย VS Code</span>
-code <span class="nv">$profile</span>
-</code></pre></div></div>
-
-<h2 id="alias-ที่ใช้">Alias ที่ใช้</h2>
-
-<blockquote>
-  <p>ลอกมาจาก <code class="language-plaintext highlighter-rouge">Oh-my-zsh</code></p>
-</blockquote>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ประกาศด้วยคำสั่ง Function</span>
-Function gitCommand <span class="o">{</span> git <span class="nv">$args</span> <span class="o">}</span>
-Function gitCommit <span class="o">{</span> git commit <span class="nt">--verbose</span> <span class="o">}</span>
-Function gitCheckout <span class="o">{</span> git checkout <span class="nv">$args</span> <span class="o">}</span>
-Function gitCheckoutBranch <span class="o">{</span> git checkout <span class="nt">-b</span> <span class="nv">$args</span> <span class="o">}</span>
-Function gitRemote <span class="o">{</span> git remote <span class="nt">-v</span> <span class="o">}</span>
-Function gitRemoteRemove <span class="o">{</span> git remote remove <span class="nv">$args</span> <span class="o">}</span>
-Function gitRemoteAdd <span class="o">{</span> git remote add <span class="nv">$args</span> <span class="o">}</span>
-Function gitPull <span class="o">{</span> git pull origin <span class="nv">$args</span> <span class="o">}</span>
-
-Function gitPush <span class="o">{</span>
-    param <span class="o">(</span>
-        <span class="o">[</span>string[]]<span class="nv">$args</span>
-    <span class="o">)</span>
-
-    <span class="k">if</span> <span class="o">(</span><span class="nv">$args</span>.Count <span class="nt">-ne</span> 0 <span class="nt">-and</span> <span class="nv">$args</span>.Count <span class="nt">-ne</span> 1<span class="o">)</span> <span class="o">{</span>
-        git push origin <span class="nv">$args</span>
-    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="nv">$args</span>.Count <span class="nt">-eq</span> 0<span class="o">)</span> <span class="o">{</span>
-            <span class="nv">$b</span> <span class="o">=</span> <span class="o">(</span>git rev-parse <span class="nt">--abbrev-ref</span> HEAD<span class="o">)</span>
-        <span class="o">}</span>
-        git push origin <span class="si">$(</span><span class="nv">$b</span> <span class="o">=</span> <span class="k">if</span> <span class="o">(</span><span class="nv">$args</span>.Count <span class="nt">-eq</span> 0<span class="o">)</span> <span class="o">{</span> <span class="nv">$b</span> <span class="o">}</span> <span class="k">else</span> <span class="o">{</span> <span class="nv">$args</span><span class="o">[</span>0] <span class="o">}</span><span class="si">)</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-Function gitPushForce <span class="o">{</span>
-    param <span class="o">(</span>
-        <span class="o">[</span>string]<span class="nv">$arg</span>
-    <span class="o">)</span>
-
-    <span class="k">if</span> <span class="o">(</span><span class="nv">$args</span>.Count <span class="nt">-ne</span> 1<span class="o">)</span> <span class="o">{</span>
-        <span class="nv">$b</span> <span class="o">=</span> <span class="o">(</span>git rev-parse <span class="nt">--abbrev-ref</span> HEAD<span class="o">)</span>
-    <span class="o">}</span>
-    git push <span class="nt">--force</span> origin <span class="nv">$b</span>
-<span class="o">}</span>
-
-Function gitFetch <span class="o">{</span> git fetch <span class="nt">--all</span> <span class="nt">--tags</span> <span class="nt">--prune</span> <span class="nt">--jobs</span><span class="o">=</span>10 <span class="o">}</span>
-Function gitStatus <span class="o">{</span> git status <span class="o">}</span>
-Function gitSwitch <span class="o">{</span> git switch <span class="nv">$args</span> <span class="o">}</span>
-Function gitResetHard <span class="o">{</span> git reset <span class="nt">--hard</span> <span class="nv">$args</span> <span class="o">}</span>
-Function gitResetHardHead <span class="o">{</span> git reset <span class="nt">--hard</span> HEAD <span class="o">}</span>
-Function gitBranch <span class="o">{</span> git branch <span class="nv">$args</span> <span class="o">}</span>
-Function gitBranchDelete <span class="o">{</span> git branch <span class="nt">-d</span> <span class="nv">$args</span> <span class="o">}</span>
-Function gitLogGraph <span class="o">{</span> git log <span class="nt">--oneline</span> <span class="nt">--graph</span> <span class="nt">--decorate</span> <span class="o">}</span>
-Function gitLogAllGraph <span class="o">{</span> git log <span class="nt">--oneline</span> <span class="nt">--all</span> <span class="nt">--graph</span> <span class="nt">--decorate</span> <span class="o">}</span>
-Function gitAdd <span class="o">{</span> git add <span class="nv">$args</span> <span class="o">}</span>
-Function gitAddAll <span class="o">{</span> git add <span class="nb">.</span> <span class="o">}</span>
-
-<span class="c"># ตั้งค่า alias ให้ชี้ไปที่ Function</span>
-Set-Alias <span class="nt">-Name</span> g <span class="nt">-Value</span> gitCommand
-
-<span class="c"># ใช้ gc ไม่ได้เพราะทับกับคำสั่งเดิมของ windows เลยต้องใช้เป็น gcc แทน</span>
-Set-Alias <span class="nt">-Name</span> gcc <span class="nt">-Value</span> gitCommit
-Set-Alias <span class="nt">-Name</span> gco <span class="nt">-Value</span> gitCheckout
-Set-Alias <span class="nt">-Name</span> gcb <span class="nt">-Value</span> gitCheckoutBranch
-Set-Alias <span class="nt">-Name</span> grv <span class="nt">-Value</span> gitRemote
-Set-Alias <span class="nt">-Name</span> grrm <span class="nt">-Value</span> gitRemoteRemove
-Set-Alias <span class="nt">-Name</span> gra <span class="nt">-Value</span> gitRemoteAdd
-Set-Alias <span class="nt">-Name</span> ggl <span class="nt">-Value</span> gitPull
-Set-Alias <span class="nt">-Name</span> ggp <span class="nt">-Value</span> gitPush
-Set-Alias <span class="nt">-Name</span> ggf <span class="nt">-Value</span> gitPushForce
-Set-Alias <span class="nt">-Name</span> gst <span class="nt">-Value</span> gitStatus
-Set-Alias <span class="nt">-Name</span> gsw <span class="nt">-Value</span> gitSwitch
-Set-Alias <span class="nt">-Name</span> grh <span class="nt">-Value</span> gitResetHard
-Set-Alias <span class="nt">-Name</span> grhh <span class="nt">-Value</span> gitResetHardHead
-Set-Alias <span class="nt">-Name</span> gb <span class="nt">-Value</span> gitBranch
-Set-Alias <span class="nt">-Name</span> gbd <span class="nt">-Value</span> gitBranchDelete
-Set-Alias <span class="nt">-Name</span> glgg <span class="nt">-Value</span> gitLogGraph
-Set-Alias <span class="nt">-Name</span> glola <span class="nt">-Value</span> gitLogAllGraph
-Set-Alias <span class="nt">-Name</span> gf <span class="nt">-Value</span> gitFetch
-Set-Alias <span class="nt">-Name</span> ga <span class="nt">-Value</span> gitAdd
-Set-Alias <span class="nt">-Name</span> gaa <span class="nt">-Value</span> gitAddAll
-
-</code></pre></div></div>
-
-<h2 id="การ-load-ใส่-powershell">การ Load ใส่ powershell</h2>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># กดบันทึกแล้วเปิดใหม่หรือใช้คำสั่งนี้ เป็นเหมือนการสั่ง source ใน Unix</span>
-<span class="nb">.</span> <span class="nv">$profile</span>
-
-<span class="c"># ตั้งค่าให้ ggp, ggf สามารถทำงานได้โดยไม่ต้อง set upstream</span>
-g config <span class="nt">--global</span> push.autoSetupRemote <span class="nb">true</span>
-</code></pre></div></div>]]></content><author><name>wittawasw</name></author><category term="git" /><category term="cli" /><category term="windows," /><category term="powershell" /><summary type="html"><![CDATA[หลังจากที่มีเหตุให้ต้องใช้ Windows เป็นเครื่องสำรองอยู่เกือบเดือน หลายๆอย่างที่ใช้งานใน Ubuntu ก็ย้ายมาอยู่บน WSL 2 ได้เยอะแล้ว ช่วงนี้มีความคิดอยากทำ Flutter app ก็เลยอยากลงบนเครื่อง Windows ด้วย แต่ก็ติดที่มันใช้ผ่าน WSL ไม่สะดวก ถ้าไม่ผ่าน WSL ก็ติดเรื่องเดียว คือ ไม่รู้ว่าจะหาทางเอา Git CLI แบบตัวย่อที่ปกติใช้งานบน Ubuntu มาทำบน Windows ยังไง รู้แต่ว่ายังไงก็ไม่ยอมใช้ GUI ก็เลยได้ลองเล่น Powershell ไปมาก็รู้สึกลงตัวกับแบบนี้ ยังไม่รู้สึกดีเท่าที่ทำงานบน MacOS, Ubuntu แต่ก็พอใช้ได้แล้ว]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>wittawasw</name></author><category term="wsl2" /><category term="chrome" /><category term="font" /><summary type="html"><![CDATA[ไม่เจอปัญหานี้ใน MacOS แต่เจอใน WSL2 ที่เป็น Ubuntu 24.04 เลยลอง install package Noto ดูเพื่อทดสอบว่าจะทำให้แสดงได้หรือไม่ ซึ่งก็ทำงานได้ดี]]></summary></entry></feed>

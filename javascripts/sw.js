@@ -215,6 +215,12 @@ const urlsToCache = [
   
   '/tag/browser/index.html',
   
+  '/tag/ประกันสังคม/index.html',
+  
+  '/tag/crisis/index.html',
+  
+  '/tag/management/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -235,6 +241,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2026/01/27/sso-system-is-down.html',
   
   '/2025/07/16/keep-browser-tab-active.html',
   
