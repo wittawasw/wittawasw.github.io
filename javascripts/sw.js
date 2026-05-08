@@ -25,6 +25,8 @@ const urlsToCache = [
   
   '/page7/index.html',
   
+  '/page8/index.html',
+  
   '/tag/go/index.html',
   
   '/tag/website/index.html',
@@ -221,6 +223,12 @@ const urlsToCache = [
   
   '/tag/management/index.html',
   
+  '/tag/software/index.html',
+  
+  '/tag/development/index.html',
+  
+  '/tag/developer/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -235,12 +243,16 @@ const urlsToCache = [
   
   '/collection/posts/page7/index.html',
   
+  '/collection/posts/page8/index.html',
+  
   '/feed.xml',
   
   '/sitemap.xml',
   
   '/robots.txt',
   
+  
+  '/2026/05/08/software-developer-head-count-will-not-decrease-that-many.html',
   
   '/2026/01/27/sso-system-is-down.html',
   

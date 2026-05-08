@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#181818"/><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>งานพัฒนาซอฟต์แวร์จะไม่หายไปเยอะจนน่ากังวล | wittawasw</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="งานพัฒนาซอฟต์แวร์จะไม่หายไปเยอะจนน่ากังวล" />
+<meta name="author" content="wittawasw" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ช่วงนี้กระแสความกลัวว่า AI จะทำให้อาชีพนักพัฒนาซอฟต์แวร์หายไปเกือบหมด กลายเป็นเรื่องที่ถูกพูดถึงกันแทบทุกวัน บางคนถึงขั้นเชื่อว่าอีกไม่กี่ปีนักพัฒนาจะหายไป 80-90% เพราะ AI สามารถ generate code ได้เอง เขียน test ได้เอง หรือแม้แต่ deploy ระบบได้เอง" />
+<meta property="og:description" content="ช่วงนี้กระแสความกลัวว่า AI จะทำให้อาชีพนักพัฒนาซอฟต์แวร์หายไปเกือบหมด กลายเป็นเรื่องที่ถูกพูดถึงกันแทบทุกวัน บางคนถึงขั้นเชื่อว่าอีกไม่กี่ปีนักพัฒนาจะหายไป 80-90% เพราะ AI สามารถ generate code ได้เอง เขียน test ได้เอง หรือแม้แต่ deploy ระบบได้เอง" />
+<link rel="canonical" href="https://wittawasw.com/2026/05/08/software-developer-head-count-will-not-decrease-that-many.html" />
+<meta property="og:url" content="https://wittawasw.com/2026/05/08/software-developer-head-count-will-not-decrease-that-many.html" />
+<meta property="og:site_name" content="wittawasw" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-05-08T18:01:00+07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="งานพัฒนาซอฟต์แวร์จะไม่หายไปเยอะจนน่ากังวล" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"wittawasw"},"dateModified":"2026-05-08T18:01:00+07:00","datePublished":"2026-05-08T18:01:00+07:00","description":"ช่วงนี้กระแสความกลัวว่า AI จะทำให้อาชีพนักพัฒนาซอฟต์แวร์หายไปเกือบหมด กลายเป็นเรื่องที่ถูกพูดถึงกันแทบทุกวัน บางคนถึงขั้นเชื่อว่าอีกไม่กี่ปีนักพัฒนาจะหายไป 80-90% เพราะ AI สามารถ generate code ได้เอง เขียน test ได้เอง หรือแม้แต่ deploy ระบบได้เอง","headline":"งานพัฒนาซอฟต์แวร์จะไม่หายไปเยอะจนน่ากังวล","mainEntityOfPage":{"@type":"WebPage","@id":"https://wittawasw.com/2026/05/08/software-developer-head-count-will-not-decrease-that-many.html"},"url":"https://wittawasw.com/2026/05/08/software-developer-head-count-will-not-decrease-that-many.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://wittawasw.com/feed.xml" title="wittawasw" />
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+
+  <script type="module">
+    import * as Turbo from 'https://cdn.skypack.dev/@hotwired/turbo@7.3.0';
+  </script>
+
+  <script src="/javascripts/sw.js"></script>
+  <style>
+    .turbo-progress-bar {
+      background: #79b8ff;
+    }
+
+    p {
+      text-justify: inter-word;
+    }
+  </style>
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">wittawasw</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+        </div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">งานพัฒนาซอฟต์แวร์จะไม่หายไปเยอะจนน่ากังวล</h1>
+    <div class="post-meta">
+      <time class="dt-published" datetime="2026-05-08T18:01:00+07:00" itemprop="datePublished">
+        May 8, 2026
+      </time>
+    </div>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>ช่วงนี้กระแสความกลัวว่า AI จะทำให้อาชีพนักพัฒนาซอฟต์แวร์หายไปเกือบหมด กลายเป็นเรื่องที่ถูกพูดถึงกันแทบทุกวัน บางคนถึงขั้นเชื่อว่าอีกไม่กี่ปีนักพัฒนาจะหายไป 80-90% เพราะ AI สามารถ generate code ได้เอง เขียน test ได้เอง หรือแม้แต่ deploy ระบบได้เอง<br /></p>
+
+<p>แต่ส่วนตัวผมคิดว่าภาพนั้น “เกินจริง” ไปมาก<br /></p>
+
+<p>สิ่งที่จะเกิดขึ้นจริงน่าจะเป็นการลดจำนวนคนลงในช่วงแรกมากกว่า โดยเฉพาะงานที่เป็น repetitive task หรือ workflow ที่สามารถ automate ได้ง่าย บริษัทจำนวนมากจะเริ่มใช้คนต่อ project น้อยลง จากเดิมที่ต้องใช้ทีม 10 คน อาจเหลือ 5-6 คน หรือ startup ที่เคยต้องจ้าง backend, frontend, devops แยกกัน ก็อาจใช้คนแค่ 1-2 คนที่ทำงานร่วมกับ AI ได้ดีพอแทน<br /></p>
+
+<p>แต่ในระยะยาว ผมกลับมองว่าปริมาณ “งานพัฒนาซอฟต์แวร์” จะเพิ่มขึ้นเร็วกว่าความสามารถในการลดคนเสียอีก<br /></p>
+
+<p>ที่ผ่านมา ซอฟต์แวร์ ถูกจำกัดอยู่แค่ในคอมพิวเตอร์ มือถือ หรือระบบเฉพาะทางบางอย่าง แต่ในอีก 10-20 ปีข้างหน้า ซอฟต์แวร์ จะเข้าไปอยู่ในทุกอย่างรอบตัวมนุษย์มากกว่าที่เราเคยเห็นมาก่อน<br /></p>
+
+<p>ทีวีจะไม่ใช่แค่ทีวีอีกต่อไป<br />
+ตู้เย็นจะไม่ใช่แค่เครื่องทำความเย็น<br />
+ซอฟต์แวร์ในรถยนต์จะไม่ใช่แค่ของประดับ<br />
+แม้แต่เตาอบ เครื่องซักผ้า หรือเครื่องใช้ไฟฟ้าธรรมดา ก็จะมีความซับซ้อนของซอฟต์แวร์ภายในมากขึ้นเรื่อยๆ<br /></p>
+
+<p>คนรุ่นถัดไปจะมอง “ทีวีที่ไม่มี software update” เป็นของแปลกพอๆกับที่คนยุคนี้มองโทรศัพท์ไม่มีอินเทอร์เน็ต<br /></p>
+
+<p>Software is eating the World กำลังเกิดขึ้นจริงด้วยความเร็วที่คาดเดาไม่ได้อีกแล้ว ไม่ใช่แค่ในความหมายของ startup หรือ web application ด้วย มันจะลามเข้าไปถึงทุกอย่าง appliance, infrastructure, healthcare, transportation, education และ workflow ของแทบทุกอุตสาหกรรม<br /></p>
+
+<p>เมื่อซอฟต์แวร์แทรกเข้าไปในทุกอย่าง ความต้องการคนที่เข้าใจการสร้าง ดูแล ปรับแต่ง และเชื่อมต่อระบบเหล่านี้ก็เกิดขึ้นมหาศาล<br /></p>
+
+<p>สิ่งที่เปลี่ยนคือ “รูปแบบของนักพัฒนา”<br /></p>
+
+<p>นักพัฒนารุ่นใหม่จะไม่ได้นั่งเขียน code ทีล่ะบรรทัดอีกแล้ว แต่จะกลายเป็นคนที่ทำงานร่วมกับ AI เพื่อออกแบบ workflow, validate logic, เชื่อมระบบ, ดูแล infra, วิเคราะห์ requirement และตัดสินใจเชิงเทคนิคแทน<br /></p>
+
+<p>พูดง่ายๆคือ AI จะลด “แรงงานเชิงกล” ของงานพัฒนาซอฟต์แวร์ แต่ไม่ได้ลดความต้องการคนที่เข้าใจซอฟต์แวร์จริงๆ<br /></p>
+
+<p>และถ้ามองเทียบกับสายอาชีพอื่น ผมกลับคิดว่านักพัฒนาซอฟต์แวร์อาจโดนกระทบน้อยกว่าหลายสายด้วยซ้ำ<br /></p>
+
+<p>อาชีพอย่าง นักวิเคราะห์, นักกฎหมาย, นักทำบัญชี หรือสายเอกสารจำนวนมาก มี workflow ที่เป็น structured reasoning สูงแต่ก็เป็นสิ่งที่ AI เก่งขึ้นเร็วมากในช่วงไม่กี่ปีที่ผ่านมา งานจำนวนมากในสายเหล่านี้จะถูกลด head-count หนักกว่านักพัฒนาด้วยซ้ำ โดยหลายคนในสายงานเหล่านั้น ก็อาจต้อง pivot เข้ามาใกล้งานพัฒนาซอฟต์แวร์มากขึ้น<br /></p>
+
+<p>เราอาจเริ่มเห็นนักทำบัญชีที่ต้องเขียน automation เอง<br />
+นักกฎหมายที่ต้องใช้ AI pipeline วิเคราะห์คดี<br />
+นักวิเคราะห์ที่ต้อง build internal tooling ของตัวเอง<br />
+หรือคนสาย domain expert ที่ต้องเรียนรู้การพัฒนาซอฟต์แวร์ในระดับหนึ่งเพื่อทำงานร่วมกับ AI ได้<br /></p>
+
+<p>พูดอีกแบบคือ โลกไม่ได้กำลังเดินไปสู่ “โลกที่ไม่มีนักพัฒนา”<br /></p>
+
+<p>แต่มันกำลังเดินไปสู่โลกที่ “คนแทบทุกสายต้องเข้าใจซอฟต์แวร์มากขึ้น”<br /></p>
+
+<p>ดังนั้นถ้าคุณอยู่ในสายงานพัฒนาซอฟต์แวร์อยู่แล้ว ผมคิดว่าไม่จำเป็นต้องมองโลกในแง่ร้าย<br /></p>
+
+<p>สิ่งที่ควรทำมากกว่าคือเริ่มยอมรับว่าโลกการทำงานกำลังเปลี่ยน<br />
+AI จะกลายเป็นส่วนหนึ่งของ workflow ปกติ<br />
+ความเร็วในการทำงานจะสูงขึ้น<br />
+ความคาดหวังจะสูงขึ้น<br />
+การแข่งขันจะสูงขึ้น<br /></p>
+
+<p>แต่ในขณะเดียวกัน ปริมาณซอฟต์แวร์บนโลกก็จะเพิ่มขึ้นแบบมหาศาลเช่นกัน
+งานของนักพัฒนาจะง่ายขึ้นสำหรับความซับซ้อนของระบบที่มีอยู่ แต่ขอบเขตของความซับซ้อนนั้นกำลังถูกผลักออกไปไกลขึ้นเรื่อยๆ
+เดาไม่ออกเหมือนกันว่าภายใน 10 ปีข้างหน้าจะเกิดอะไรขึ้นบ้าง ความซับซ้อนของงานจะมากขนาดไหนแล้วนักพัฒนาต้องเก่งแบบไหน แต่เชื่อจากใจจริงว่านักพัฒนาซอฟต์แวร์จะยังมีงานทำ</p>
+
+  </div>
+
+  <a class="u-url" href="/2026/05/08/software-developer-head-count-will-not-decrease-that-many.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      <!--
+        <ul class="contact-list">
+          <li class="p-name">wittawasw</li>
+          
+        </ul> -->
+      </div>
+      <div class="footer-col">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="social-links">
+      <!--<ul class="social-media-list"></ul>
+-->
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>
