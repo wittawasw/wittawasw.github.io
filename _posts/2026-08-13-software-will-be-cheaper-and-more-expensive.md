@@ -2,7 +2,7 @@
 layout: post
 title: ซอฟต์แวร์จะถูกลงและแพงขึ้นในเวลาเดียวกัน
 tags: software development, software, AI
-date: 2026-08-13 19:07 +0700
+date: 2026-08-13 18:15 +0700
 ---
 
 CEO ของ Anthropic เคยให้([สัมภาษณ์](https://x.com/rohanpaul_ai/status/2055841486714147177))เอาไว้ว่า
