@@ -1,4 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2026-08-13T18:12:38+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name></author><entry><title type="html">งานพัฒนาซอฟต์แวร์จะไม่หายไปเยอะจนน่ากังวล</title><link href="https://wittawasw.com/2026/05/08/software-developer-head-count-will-not-decrease-that-many.html" rel="alternate" type="text/html" title="งานพัฒนาซอฟต์แวร์จะไม่หายไปเยอะจนน่ากังวล" /><published>2026-05-08T18:01:00+07:00</published><updated>2026-05-08T18:01:00+07:00</updated><id>https://wittawasw.com/2026/05/08/software-developer-head-count-will-not-decrease-that-many</id><content type="html" xml:base="https://wittawasw.com/2026/05/08/software-developer-head-count-will-not-decrease-that-many.html"><![CDATA[<p>ช่วงนี้กระแสความกลัวว่า AI จะทำให้อาชีพนักพัฒนาซอฟต์แวร์หายไปเกือบหมด กลายเป็นเรื่องที่ถูกพูดถึงกันแทบทุกวัน บางคนถึงขั้นเชื่อว่าอีกไม่กี่ปีนักพัฒนาจะหายไป 80-90% เพราะ AI สามารถ generate code ได้เอง เขียน test ได้เอง หรือแม้แต่ deploy ระบบได้เอง<br /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2026-08-13T18:17:28+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name></author><entry><title type="html">ซอฟต์แวร์จะถูกลงและแพงขึ้นในเวลาเดียวกัน</title><link href="https://wittawasw.com/2026/08/13/software-will-be-cheaper-and-more-expensive.html" rel="alternate" type="text/html" title="ซอฟต์แวร์จะถูกลงและแพงขึ้นในเวลาเดียวกัน" /><published>2026-08-13T18:15:00+07:00</published><updated>2026-08-13T18:15:00+07:00</updated><id>https://wittawasw.com/2026/08/13/software-will-be-cheaper-and-more-expensive</id><content type="html" xml:base="https://wittawasw.com/2026/08/13/software-will-be-cheaper-and-more-expensive.html"><![CDATA[<p>CEO ของ Anthropic เคยให้(<a href="https://x.com/rohanpaul_ai/status/2055841486714147177">สัมภาษณ์</a>)เอาไว้ว่า
+“ซอฟต์แวร์จะถูกลงจนถึงกลายเป็นของฟรี”</p>
+
+<p>การที่เราคิดต้นทุนของซอฟต์แวร์จากจำนวนผู้ใช้หลายล้านคนได้กำลังจะหายไป และในขณะเดียวกัน อาชีพจำนวนมากที่ถูกสร้างขึ้นมาในหลายสิบปีที่ผ่านมาก็กำลังถูกทำให้หายไป</p>
+
+<p>แต่พวกเราจะรับมือกับมันได้ เราจะปรับตัว แต่แค่ตอนนี้แทบยังไม่มีใครตระหนักเลยว่าอะไรกำลังจะเกิดขึ้น
+และผลกระทบของมันจะใหญ่ขนาดไหน</p>
+
+<blockquote>
+  <p>“Software is going to become cheap, maybe essentially free.</p>
+
+  <p>The premise that you need to amortize a piece of software you build across
+millions of users, that may start to be false.</p>
+
+  <p>But at the same time, there are whole jobs,
+whole careers that we’ve built for decades that may not be present.</p>
+
+  <p>And, you know, I think we can deal with it.
+I think we can adjust to it. But I don’t,
+I don’t think there’s an awareness at all of what,
+of what is coming here and the magnitude of it.”</p>
+</blockquote>
+
+<hr />
+
+<p>ครึ่งแรกของคำพูดกำลังเกิดขึ้นจริง</p>
+
+<p>ยังไม่รู้เหมือนกันว่าผู้ให้บริการระบบปฏิบัติการทั้งในคอมพิวเตอร์และมือถือจะปรับตัวไปทางไหน ในแง่ของการให้บริการและภาพรวมของซอฟต์แวร์สำหรับใช้งานคนเดียว
+แต่เราคาดการณ์ได้ว่าราคาของซอฟต์แวร์หลายอย่างจะถูกลงจนถึงกลายเป็นของฟรีแน่นอน</p>
+
+<p>สิ่งที่น่าสนใจกว่าคือครึ่งหลังของคำพูด ที่ว่าหลายอาชีพจะหายไป ที่ก็เชื่อได้ว่ากำลังเกิดขึ้นจริงเหมือนกัน</p>
+
+<p>ซอฟต์แวร์ที่ทำงานได้ด้วยตัวเองอาจมีต้นทุนลดลงจนแทบเป็นศูนย์
+แต่เชื่อว่าซอฟต์แวร์ที่ต้องเชื่อมต่อกับระบบอื่นจะมีราคาแพงขึ้น
+โดยเฉพาะเมื่อ AI Agent สามารถเข้าถึงข้อมูล เรียกใช้บริการ และดำเนินการข้ามหลายระบบได้ด้วยตัวเอง</p>
+
+<p>ความสามารถในการ Integration ที่มากขึ้นของ AI Agent หมายถึงพื้นที่ความเสี่ยงที่กว้างขึ้น
+และความผิดพลาดเพียงจุดเดียวอาจส่งผลต่อระบบอื่นต่อเนื่องกันเป็นวงกว้าง
+การเชื่อมต่อระบบจึงต้องลงทุนมากขึ้นกับการออกแบบสิทธิ์ การแยกระบบ การตรวจสอบ การกำกับดูแล
+และกลไกควบคุมการทำงานของทั้งมนุษย์และ AI Agent</p>
+
+<p>ตัวอย่างเช่น</p>
+<ul>
+  <li>ซอฟต์แวร์ฐานข้อมูลทุกอัน</li>
+  <li>Public Facing API ทุกที่</li>
+  <li>แบบฟอร์มติดต่อสอบถาม</li>
+  <li>ซอฟต์แวร์ที่เก็บข้อมูลส่วนบุคคล</li>
+</ul>
+
+<p>ตัวอย่างที่ยกมาต้องเพิ่มกลไกในการควบคุมการเข้าใช้งานและป้องกันการเข้าถึงโดยไม่ได้รับอนุญาตจาก
+AI Agent ทั้งหมด การออกแบบระบบให้ซอฟต์แวร์ทำงานร่วมกันจะแพงขึ้น
+เพราะราคาที่เราต้องจ่ายเมื่อเกิดความผิดพลาดแพงขึ้น</p>
+
+<p>ผมเชื่อว่าอาชีพเกิดใหม่จะอยู่ตรงนี้แหละ การสร้างซอฟต์แวร์ที่สามารถป้องกันระบบจาก AI Agent
+และการทำให้ลูกค้าเชื่อใจให้ได้ว่าซอฟต์แวร์ที่เราขายปลอดภัยพอ</p>]]></content><author><name>wittawasw</name></author><category term="software" /><category term="development," /><category term="software," /><category term="AI" /><summary type="html"><![CDATA[CEO ของ Anthropic เคยให้(สัมภาษณ์)เอาไว้ว่า “ซอฟต์แวร์จะถูกลงจนถึงกลายเป็นของฟรี”]]></summary></entry><entry><title type="html">งานพัฒนาซอฟต์แวร์จะไม่หายไปเยอะจนน่ากังวล</title><link href="https://wittawasw.com/2026/05/08/software-developer-head-count-will-not-decrease-that-many.html" rel="alternate" type="text/html" title="งานพัฒนาซอฟต์แวร์จะไม่หายไปเยอะจนน่ากังวล" /><published>2026-05-08T18:01:00+07:00</published><updated>2026-05-08T18:01:00+07:00</updated><id>https://wittawasw.com/2026/05/08/software-developer-head-count-will-not-decrease-that-many</id><content type="html" xml:base="https://wittawasw.com/2026/05/08/software-developer-head-count-will-not-decrease-that-many.html"><![CDATA[<p>ช่วงนี้กระแสความกลัวว่า AI จะทำให้อาชีพนักพัฒนาซอฟต์แวร์หายไปเกือบหมด กลายเป็นเรื่องที่ถูกพูดถึงกันแทบทุกวัน บางคนถึงขั้นเชื่อว่าอีกไม่กี่ปีนักพัฒนาจะหายไป 80-90% เพราะ AI สามารถ generate code ได้เอง เขียน test ได้เอง หรือแม้แต่ deploy ระบบได้เอง<br /></p>
 
 <p>แต่ส่วนตัวผมคิดว่าภาพนั้น “เกินจริง” ไปมาก<br /></p>
 
@@ -511,19 +565,4 @@ nomad จากเอเชียกลางตั้งแต่ช่วง�
 แต่หลายคนก็เดาไปในทางเดียวกันว่า ขนาดแค่ปฏิเสธไม่ยอมทำงานยังโดนจับไปขังได้
 แล้วจีนจะปล่อยให้คนที่มีประวัติหนีมีโอกาสที่กลับไปเล่าเส้นทางหนีให้คนอื่นฟังได้หรอ</p>
 
-<p>หลายคนเดาว่าก็คงถูกขังกับบังคับใช้แรงงานไปตลอดชีวิตหรืออย่างน้อยก็หลายสิบปีจนไม่มีแรงเหลือให้หนี</p>]]></content><author><name>wittawasw</name></author><category term="social" /><summary type="html"><![CDATA[ผมเห็นข่าวที่คนไทยหลายคนกระทั่งคนรู้จักของผมบางคน เชื่อแนวคิดของตำรวจที่ออกมาอ้างว่าการส่งอุยกูร์กลับให้จีนเป็นเรื่องถูกต้อง “ตามหลักกฎหมายปกติ” แล้วก็ได้แต่เศร้าใจ]]></summary></entry><entry><title type="html">DeepSeek-R1 ประตูบานใหม่ของวงการ AI</title><link href="https://wittawasw.com/2025/01/28/deepseek-r1-announcement.html" rel="alternate" type="text/html" title="DeepSeek-R1 ประตูบานใหม่ของวงการ AI" /><published>2025-01-28T00:00:00+07:00</published><updated>2025-01-28T00:00:00+07:00</updated><id>https://wittawasw.com/2025/01/28/deepseek-r1-announcement</id><content type="html" xml:base="https://wittawasw.com/2025/01/28/deepseek-r1-announcement.html"><![CDATA[<p>DeepSeek-R1 ทำให้อินเตอร์เนตแตกตื่น ตลาดหุ้นด้าน AI ร่วง ไม่ใช่แค่เรื่องต้นทุนถูกกว่า
-แต่มันคือการทลายการปิดกั้นวิธีการสร้าง AI แบบเดียวกับ OpenAI และสารพัดเจ้าตลาด</p>
-
-<p>ทุกเจ้าเท่าที่มีอยู่ตอนนี้ที่ทั้งลงทุนเองและรับเงินลงทุนไปมหาศาล ลงทุนไปเยอะกับการหาวิธี train model
-ที่ดีพอมาสู้กันในแต่ล่ะรอบที่เปิดตัวของใหม่ จนนักวิเคราะห์หลายคนก็ลงเสียงเป็นเอกฉันท์ว่า สนามนี้มีไว้ให้ยักษ์ชนยักษ์เท่านั้น ต่างฝ่ายต่างเก็บความลับวิธีการ train ของตัวเองเป็นชั้นโคตรความลับ แล้วก็เปิดเผยเฉพาะโมเดลขั้นต้นออกมาสู่สาธารณะเท่านั้น</p>
-
-<p>การออกเอกสารเปิดเผยรายละเอียดวิธีการสร้างโมเดลของ DeepSeek-R1 เรียกได้ว่าเหยียบหน้านักลงทุน
-ที่เชื่อว่าลงทุนไปเถอะ ยังไงก็ได้ทุนคืนเพราะยากมากที่จะมีคนลงทุนตั้งแต่ต้น
-ให้ขึ้นมาสู้ในระดับเดียวกันได้ เพราะกลายเป็นว่านอกจากจะสามารถทำซ้ำให้ได้ผลลัพธ์ใกล้เคียงกันได้แล้ว
-ยังใช้ต้นทุนน้อยกว่าในการ train หลายเท่าตัวอีก ตลาดหุ้นก็เลยตอบรับด้วยการเทขายเพราะกลัวว่า
-มูลค่าหุ้นในมือจะลดลงอย่างมีนัยสำคัญ</p>
-
-<p>โดยส่วนตัวแล้วเชื่อว่า DeepSeek ยังสู้ OpenAI หรือ Google ไม่ได้ แต่อย่างน้อยก็ได้เปิดประตูความหวัง
-จากที่ทุกคนเชื่อว่านี่คือสนามของยักษ์ชนยักษ์ มีผู้เล่นได้แค่ไม่กี่บริษัทระดับโลกเท่านั้น
-ที่รายใหม่จะไม่มีโอกาสตามทันได้เลย กลายเป็นความไม่แน่นอนอีกครั้งว่า
-อาจจะมีรายใหม่ที่เกิดขึ้นมาแล้วเกิดการล้มยักษ์ทางเทคโนโลยีให้ได้เห็นอีก</p>]]></content><author><name>wittawasw</name></author><category term="AI" /><category term="openAI" /><category term="deepseek" /><summary type="html"><![CDATA[DeepSeek-R1 ทำให้อินเตอร์เนตแตกตื่น ตลาดหุ้นด้าน AI ร่วง ไม่ใช่แค่เรื่องต้นทุนถูกกว่า แต่มันคือการทลายการปิดกั้นวิธีการสร้าง AI แบบเดียวกับ OpenAI และสารพัดเจ้าตลาด]]></summary></entry></feed>
+<p>หลายคนเดาว่าก็คงถูกขังกับบังคับใช้แรงงานไปตลอดชีวิตหรืออย่างน้อยก็หลายสิบปีจนไม่มีแรงเหลือให้หนี</p>]]></content><author><name>wittawasw</name></author><category term="social" /><summary type="html"><![CDATA[ผมเห็นข่าวที่คนไทยหลายคนกระทั่งคนรู้จักของผมบางคน เชื่อแนวคิดของตำรวจที่ออกมาอ้างว่าการส่งอุยกูร์กลับให้จีนเป็นเรื่องถูกต้อง “ตามหลักกฎหมายปกติ” แล้วก็ได้แต่เศร้าใจ]]></summary></entry></feed>
