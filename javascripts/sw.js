@@ -252,6 +252,8 @@ const urlsToCache = [
   '/robots.txt',
   
   
+  '/2026/08/18/update-ca-cert-in-container.html',
+  
   '/2026/08/13/software-will-be-cheaper-and-more-expensive.html',
   
   '/2026/05/08/software-developer-head-count-will-not-decrease-that-many.html',
