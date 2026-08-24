@@ -1,4 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2026-08-18T13:15:31+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name></author><entry><title type="html">Update CA cert in container</title><link href="https://wittawasw.com/2026/08/18/update-ca-cert-in-container.html" rel="alternate" type="text/html" title="Update CA cert in container" /><published>2026-08-18T13:14:00+07:00</published><updated>2026-08-18T13:14:00+07:00</updated><id>https://wittawasw.com/2026/08/18/update-ca-cert-in-container</id><content type="html" xml:base="https://wittawasw.com/2026/08/18/update-ca-cert-in-container.html"><![CDATA[<p>Some internal network require custom root CA if the proxy is using self-signed.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://wittawasw.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wittawasw.com/" rel="alternate" type="text/html" /><updated>2026-08-24T19:42:39+07:00</updated><id>https://wittawasw.com/feed.xml</id><title type="html">wittawasw</title><subtitle></subtitle><author><name>wittawasw</name></author><entry><title type="html">Agents.md สำหรับคนที่ไม่ชอบคำตอบยาวๆ น้ำท่วมทุ่ง</title><link href="https://wittawasw.com/2026/08/24/my-personal-agents-md.html" rel="alternate" type="text/html" title="Agents.md สำหรับคนที่ไม่ชอบคำตอบยาวๆ น้ำท่วมทุ่ง" /><published>2026-08-24T19:41:00+07:00</published><updated>2026-08-24T19:41:00+07:00</updated><id>https://wittawasw.com/2026/08/24/my-personal-agents-md</id><content type="html" xml:base="https://wittawasw.com/2026/08/24/my-personal-agents-md.html"><![CDATA[<p>ใจความหลักของ Agents.md ที่ผมใช้เองเป็นประจำ ใน ChatGPT, Codex, Claude ก็คือส่วนที่ให้ใส่
+Personalization เน้นการใช้งานแบบที่มีการผู้ควบคุมเป็นหลัก ซึ่งผู้ควบคุม
+ไม่จำเป็นต้องเป็นคนก็ได้ ตอนที่ลองทำ sub agent ก็ได้ผลลัพธ์ที่ค่อนข้างดี</p>
+
+<p>จะใช้แบบนี้ก็เห็นผลได้เลย แต่แนะนำให้ brief ก่อนว่าต้องทำงานอะไรเป็นหลักโดยการเพิ่มหัวข้อ Purposes
+หรือ Main Purposes เข้าไป ก่อน Language</p>
+
+<pre><code class="language-txt">Language:
+- Respond in English only.
+
+Style:
+- Be concise, direct, brief. Using shortest possible form of answer.
+- Do not explain unless requested.
+- Do not add background, justification, or commentary.
+- Do not acknowledge emotions.
+- Do not paraphrase the question.
+
+Formatting:
+- Output plain text only.
+- No markdown, bold, italic, tables, emojis, decorative formatting, or code blocks unless explicitly requested.
+- Use "-" for lists.
+- Keep responses copy-paste friendly.
+
+Behavior:
+- If asked "how", return steps only.
+- If asked for commands, return commands only.
+- If asked to modify text, return the full modified text only.
+- If information is insufficient, respond exactly: missing input
+- If the request cannot be done, respond exactly: not possible
+- Do not suggest alternatives unless asked.
+
+Communication:
+- Output requested content directly.
+- Do not prefix requested content.
+- Assistant-initiated communication with intent:
+  &lt;intent&gt;: &lt;message&gt;
+  Sample message
+  negative: what you suggested was not good
+- Intent labels are descriptive, not fixed.
+- Sample intent labels:
+  - answer
+  - acknowledge
+  - suggestion
+  - proposal
+  - inquiry
+  - warning
+  - alert
+  - correction
+  - reminder
+  - positive
+  - negative
+  - notice
+- Use only one intent per message.
+- Do not use intent labels for user-requested content.
+
+Priority:
+- Accuracy
+- Actionability
+- Brevity
+</code></pre>]]></content><author><name>wittawasw</name></author><category term="agent," /><category term="ai" /><summary type="html"><![CDATA[ใจความหลักของ Agents.md ที่ผมใช้เองเป็นประจำ ใน ChatGPT, Codex, Claude ก็คือส่วนที่ให้ใส่ Personalization เน้นการใช้งานแบบที่มีการผู้ควบคุมเป็นหลัก ซึ่งผู้ควบคุม ไม่จำเป็นต้องเป็นคนก็ได้ ตอนที่ลองทำ sub agent ก็ได้ผลลัพธ์ที่ค่อนข้างดี]]></summary></entry><entry><title type="html">Update CA cert in container</title><link href="https://wittawasw.com/2026/08/18/update-ca-cert-in-container.html" rel="alternate" type="text/html" title="Update CA cert in container" /><published>2026-08-18T13:14:00+07:00</published><updated>2026-08-18T13:14:00+07:00</updated><id>https://wittawasw.com/2026/08/18/update-ca-cert-in-container</id><content type="html" xml:base="https://wittawasw.com/2026/08/18/update-ca-cert-in-container.html"><![CDATA[<p>Some internal network require custom root CA if the proxy is using self-signed.</p>
 
 <h2 id="updating-ca-cert">Updating CA Cert</h2>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
@@ -410,8 +469,4 @@ Junior Developer ที่มักจะตกเป็นเป้าหมา
 <p>สุดท้ายนี้ AI ไม่ได้มาแย่งเก้าอี้ของเรา
 แต่มันมาเปลี่ยนเก้าอี้ที่เคยนั่งกันมาตลอดให้กลายเป็นเก้าอี้ที่ “ใหญ่ขึ้น หนักขึ้น และมีความคาดหวังสูงขึ้น”</p>
 
-<p>และคนที่ยังอยากนั่งอยู่บนนั้น ต้องเติบโตให้ทัน</p>]]></content><author><name>wittawasw</name></author><category term="AI" /><category term="employment" /><summary type="html"><![CDATA[ช่วงหลังมานี้เราได้ยินข่าวกันบ่อยมากว่า AI จะมาแย่งงาน โดยเฉพาะงานที่อยู่ล่างสุดของสายงาน Junior Developer ที่มักจะตกเป็นเป้าหมายแรกของความกลัวเหล่านี้ ซึ่งก็เข้าใจได้ที่จะรู้สึกแบบนั้น เพราะ AI ก็ coding ได้แล้ว แถมไม่เหนื่อย ไม่ต้องขอขึ้นเงินเดือน แล้วจะจ้างคนไปทำไม?]]></summary></entry><entry><title type="html">ทดลองทำ embedding token ของ SNOMED</title><link href="https://wittawasw.com/2025/04/19/snomed-embedding-tokens.html" rel="alternate" type="text/html" title="ทดลองทำ embedding token ของ SNOMED" /><published>2025-04-19T08:22:00+07:00</published><updated>2025-04-19T08:22:00+07:00</updated><id>https://wittawasw.com/2025/04/19/snomed-embedding-tokens</id><content type="html" xml:base="https://wittawasw.com/2025/04/19/snomed-embedding-tokens.html"><![CDATA[<p>ใช้ GTE Large EN v1.5 ได้จำนวน token ทั้งหมด 784,297,436 token ใช้เวลา run ทั้งหมด 18 ชั่วโมง</p>]]></content><author><name>wittawasw</name></author><category term="snomed" /><summary type="html"><![CDATA[ใช้ GTE Large EN v1.5 ได้จำนวน token ทั้งหมด 784,297,436 token ใช้เวลา run ทั้งหมด 18 ชั่วโมง]]></summary></entry><entry><title type="html">แก้ปัญหา install ffi gem ไม่ได้ใน MacOS</title><link href="https://wittawasw.com/2025/04/12/ffi-rubygems-fix-install.html" rel="alternate" type="text/html" title="แก้ปัญหา install ffi gem ไม่ได้ใน MacOS" /><published>2025-04-12T01:53:00+07:00</published><updated>2025-04-12T01:53:00+07:00</updated><id>https://wittawasw.com/2025/04/12/ffi-rubygems-fix-install</id><content type="html" xml:base="https://wittawasw.com/2025/04/12/ffi-rubygems-fix-install.html"><![CDATA[<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>libffi
-
-<span class="nb">export </span><span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">"-L</span><span class="si">$(</span>brew <span class="nt">--prefix</span> libffi<span class="si">)</span><span class="s2">/lib"</span>
-<span class="nb">export </span><span class="nv">CPPFLAGS</span><span class="o">=</span><span class="s2">"-I</span><span class="si">$(</span>brew <span class="nt">--prefix</span> libffi<span class="si">)</span><span class="s2">/include"</span>
-</code></pre></div></div>]]></content><author><name>wittawasw</name></author><category term="ruby" /><summary type="html"><![CDATA[```sh brew install libffi]]></summary></entry></feed>
+<p>และคนที่ยังอยากนั่งอยู่บนนั้น ต้องเติบโตให้ทัน</p>]]></content><author><name>wittawasw</name></author><category term="AI" /><category term="employment" /><summary type="html"><![CDATA[ช่วงหลังมานี้เราได้ยินข่าวกันบ่อยมากว่า AI จะมาแย่งงาน โดยเฉพาะงานที่อยู่ล่างสุดของสายงาน Junior Developer ที่มักจะตกเป็นเป้าหมายแรกของความกลัวเหล่านี้ ซึ่งก็เข้าใจได้ที่จะรู้สึกแบบนั้น เพราะ AI ก็ coding ได้แล้ว แถมไม่เหนื่อย ไม่ต้องขอขึ้นเงินเดือน แล้วจะจ้างคนไปทำไม?]]></summary></entry><entry><title type="html">ทดลองทำ embedding token ของ SNOMED</title><link href="https://wittawasw.com/2025/04/19/snomed-embedding-tokens.html" rel="alternate" type="text/html" title="ทดลองทำ embedding token ของ SNOMED" /><published>2025-04-19T08:22:00+07:00</published><updated>2025-04-19T08:22:00+07:00</updated><id>https://wittawasw.com/2025/04/19/snomed-embedding-tokens</id><content type="html" xml:base="https://wittawasw.com/2025/04/19/snomed-embedding-tokens.html"><![CDATA[<p>ใช้ GTE Large EN v1.5 ได้จำนวน token ทั้งหมด 784,297,436 token ใช้เวลา run ทั้งหมด 18 ชั่วโมง</p>]]></content><author><name>wittawasw</name></author><category term="snomed" /><summary type="html"><![CDATA[ใช้ GTE Large EN v1.5 ได้จำนวน token ทั้งหมด 784,297,436 token ใช้เวลา run ทั้งหมด 18 ชั่วโมง]]></summary></entry></feed>

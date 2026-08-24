@@ -229,6 +229,8 @@ const urlsToCache = [
   
   '/tag/developer/index.html',
   
+  '/tag/agent/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -251,6 +253,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2026/08/24/my-personal-agents-md.html',
   
   '/2026/08/18/update-ca-cert-in-container.html',
   
