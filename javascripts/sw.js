@@ -5,7 +5,7 @@ const urlsToCache = [
   
   '/404.html',
   
-  '/about.html',
+  '/about/',
   
   '/javascripts/sw.js',
   
@@ -231,6 +231,10 @@ const urlsToCache = [
   
   '/tag/agent/index.html',
   
+  '/tag/security/index.html',
+  
+  '/tag/governance/index.html',
+  
   '/collection/posts/index.html',
   
   '/collection/posts/page2/index.html',
@@ -253,6 +257,8 @@ const urlsToCache = [
   
   '/robots.txt',
   
+  
+  '/2026/09/03/software-from-ai-usage-policy.html',
   
   '/2026/08/24/my-personal-agents-md.html',
   
